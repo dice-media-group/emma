@@ -1,4 +1,5 @@
 class Blog::ArticlesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_blog_article, only: [:show, :edit, :update, :destroy]
 
   # GET /blog/articles
@@ -25,6 +26,7 @@ class Blog::ArticlesController < ApplicationController
   # POST /blog/articles.json
   def create
     @blog_article = Blog::Article.new(blog_article_params)
+    @blog_article.user = current_user
 
     respond_to do |format|
       if @blog_article.save
@@ -69,6 +71,6 @@ class Blog::ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_article_params
-      params.require(:blog_article).permit(:title, :body, :user_id)
+      params.require(:blog_article).permit(:title, :body)
     end
 end
