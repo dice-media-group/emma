@@ -2,6 +2,9 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   namespace :blog do
+    resources :entries
+  end
+  namespace :blog do
     resources :articles
   end
   # get '/blog', to: 'blog#index'
