@@ -7,6 +7,15 @@ Rails.application.routes.draw do
   namespace :blog do
     resources :articles
   end
+
+  namespace :admin do
+      resources :users
+      resources :announcements
+      resources :notifications
+
+      root to: "users#index"
+    end
+
   # get '/blog', to: 'blog#index'
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
