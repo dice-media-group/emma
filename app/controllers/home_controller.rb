@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def index
+    @articles = Blog::Article.where("pinned_value > ?", 0)
+    render :layout => 'frontdoor'
   end
 
   def terms
