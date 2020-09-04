@@ -1,8 +1,1 @@
-<% unless user_signed_in? && current_user.admin? %>
-  <p> Hello <%- current_user.email%></p>
-<% else %>
-  Please sign in and let's begin
-<% end %>
-
-<h1>Backstage#index</h1>
-<p>Find me in app/views/backstage/index.html.erb</p>
+<h1>  Welcome <%= current_user.first_name %></h1>

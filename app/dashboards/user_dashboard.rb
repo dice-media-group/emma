@@ -12,7 +12,6 @@ class UserDashboard < Administrate::BaseDashboard
     avatar_blob: Field::HasOne,
     notifications: Field::HasMany,
     services: Field::HasMany,
-    articles: Field::HasMany,
     id: Field::Number,
     email: Field::String,
     encrypted_password: Field::String,
@@ -46,7 +45,6 @@ class UserDashboard < Administrate::BaseDashboard
   avatar_blob
   notifications
   services
-  articles
   id
   email
   encrypted_password
@@ -69,7 +67,6 @@ class UserDashboard < Administrate::BaseDashboard
   avatar_blob
   notifications
   services
-  articles
   email
   encrypted_password
   reset_password_token
