@@ -1,5 +1,6 @@
 # Emma
 
+
 Emma is named after the first female telephone switchboard operator, hired September 1, 1878 (https://time.com/4011936/emma-nutt/). This rails app connects its blogger with its audience in a faster, more comfortable, more effective way.
 
 This README would normally document whatever steps are necessary to get the
