@@ -8,6 +8,10 @@
 @import "jumpstart/sticky-footer";
 @import "jumpstart/announcements";
 
+// actiontext editor styles
+@import "trix/dist/trix.css";
+@import "actiontext";
+
 // Fixes bootstrap nav-brand container overlap
 @include media-breakpoint-down(xs) {
   .container {
