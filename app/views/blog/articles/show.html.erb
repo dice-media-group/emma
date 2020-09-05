@@ -1,0 +1,21 @@
+<div class="page-header">
+  <%= link_to blog_articles_path, class: 'btn btn-default' do %>
+    All Blog_articles
+  <% end %>
+  <%= link_to edit_blog_article_path(@blog_article), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show blog_article</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @blog_article.title %></dd>
+
+  <dt>Body:</dt>
+  <dd><%= @blog_article.body %></dd>
+
+  <dt>Byline:</dt>
+  <dd><%= @blog_article.user.name.full %></dd>
+
+</dl>

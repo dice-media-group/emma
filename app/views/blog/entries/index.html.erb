@@ -1,0 +1,43 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Blog_entries</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_blog_entry_path, class: 'btn btn-primary' do %>
+    Add New Entry
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Title</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @blog_entries.each do |blog_entry| %>
+        <%= content_tag :tr, id: dom_id(blog_entry), class: dom_class(blog_entry) do %>
+          
+
+                      <td><%= blog_entry.title %></td>
+          
+          
+            <td><%= link_to 'Show', blog_entry %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
