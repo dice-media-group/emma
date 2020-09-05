@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :meetups
   namespace :blog do
     resources :entries
   end
