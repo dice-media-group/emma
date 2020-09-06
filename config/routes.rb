@@ -1,9 +1,16 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  resources :meetups
+  resources :press_kits
+  get 'services/index'
+  resources :books
+  resources :media_appearances
+  resources :podcasts, only: [:index, :show]
+  resources :meetups, only: [:index, :show]
+
   namespace :blog do
     resources :entries
+    root to: "entries#index"
   end
   namespace :blog do
     resources :articles
@@ -19,13 +26,20 @@ Rails.application.routes.draw do
 
   # get '/blog', to: 'blog#index'
   get '/privacy', to: 'home#privacy'
+  get '/podcast', to: 'podcasts#index'
+  get '/events', to: 'meetups#index'
+  get '/media-appearances', to: 'media_appearances#index'
+  get '/press-kit', to: 'press_kits#index'
   get '/terms', to: 'home#terms'
   get '/biography', to: 'home#biography'
   get '/first-time-here', to: 'home#first_time_here'
   get '/hire-me', to: 'home#hire_me'
-    authenticate :user, lambda { |u| u.admin? } do
-      mount Sidekiq::Web => '/sidekiq'
-    end
+  get '/get-in-touch-with-me', to: 'home#contact_me'
+  get '/wallpapers', to: 'home#wallpapers'
+
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
 
   resources :notifications, only: [:index]
