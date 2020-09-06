@@ -1,0 +1,2 @@
+class PressKit < ApplicationRecord
+end
