@@ -1,0 +1,2 @@
+class MediaAppearance < ApplicationRecord
+end
