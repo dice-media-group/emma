@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
     @articles = Blog::Entry.all_pinned
+    @coming_soon = Meetup.coming_soon
     render :layout => 'frontdoor'
   end
 
@@ -24,6 +25,15 @@ class HomeController < ApplicationController
   end
 
   def biography
+    render :layout => 'frontdoor'
+    
+  end
+
+  def contact_me
+    render :layout => 'frontdoor'    
+  end
+
+  def wallpapers
     render :layout => 'frontdoor'
     
   end
