@@ -1,10 +1,12 @@
 class MeetupsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
   before_action :set_meetup, only: [:show, :edit, :update, :destroy]
 
   # GET /meetups
   # GET /meetups.json
   def index
     @meetups = Meetup.all
+    render :layout => 'frontdoor'
   end
 
   # GET /meetups/1
