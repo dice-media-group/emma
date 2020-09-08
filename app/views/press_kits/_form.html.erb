@@ -1,0 +1,29 @@
+<%= form_with(model: press_kit, local: true) do |form| %>
+  <% if press_kit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(press_kit.errors.count, "error") %> prohibited this press_kit from being saved:</h2>
+
+      <ul>
+      <% press_kit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <% if press_kit.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', press_kit, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if press_kit.persisted? %>
+      <%= link_to "Cancel", press_kit, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", press_kits_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

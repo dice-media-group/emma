@@ -23,4 +23,11 @@ module ApplicationHelper
       "#{base_url}/00000000000000000000000000000000#{base_url_params}"
     end
   end
+
+  def body_css_class
+    @body_css_classes ||= []
+    view_css_class = [controller_path.split('/')].flatten.join('-')
+
+    @body_css_classes.unshift(view_css_class).join(' ')
+  end
 end
