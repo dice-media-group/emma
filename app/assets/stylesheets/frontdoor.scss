@@ -579,3 +579,43 @@ element {
 .gv-btn-s-pin:hover {
   background: #651014;
 }
+
+// footer css grid layout
+.ct-footer-container {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "sponsorname"
+    "navlinks"
+    "sociallinks"
+    "mailinglist"
+    "legal";
+}
+
+@media (min-width: 1000px) {
+  .ct-footer-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "sponsorname navlinks navlinks navlinks"
+      "sociallinks mailinglist mailinglist mailinglist"
+      "legal ..... ..... ........";
+  }
+
+  .ct-mark-type {
+    grid-area: sponsorname;
+  }
+  .ct-nav-footer {
+    grid-area: navlinks;
+  }
+  .ct-footer-keep-in-touch {
+    grid-area: sociallinks;
+  }
+  .ct-subscribe-to-list {
+    grid-area: mailinglist;
+  }
+  .ct-footer-fineprint {
+    grid-area: legal;
+  }
+}
