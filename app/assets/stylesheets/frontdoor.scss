@@ -1,0 +1,581 @@
+/* application.debug-8b65818ec326c9e807bf936bbd90cf755b92da1935444a385fac2f7ad0317a8b.css | https://cbt.ngrok.io/assets/application.debug-8b65818ec326c9e807bf936bbd90cf755b92da1935444a385fac2f7ad0317a8b.css */
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.fa,
+.fas,
+.far,
+.fal,
+.fad,
+.fab {
+  font-size: 2em;
+}
+
+.gv-nav-footer,
+.gv-nav {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.gv-nav-wrapper a:hover,
+.gv-footer a:hover,
+.gv-mark-type a:hover {
+  color: #ec3f35;
+  text-decoration: none;
+}
+
+.gv-nav-wrapper a,
+.gv-footer a,
+.gv-nav-wrapper a:active,
+.gv-footer a:active,
+.gv-nav-wrapper a:focus .gv-nav-wrapper a:visited,
+.gv-nav-wrapper a:focus .gv-footer a:visited,
+.gv-footer a:focus .gv-nav-wrapper a:visited,
+.gv-footer a:focus .gv-footer a:visited,
+.gv-mark-type a,
+.gv-mark-type a:active,
+.gv-mark-type a:focus .gv-mark-type a:visited,
+.gv-mark-type a:focus .gv-footer a:visited,
+.gv-footer a:focus .gv-mark-type a:visited {
+  display: inline-block;
+  color: #fff;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+a,
+.link-blue,
+.gv-post-author h5 .link-blue,
+.gv-post-author h6 .link-blue,
+.gv-post-author h6 .gv-post-author h5 .link-blue,
+.gv-post-author h5 .gv-post-author h6 .link-blue {
+  color: #08a5cb;
+  text-decoration: none;
+}
+a {
+  background-color: transparent;
+}
+* {
+  box-sizing: border-box;
+}
+.gv-nav-footer ul,
+.gv-nav ul,
+.gv-nav-footer ul.menu,
+.gv-nav ul.menu {
+  list-style-type: none;
+  font-size: 11pt;
+}
+
+.gv-nav-footer ul.menu li.menu-item {
+  padding-left: 0;
+  display: block;
+}
+@media (min-width: 568px) {
+  .gv-nav-footer ul.menu li.menu-item {
+    display: inline-block;
+    padding: 0 30px 0 0;
+  }
+}
+.link-red:hover,
+.link-red:focus {
+  color: #a62c25;
+  outline: 0;
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+element {
+}
+.gv-nav-wrapper a,
+.gv-footer a,
+.gv-nav-wrapper a:active,
+.gv-footer a:active,
+.gv-nav-wrapper a:focus .gv-nav-wrapper a:visited,
+.gv-nav-wrapper a:focus .gv-footer a:visited,
+.gv-footer a:focus .gv-nav-wrapper a:visited,
+.gv-footer a:focus .gv-footer a:visited,
+.gv-mark-type a,
+.gv-mark-type a:active,
+.gv-mark-type a:focus .gv-mark-type a:visited,
+.gv-mark-type a:focus .gv-footer a:visited,
+.gv-footer a:focus .gv-mark-type a:visited {
+  display: inline-block;
+  color: #fff;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+a,
+.link-blue,
+.gv-post-author h5 .link-blue,
+.gv-post-author h6 .link-blue,
+.gv-post-author h6 .gv-post-author h5 .link-blue,
+.gv-post-author h5 .gv-post-author h6 .link-blue {
+  color: #08a5cb;
+  text-decoration: none;
+}
+
+.gv-widget-wrapper {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 600;
+}
+
+.gv-widget-wrapper {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 600;
+}
+
+.gv-widget-fulllength {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+.gv-footer {
+  background: #000;
+  color: #fff;
+  padding: 20px 10px 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.gv-footer {
+  padding-bottom: 65px;
+  padding-top: 40px;
+}
+
+.gv-footer .gv-mark-type {
+  font-size: 30pt;
+  line-height: 24pt;
+}
+
+.gv-footer .gv-mark-type {
+  font-size: 30pt;
+  line-height: 24pt;
+  max-width: 100%;
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding-left: 0;
+}
+.gv-mark-type {
+  font-family: "league-gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24pt;
+  line-height: 22pt;
+}
+
+@media (max-width: 320px) {
+  .gv-mark-type {
+    max-width: 100%;
+    font-size: 19pt;
+  }
+}
+@media (min-width: 768px) {
+  .gv-mark-type {
+    max-width: 210px;
+    margin-top: 0;
+  }
+}
+@media (min-width: 875px) {
+  .gv-mark-type {
+    font-size: 20pt;
+  }
+}
+@media (min-width: 992px) {
+  .gv-mark-type {
+    font-size: 23pt;
+    max-width: 300px;
+  }
+}
+@media (min-width: 768px) {
+  #gv-main-nav .gv-mark-type {
+    padding-left: 10px;
+  }
+}
+@media (min-width: 768px) {
+  #gv-main-nav.has-cta .gv-mark-type {
+    padding-left: 75px;
+    margin-top: 0;
+  }
+}
+@media (min-width: 875px) {
+  #gv-main-nav.has-cta .gv-mark-type {
+    padding-left: 0;
+  }
+}
+@media (min-width: 992px) {
+  #gv-main-nav.has-cta .gv-mark-type {
+    padding-left: 10px;
+  }
+}
+@media (min-width: 1100px) {
+  #gv-main-nav.has-cta .gv-mark-type {
+    margin-right: 3%;
+  }
+}
+@media (min-width: 1300px) {
+  #gv-main-nav.has-cta .gv-mark-type {
+    padding-left: 45px;
+  }
+}
+@media (min-width: 1400px) {
+  #gv-main-nav.has-cta .gv-mark-type {
+    padding-left: 0;
+  }
+}
+.gv-nav-wrapper a,
+.gv-footer a,
+.gv-nav-wrapper a:active,
+.gv-footer a:active,
+.gv-nav-wrapper a:focus .gv-nav-wrapper a:visited,
+.gv-nav-wrapper a:focus .gv-footer a:visited,
+.gv-footer a:focus .gv-nav-wrapper a:visited,
+.gv-footer a:focus .gv-footer a:visited,
+.gv-mark-type a,
+.gv-mark-type a:active,
+.gv-mark-type a:focus .gv-mark-type a:visited,
+.gv-mark-type a:focus .gv-footer a:visited,
+.gv-footer a:focus .gv-mark-type a:visited {
+  display: inline-block;
+  color: #fff;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+.gv-h-inherit {
+  font-size: inherit;
+}
+.gv-h-slab-caps,
+.gv-h-slab,
+.gv-wiki-item h5,
+.event .event-title,
+.event .event-location,
+.gv-articleunit-footer {
+  font-family: "Roboto Slab", Georgia, Times, serif;
+  font-weight: 700;
+}
+.gv-h-slab,
+.gv-wiki-item h5,
+.event .event-title,
+.event .event-location,
+.gv-articleunit-footer {
+  text-transform: none;
+}
+.gv-h-slab-normal,
+.event .event-location {
+  font-weight: 400;
+}
+
+a.hover-social.sp-twitter:hover,
+a.hover-social.sp-twitter-square:hover,
+a.hover-social.sp-twitter:focus,
+a.hover-social.sp-twitter-square:focus {
+  color: #25a8e0;
+}
+a.hover-social.sp-facebook:hover,
+a.hover-social.sp-facebook-f:hover,
+a.hover-social.sp-facebook-official:hover,
+a.hover-social.sp-facebook-square:hover,
+a.hover-social.sp-facebook:focus,
+a.hover-social.sp-facebook-f:focus,
+a.hover-social.sp-facebook-official:focus,
+a.hover-social.sp-facebook-square:focus {
+  color: #3b5a99;
+}
+a.hover-social.sp-pinterest:hover,
+a.hover-social.sp-pinterest-square:hover,
+a.hover-social.sp-pinterest-p:hover,
+a.hover-social.sp-pinterest:focus,
+a.hover-social.sp-pinterest-square:focus,
+a.hover-social.sp-pinterest-p:focus {
+  color: #ca2128;
+}
+a.hover-social.sp-instagram:hover,
+a.hover-social.sp-instagram:focus {
+  color: #0d7bb7;
+}
+a.hover-social.sp-youtube:hover,
+a.hover-social.sp-youtube-play:hover,
+a.hover-social.sp-youtube-square:hover,
+a.hover-social.sp-youtube:focus,
+a.hover-social.sp-youtube-play:focus,
+a.hover-social.sp-youtube-square:focus {
+  color: #e52d27;
+}
+a.hover-social.sp-snapchat:hover,
+a.hover-social.sp-snapchat-play:hover,
+a.hover-social.sp-snapchat-square:hover,
+a.hover-social.sp-snapchat:focus,
+a.hover-social.sp-snapchat-play:focus,
+a.hover-social.sp-snapchat-square:focus {
+  color: #fffc03;
+}
+.sp-linkedin.sp-circle:hover,
+.sp-linkedin-square.sp-circle:hover,
+.sp-linkedin.sp-circle:focus,
+.sp-linkedin-square.sp-circle:focus {
+  background: #0d7bb7;
+  color: #fff;
+}
+#overlay-share .social-container .sp-linkedin,
+#gv-mobile-share .social-container .sp-linkedin {
+  background: #0d7bb7;
+}
+#overlay-share .social-container .sp-linkedin:hover,
+#gv-mobile-share .social-container .sp-linkedin:hover,
+#overlay-share .social-container .sp-linkedin:focus,
+#gv-mobile-share .social-container .sp-linkedin:focus {
+  background: #063d5b;
+  color: #fff;
+}
+
+.gv-footer-fineprint {
+  font-size: 10pt;
+  font-family: "Roboto Slab", Georgia, Times, serif;
+  font-weight: 400;
+  line-height: 16pt;
+  color: #a7a7a7;
+  padding-top: 30px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.col-md-push-1 {
+  left: 8.33333333%;
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+element {
+}
+.gv-widget-mailinglist {
+  text-align: center;
+}
+.gv-widget-mailinglist .gv-form {
+  padding: 15px 0;
+  text-align: left;
+  position: relative;
+}
+@media (min-width: 992px) and (max-width: 1299px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+.gv-widget-mailinglist {
+  text-align: center;
+}
+.gv-widget-mailinglist .gv-form {
+  padding: 15px 0;
+  text-align: left;
+  position: relative;
+}
+.gv-widget-mailinglist.mobile {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .gv-widget-mailinglist.mobile {
+    display: none;
+    visibility: hidden;
+  }
+}
+.gv-widget-mailinglist.desktop {
+  display: none;
+  visibility: hidden;
+  min-height: 220px;
+  padding-top: 1%;
+}
+@media (min-width: 768px) {
+  .gv-widget-mailinglist.desktop {
+    display: block;
+    visibility: visible;
+  }
+}
+@media (max-width: 992px) {
+  .gv-widget-mailinglist.desktop h1 {
+    font-size: 34pt;
+    line-height: 28pt;
+  }
+  .gv-widget-mailinglist.desktop h3 {
+    font-size: 20pt;
+    line-height: 14pt;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+// gv-btn
+.gv-btn {
+  -webkit-appearance: none;
+  border: 0;
+  display: inline-block;
+  white-space: nowrap;
+  width: auto;
+  padding: 10px 20px 10px 20px;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Roboto Slab", Georgia, Times, serif;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 400;
+  font-style: normal;
+  transition: background 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+.gv-btn:focus,
+.gv-btn:active {
+  outline: none;
+}
+.gv-btn:hover,
+.gv-btn:active,
+.gv-btn:focus,
+.gv-btn:visited {
+  color: #fff;
+}
+.gv-btn:hover {
+  transition: background 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.gv-btn-short {
+  padding: 5px 10px;
+}
+.gv-btn-white {
+  transition: none;
+  background: #fff;
+  color: #a7a7a7;
+}
+.gv-btn-white:hover,
+.gv-btn-white:active,
+.gv-btn-white:focus,
+.gv-btn-white:visited {
+  color: #a7a7a7;
+}
+.gv-btn-white:hover {
+  background: #fff;
+  transition: none;
+}
+.gv-btn-tweet {
+  background: #25a8e0;
+  padding-top: 12px;
+  padding-bottom: 9px;
+  position: relative;
+}
+.gv-btn-tweet:hover,
+.gv-btn-tweet:active,
+.gv-btn-tweet:focus,
+.gv-btn-tweet:visited {
+  color: #fff;
+}
+.gv-btn-tweet:hover {
+  background: #125470;
+}
+.gv-btn-tweet .fa {
+  margin-right: 0.25em;
+  font-size: 1.4em;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+.gv-btn-red {
+  background: #ec3f35;
+}
+.gv-btn-red:hover {
+  background: #a62c25;
+}
+.gv-btn-black {
+  background: #000;
+}
+.gv-btn-black:hover {
+  background: #1a1a1a;
+}
+.gv-btn-blue {
+  background: #08a5cb;
+}
+.gv-btn-blue:hover {
+  background: #06738e;
+}
+.gv-btn-grey {
+  background: #a7a7a7;
+}
+.gv-btn-grey:hover {
+  background: #676767;
+}
+.gv-btn-lg {
+  font-size: 1.5em;
+  line-height: 1em;
+}
+.gv-btn-long {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.gv-btn-xlong,
+.gv-btn-xxlong {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+@media (min-width: 992px) {
+  .gv-btn-xxlong {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+.gv-btn-block {
+  display: block;
+  text-align: center;
+}
+.gv-btn.force-center {
+  display: inline-block;
+  margin: 0 auto;
+}
+.gv-btn-s-fb,
+.gv-btn-s-fb:active,
+.gv-btn-s-fb:focus,
+.gv-btn-s-fb:visited {
+  background: #3b5a99;
+}
+.gv-btn-s-fb:hover {
+  background: #1d2d4c;
+}
+.gv-btn-s-tw,
+.gv-btn-s-tw:active,
+.gv-btn-s-tw:focus,
+.gv-btn-s-tw:visited {
+  background: #25a8e0;
+}
+.gv-btn-s-tw:hover {
+  background: #125470;
+}
+.gv-btn-s-in,
+.gv-btn-s-in:active,
+.gv-btn-s-in:focus,
+.gv-btn-s-in:visited {
+  background: #0d7bb7;
+}
+.gv-btn-s-in:hover {
+  background: #063d5b;
+}
+.gv-btn-s-pin,
+.gv-btn-s-pin:active,
+.gv-btn-s-pin:focus,
+.gv-btn-s-pin:visited {
+  background: #ca2128;
+}
+.gv-btn-s-pin:hover {
+  background: #651014;
+}
