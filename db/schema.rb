@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_05_225716) do
+ActiveRecord::Schema.define(version: 2020_09_09_062520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 2020_09_05_225716) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "pinned_value", default: 0
+    t.bigint "blog_entry_id", null: false
+    t.index ["blog_entry_id"], name: "index_blog_articles_on_blog_entry_id"
     t.index ["user_id"], name: "index_blog_articles_on_user_id"
   end
 
@@ -72,6 +74,22 @@ ActiveRecord::Schema.define(version: 2020_09_05_225716) do
     t.index ["slug"], name: "index_blog_entries_on_slug", unique: true
   end
 
+  create_table "blog_video_embeds", force: :cascade do |t|
+    t.text "embed_code"
+    t.bigint "blog_entry_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["blog_entry_id"], name: "index_blog_video_embeds_on_blog_entry_id"
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "byline"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -81,6 +99,13 @@ ActiveRecord::Schema.define(version: 2020_09_05_225716) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "media_appearances", force: :cascade do |t|
+    t.string "title"
+    t.datetime "published_on"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "meetups", force: :cascade do |t|
@@ -102,6 +127,11 @@ ActiveRecord::Schema.define(version: 2020_09_05_225716) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient_type_and_recipient_id"
+  end
+
+  create_table "press_kits", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "services", force: :cascade do |t|
@@ -135,6 +165,8 @@ ActiveRecord::Schema.define(version: 2020_09_05_225716) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "blog_articles", "blog_entries"
   add_foreign_key "blog_articles", "users"
+  add_foreign_key "blog_video_embeds", "blog_entries"
   add_foreign_key "services", "users"
 end

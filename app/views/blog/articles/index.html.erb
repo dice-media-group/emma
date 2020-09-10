@@ -22,6 +22,7 @@
             <th>Title</th>
             <th>Body</th>
             <th>User</th>
+            <th>Pinned Order</th>
             
           <th></th>
         
@@ -33,9 +34,10 @@
         <%= content_tag :tr, id: dom_id(blog_article), class: dom_class(blog_article) do %>
           
 
-                      <td><%= blog_article.title %></td>
-                      <td><%= blog_article.body %></td>
-                      <td><%= blog_article.user %></td>
+            <td><%= link_to blog_article.title,  edit_blog_article_path(blog_article) %></td>
+            <td><%= blog_article.body %></td>
+            <td><%= blog_article.user.name.full %></td>
+            <td><%= blog_article.pinned_value %></td>
           
           
             <td><%= link_to 'Show', blog_article %></td>
