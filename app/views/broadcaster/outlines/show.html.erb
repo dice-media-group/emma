@@ -1,0 +1,15 @@
+<div class="page-header">
+  <%= link_to broadcaster_outlines_path, class: 'btn btn-default' do %>
+    All Broadcaster_outlines
+  <% end %>
+  <%= link_to edit_broadcaster_outline_path(@broadcaster_outline), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show broadcaster_outline</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Body:</dt>
+  <dd><%= @broadcaster_outline.body %></dd>
+
+</dl>

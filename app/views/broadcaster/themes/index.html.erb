@@ -1,0 +1,43 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Broadcaster_themes</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_broadcaster_theme_path, class: 'btn btn-primary' do %>
+    Add New Theme
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Title</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @broadcaster_themes.each do |broadcaster_theme| %>
+        <%= content_tag :tr, id: dom_id(broadcaster_theme), class: dom_class(broadcaster_theme) do %>
+          
+
+                      <td><%= broadcaster_theme.title %></td>
+          
+          
+            <td><%= link_to 'Show', broadcaster_theme %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

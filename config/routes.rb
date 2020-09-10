@@ -1,6 +1,12 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  namespace :broadcaster do
+    resources :outlines
+  end
+  namespace :broadcaster do
+    resources :themes
+  end
   resources :press_kits
   get 'services/index'
   resources :books
