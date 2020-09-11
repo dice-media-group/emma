@@ -1,10 +1,12 @@
 class Broadcaster::OutlinesController < ApplicationController
+  before_action :get_theme,               only: [:index, :new]
   before_action :set_broadcaster_outline, only: [:show, :edit, :update, :destroy]
 
   # GET /broadcaster/outlines
   # GET /broadcaster/outlines.json
   def index
-    @broadcaster_outlines = Broadcaster::Outline.all
+    # @broadcaster_outlines = Broadcaster::Outline.all
+    @broadcaster_outlines = @theme.broadcaster_outlines
   end
 
   # GET /broadcaster/outlines/1
@@ -14,7 +16,8 @@ class Broadcaster::OutlinesController < ApplicationController
 
   # GET /broadcaster/outlines/new
   def new
-    @broadcaster_outline = Broadcaster::Outline.new
+    get_theme
+    @broadcaster_outline = @theme.broadcaster_outlines.build
   end
 
   # GET /broadcaster/outlines/1/edit
@@ -24,11 +27,15 @@ class Broadcaster::OutlinesController < ApplicationController
   # POST /broadcaster/outlines
   # POST /broadcaster/outlines.json
   def create
+    get_theme
+    # @broadcaster_outline = Broadcaster::Outline.new(broadcaster_outline_params)
     @broadcaster_outline = Broadcaster::Outline.new(broadcaster_outline_params)
+    @broadcaster_outline.broadcaster_theme = @theme
+        
 
     respond_to do |format|
       if @broadcaster_outline.save
-        format.html { redirect_to @broadcaster_outline, notice: 'Outline was successfully created.' }
+        format.html { redirect_to broadcaster_theme_outlines_path(@theme), notice: 'Outline was successfully created.' }
         format.json { render :show, status: :created, location: @broadcaster_outline }
       else
         format.html { render :new }
@@ -63,12 +70,16 @@ class Broadcaster::OutlinesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def get_theme
+      @theme = Broadcaster::Theme.find(params[:theme_id])
+    end
+
     def set_broadcaster_outline
       @broadcaster_outline = Broadcaster::Outline.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def broadcaster_outline_params
-      params.require(:broadcaster_outline).permit(:body)
+      params.require(:broadcaster_outline).permit(:body, :theme_id, :broadcaster_theme_id)
     end
 end

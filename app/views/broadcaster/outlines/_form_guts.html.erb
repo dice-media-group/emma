@@ -1,5 +1,3 @@
-<%#= form_with(url: broadcaster_theme_outlines_path, local: true) do |form| %>
-<%= form_with(scope: :broadcaster_outline, url: broadcaster_theme_outlines_path, class: "outline", local: true) do |form| %>
   <% if broadcaster_outline.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(broadcaster_outline.errors.count, "error") %> prohibited this broadcaster_outline from being saved:</h2>
@@ -32,4 +30,3 @@
       <%= link_to "Cancel", broadcaster_theme_outlines_path, class: "btn btn-link" %>
     <% end %>
   </div>
-<% end %>
