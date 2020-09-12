@@ -6,6 +6,8 @@ class Broadcaster::Theme < ApplicationRecord
 
     has_many :broadcaster_audios, class_name: 'Broadcaster::Audio', foreign_key: 'broadcaster_theme_id', dependent: :destroy
 
+    has_many :broadcaster_social_entries, class_name: 'Broadcaster::SocialEntry', foreign_key: 'broadcaster_theme_id', dependent: :destroy
+
     validates :title, presence: true, uniqueness: true
 
 

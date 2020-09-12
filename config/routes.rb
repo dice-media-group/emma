@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :outlines
       resources :videos
       resources :audios
+      resources :social_entries
     end
   end
   resources :press_kits

@@ -1,0 +1,14 @@
+<div class="page-header">
+  <%#= link_to broadcaster_social_entries_path, class: 'btn btn-default' do %>
+    All  <strong><%= @broadcaster_social_entry.broadcaster_theme.title %></strong>  social entries
+  <%# end %>
+  <%= link_to edit_broadcaster_social_entry_path(@broadcaster_social_entry), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show broadcaster_social_entry</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @broadcaster_social_entry.title %></dd>
+</dl>

@@ -1,0 +1,2 @@
+module Broadcaster::SocialEntriesHelper
+end
