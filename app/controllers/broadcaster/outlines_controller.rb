@@ -61,9 +61,11 @@ class Broadcaster::OutlinesController < ApplicationController
   # DELETE /broadcaster/outlines/1
   # DELETE /broadcaster/outlines/1.json
   def destroy
+    @theme = @broadcaster_outline.broadcaster_theme
+
     @broadcaster_outline.destroy
     respond_to do |format|
-      format.html { redirect_to broadcaster_outlines_url, notice: 'Outline was successfully destroyed.' }
+      format.html { redirect_to @theme, notice: 'Outline was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
