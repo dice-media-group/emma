@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_11_034113) do
+ActiveRecord::Schema.define(version: 2020_09_12_031402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,14 @@ ActiveRecord::Schema.define(version: 2020_09_11_034113) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "broadcaster_audios", force: :cascade do |t|
+    t.string "title"
+    t.bigint "broadcaster_theme_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["broadcaster_theme_id"], name: "index_broadcaster_audios_on_broadcaster_theme_id"
   end
 
   create_table "broadcaster_outlines", force: :cascade do |t|
@@ -190,6 +198,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_034113) do
   add_foreign_key "blog_articles", "blog_entries"
   add_foreign_key "blog_articles", "users"
   add_foreign_key "blog_video_embeds", "blog_entries"
+  add_foreign_key "broadcaster_audios", "broadcaster_themes"
   add_foreign_key "broadcaster_outlines", "broadcaster_themes"
   add_foreign_key "broadcaster_videos", "broadcaster_themes"
   add_foreign_key "services", "users"

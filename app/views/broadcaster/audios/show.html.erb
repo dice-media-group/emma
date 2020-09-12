@@ -1,0 +1,18 @@
+<div class="page-header">
+  <%= link_to broadcaster_theme_audios_path, class: 'btn btn-default' do %>
+    All Broadcaster_audios
+  <% end %>
+  <%= link_to edit_broadcaster_audio_path(@broadcaster_audio), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show broadcaster_audio</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @broadcaster_audio.title %></dd>
+
+  <dt>Broadcaster theme:</dt>
+  <dd><%= @broadcaster_audio.broadcaster_theme %></dd>
+
+</dl>

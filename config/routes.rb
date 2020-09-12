@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :themes, shallow: true do
       resources :outlines
       resources :videos
+      resources :audios
     end
   end
   resources :press_kits
