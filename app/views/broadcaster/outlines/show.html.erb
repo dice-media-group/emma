@@ -1,0 +1,15 @@
+<div class="page-header">
+  <%= link_to broadcaster_theme_outlines_path(@broadcaster_outline.broadcaster_theme), class: 'btn btn-default' do %>
+    All Outlines for this theme
+  <% end %>
+  <%= link_to edit_broadcaster_outline_path(@broadcaster_outline), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Outline for <%= @broadcaster_outline.broadcaster_theme.title %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Body:</dt>
+  <dd><%= @broadcaster_outline.body %></dd>
+
+</dl>

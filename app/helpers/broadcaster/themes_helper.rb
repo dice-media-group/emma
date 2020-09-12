@@ -1,0 +1,2 @@
+module Broadcaster::ThemesHelper
+end
