@@ -24,7 +24,9 @@ class Broadcaster::SocialEntriesController < ApplicationController
   # POST /broadcaster/social_entries
   # POST /broadcaster/social_entries.json
   def create
+    get_theme
     @broadcaster_social_entry = Broadcaster::SocialEntry.new(broadcaster_social_entry_params)
+    @broadcaster_social_entry.broadcaster_theme = @theme
 
     respond_to do |format|
       if @broadcaster_social_entry.save
@@ -54,15 +56,20 @@ class Broadcaster::SocialEntriesController < ApplicationController
   # DELETE /broadcaster/social_entries/1
   # DELETE /broadcaster/social_entries/1.json
   def destroy
+    @theme = @broadcaster_social_entry.broadcaster_theme
     @broadcaster_social_entry.destroy
     respond_to do |format|
-      format.html { redirect_to broadcaster_social_entries_url, notice: 'Social entry was successfully destroyed.' }
+      format.html { redirect_to @theme, notice: 'Social entry was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def get_theme
+      @theme = Broadcaster::Theme.find(params[:theme_id])
+    end
+
     def set_broadcaster_social_entry
       @broadcaster_social_entry = Broadcaster::SocialEntry.find(params[:id])
     end

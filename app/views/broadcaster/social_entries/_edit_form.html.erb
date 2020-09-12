@@ -1,4 +1,4 @@
-<%= form_with(scope: :broadcaster_social_entry, url: broadcaster_theme_social_entries_path, local: true) do |form| %>
+<%= form_with(model: broadcaster_social_entry, local: true) do |form| %>
   <% if broadcaster_social_entry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(broadcaster_social_entry.errors.count, "error") %> prohibited this social_entry from being saved:</h2>

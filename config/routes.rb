@@ -2,13 +2,11 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   namespace :broadcaster do
-    resources :social_entries
-  end
-  namespace :broadcaster do
     resources :themes, shallow: true do
       resources :outlines
       resources :videos
       resources :audios
+      resources :social_entries
     end
   end
   resources :press_kits
