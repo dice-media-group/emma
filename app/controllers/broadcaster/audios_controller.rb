@@ -1,5 +1,5 @@
 class Broadcaster::AudiosController < ApplicationController
-  before_action :get_theme,               only: [:index, :new]
+  before_action :get_theme,             only: [:index, :new]
   before_action :set_broadcaster_audio, only: [:show, :edit, :update, :destroy]
 
   # GET /broadcaster/audios
@@ -17,10 +17,7 @@ class Broadcaster::AudiosController < ApplicationController
 
   # GET /broadcaster/audios/new
   def new
-    get_theme
-    # @broadcaster_audio = Broadcaster::Audio.new
-      @broadcaster_audio = @theme.broadcaster_audio.build
-
+    @broadcaster_audio = Broadcaster::Audio.new
   end
 
   # GET /broadcaster/audios/1/edit
@@ -63,7 +60,7 @@ class Broadcaster::AudiosController < ApplicationController
   # DELETE /broadcaster/audios/1
   # DELETE /broadcaster/audios/1.json
   def destroy
-    @theme = @broadcaster_outline.broadcaster_theme
+    @theme = @broadcaster_audio.broadcaster_theme
 
     @broadcaster_audio.destroy
     respond_to do |format|
