@@ -1,0 +1,2 @@
+module Broadcaster::OutlinesHelper
+end

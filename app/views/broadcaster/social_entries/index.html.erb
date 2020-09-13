@@ -1,0 +1,45 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Broadcaster_social_entries</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_broadcaster_theme_social_entry_path, class: 'btn btn-primary' do %>
+    Add New Social entry
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Title</th>
+            <th>Broadcaster theme</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @broadcaster_social_entries.each do |broadcaster_social_entry| %>
+        <%= content_tag :tr, id: dom_id(broadcaster_social_entry), class: dom_class(broadcaster_social_entry) do %>
+          
+
+                      <td><%= broadcaster_social_entry.title %></td>
+                      <td><%= broadcaster_social_entry.broadcaster_theme %></td>
+          
+          
+            <td><%= link_to 'Show', broadcaster_social_entry %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,18 @@
+<div class="page-header">
+  <%= link_to broadcaster_theme_path(@broadcaster_theme_avatar.broadcaster_theme), class: 'btn btn-default' do %>
+    An Avatar for theme: 
+    <strong>
+      <%= @broadcaster_theme_avatar.broadcaster_theme.title %>
+    </strong> 
+  <% end %>
+  <%= link_to edit_broadcaster_theme_avatar_path(@broadcaster_theme_avatar), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Details for this Target Avatar</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @broadcaster_theme_avatar.broadcaster_avatar.name %></dd>
+
+</dl>

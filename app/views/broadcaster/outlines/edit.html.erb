@@ -1,0 +1,11 @@
+<h1>Edit Broadcaster_outline</h1>
+<% if action_name == 'edit' %>
+  I am an edit page
+    <%= render 'edit_form', broadcaster_outline: @broadcaster_outline %>
+<% else %>
+    I am not an edit page
+    <%= render 'form', broadcaster_outline: @broadcaster_outline %>
+<% end %>
+
+
+<%#= render 'form', broadcaster_outline: @broadcaster_outline %>

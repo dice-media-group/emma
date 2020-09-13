@@ -1,4 +1,7 @@
 class Blog::Entry < ApplicationRecord
+  has_many :blog_articles
+  has_many :blog_video_embeds
+  
   extend FriendlyId
   friendly_id :title, use: :slugged
 

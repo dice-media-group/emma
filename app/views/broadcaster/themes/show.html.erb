@@ -1,0 +1,185 @@
+<div class="page-header">
+  <%= link_to broadcaster_themes_path, class: 'btn btn-default' do %>
+    All Broadcaster_themes
+  <% end %>
+  <%= link_to edit_broadcaster_theme_path(@broadcaster_theme), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Theme: <%= @broadcaster_theme.title %></h1>
+</div>
+
+
+<dl class="dl-horizontal">
+  <dt>Outlines:</dt>
+  <dt><%= link_to 'Outlines', broadcaster_theme_outlines_path(@broadcaster_theme) %>: <%= @broadcaster_theme.broadcaster_outlines.count.to_i %> </dt>
+
+
+  <dd >
+  
+  <div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Body</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @broadcaster_theme.broadcaster_outlines.each do |broadcaster_outline| %>
+        <%= content_tag :tr, id: dom_id(broadcaster_outline), class: dom_class(broadcaster_outline) do %>
+          
+
+                      <td><%= broadcaster_outline.body %></td>
+          
+          
+            <td><%= link_to 'Show', broadcaster_outline %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+  </dd>
+
+</dl>
+
+<hr>
+<p>=====</p>
+<hr>
+
+<dl class="dl-horizontal">
+  <dt><%= link_to 'Videos', broadcaster_theme_videos_path(@broadcaster_theme) %>: <%= @broadcaster_theme.broadcaster_videos.count.to_i %> </dt>
+
+  <dd >
+  
+  <div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @broadcaster_theme.broadcaster_videos.each do |broadcaster_video| %>
+        <%= content_tag :tr, id: dom_id(broadcaster_video), class: dom_class(broadcaster_video) do %>
+          
+
+                      <td><%= broadcaster_video.title %></td>
+          
+          
+            <td><%= link_to 'Show', broadcaster_video %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+  </dd>
+
+</dl>
+
+<hr>
+<p>=====</p>
+<hr>
+  <dt><%= link_to 'Audio', broadcaster_theme_audios_path(@broadcaster_theme) %>: <%= @broadcaster_theme.broadcaster_audios.count.to_i %> </dt>
+
+<dl class="dl-horizontal">
+  <dt>Audio
+  
+  </dt>
+
+  <dd >
+  
+  <div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @broadcaster_theme.broadcaster_audios.each do |broadcaster_audio| %>
+        <%= content_tag :tr, id: dom_id(broadcaster_audio), class: dom_class(broadcaster_audio) do %>
+          <td><%= broadcaster_audio.title %></td>
+          <td><%= link_to 'Show', broadcaster_audio %></td>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+  </dd>
+
+</dl>
+
+<hr>
+<p>=====</p>
+<hr>
+  <dt><%= link_to 'Social Entries', broadcaster_theme_social_entries_path(@broadcaster_theme) %>: <%= @broadcaster_theme.broadcaster_social_entries.count.to_i %> </dt>
+
+<dl class="dl-horizontal">
+
+  <dd >
+  
+  <div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @broadcaster_theme.broadcaster_social_entries.each do |social_entry| %>
+        <%= content_tag :tr, id: dom_id(social_entry), class: dom_class(social_entry) do %>
+          <td><%= social_entry.title %></td>
+          <td><%= link_to 'Show', social_entry %></td>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+  </dd>
+
+</dl>
+
+<hr>
+<p>=====</p>
+<hr>
+  <dt><%= link_to 'Target Avatars', broadcaster_theme_theme_avatars_path(@broadcaster_theme) %>: <%= @broadcaster_theme.broadcaster_theme_avatars.count.to_i %> </dt>
+
+<dl class="dl-horizontal">
+
+  <dd >
+  
+  <div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @broadcaster_theme.broadcaster_theme_avatars.each do |theme_avatar| %>
+        <%= content_tag :tr, id: dom_id(theme_avatar), class: dom_class(theme_avatar.broadcaster_avatar) do %>
+          <td><%= theme_avatar.broadcaster_avatar.name %></td>
+          <td><%= link_to 'Show Avatar\'s Details', theme_avatar.broadcaster_avatar %></td>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+  </dd>
+
+</dl>
