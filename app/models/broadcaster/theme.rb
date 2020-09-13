@@ -8,6 +8,12 @@ class Broadcaster::Theme < ApplicationRecord
 
     has_many :broadcaster_social_entries, class_name: 'Broadcaster::SocialEntry', foreign_key: 'broadcaster_theme_id', dependent: :destroy
 
+    has_many :broadcaster_theme_avatars, class_name: 'Broadcaster::ThemeAvatar', foreign_key: 'broadcaster_theme_id', dependent: :destroy
+
+    has_many :broadcaster_avatars, class_name: 'Broadcaster::Avatar', through: :broadcaster_theme_avatars
+
+    
+
     validates :title, presence: true, uniqueness: true
 
 

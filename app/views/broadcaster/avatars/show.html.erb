@@ -1,0 +1,18 @@
+<div class="page-header">
+  <%= link_to broadcaster_avatars_path, class: 'btn btn-default' do %>
+    All Broadcaster_avatars
+  <% end %>
+  <%= link_to edit_broadcaster_avatar_path(@broadcaster_avatar), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show broadcaster_avatar</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @broadcaster_avatar.name %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @broadcaster_avatar.description %></dd>
+
+</dl>

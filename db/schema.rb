@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_12_031402) do
+ActiveRecord::Schema.define(version: 2020_09_12_190835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,12 +98,36 @@ ActiveRecord::Schema.define(version: 2020_09_12_031402) do
     t.index ["broadcaster_theme_id"], name: "index_broadcaster_audios_on_broadcaster_theme_id"
   end
 
+  create_table "broadcaster_avatars", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "broadcaster_outlines", force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "broadcaster_theme_id", null: false
     t.index ["broadcaster_theme_id"], name: "index_broadcaster_outlines_on_broadcaster_theme_id"
+  end
+
+  create_table "broadcaster_social_entries", force: :cascade do |t|
+    t.string "title"
+    t.bigint "broadcaster_theme_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["broadcaster_theme_id"], name: "index_broadcaster_social_entries_on_broadcaster_theme_id"
+  end
+
+  create_table "broadcaster_theme_avatars", force: :cascade do |t|
+    t.bigint "broadcaster_theme_id", null: false
+    t.bigint "broadcaster_avatar_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["broadcaster_avatar_id"], name: "index_broadcaster_theme_avatars_on_broadcaster_avatar_id"
+    t.index ["broadcaster_theme_id"], name: "index_broadcaster_theme_avatars_on_broadcaster_theme_id"
   end
 
   create_table "broadcaster_themes", force: :cascade do |t|
@@ -200,6 +224,9 @@ ActiveRecord::Schema.define(version: 2020_09_12_031402) do
   add_foreign_key "blog_video_embeds", "blog_entries"
   add_foreign_key "broadcaster_audios", "broadcaster_themes"
   add_foreign_key "broadcaster_outlines", "broadcaster_themes"
+  add_foreign_key "broadcaster_social_entries", "broadcaster_themes"
+  add_foreign_key "broadcaster_theme_avatars", "broadcaster_avatars"
+  add_foreign_key "broadcaster_theme_avatars", "broadcaster_themes"
   add_foreign_key "broadcaster_videos", "broadcaster_themes"
   add_foreign_key "services", "users"
 end

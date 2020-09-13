@@ -1,0 +1,2 @@
+module ThemeAvatarsHelper
+end

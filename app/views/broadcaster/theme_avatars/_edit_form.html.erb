@@ -1,7 +1,8 @@
 <%= form_with(model: broadcaster_theme_avatar, local: true) do |form| %>
+
   <% if broadcaster_theme_avatar.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(broadcaster_theme_avatar.errors.count, "error") %> prohibited this broadcaster_video from being saved:</h2>
+      <h2><%= pluralize(broadcaster_theme_avatar.errors.count, "error") %> prohibited this broadcaster_theme_avatar from being saved:</h2>
 
       <ul>
       <% broadcaster_theme_avatar.errors.full_messages.each do |message| %>
@@ -12,8 +13,9 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: 'form-control' %>
+    <%= form.label :theme_avatar %>
+
+    <%= form.select :broadcaster_avatar_id, Broadcaster::Avatar.all.collect { |avatar| [ avatar.name, avatar.id ] }, include_blank: true %>
   </div>
 
   <div class="form-group">
@@ -26,7 +28,7 @@
     <%= form.submit class: 'btn btn-primary' %>
 
     <% if broadcaster_theme_avatar.persisted? %>
-      <%= link_to "Cancel", broadcaster_theme_avatar, class: "btn btn-link" %>
+      <%= link_to "Cancel", broadcaster_theme_avatar_path, class: "btn btn-link" %>
     <% else %>
       <%= link_to "Cancel", broadcaster_theme_avatars_path, class: "btn btn-link" %>
     <% end %>
