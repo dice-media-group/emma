@@ -1,0 +1,2 @@
+module Broadcaster::BaseHelper
+end

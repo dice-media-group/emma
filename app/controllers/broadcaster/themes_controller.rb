@@ -1,4 +1,4 @@
-class Broadcaster::ThemesController < ApplicationController
+class Broadcaster::ThemesController < Broadcaster::BaseController
   before_action :set_broadcaster_theme, only: [:show, :edit, :update, :destroy]
 
   # GET /broadcaster/themes
