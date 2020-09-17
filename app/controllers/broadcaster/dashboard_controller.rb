@@ -1,4 +1,5 @@
-class Broadcaster::DashboardController < ApplicationController
+class Broadcaster::DashboardController < Broadcaster::BaseController
   def index
+    
   end
 end
