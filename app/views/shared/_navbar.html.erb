@@ -9,13 +9,14 @@
         window.location = event.target.querySelector('a').getAttribute('href');
       })
     </script>
-    <div class="gv-nav-inner">
+    <div class="ct-nav-inner">
             <div id="cta-firsttime" class="gv-cta-first">
             <a href="/first-time-here/"><img src="https://2pyzcd2sdlnr1r3xjh15mrbn-wpengine.netdna-ssl.com/wp-content/themes/garysixteen/assets/img/logo-firsttime.svg"></a>
         </div>
-		<div class="gv-cta-community">
+		<div class="ct-cta-community">
 			<a href="https://my.community.com/gary.vaynerchuk">
-				<img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20191212171239/text-me.png">
+                <%= render '/shared/text_me_svg' %>
+			 <!-- 	<img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20191212171239/text-me.png"> -->
 			</a>
 		</div>
             <div class="row">
