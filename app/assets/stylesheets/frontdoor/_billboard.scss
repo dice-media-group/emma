@@ -1,0 +1,59 @@
+.ct-billboard-wrapper,
+.ct-billboard-features,
+.ct-billboard,
+.ct-billboard-poster,
+.ct-billboard-header {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 400;
+}
+.ct-billboard-wrapper {
+    background: #000;
+    z-index: 400;
+    color: #fff;
+    /*margin-top: 40px !important;*/
+}
+.ct-billboard-poster img,
+.ct-billboard-poster-img,
+.ct-billboard-poster .wp-post-image {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+.ct-billboard-postwrap,
+.ct-billboard-callout {
+    display: block;
+    position: relative;
+    width: 100%;
+    z-index: 405;
+}
+.ct-billboard-postwrap .container,
+.ct-billboard-callout .container {
+    position: relative;
+}
+@media (min-width: 768px) {
+    .ct-billboard-callout {
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+    }
+    .ct-billboard-callout .container {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.ct-billboard {
+    max-height: 700px;
+    overflow: hidden;
+}
+.ct-page-feature .ct-billboard-callout {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+}
+.ct-page-feature .ct-billboard-callout .container {
+    top: 50%;
+    transform: translateY(-50%);
+}
