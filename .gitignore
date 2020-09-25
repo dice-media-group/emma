@@ -35,4 +35,6 @@
 yarn-debug.log*
 .yarn-integrity
 
+# Ignore asdf dot files
+.tool-versions
 /config/credentials/development.key
