@@ -1,3 +1,6 @@
+.home {
+    padding-top: 65px;
+}
 .ct-billboard-wrapper,
 .ct-billboard-features,
 .ct-billboard,
@@ -236,4 +239,14 @@
     .ct-billboard-postwrap .ct-liner-simple:after {
         border-color: #fff;
     }
+}
+// video player
+/* This is purely for the demo */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.plyr {
+    border-radius: 4px;
+    margin-bottom: 15px;
 }
