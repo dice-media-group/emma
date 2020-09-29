@@ -1,5 +1,7 @@
 <div id="ct-sect-blog" class="ct-section">
-        <h1>pinned_blog_entries goes here</h1>
         <%= render partial: "pinned_blog_entry", collection: @coming_soon %>
+        <% 5.times do %>
+        <%= render partial: "pinned_blog_entry" %>
+        <% end %>
 </div>
 

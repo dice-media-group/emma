@@ -19,4 +19,21 @@ h3,
     font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: 400;
 }
-//
+// index__about_me
+.ct-section {
+    display: block;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.ct-section h1:first-child,
+.ct-section h2:first-child {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+.ct-section h2:first-child {
+    margin-top: 20px;
+}
+.ct-section-invert {
+    background: #101010;
+    color: #fff;
+}
