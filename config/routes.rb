@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :photos
   # namespace :broadcaster do
   #   get 'dashboard/index'
   # end
