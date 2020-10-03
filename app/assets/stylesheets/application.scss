@@ -11,7 +11,7 @@
 // actiontext editor styles
 @import "trix/dist/trix.css";
 @import "actiontext";
-@import "frontdoor";
+// @import "frontdoor";
 
 // Fixes bootstrap nav-brand container overlap
 @include media-breakpoint-down(xs) {

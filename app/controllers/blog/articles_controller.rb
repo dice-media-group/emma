@@ -1,5 +1,5 @@
 class Blog::ArticlesController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_blog_article, only: [:show, :edit, :update, :destroy]
 
   # GET /blog/articles

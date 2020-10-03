@@ -18,19 +18,26 @@ class Blog::EntriesController < ApplicationController
   # GET /blog/entries/new
   def new
     @blog_entry = Blog::Entry.new
+    @articles   = Blog::Article.all.select(:id, :title)
+    
   end
 
   # GET /blog/entries/1/edit
   def edit
+    @articles   = Blog::Article.all.select(:id, :title)  
   end
 
   # POST /blog/entries
   # POST /blog/entries.json
   def create
     @blog_entry = Blog::Entry.new(blog_entry_params)
+    blog_article_exists = Blog::Article.exists?(params[:blog_article][:id])
+
 
     respond_to do |format|
-      if @blog_entry.save
+      if @blog_entry.save && blog_article_exists
+        @blog_article = Blog::Article.find(params[:blog_article][:id])
+        @blog_entry.blog_entry_assignments.create!(blog_article: @blog_article)
         format.html { redirect_to @blog_entry, notice: 'Entry was successfully created.' }
         format.json { render :show, status: :created, location: @blog_entry }
       else
@@ -72,6 +79,6 @@ class Blog::EntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_entry_params
-      params.require(:blog_entry).permit(:title, :image)
+      params.require(:blog_entry).permit(:title, :image, :blog_article_id)
     end
 end
