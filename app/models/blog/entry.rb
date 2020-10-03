@@ -15,15 +15,7 @@ class Blog::Entry < ApplicationRecord
   friendly_id :title, use: :slugged
 
   def self.all_pinned
-    Blog::Article.collect_pinned
+    Blog::Entry.where("pinned_value > ?", 0)
     # "helow"
-  end
-
-  def self.all_pinned
-    Blog::Article.collect_pinned
-  end
-  
-  def self.pinned(id)
-    self.all_pinned.find(id)
   end
 end
