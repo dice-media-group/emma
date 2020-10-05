@@ -1,1 +1,14 @@
-<h1>upcoming_meetups goes here</h1>
+  <div class="gv-widget gv-widget-events theme-white">
+    <h3 class="gv-h-welter50">Upcoming Events</h3>
+    <div class="event-listing">
+      <% 5.times.each do %>
+        <%= render '/shared/upcoming_meetup' %>
+      
+      <% end %>
+    </div>
+
+    <div class="event-widget-footer text-right">
+      <a class="link-blue link-bold"
+           href="https://www.garyvaynerchuk.com/events/">See all events &gt;&gt;</a>
+    </div>
+  </div>

@@ -1,9 +1,14 @@
-<div class="gv-widget gv-widget-events theme-white">
-    <h3 class="gv-h-welter50">
-        Upcoming Events            </h3>
+  <div class="ct-widget ct-widget-events theme-white">
+    <h3 class="ct-h-welter50">Upcoming Events</h3>
     <div class="event-listing">
-        <%= render partial: "/shared/upcoming_meetup", collection: @coming_soon %>
-    <div class="event-widget-footer text-right">
-            <a href="/events/" class="link-blue link-bold">See all events &gt;&gt;</a>
+        <%= 5.times.each do %>
+            <%= render partial: "/shared/upcoming_meetup" %>
+        <% end %>
     </div>
-</div>
+    <div class="event-widget-footer text-right">
+        <a class="link-blue link-bold"
+                href="/events/">See all events &gt;&gt;
+        </a>
+    </div>
+    </div>
+  </div>

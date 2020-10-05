@@ -6,6 +6,9 @@ class Blog::EntriesController < ApplicationController
   def index
     @blog_entries = Blog::Entry.all
     render :layout => 'frontdoor'
+
+    # reading time
+    
   end
 
   # GET /blog/entries/1
