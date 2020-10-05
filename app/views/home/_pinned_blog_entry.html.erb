@@ -1,3 +1,4 @@
+<% @article = pinned_blog_entry.blog_articles.first  %>
 <div id="ct-sect-blog" class="ct-section">
     <div class="container">
         <h4 class="h3 ct-h-welter50">Read This</h4>
@@ -6,7 +7,7 @@
                 <div class="ct-post-img">
                     <%= link_to pinned_blog_entry do %>
                         <%= image_tag  pinned_blog_entry.image %>
-                        <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new.png 2800w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-250x200.png 250w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-768x614.png 768w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-700x560.png 700w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-120x96.png 120w" sizes="(max-width: 2800px) 100vw, 2800px"> 
+                        <%# <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new.png 2800w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-250x200.png 250w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-768x614.png 768w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-700x560.png 700w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-120x96.png 120w" sizes="(max-width: 2800px) 100vw, 2800px">  %>
                     
                     <% end %>
                     
@@ -20,10 +21,17 @@
                                             </a>
                 </h1>
                 <h5 class="ct-h-slab ct-post-date">
-                    2 years ago                    <span class="middot">·</span>
-                    3 min read                </h5>
+                <%# https://alexanderpaterson.com/posts/showing-estimated-reading-time-on-a-rails-blog-post %>
+                    <%= time_ago_in_words(pinned_blog_entry.created_at) %> ago                    
+                    <span class="middot">·</span>
+                    <% text = @article.body.to_plain_text
+                       @reading_time = (text.scan(/\w+/).length / 150).to_i  %>
+                    <span>
+                        <%= pluralize(@reading_time, 'minute') %>
+                    </span> || 3 min read                
+                </h5>
                 <p>
-                     <%= pinned_blog_entry.blog_articles.first.body.to_plain_text[0..404] %> &#8230;
+                     <%= @article.body.to_plain_text[0..404] %> &#8230;
                 </p>
                 <div class="text-right">
                     <%= link_to  pinned_blog_entry, class: "ct-post-permalink link-blue" do %>

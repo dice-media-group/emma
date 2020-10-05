@@ -1,4 +1,5 @@
 class Blog::Article < ApplicationRecord
+  WORDS_PER_MINUTE = 150
   belongs_to    :user
   has_rich_text :body
   has_many      :blog_entry_assignments,
@@ -17,6 +18,8 @@ class Blog::Article < ApplicationRecord
   def self.collect_pinned
     where("pinned_value > ?", 0)
   end
+
+
 end
 
 
