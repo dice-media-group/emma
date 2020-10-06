@@ -24,9 +24,10 @@ Rails.application.routes.draw do
   resources :podcasts, only: [:index, :show]
   resources :meetups, only: [:index, :show]
 
+  resources :blog, only: [:index]
   namespace :blog do
     resources :entries
-    root to: "entries#index"
+    # root to: "entries#index"
   end
   namespace :blog do
     resources :articles
