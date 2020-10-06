@@ -4898,6 +4898,13 @@ hr {
   padding-left: 50px;
   padding-right: 50px;
 }
+@media (min-width: 760px) {
+  .ct-btn-xlong,
+  .ct-btn-xxlong {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 @media (min-width: 992px) {
   .ct-btn-xxlong {
     padding-left: 100px;
