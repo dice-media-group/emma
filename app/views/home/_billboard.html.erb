@@ -31,14 +31,17 @@
 <style>
   .plyr {
     border-radius: 4px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
   }
 </style>
 
-<div class="photon">
 
   <!-- Great job, Sam Potts on the video player https://github.com/sampotts/plyr -->
-  <video controls crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player">
+  <video  controls crossorigin playsinline 
+          poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" 
+          id="player"
+          style="width: 100%"
+          >
       <!-- Video files -->
       <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
       <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
@@ -53,10 +56,6 @@
       <!-- Fallback for browsers that don't support the <video> element -->
       <a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
   </video>
-    
-
-
-</div>
 <script>
   document.addEventListener('DOMContentLoaded', () => { 
   // This is the bare minimum JavaScript. You can opt to pass no arguments to setup.

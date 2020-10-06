@@ -6055,6 +6055,7 @@ a.hover-social.sp-snapchat-square:focus {
   color: #fff;
   vertical-align: middle;
   text-transform: uppercase;
+  padding-top: 8px;
 }
 .ct-nav-wrapper a:hover,
 .ct-footer a:hover,
@@ -6167,7 +6168,7 @@ a.hover-social.sp-snapchat-square:focus {
   margin: -5px 1% 0 0;
   padding: 0;
   font-size: 18pt;
-  line-height: 16pt;
+  line-height: 24pt;
   max-width: 100%;
 }
 @media (max-width: 320px) {
@@ -7739,5 +7740,5 @@ a.hover-social.sp-snapchat-square:focus {
 
 //homepage styles
 
-// @import "frontdoor/billboard";
+@import "frontdoor/billboard";
 @import "frontdoor/about_me";
