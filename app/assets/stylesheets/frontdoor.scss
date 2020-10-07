@@ -7745,7 +7745,39 @@ a.hover-social.sp-snapchat-square:focus {
   padding: 0 !important;
 }
 
-//homepage styles
+// //homepage styles
 
 @import "frontdoor/billboard";
 @import "frontdoor/about_me";
+
+@font-face {
+  font-family: "Santana-Black";
+  src: font-url("Santana-Black.ttf") format("truetype");
+}
+
+// @font-face {
+//   font-family: "Santana-Black";
+//   src: url("https://assets.codepen.io/572572/Santana-Black.ttf");
+// }
+
+@font-face {
+  font-family: "Miso";
+  src: asset-url("fonts/miso-bold.ttf") format("truetype");
+}
+
+.ct-cta-text-me-svg {
+  width: 100px;
+  height: auto;
+
+  text {
+    font-family: "Santana-Black", sans-serif;
+    // font-family: "Miso", sans-serif;
+    fill: #000;
+    text-transform: uppercase;
+    font-size: 38px;
+  }
+
+  .phone-number {
+    letter-spacing: 22px;
+  }
+}
