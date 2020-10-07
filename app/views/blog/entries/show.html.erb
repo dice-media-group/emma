@@ -11,5 +11,16 @@
 <dl class="dl-horizontal">
   <dt>Title:</dt>
   <dd><%= @blog_entry.title %></dd>
+  <dd>
+    <% if @blog_entry.image.attached? %>
+      <%= image_tag @blog_entry.image %>
+    <% end %>
+  </dd>
 
+  <dd>
+    <% if @blog_entry.blog_articles.count > 0 %>
+      <%= @blog_entry.blog_articles.first.body %>
+    <% end %>
+
+  </dd>
 </dl>

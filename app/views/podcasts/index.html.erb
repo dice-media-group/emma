@@ -1,2 +1,39 @@
-<h1>Podcasts#index</h1>
-<p>Find me in app/views/podcasts/index.html.erb</p>
+<%= render 'billboard' %>
+  <div class="ct-content-wrapper ct-flex-template">
+    <div class="ct-page-content">
+      <!-- ct-page-content -->
+      <div class="container ct-flex-has-sidebar">
+        <div class="col-md-8">
+          <!-- wrap -->
+          <div class="ct-flex-row"
+               id="flex-module-0">
+            <h2 class="h1 ct-liner">Welcome to The GaryVee Audio Experience</h2>
+          </div>
+          <div class="ct-flex-row"
+               id="flex-module-1">
+            <p><strong><em>Check out my most recent podcast episode here:</em></strong></p>
+            <%= render 'embedded_podcast_player' %>
+            <%#  %>
+            <%= render 'intro_paragraph' %>
+            <%= render 'recommendations' %>            
+          </div>
+        </div><!-- wrap -->
+
+        <!-- button aside -->
+        <div class="ct-flex-sidebar col-md-4">
+          <div class="hidden-xs"
+               style="width: 85%; margin: 0 auto;">
+            <p><a id="subscribebtns"
+               name="subscribebtns"></a></p>
+            <h1>Subscribe Here:</h1>
+            <%#= render 'subscribe_buttons' %>
+
+            <!-- Event snippet for GV Audio Experience Landing Page conversion page --> 
+            <script>
+                gtag('event', 'conversion',{'send_to': 'AW-998150423/QkIbCNW5_aoBEJei-tsD'}); 
+            </script>
+          </div>
+        </div>
+      </div><!-- .container -->
+    </div>
+  </div>

@@ -1,3 +1,39 @@
-body {
-  background-color: orange;
+// body {
+//   background-color: orange;
+// }
+h1,
+h2,
+.h1,
+.h2 {
+    font-family: "league-gothic", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+}
+h1.hf-welter,
+h2.hf-welter,
+.h1.hf-welter,
+.h2.hf-welter {
+    font-family: "league-gothic", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h3,
+.h3 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: 400;
+}
+// index__about_me
+.ct-section {
+    display: block;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.ct-section h1:first-child,
+.ct-section h2:first-child {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+.ct-section h2:first-child {
+    margin-top: 20px;
+}
+.ct-section-invert {
+    background: #101010;
+    color: #fff;
 }

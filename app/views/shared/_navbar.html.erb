@@ -1,47 +1,74 @@
-<div id="gv-main-nav" class="gv-nav-wrapper">
-    <div id="hello-bar" class="gv-hello-bar-wrapper" style="display:flex;">
-        <nav class="gv-hello-bar">
-            <ul id="menu-hello-bar" class="menu"><li id="menu-item-8224" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8224"><a href="http://garyvee.com/applepodcast">🎧 Subscribe to my podcast 🎧</a></li>
-</ul>        </nav>
+  <div class="ct-nav-wrapper"
+       id="ct-main-nav">
+    <div class="ct-hello-bar-wrapper"
+         id="hello-bar"
+         style="display:flex;">
+      <nav class="ct-hello-bar">
+        <ul class="menu"
+            id="menu-hello-bar">
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8224"
+              id="menu-item-8224">
+            <a href="https://anchor.fm/gocarlgo">🎧 Subscribe to my podcast 🎧</a>
+          </li>
+        </ul>
+      </nav>
     </div>
     <script>
       document.getElementById('hello-bar').addEventListener('click', function(event) {
         window.location = event.target.querySelector('a').getAttribute('href');
       })
     </script>
-    <div class="gv-nav-inner">
-            <div id="cta-firsttime" class="gv-cta-first">
-            <a href="/first-time-here/"><img src="https://2pyzcd2sdlnr1r3xjh15mrbn-wpengine.netdna-ssl.com/wp-content/themes/garysixteen/assets/img/logo-firsttime.svg"></a>
+    <div class="ct-nav-inner">
+      <div class="ct-cta-first"
+           id="cta-firsttime">
+        <a href="/first-time-here/">
+          <%= image_tag 'logo-firsttime.svg' %>
+        </a>
+      </div>
+      <div class="ct-cta-community">
+        <a href="https://my.community.com/carl.tanner">
+          <%= render '/shared/text_me_svg' %> </a>
+      </div>
+      <div class="row">
+        <div class="ct-nav-mobile">
+          <button class="ct-nav-toggle">Menu</button>
         </div>
-		<div class="gv-cta-community">
-			<a href="https://my.community.com/gary.vaynerchuk">
-				<img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20191212171239/text-me.png">
-			</a>
-		</div>
-            <div class="row">
-            <div class="gv-nav-mobile">
-                <button class="gv-nav-toggle">
-                    Menu
-                </button>
-            </div>
-            <div class="gv-mark-type">
-                <a href="" class="no-hover">
-                    Gary Vaynerchuk
-                </a>
-            </div>
-
-            <div class="gv-nav-desktop">
-                <nav class="gv-nav">
-                    <ul id="menu-main-nav" class="menu"><li id="menu-item-7117" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-7117"><a target="_blank" rel="noopener noreferrer" href="/podcast/" aria-current="page">PODCAST</a></li>
-<li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55"><a href="/blog/">Blog</a></li>
-<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="/events/">Events</a></li>
-<li id="menu-item-7930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7930"><a href="/get-in-touch-with-me/">Contact</a></li>
-<li id="menu-item-8182" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8182"><a href="/biography/">My Story</a></li>
-</ul>                </nav>
-            </div>
-            <!-- <button data-href="#gv-search|modal-open" class="gv-search-toggle gv-modal-ctrl">
+        <div class="ct-mark-type">
+          <a class="no-hover"
+               href="/" style="padding-top: 8px;">Carl <br/> Tanner</a>
+        </div>
+        <div class="ct-nav-desktop">
+          <nav class="ct-nav">
+            <ul class="menu"
+                id="menu-main-nav">
+              <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-7117"
+                  id="menu-item-7117">
+                <a aria-current="page"
+                    href="/podcast/"
+                    rel="noopener noreferrer"
+                    target="_blank">PODCAST</a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55"
+                  id="menu-item-55">
+                <a href="/blog/">Blog</a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"
+                  id="menu-item-52">
+                <a href="/events/">Events</a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7930"
+                  id="menu-item-7930">
+                <a href="/get-in-touch-with-me/">Contact</a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8182"
+                  id="menu-item-8182">
+                <a href="/biography/">My Story</a>
+              </li>
+            </ul>
+          </nav>
+        </div><!-- <button data-href="#ct-search|modal-open" class="ct-search-toggle ct-modal-ctrl">
                 <i class="fa fa-search"></i>
             </button> %> -->
-        </div>
+      </div>
     </div>
-</div>
+  </div>

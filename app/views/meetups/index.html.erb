@@ -1,51 +1,15 @@
+<%= render 'billboard' %>
 
-
-
-<div class="row">
-  <div class="col-sm-6">
-    <h1>Meetups</h1>
-  </div>
-
-  <div class="col-sm-6 text-right">
-  <%#= link_to new_meetup_path, class: 'btn btn-primary' do %>
-    <%# Add New Meetup %>
-  <%# end %>
-  </div>
-</div>
-
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-      <tr>
-    
-
-            <th>Title</th>
-            <th>Start date</th>
-            <th>End date</th>
-            <th>More info url</th>
-            <th>Location</th>
-            
-          <th></th>
-        
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @meetups.each do |meetup| %>
-        <%= content_tag :tr, id: dom_id(meetup), class: dom_class(meetup) do %>
-          
-
-                      <td><%= meetup.title %></td>
-                      <td><%= meetup.start_date %></td>
-                      <td><%= meetup.end_date %></td>
-                      <td><%= meetup.more_info_url %></td>
-                      <td><%= meetup.location %></td>
-          
-          
-            <td><%= link_to 'Show', meetup %></td>
-          
+<div class="ct-content-wrapper no-padding">
+    <div id="ct-calreply-widget" class="ct-widget-fulllength ct-widget-bg">
+        <div class="container text-center">
+            <h2 class="h3">Get Notifications For New Events And Episodes</h2>
+        </div>
+    </div>
+    <%#  %>
+    <div id="ct-event-page" class="ct-page-wrapper container">
+        <% 5.times.each do  %>
+            <%= render 'event' %>        
         <% end %>
-      <% end %>
-    </tbody>
-  </table>
+    </div>
 </div>

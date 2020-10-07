@@ -1,3 +1,4 @@
+
 <%= form_with(model: blog_entry, local: true) do |form| %>
   <% if blog_entry.errors.any? %>
     <div id="error_explanation">
@@ -16,6 +17,53 @@
     <%= form.text_field :title, class: 'form-control' %>
   </div>
 
+  <div class="form-group" style="max-width: 22;">
+    <%= form.label :pinned_value %> <p>(set to zero for it not to be pinned)</p>
+    <%= form.number_field :pinned_value, class: 'form-control' %>
+  </div>
+
+
+  <%#  %>
+  <script>
+      // In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
+  </script>
+  <select class="js-example-basic-single" 
+    name="blog_article[id]]" 
+    id="blog_article_id">
+    <% @articles.each do |a| %>
+      <option value="<%= a.id %>"><%= a.title %> </option>    
+    <% end %>
+    
+</select>
+
+  <%#= form.select :id, @articles, include_blank: true,  class: "js-example-basic-single" %>
+
+<%#  %>
+
+  <div class="form-group">
+    <%#=form.label :blog_article %>
+    <%#= f.select :blog_article_id, Blog::Article.all.collect { |p| [ p.title, p.id ] }, include_blank: true %>
+
+
+  </div>
+  
+  <div class="form-group" data-uppy="blog_entry[image]">
+    <%= form.label :image %>
+    <div>
+      <% if @blog_entry.image.attached? %>
+        <%= image_tag @blog_entry.image, width: 280, data: { behavior: 'uppy-preview' } %>
+      <% else %>
+        <img src="" width="280" data-behavior="uppy-preview" />
+      <% end %>
+    </div>
+
+    <%= link_to "Upload", "#", data: { behavior: "uppy-trigger" } %>
+  </div>
+
+<%#  %>
   <div class="form-group">
     <% if blog_entry.persisted? %>
       <div class="float-right">
@@ -32,3 +80,4 @@
     <% end %>
   </div>
 <% end %>
+

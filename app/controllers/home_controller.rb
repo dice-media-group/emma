@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @articles = Blog::Entry.all_pinned
+    @pinned_entries = Blog::Entry.all_pinned
     @coming_soon = Meetup.coming_soon
     render :layout => 'frontdoor'
   end

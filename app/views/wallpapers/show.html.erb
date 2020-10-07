@@ -1,0 +1,23 @@
+<div class="page-header">
+  <%= link_to wallpapers_path, class: 'btn btn-default' do %>
+    All Wallpapers
+  <% end %>
+  <%= link_to edit_wallpaper_path(@wallpaper), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show wallpaper</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @wallpaper.title %></dd>
+
+  <dt>Device size:</dt>
+  <dd><%= @wallpaper.device_size %></dd>
+
+<% if @wallpaper.image.attached? %>
+  <%= image_tag @wallpaper.image %>
+  <% else %>
+  <p>no image available</p>
+<% end %>
+</dl>
