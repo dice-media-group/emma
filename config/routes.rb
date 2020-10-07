@@ -1,6 +1,8 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :wallpapers
+  get 'wallpapers/index'
   resources :photos
   # namespace :broadcaster do
   #   get 'dashboard/index'
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
   resources :media_appearances
   resources :podcasts, only: [:index, :show]
   resources :meetups, only: [:index, :show]
+  resources :wallpapers, only: [:index, :show]
 
   resources :blog, only: [:index]
   namespace :blog do
@@ -52,7 +55,6 @@ Rails.application.routes.draw do
   get '/first-time-here', to: 'home#first_time_here'
   get '/hire-me', to: 'home#hire_me'
   get '/get-in-touch-with-me', to: 'home#contact_me'
-  get '/wallpapers', to: 'home#wallpapers'
 
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
