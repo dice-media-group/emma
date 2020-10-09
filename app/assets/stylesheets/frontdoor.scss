@@ -376,8 +376,8 @@ h2,
 }
 h3,
 .h3 {
-  font-size: 14pt;
-  line-height: 24pt;
+  font-size: 22pt;
+  line-height: 18pt;
 }
 h4,
 .h4 {
@@ -7780,4 +7780,8 @@ a.hover-social.sp-snapchat-square:focus {
   .phone-number {
     letter-spacing: 22px;
   }
+}
+
+.home .ct-billboard video {
+  max-height: 556px;
 }
