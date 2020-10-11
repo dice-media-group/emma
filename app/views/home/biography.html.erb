@@ -1,4 +1,11 @@
-<%= render 'bio_billboard' %>
+<% billboard_image_filename = "biography_hero.jpg" %>
+<% headline = "Carl Tanner" %>
+<%= render partial: '/shared/static_billboard', 
+    locals: { image_filename: billboard_image_filename,
+              headline:       headline
+    
+    } %>
+
   <div class="ct-content-wrapper no-shadow">
     <div class="ct-page-wrapper container">
       <div class="row">

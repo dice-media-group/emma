@@ -1,4 +1,11 @@
-<%= render 'billboard' %>
+
+<% billboard_image_filename = "events_hero.jpg" %>
+<% headline = "Carl Tanner" %>
+<%= render partial: '/shared/static_billboard', 
+    locals: { image_filename: billboard_image_filename,
+              headline:       headline
+    
+    } %>
 
 <div class="ct-content-wrapper no-padding">
     <div id="ct-calreply-widget" class="ct-widget-fulllength ct-widget-bg">
