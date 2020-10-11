@@ -1,4 +1,6 @@
-<%= render 'bio_billboard' %>
+<% billboard_image_filename = "biography_hero.jpg" %>
+<%= render partial: '/shared/static_billboard', locals: { image_filename: billboard_image_filename } %>
+
   <div class="ct-content-wrapper no-shadow">
     <div class="ct-page-wrapper container">
       <div class="row">
