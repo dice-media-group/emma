@@ -1,4 +1,7 @@
-<%= render 'billboard' %>
+<%#= render '/shared/static_billboard', locals: {image_filename: "billboard01.png"} %>
+
+<% billboard_iamge_filename = "billboard01.png" %>
+<%= render partial: '/shared/static_billboard', locals: { image_filename: billboard_iamge_filename } %>
 
 <div class="ct-content-wrapper no-padding">
     <div id="ct-calreply-widget" class="ct-widget-fulllength ct-widget-bg">
