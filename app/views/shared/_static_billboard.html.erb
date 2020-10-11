@@ -1,14 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
+  <style>
+    /* The brightest duotone color */
+    .darken::before {
+      background-color: rgba(30, 255, 188, 1);
+    }
+
+    /* The darkest duotone color */
+    .lighten::after {
+      background-color: rgba(0, 15, 170, 1);
+    }
+
+    /* Hero background images */
+    #hero-1 {
+      width: 100vw;
+      height: 38vh;
+      background-image: url(<%= image_url(image_filename) %>);
+    }
+
+    /* Duotone effect */
+    .duotone {
+      width: 100vw;
+      height: 38vh;
+      overflow: hidden;
+      position: relative;
+      display: inline-block;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      box-shadow: inset 0 0 0 0 rgba(255,255,255, 1);
+      transform: scale(1);
+      transition: all .5s ease-in-out;
+    }
+
+    .duotone::before, .duotone::after {
+      content: '';
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      box-shadow: inset 0 0 0 0 rgba(255,255,255, 1);
+      transition: all .5s ease-in-out;
+    }
+
+    .duotone::before {
+      mix-blend-mode: multiply;
+    }
+
+    .duotone::after {
+      mix-blend-mode: lighten;
+    }
+
+
+  </style>
+
   <section class="ct-billboard-wrapper ct-page-feature">
     <div class="ct-billboard">
       <div class="ct-billboard-poster"
            style="opacity: 1;">
-                <%= image_tag(image_filename) %>   
+        <div class="duotone darken lighten" id='hero-1'>
+
+        </div>
         <%# The below image tag works and we should come back around and refactor the above tag to use srcsec %>
         <%#= image_tag "billboard01.png" ,
            class: "attachment-post-thumbnail size-post-thumbnail wp-post-image",
@@ -18,10 +68,9 @@
       </div>
       <div class="ct-billboard-callout">
         <div class="container text-right">
-          <h1 class="col-sm-6 pull-right"></h1>
+            <h1 class="col-sm-6 pull-right"><%= headline %></h1>
+
         </div>
       </div>
     </div>
   </section>
-</body>
-</html>

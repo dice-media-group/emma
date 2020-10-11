@@ -1,5 +1,10 @@
 <% billboard_image_filename = "first_time_here_hero.jpg" %>
-<%= render partial: '/shared/static_billboard', locals: { image_filename: billboard_image_filename } %>
+<% headline = "First Time Here?" %>
+<%= render partial: '/shared/static_billboard', 
+    locals: { image_filename: billboard_image_filename,
+              headline:       headline
+    
+    } %>
 
   <div class="ct-content-wrapper ct-flex-template">
     <div class="ct-page-content">

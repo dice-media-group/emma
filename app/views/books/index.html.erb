@@ -1,7 +1,10 @@
-
 <% billboard_image_filename = "books_hero.jpg" %>
-<%= render partial: '/shared/static_billboard', locals: { image_filename: billboard_image_filename } %>
-
+<% headline = "Favorite Books" %>
+<%= render partial: '/shared/static_billboard', 
+    locals: { image_filename: billboard_image_filename,
+              headline:       headline
+    
+    } %>
 
 
 <div class="row">
