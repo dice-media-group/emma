@@ -1,37 +1,25 @@
   <div class="ct-widget ct-widget-events theme-black">
-    <h3 class="h1">Upcoming Events</h3>
+    <h3 class="h1">Upcoming Events</h3><!--  start listing-->
     <div class="event-listing">
-<!--  start listing-->
-      <% 5.times.each do %>
+      <%@upcoming_meetups.each do |meetup| %>
       <div class="clearfix event event-2-col">
-        <a class="event-linker"
-             href="https://events.sage.com/profile/web/index.cfm?PKwebID=0x42767513&amp;varPage=home&amp;utm_source=twitter_baa8ecb0-b576-494d-9a6b-00a4d9cf04ec&amp;utm_medium=social%20network&amp;utm_campaign=NPS_FY20_DGSO_owned_summit#anchor2"
-             target="_blank">
+        <%= link_to meetup.more_info_url, target: "_blank", class: "event-linker" do %>
         <div class="widget-event-date text-center">
-          <div class="h3 ct-h-welter50">
-            Dec
+          <div class="h3 gv-h-welter50">
+            <%=  meetup.start_date.strftime("%b") %>
           </div>
-          <div class="h2 ct-h-welter50">
-            09
+          <div class="h2 gv-h-welter50">
+            <%=  meetup.start_date.strftime("%d") %>
           </div>
         </div>
         <div class="widget-event-title">
-          <h3 class="event-title">Sage Summit US 2020</h3>
-          <h4 class="event-location">Orlando, FL</h4>
-        </div></a>
+          <h3 class="event-title"><%= meetup.title %></h3>
+          <h4 class="event-location"><%= meetup.location %></h4>
+        </div><%end %>
         <div class="widget-event-info">
-          <a class="event-linker"
-               href="https://events.sage.com/profile/web/index.cfm?PKwebID=0x42767513&amp;varPage=home&amp;utm_source=twitter_baa8ecb0-b576-494d-9a6b-00a4d9cf04ec&amp;utm_medium=social%20network&amp;utm_campaign=NPS_FY20_DGSO_owned_summit#anchor2"
-               target="_blank"></a><a class="ct-btn ct-btn-blue ct-btn-block"
-               href="https://events.sage.com/profile/web/index.cfm?PKwebID=0x42767513&amp;varPage=home&amp;utm_source=twitter_baa8ecb0-b576-494d-9a6b-00a4d9cf04ec&amp;utm_medium=social%20network&amp;utm_campaign=NPS_FY20_DGSO_owned_summit#anchor2"
-               target="_blank">Info</a>
+          <%= link_to meetup.more_info_url, target: "_blank", class: "event-linker" do %><%end %><%= link_to meetup.more_info_url,  target: "_blank", class: "gv-btn gv-btn-blue gv-btn-block" do %>Info <%end %>
         </div>
-      </div>
-      
-      <% end %>
-      
-<!--  finish  listing-->
-
+      </div><%end %><!--  finish  listing-->
     </div>
     <div class="event-widget-footer text-center">
       <a class="ct-btn ct-btn-blue ct-btn-block"
