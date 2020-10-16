@@ -16,7 +16,7 @@
       blurb: "Get a glimpse of some of my funnier moments on TikTok" },
 
     { name: 'facebook', url: "http://facebook.com", 
-      font_awesome_class: "fab fa-facebook", network_kind: "social", 
+      font_awesome_class: "fab fa-facebook-f", network_kind: "social", 
       blurb: "Get a glimpse of some of my funnier moments on facebook" },
 
     { name: 'twitter', url: "http://twitter.com", 
