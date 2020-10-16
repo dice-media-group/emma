@@ -4,6 +4,6 @@ class PublisherAcct < ApplicationRecord
     end
 
     def self.all_links_and_icons
-        accounts = PublisherAcct.select(:name, :url, :font_awesome_class, :blurb)
+        accounts = PublisherAcct.select(:name, :url, :font_awesome_class, :network_kind, :blurb)
     end
 end

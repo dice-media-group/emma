@@ -35,6 +35,10 @@
       font_awesome_class: "fas fa-music", network_kind: "social", 
       blurb: "Get a glimpse of some of my funnier moments on TikTok"},
 
+    {name: "podcast", url: "/podcast", 
+      font_awesome_class: "fas fa-podcast", network_kind: "social", 
+      blurb: "Perfect for your commute. Listen daily to keynotes, interviews, rants, business meetings, and more."},
+
     { name: 'stitcher', url: "http://tiktok.com", 
       font_awesome_class: "fas fa-music", network_kind: "podcast", 
       blurb: "Get a glimpse of some of my funnier moments on TikTok" },
