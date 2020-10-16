@@ -32,7 +32,7 @@
       blurb: "Get a glimpse of some of my funnier moments on TikTok" },
 
     {name: "tiktok", url: "http://tiktok.com", 
-      font_awesome_class: "fas fa-tiktok", network_kind: "social", 
+      font_awesome_class: "fas fa-music", network_kind: "social", 
       blurb: "Get a glimpse of some of my funnier moments on TikTok"},
 
     {name: "podcast", url: "/podcast", 
