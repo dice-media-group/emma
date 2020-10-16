@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
   resources :press_kits
   get 'services/index'
-  resources :books
+  resources :books, only: [:index, :show]
   resources :media_appearances
   resources :podcasts, only: [:index, :show]
   resources :wallpapers, only: [:index, :show]

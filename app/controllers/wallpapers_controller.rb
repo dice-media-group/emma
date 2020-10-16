@@ -1,4 +1,5 @@
 class WallpapersController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
   before_action :set_wallpaper, only: [:show, :edit, :update, :destroy]
 
   # GET /wallpapers
