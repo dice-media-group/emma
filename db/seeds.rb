@@ -8,31 +8,31 @@
 
 # initialize PublisherAcct w/o possible duplication
   publisher_accts = PublisherAcct.create_or_find_by([{ name: 'instagram', url: "http://instagram.com", 
-      font_awesome_class: "fas fa-music", network_kind: "social", 
+      font_awesome_class: "fab fa-instagram", network_kind: "social", 
       blurb: "Get a glimpse of some of my funnier moments on TikTok" },
 
-    { name: 'youtube', url: "http://tiktok.com", 
-      font_awesome_class: "fas fa-music", network_kind: "social", 
+    { name: 'youtube', url: "http://youtube.com", 
+      font_awesome_class: "fab fa-youtube", network_kind: "social", 
       blurb: "Get a glimpse of some of my funnier moments on TikTok" },
 
-    { name: 'facebook', url: "http://tiktok.com", 
-      font_awesome_class: "fas fa-music", network_kind: "social", 
+    { name: 'facebook', url: "http://facebook.com", 
+      font_awesome_class: "fas fa-facebook", network_kind: "social", 
       blurb: "Get a glimpse of some of my funnier moments on TikTok" },
 
     { name: 'twitter', url: "http://tiktok.com", 
-      font_awesome_class: "fas fa-music", network_kind: "social", 
+      font_awesome_class: "fab fa-twitter", network_kind: "social", 
       blurb: "Get a glimpse of some of my funnier moments on TikTok" },
 
     { name: 'snapchat', url: "http://tiktok.com", 
-      font_awesome_class: "fas fa-music", network_kind: "social", 
+      font_awesome_class: "fab fa-snapchat-ghost", network_kind: "social", 
       blurb: "Get a glimpse of some of my funnier moments on TikTok" },
 
     { name: 'linkedin', url: "http://tiktok.com", 
-      font_awesome_class: "fas fa-music", network_kind: "social", 
+      font_awesome_class: "fab fa-linkedin", network_kind: "social", 
       blurb: "Get a glimpse of some of my funnier moments on TikTok" },
 
     {name: "tiktok", url: "http://tiktok.com", 
-      font_awesome_class: "fas fa-music", network_kind: "social", 
+      font_awesome_class: "fas fa-tiktok", network_kind: "social", 
       blurb: "Get a glimpse of some of my funnier moments on TikTok"},
 
     {name: "podcast", url: "/podcast", 
