@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-
+    resources :books
     resources :publisher_accts
     resources :users
     resources :announcements
