@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   resources :books
   resources :media_appearances
   resources :podcasts, only: [:index, :show]
-  resources :meetups, only: [:index, :show]
   resources :wallpapers, only: [:index, :show]
 
   resources :blog, only: [:index]
@@ -37,6 +36,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+
+    resources :meetups
     resources :books
     resources :publisher_accts
     resources :users
