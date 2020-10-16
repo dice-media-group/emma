@@ -37,11 +37,12 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-      resources :users
-      resources :announcements
-      resources :notifications
 
-      root to: "users#index"
+    resources :publisher_accts
+    resources :users
+    resources :announcements
+    resources :notifications
+    root to: "users#index"
     end
 
   # get '/blog', to: 'blog#index'
