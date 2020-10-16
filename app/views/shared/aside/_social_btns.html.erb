@@ -1,24 +1,18 @@
+<% @linked_icon_names   = [ "facebook", "youtube", "instagram", "twitter", "snapchat" ] %>
+
   <div class="ct-widget ct-widget-socialprops clearfix text-center"
        id="gv_widgets_socialprops-2">
     <div class="sidebar-c-5">
-      <% social_spots = ["facebook", "youtube", "instagram", "twitter"] %>
-      <% social_spots.each do |spot| %>
+      <% @linked_icon_names.each do |icon_name| %>
+         <% icon = @linked_icon_data.find_by(name: icon_name) %>
          <span class="wrap-social-item">
             <a alt=""
-            class=" <%= "sp-circle sp-#{spot}" %> "
-            href="<%= PublisherAcct.link(spot)%>"
+            class=" <%= "sp-circle sp-#{icon.name}" %> "
+            href="<%= icon.url %>"
             target="_blank">
-               <i class='<%= "fab fa-#{spot}" %>'></i>
+               <i class='<%= "fab fa-#{icon.font_awesome_class}" %>'></i>
             </a>
          </span>          
       <% end %>
-      <%# snapchat does not follow pattern %>
-      <span class="wrap-social-item"><a alt=""
-         class="sp-circle sp-snapchat"
-         href="<%= PublisherAcct.link('snapchat')%>"
-         target="_blank">
-               <i class="fab fa-snapchat-ghost"></i>
-         </a>
-      </span>
     </div>
   </div>
