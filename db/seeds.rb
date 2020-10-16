@@ -17,17 +17,17 @@
 
     { name: 'facebook', url: "http://facebook.com", 
       font_awesome_class: "fab fa-facebook", network_kind: "social", 
-      blurb: "Get a glimpse of some of my funnier moments on TikTok" },
+      blurb: "Get a glimpse of some of my funnier moments on facebook" },
 
-    { name: 'twitter', url: "http://tiktok.com", 
+    { name: 'twitter', url: "http://twitter.com", 
       font_awesome_class: "fab fa-twitter", network_kind: "social", 
       blurb: "Get a glimpse of some of my funnier moments on TikTok" },
 
-    { name: 'snapchat', url: "http://tiktok.com", 
+    { name: 'snapchat', url: "http://snapchat.com", 
       font_awesome_class: "fab fa-snapchat-ghost", network_kind: "social", 
-      blurb: "Get a glimpse of some of my funnier moments on TikTok" },
+      blurb: "An inside look at my life through stories." },
 
-    { name: 'linkedin', url: "http://tiktok.com", 
+    { name: 'linkedin', url: "http://linkedin.com", 
       font_awesome_class: "fab fa-linkedin", network_kind: "social", 
       blurb: "Get a glimpse of some of my funnier moments on TikTok" },
 

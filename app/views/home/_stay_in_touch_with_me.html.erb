@@ -19,7 +19,7 @@
                 <div class="col-sm-3 col-md-3 text-center">
                     <div class="ct-widget-unit home">
                         <% icon = @linked_icon_data.find_by(name: icon_name) %>
-                        <%= link_to  icon.name, 
+                        <%= link_to  icon.url, 
                             class: "sp-circle sp-circle-lg sp-circle-invert sp-#{icon.name}", 
                             target: "_blank" do %>
                                 <i class="<%= icon.font_awesome_class %> "></i>
