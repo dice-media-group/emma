@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
   resources :press_kits
   get 'services/index'
-  resources :books, only: [:index, :show]
+  resources :books, only: [:index]
   resources :media_appearances
   resources :podcasts, only: [:index, :show]
   resources :wallpapers, only: [:index, :show]
@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+
+    resources :merchandise_links
 
     resources :meetups
     resources :books

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_15_221057) do
+ActiveRecord::Schema.define(version: 2020_10_17_003945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 2020_10_15_221057) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "jacket_location"
   end
 
   create_table "broadcaster_audios", force: :cascade do |t|
@@ -180,6 +181,15 @@ ActiveRecord::Schema.define(version: 2020_10_15_221057) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "merchandise_links", force: :cascade do |t|
+    t.string "seller_name"
+    t.text "url"
+    t.bigint "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_merchandise_links_on_book_id"
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.string "recipient_type", null: false
     t.bigint "recipient_id", null: false
@@ -259,5 +269,6 @@ ActiveRecord::Schema.define(version: 2020_10_15_221057) do
   add_foreign_key "broadcaster_theme_avatars", "broadcaster_avatars"
   add_foreign_key "broadcaster_theme_avatars", "broadcaster_themes"
   add_foreign_key "broadcaster_videos", "broadcaster_themes"
+  add_foreign_key "merchandise_links", "books"
   add_foreign_key "services", "users"
 end
