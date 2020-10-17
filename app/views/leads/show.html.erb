@@ -1,0 +1,27 @@
+<div class="page-header">
+  <%= link_to leads_path, class: 'btn btn-default' do %>
+    All Leads
+  <% end %>
+  <%= link_to edit_lead_path(@lead), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show lead</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @lead.name %></dd>
+
+  <dt>Phone:</dt>
+  <dd><%= @lead.phone %></dd>
+
+  <dt>Email address:</dt>
+  <dd><%= @lead.email_address %></dd>
+
+  <dt>Subject:</dt>
+  <dd><%= @lead.subject %></dd>
+
+  <dt>Message body:</dt>
+  <dd><%= @lead.message_body %></dd>
+
+</dl>
