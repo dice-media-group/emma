@@ -1,3 +1,12 @@
+<%# billboard_image_filename = "biography_hero.jpg" %>
+<%# headline = "Favorite Books" %>
+<%#= render partial: 'billboard', 
+    locals: { image_filename: billboard_image_filename,
+              headline:       headline
+    
+    } %>
+
+<!--  -->
 <% billboard_image_filename = "biography_hero.jpg" %>
 <% headline = "Favorite Books" %>
 <%= render partial: '/shared/static_billboard', 
@@ -6,13 +15,9 @@
     
     } %>
 
-  <div class="ct-content-wrapper">
-    <div class="ct-page-wrapper container">
-
-<%= render @books %>
-              
-        
-
-                </div>
+<div class="ct-content-wrapper">
+  <div class="ct-page-wrapper container">
+    <%= render @books %>
   </div>
+</div>
 
