@@ -1,0 +1,16 @@
+authtoken: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx4
+log: stdout
+tunnels:
+  gocarlgo-rails:
+    addr: 3330
+    proto: http
+    bind_tls: true
+    subdomain: gocarlgo2
+  gocarlgo-webpack:
+    addr: 3035
+    proto: http
+    bind_tls: true
+    subdomain: gocarlgo2
+    host-header: localhost:3035
+~ %
+
