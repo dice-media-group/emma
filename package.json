@@ -12,6 +12,7 @@
     "@uppy/dashboard": "^1.12.7",
     "bootstrap": "^4.5.2",
     "data-confirm-modal": "^1.6.2",
+    "dotenv": "^8.2.0",
     "expose-loader": "^1.0.0",
     "jquery": "^3.5.1",
     "local-time": "^2.1.0",
