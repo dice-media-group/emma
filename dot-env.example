@@ -1,11 +1,11 @@
 # .env.example
 
-APP_TUNNEL=gocarlgo-rails
-APP_SUBDOMAIN=gocarlgo2
-APP_URL=gocarlgo2
+APP_TUNNEL=subdomain-rails
+APP_SUBDOMAIN=subdomain
+APP_URL=subdomain
 APP_PORT=3330
-ASSET_TUNNEL=gocarlgo-webpack
-ASSET_TUNNEL_URI=gocarlgo2.ngrok.io
-ASSETS_SUBDOMAIN=gocarlgo2
+ASSET_TUNNEL=subdomain-webpack
+ASSET_TUNNEL_URI=subdomain.ngrok.io
+ASSETS_SUBDOMAIN=subdomain
 ASSETS_PORT=3035
-ASSETS_URL=https://gocarlgo2.ngrok.com
+ASSETS_URL=https://subdomain.ngrok.com

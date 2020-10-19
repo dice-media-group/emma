@@ -1,3 +1,5 @@
+# this file can be place at .ngrok2/ngrok.yml
+
 authtoken: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx4
 log: stdout
 tunnels:
@@ -5,12 +7,12 @@ tunnels:
     addr: 3330
     proto: http
     bind_tls: true
-    subdomain: gocarlgo2
+    subdomain: my_ngrok_rails_domain
   gocarlgo-webpack:
     addr: 3035
     proto: http
     bind_tls: true
-    subdomain: gocarlgo2
+    subdomain: my_ngrok_webpack_domain
     host-header: localhost:3035
 ~ %
 
