@@ -3,8 +3,9 @@ class HomeController < ApplicationController
 
 
   def index
-    @pinned_entries               = Blog::Entry.all_pinned
-    @coming_soon                  = Meetup.coming_soon
+    @pinned_entries = Blog::Entry.all_pinned
+    @coming_soon    = Meetup.coming_soon
+    @lead           = Lead.new
   end
 
   def terms

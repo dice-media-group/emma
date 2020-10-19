@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :leads
   resources :wallpapers
   get 'wallpapers/index'
   resources :photos
@@ -36,6 +37,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+
+    resources :leads
 
     resources :merchandise_links
 
