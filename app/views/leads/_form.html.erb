@@ -1,15 +1,12 @@
-<%= form_with(model: lead, local: true) do |form| %>
-  <% if lead.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(lead.errors.count, "error") %> prohibited this lead from being saved:</h2>
+<style>
+ .form-group {
+   margin: 10px
+ }
+</style>
 
-      <ul>
-      <% lead.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<h1>Contact us</h1>
+
+<%= form_for @lead , url: lead_path do |form| %>
 
   <div class="form-group">
     <%= form.label :name %>
@@ -43,12 +40,7 @@
       </div>
     <% end %>
 
-    <%= form.submit class: 'btn btn-primary' %>
+    <%= form.submit "Send Message", class: 'btn btn-primary' %>
 
-    <% if lead.persisted? %>
-      <%= link_to "Cancel", lead, class: "btn btn-link" %>
-    <% else %>
-      <%= link_to "Cancel", leads_path, class: "btn btn-link" %>
-    <% end %>
-  </div>
+
 <% end %>

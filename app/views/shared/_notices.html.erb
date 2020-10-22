@@ -1,3 +1,5 @@
+<div class="notices_top_margin">
+
 <% flash.each do |msg_type, message| %>
   <div class="alert <%= bootstrap_class_for(msg_type) %>">
     <div class="container">
@@ -6,3 +8,4 @@
     </div>
   </div>
 <% end %>
+</div>

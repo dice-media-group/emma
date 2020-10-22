@@ -1,7 +1,10 @@
 class LeadsController < ApplicationController
-  before_action :set_lead, only: [:show, :edit, :update, :destroy]
   layout "frontdoor"
 
+  # GET /leads/new
+  def show
+    @lead = Lead.new
+  end
 
 
   # GET /leads/new
@@ -15,15 +18,12 @@ class LeadsController < ApplicationController
   def create
     @lead = Lead.new(lead_params)
 
-    respond_to do |format|
       if @lead.save
-        format.html { redirect_to @lead, notice: 'Lead was successfully created.' }
-        format.json { render :show, status: :created, location: @lead }
+        redirect_to root_path, notice: 'Your message was sent. Thanks! '
       else
-        format.html { render :new }
-        format.json { render json: @lead.errors, status: :unprocessable_entity }
+      render action: :show
       end
-    end
+    
   end
 
 

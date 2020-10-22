@@ -1,7 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  resources :leads
+  resource :lead
   resources :wallpapers
   get 'wallpapers/index'
   resources :photos
