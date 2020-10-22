@@ -20,6 +20,7 @@ class HomeController < ApplicationController
   end
 
   def hire_me
+    @lead           = Lead.new
     
   end
 
