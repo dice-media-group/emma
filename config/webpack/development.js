@@ -11,7 +11,8 @@ const ngrokTunnel = process.env.ASSET_TUNNEL_URI;
 
 environment.config.merge({
   devServer: {
-    public: ngrokTunnel,
+    host: ngrokTunnel,
+    public: ngrokTunnel + ":3035",
   },
 });
 
