@@ -1,30 +1,33 @@
-<% billboard_image_filename = "hire_me_hero.jpg" %>
-<% headline = "Hire Me" %>
-<%= render partial: '/shared/static_billboard', 
+<% billboard_image_filename = "hire_me_hero.jpg" %><% headline = "Hire Me" %><%= render partial: '/shared/static_billboard', 
     locals: { image_filename: billboard_image_filename,
               headline:       headline
     
     } %>
+  <div class="ct-content-wrapper">
+    <div class="ct-page-wrapper container">
+      <div class="ct-page-content">
+        <h2 class="h1 ct-liner-half">Services</h2>
+        <h5 class="ct-h-slab-caps ct-h-nomargin">Keynote Speaking | Fireside Chat | Q&amp;A</h5>
+        <p>Not afraid to tell it like he sees it, Carl Tanner is an entertaining, thought-provoking full-stack developer rooted in the notion of creating code for the year we live in and betting on one’s strengths to ensure a path to success and happiness. Carl will leave your audience entertained, motivated, and begging for more.</p>
+        <p>If you’re interested in landing Carl for an event, use the form below to send him a message.</p>
 
-<div class="gv-content-wrapper">
-    <div class="gv-page-wrapper container">
-                    <div class="gv-page-content">
-            <h2 class="h1 gv-liner-half">Services</h2>
-<h5 class="gv-h-slab-caps gv-h-nomargin">Keynote Speaking | Fireside Chat | Q&amp;A</h5>
-<p>Not afraid to tell it like he sees it, Gary Vaynerchuk is an entertaining, thought-provoking business practitioner rooted in the notion of marketing in the year we live in and betting on one’s strengths to ensure a path to success and happiness. Gary will leave your audience entertained, motivated, and begging for more.</p>
-<p>If you’re interested in landing Gary for an event, or one of our other amazing speakers, head over to <a href="https://vaynerspeakers.com/gary-vaynerchuk/">vaynerspeakers.com</a>.</p>
-<h5 class="gv-h-slab-caps gv-h-nomargin">Custom #AskGaryVee Videos</h5>
-<p>Catapulted into&nbsp;notoriety by his viral wine-tasting show <a href="http://tv.winelibrary.com">Wine Library TV</a>, Gary’s struck gold again with <a href="https://www.youtube.com/playlist?list=PLfA33-E9P7FC0AoARnMLvgFgESJe4_Ngs">The&nbsp;#AskGaryVee Show</a>. Filmed in his New York City <a href="http://vaynermedia.com">VaynerMedia</a> office and reaching a weekly audience of more than&nbsp;100,000 people, the show is a place for Gary to answer viewers’ questions and share his tried-and-true methods for success. Also one of the fastest-rising podcasts on iTunes, you now have the opportunity to&nbsp;bring a personalized Q&amp;A tailored to the interests of your organization or audience, filmed and packaged by Gary’s own production team.</p>
-<p class="text-right"><a href="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20191016223618/GV_SPEAKING_ONEPAGER_10-16-1.pdf">Learn More About My Speaking Gigs Here</a></p>
-<h2 id="page-contact-form" class="h1 gv-liner-half">Want to get in touch with me?</h2>
-
-<div class="gf_browser_gecko gform_wrapper" id="gform_wrapper_1">
-    <%# contact form here %>
-    <%= render '/shared/lead_form', lead: @lead %>
-
-</div>
-
-
+        <h5 class="ct-h-slab-caps ct-h-nomargin">Custom #AskCarl Videos and Remote Consulting</h5>
+        <p>With more than five years experience developing full-stack Ruby on Rails applications, Carl can help you improve your code and meet deadlines. Carl applies Object Oriented Principles like:</p>
+        <ul>
+          <li>SOLID (Single-responsibility principle, Open–closed principle, Liskov substitution principle, Interface segregation principle, Dependency inversion principle)</li>
+          <li>DRY (Don't Repeat Yourself)</li>
+          <li>Encapsulation</li>
+          <li>Abstraction</li>
+          <li>Inheritance</li>
+          <li>Polymorphism</li>
+        </ul>
+        <p class="text-right"><a href="/public/CT_SPEAKING_ONEPAGER_10-20-1.pdf">Learn More About My Consulting Gigs Here</a></p>
+        <h2 class="h1 ct-liner-half"
+            id="page-contact-form">Want to get in touch with me?</h2>
+        <div class="gf_browser_gecko gform_wrapper"
+             id="gform_wrapper_1">
+          <%# contact form here %><%= render '/shared/lead_form', lead: @lead %>
         </div>
-        </div>
-</div>
+      </div>
+    </div>
+  </div>
