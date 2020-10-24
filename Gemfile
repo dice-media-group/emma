@@ -70,3 +70,6 @@ gem 'sidekiq', '~> 6.0', '>= 6.0.3'
 gem 'sitemap_generator', '~> 6.1', '>= 6.1.2'
 gem 'whenever', require: false
 gem 'image_processing'
+
+# app-specific
+gem 'pagy', '~> 3.9'

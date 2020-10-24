@@ -18,4 +18,8 @@ class Blog::Entry < ApplicationRecord
     Blog::Entry.where("pinned_value > ?", 0)
     # "helow"
   end
+
+  def self.from_time
+    Time.now - self.created_at
+  end
 end
