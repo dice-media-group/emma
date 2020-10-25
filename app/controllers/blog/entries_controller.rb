@@ -1,13 +1,11 @@
 class Blog::EntriesController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :create, :new, :edit, :update, :destroy]
   before_action :set_blog_entry, only: [:show, :edit, :update, :destroy]
 
   # GET /blog/entries
   # GET /blog/entries.json
   def index
     @blog_entries = Blog::Entry.all
-    render :layout => 'frontdoor'
-
-    # reading time
     
   end
 
@@ -15,7 +13,7 @@ class Blog::EntriesController < ApplicationController
   # GET /blog/entries/1.json
   def show
     render :layout => 'frontdoor'
-    # @blog_entry = Blog::Entry.friendly.find(params[:id])
+    @blog_entry = Blog::Entry.friendly.find(params[:id])
   end
 
   # GET /blog/entries/new

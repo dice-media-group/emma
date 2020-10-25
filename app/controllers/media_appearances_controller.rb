@@ -5,8 +5,8 @@ class MediaAppearancesController < ApplicationController
   # GET /media_appearances
   # GET /media_appearances.json
   def index
-    @media_appearances = MediaAppearance.all
     render :layout => 'frontdoor'
+    @media_appearances = MediaAppearance.all
   end
 
   # GET /media_appearances/1

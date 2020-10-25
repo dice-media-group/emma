@@ -1,26 +1,15 @@
-<div class="page-header">
-  <%= link_to blog_entries_path, class: 'btn btn-default' do %>
-    All Blog_entries
-  <% end %>
-  <%= link_to edit_blog_entry_path(@blog_entry), class: 'btn btn-primary' do %>
-    Edit
-  <% end %>
-  <h1>Show blog_entry</h1>
-</div>
-
-<dl class="dl-horizontal">
-  <dt>Title:</dt>
-  <dd><%= @blog_entry.title %></dd>
-  <dd>
-    <% if @blog_entry.image.attached? %>
-      <%= image_tag @blog_entry.image %>
-    <% end %>
-  </dd>
-
-  <dd>
-    <% if @blog_entry.blog_articles.count > 0 %>
-      <%= @blog_entry.blog_articles.first.body %>
-    <% end %>
-
-  </dd>
-</dl>
+<article id="post-10701" class="post-10701 post type-post status-publish format-standard has-post-thumbnail hentry category-business category-leadership">
+  <%= render 'billboard' %>
+  <%= render 'entry_sharing_sidebar' %>
+  <div class="ct-single-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="ct-single-content col-md-8">
+          <%= render 'content' %>
+          &nbsp;
+        </div>
+          <%= render '/shared/aside' %>
+      </div>
+    </div>
+  </div>
+</article>
