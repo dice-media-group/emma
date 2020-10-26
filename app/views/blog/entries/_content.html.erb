@@ -4,7 +4,7 @@
 
     <%= render 'sharing_top_bar' %>
 </div>
-<%= render 'entry_content' %>
+<%= render  partial: 'entry_content', locals: {blog_article: blog_article} %>
 
 <div class="ct-post-footer">
     <%= render 'post_sharing' %>
