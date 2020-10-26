@@ -14,6 +14,7 @@ class Blog::EntriesController < ApplicationController
   def show
     render :layout => 'frontdoor'
     @blog_entry = Blog::Entry.friendly.find(params[:id])
+    @blog_article   = @blog_entry.blog_articles.first
   end
 
   # GET /blog/entries/new

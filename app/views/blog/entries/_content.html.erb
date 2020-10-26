@@ -1,7 +1,7 @@
 <%= render 'headline' %> 
 <div class="gv-post-author row">
+    <%= render partial: 'author', locals: {author: blog_article.user } %>
 
-    <%= render 'author' %>
     <%= render 'sharing_top_bar' %>
 </div>
 <%= render 'entry_content' %>
