@@ -21,6 +21,7 @@ class Blog::EntriesController < ApplicationController
   def new
     @blog_entry = Blog::Entry.new
     @articles   = Blog::Article.all.select(:id, :title)
+    @blog_entry.recommendations.new
     
   end
 
@@ -81,6 +82,6 @@ class Blog::EntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_entry_params
-      params.require(:blog_entry).permit(:title, :image, :blog_article_id, :pinned_value)
+      params.require(:blog_entry).permit(:title, :image, :blog_article_id, :pinned_value, recommendations_attributes: [:id, :description, :_destroy], tasks_attributes: [:id, :description, :_destroy])
     end
 end

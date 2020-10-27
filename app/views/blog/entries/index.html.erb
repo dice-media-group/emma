@@ -31,7 +31,11 @@
         <%= content_tag :tr, id: dom_id(blog_entry), class: dom_class(blog_entry) do %>
           
 
-                      <td><%= blog_entry.title %></td>
+        <td>
+        <%= blog_entry.title %>
+        <%= link_to "[edit]", edit_blog_entry_path(blog_entry) %>
+
+        </td>
           
           
             <td><%= link_to 'Show', blog_entry %></td>

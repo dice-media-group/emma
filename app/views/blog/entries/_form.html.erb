@@ -30,6 +30,9 @@
         $('.js-example-basic-single').select2();
     });
   </script>
+
+    <h4>Blog Article:</h4>
+
   <select class="js-example-basic-single" 
     name="blog_article[id]]" 
     id="blog_article_id">
@@ -43,12 +46,6 @@
 
 <%#  %>
 
-  <div class="form-group">
-    <%#=form.label :blog_article %>
-    <%#= f.select :blog_article_id, Blog::Article.all.collect { |p| [ p.title, p.id ] }, include_blank: true %>
-
-
-  </div>
   
   <div class="form-group" data-uppy="blog_entry[image]">
     <%= form.label :image %>
@@ -63,6 +60,24 @@
     <%= link_to "Upload", "#", data: { behavior: "uppy-trigger" } %>
   </div>
 
+<%#  %>
+  <div>
+    <h4>Recommend another blog entry:</h4>
+    <%= form.fields_for :recommendations do |rec|%>
+      <div class="form-group">
+        <%= rec.label :description %>
+        <%= rec.text_field :description, class: 'form-control' %>
+      </div>
+
+      <%#= rec_attributes.select :blog_entry_id, 
+          Blog::Entry.all.collect 
+            { |be| [ be.title, p.id ] }, 
+            include_blank: true
+      %>
+      <%#= select_tag "blog_recommendation", 
+          options_from_collection_for_select(@blog_entries, "id", "title") %>
+    <% end %>
+  </div>
 <%#  %>
   <div class="form-group">
     <% if blog_entry.persisted? %>
