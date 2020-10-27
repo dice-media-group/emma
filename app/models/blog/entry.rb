@@ -13,13 +13,18 @@ class Blog::Entry < ApplicationRecord
   has_one_attached    :image # hero image for entry
   
   # connect to blog_recommendations
-  #   has_many :tasks, inverse_of: :project
-  # accepts_nested_attributes_for :tasks, reject_if: :all_blank, allow_destroy: true
   has_many  :recommendations, 
             foreign_key: "entry_id", 
             class_name: "Blog::Recommendation"#,
             # inverse_of: :entry
-  accepts_nested_attributes_for :recommendations, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :recommendations, 
+                                reject_if: :all_blank, 
+                                allow_destroy: true
+  has_many  :recommended_entries, 
+            :through => :recommendations,                 
+            :source => :recommended_entry                      
+
+
 
   extend FriendlyId
   friendly_id :title, use: :slugged
