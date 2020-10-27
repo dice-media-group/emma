@@ -20,6 +20,8 @@ class Blog::Entry < ApplicationRecord
   accepts_nested_attributes_for :recommendations, 
                                 reject_if: :all_blank, 
                                 allow_destroy: true
+
+  #connect to recommended_entries
   has_many  :recommended_entries, 
             :through => :recommendations,                 
             :source => :recommended_entry                      

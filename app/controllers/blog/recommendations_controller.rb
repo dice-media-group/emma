@@ -16,10 +16,13 @@ class Blog::RecommendationsController < ApplicationController
   def new
     @blog_recommendation  = Blog::Recommendation.new
     @entries              = Blog::Entry.all
+    @recommended_entries  = Blog::RecommendedEntry.all
   end
 
   # GET /blog/recommendations/1/edit
   def edit
+    @entries              = Blog::Entry.all
+    @recommended_entries  = Blog::RecommendedEntry.all
   end
 
   # POST /blog/recommendations
@@ -70,6 +73,7 @@ class Blog::RecommendationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_recommendation_params
-      params.require(:blog_recommendation).permit(:description, :entry_id)
+      params.require(:blog_recommendation)
+        .permit(:description, :entry_id, :recommended_entry_id)
     end
 end

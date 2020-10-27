@@ -23,14 +23,26 @@
 
     <%= form.label :entry_id %>
 
-  <select class="js-example-basic-single" 
-    name="blog_recommendation[entry_id]" 
-    id="blog_recommendation_entry_id">
-        <% @entries.all.each do |a| %>
-      <option value="<%= a.id %>"><%= a.title %> </option>    
-    <% end %>
-    
-  </select>
+    <select class="js-example-basic-single" 
+      name="blog_recommendation[entry_id]" 
+      id="blog_recommendation_entry_id">
+        <% @entries.each do |a| %>
+          <option value="<%= a.id %>"><%= a.title %> </option>    
+        <% end %>    
+    </select>
+  </div>
+
+  <div class="form-group">
+
+    <%= form.label :recommended_entry_id %>
+
+    <select class="js-example-basic-single" 
+      name="blog_recommendation[recommended_entry_id]" 
+      id="blog_recommendation_recommended_entry_id">
+        <% @recommended_entries.each do |a| %>
+          <option value="<%= a.id %>"><%= a.title %> </option>    
+        <% end %>    
+    </select>
   </div>
 
   <div class="form-group">
