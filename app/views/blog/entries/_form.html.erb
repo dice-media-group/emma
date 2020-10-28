@@ -24,28 +24,20 @@
 
 
   <%#  %>
-  <script>
-      // In your Javascript (external .js resource or <script> tag)
-    $(document).ready(function() {
-        $('.js-example-basic-single').select2();
-    });
-  </script>
 
-    <h4>Blog Article:</h4>
-
-  <select class="js-example-basic-single" 
-    name="blog_article[id]]" 
-    id="blog_article_id">
-    <% @articles.each do |a| %>
-      <option value="<%= a.id %>"><%= a.title %> </option>    
-    <% end %>
-    
-</select>
-
-  <%#= form.select :id, @articles, include_blank: true,  class: "js-example-basic-single" %>
 
 <%#  %>
+<div class="form-group">
+    <%= form.label :publish_at %>
 
+<%= datetime_select("blog_entry", 
+                    "publish_at", 
+                    prompt: {day: 'Choose day', 
+                            month: 'Choose month', 
+                            year: 'Choose year'
+                            }
+                    )%>
+</div>
   
   <div class="form-group" data-uppy="blog_entry[image]">
     <%= form.label :image %>

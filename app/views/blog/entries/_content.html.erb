@@ -1,21 +1,28 @@
+<% blog_article = @blog_entry.articles.first %>
+
 <%= render 'headline' %> 
 <div class="gv-post-author row">
-    <%= render partial: 'author', locals: {author: blog_article.user } %>
+    <%= render partial: 'author' %>
 
     <%#= render 'sharing_top_bar' %>
 </div>
-<%= render  partial: 'entry_content', locals: {blog_article: blog_article} %>
+<% if   blog_article.present? %>
+    <%= render  partial: 'entry_content', locals: {blog_article: blog_article} %>
+<% else %>
+    <p>no article attached</p>
+<% end %>
+
 
 <div class="ct-post-footer">
     <%#= render 'post_sharing' %>
     <%#= render 'entry_comments' %>
     <%#= render 'entry_tags' %>
 </div>
-
-<!--<div class="ct-post-suggested">
+<div class="ct-post-suggested">
     <h3 class="ct-h-welter50">
         Check this out
     </h3>
-    <%#= render 'suggested_entry' %>
-</div>  -->
+    <% @recommended_entries  = @blog_entry.recommended_entries %>
+    <%= render @recommended_entries  %>
+</div>
                 

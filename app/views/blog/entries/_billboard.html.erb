@@ -1,8 +1,8 @@
 <section class="ct-billboard-wrapper ct-page-feature" style="margin-top: 0px; margin-bottom: 0px;">
     <div class="ct-billboard">
         <div class="ct-billboard-poster" style="opacity: 1;">
-        <% if @blog_entry.image%>
-            <%= image_tag @blog_entry.image, size: "1400x1120"  %>
+        <% if @blog_entry.image.attached? %>
+            <%= image_tag @blog_entry.image  %>
         
         <% end %>
         

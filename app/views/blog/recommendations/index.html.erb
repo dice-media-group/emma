@@ -20,6 +20,7 @@
     
 
             <th>Entry</th>
+            <th>Recommended Entry</th>
             <th>Description</th>
             
           <th></th>
@@ -32,11 +33,12 @@
         <%= content_tag :tr, id: dom_id(blog_recommendation), class: dom_class(blog_recommendation) do %>
           
 
-                      <td><%= blog_recommendation.entry.title %></td>
-                      <td><%= blog_recommendation.description %></td>
-          
-          
-            <td><%= link_to 'Show', blog_recommendation %></td>
+          <td><%= blog_recommendation.entry.title %></td>
+          <td><%= blog_recommendation.recommended_entry.title %></td>
+          <td><%= blog_recommendation.description %></td>
+        
+        
+          <td><%= link_to 'Show', blog_recommendation %></td>
           
         <% end %>
       <% end %>

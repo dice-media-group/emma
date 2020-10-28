@@ -4,9 +4,10 @@ class Blog::Entry < ApplicationRecord
                       foreign_key: "blog_entry_id", 
                       class_name: "Blog::EntryAssignment"
 
-  has_many            :blog_articles, 
-                      :through => :blog_entry_assignments, 
-                      :source => :blog_article                      
+  has_many  :articles, 
+            foreign_key: "entry_id", 
+            class_name: "Blog::Article"#,
+            # inverse_of: :entry                     
 
   # connect to blog_video_embeds  
   has_many            :blog_video_embeds

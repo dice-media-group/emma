@@ -1,6 +1,17 @@
   <article class="ct-post post-10048 post type-post status-publish format-standard has-post-thumbnail hentry category-business category-content"
            id="post-10048">
     <div class="ct-post-img">
+        <%= link_to suggested_entry do %>
+        <%= image_tag entry.image.variant(resize_to_limit: [768, 614]), size: "768x614" %>
+<%# 
+          <img alt=""
+             class="attachment-large size-large wp-post-image"
+             sizes="(max-width: 700px) 100vw, 700px"
+             src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-700x560.png"
+             srcset=
+             "https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-700x560.png 700w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-250x200.png 250w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-768x614.png 768w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-120x96.png 120w">
+         %>
+        <% end %>
       <a href="https://www.garyvaynerchuk.com/how-to-create-64-pieces-of-content-in-a-day/"><img alt=""
            class="attachment-large size-large wp-post-image"
            sizes="(max-width: 700px) 100vw, 700px"
@@ -45,7 +56,8 @@
     </div>
     <div class="row clearfix">
       <div class="col-sm-6">
-        <h1 class="ct-ctrl-title ct-post-title ct-liner-simple"><a href="https://www.garyvaynerchuk.com/how-to-create-64-pieces-of-content-in-a-day/">How To Make 64 Pieces Of Content In A Day</a></h1>
+        <h1 class="ct-ctrl-title ct-post-title ct-liner-simple"><a href="https://www.garyvaynerchuk.com/how-to-create-64-pieces-of-content-in-a-day/">
+        <%= suggested_entry.title%> </a></h1>
       </div>
       <div class="col-sm-6 text-left">
         <h5 class="ct-h-slab ct-post-date">12 months ago <span class="middot">·</span> 2 min read</h5>

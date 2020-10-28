@@ -14,7 +14,8 @@ class Blog::Article < ApplicationRecord
                  :through => :blog_entry_assignments, 
                  :source => :blog_entry
 
-
+  belongs_to :entry, class_name: 'Blog::Entry',
+  inverse_of: :articles 
   ##########################
   # => Methods
   ##########################

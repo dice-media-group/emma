@@ -18,8 +18,8 @@ const ngrokTunnel = process.env.ASSET_TUNNEL_URI;
 //
 environment.config.merge({
   devServer: {
-    port: "443",
-    public: ngrokTunnel,
+    // port: "443",
+    public: ngrokTunnel + ":3035",
   },
 });
 
