@@ -1,6 +1,8 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  namespace :blog do
+  end
   resource :lead
   resources :wallpapers
   get 'wallpapers/index'
@@ -30,9 +32,8 @@ Rails.application.routes.draw do
   resources :blog, only: [:index]
   namespace :blog do
     resources :entries
+    resources :recommendations
     # root to: "entries#index"
-  end
-  namespace :blog do
     resources :articles
   end
 

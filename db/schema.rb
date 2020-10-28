@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_26_005338) do
+ActiveRecord::Schema.define(version: 2020_10_28_042129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 2020_10_26_005338) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "pinned_value", default: 0
+    t.bigint "entry_id", null: false
+    t.index ["entry_id"], name: "index_blog_articles_on_entry_id"
     t.index ["user_id"], name: "index_blog_articles_on_user_id"
   end
 
@@ -70,6 +72,7 @@ ActiveRecord::Schema.define(version: 2020_10_26_005338) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
     t.integer "pinned_value"
+    t.datetime "publish_at"
     t.index ["slug"], name: "index_blog_entries_on_slug", unique: true
   end
 
@@ -80,6 +83,16 @@ ActiveRecord::Schema.define(version: 2020_10_26_005338) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["blog_article_id"], name: "index_blog_entry_assignments_on_blog_article_id"
     t.index ["blog_entry_id"], name: "index_blog_entry_assignments_on_blog_entry_id"
+  end
+
+  create_table "blog_recommendations", force: :cascade do |t|
+    t.bigint "entry_id", null: false
+    t.bigint "recommended_entry_id", null: false
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["entry_id"], name: "index_blog_recommendations_on_entry_id"
+    t.index ["recommended_entry_id"], name: "index_blog_recommendations_on_recommended_entry_id"
   end
 
   create_table "blog_video_embeds", force: :cascade do |t|
@@ -270,9 +283,12 @@ ActiveRecord::Schema.define(version: 2020_10_26_005338) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "blog_articles", "blog_entries", column: "entry_id"
   add_foreign_key "blog_articles", "users"
   add_foreign_key "blog_entry_assignments", "blog_articles"
   add_foreign_key "blog_entry_assignments", "blog_entries"
+  add_foreign_key "blog_recommendations", "blog_entries", column: "entry_id"
+  add_foreign_key "blog_recommendations", "blog_entries", column: "recommended_entry_id"
   add_foreign_key "blog_video_embeds", "blog_entries"
   add_foreign_key "broadcaster_audios", "broadcaster_themes"
   add_foreign_key "broadcaster_outlines", "broadcaster_themes"

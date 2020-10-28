@@ -1,0 +1,51 @@
+  <article class="ct-post post-10048 post type-post status-publish format-standard has-post-thumbnail hentry category-business category-content"
+           id="post-10048">
+    <div class="ct-post-img">
+        <%= link_to blog_entry_path(recommended_entry)  do %>
+            <% if recommended_entry.image.attached? %>
+            <%= image_tag recommended_entry.image, size: "768x614" %>
+            <% else %>
+              <p>no image</p>
+            <% end %>
+        <% end %>
+
+    </div>
+    <div class="row clearfix ct-post-sharemeta">
+      <div class="col-sm-5 col-md-6 ct-post-tags">
+        <a class="link-blue"
+             href="https://www.garyvaynerchuk.com/category/business/">#Business</a> <a class="ct-btn ct-btn-white ct-post-mobileshare pull-right visible-xs-inline-block"
+             data-permalink="https://www.garyvaynerchuk.com/how-to-create-64-pieces-of-content-in-a-day/"
+             href="#">Share </a>
+      </div>
+        <%= render '/blog/article_sharing_bar' %>
+
+    </div>
+    <div class="row clearfix">
+      <div class="col-sm-6">
+        <h1 class="ct-ctrl-title ct-post-title ct-liner-simple">
+            <%= link_to blog_entry_path(recommended_entry)  do %>
+                <%= recommended_entry.title%>
+            <% end %>        
+        </h1>
+      </div>
+      <div class="col-sm-6 text-left">
+        <h5 class="ct-h-slab ct-post-date">12 months ago <span class="middot">·</span> 2 min read</h5>
+          <p>
+            <%# if recommended_entry.blog_articles.present? %>
+            <%#= strip_tags(recommended_entry.blog_articles.first.body.to_s).truncate(270) || "no dice" %></p>
+              
+            <%# else %>
+              "no article available"
+            <%# end %>
+
+          <p>
+
+        <p>
+        
+            <%= link_to blog_entry_path(recommended_entry), class: "ct-post-permalink link-blue" do %>
+                Read More &gt;&gt;
+            <% end %>          
+        </p>
+      </div>
+    </div>
+  </article>

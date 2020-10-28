@@ -1,0 +1,68 @@
+<%= form_with(model: blog_recommendation, local: true) do |form| %>
+  <% if blog_recommendation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(blog_recommendation.errors.count, "error") %> prohibited this blog_recommendation from being saved:</h2>
+
+      <ul>
+      <% blog_recommendation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%#  %>
+  <script>
+      // In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
+  </script>
+  <div class="form-group">
+
+    <%= form.label :entry_id %>
+
+    <select class="js-example-basic-single" 
+      name="blog_recommendation[entry_id]" 
+      id="blog_recommendation_entry_id">
+        <% @entries.each do |a| %>
+          <option value="<%= a.id %>"><%= a.title %> </option>    
+        <% end %>    
+    </select>
+  </div>
+
+  <div class="form-group">
+
+    <%= form.label :recommended_entry_id %>
+
+    <select class="js-example-basic-single" 
+      name="blog_recommendation[recommended_entry_id]" 
+      id="blog_recommendation_recommended_entry_id">
+        <% @recommended_entries.each do |a| %>
+          <option value="<%= a.id %>"><%= a.title %> </option>    
+        <% end %>    
+    </select>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if blog_recommendation.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', blog_recommendation, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if blog_recommendation.persisted? %>
+      <%= link_to "Cancel", blog_recommendation, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", blog_recommendations_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

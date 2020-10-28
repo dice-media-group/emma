@@ -1,30 +1,38 @@
   <div class="ct-post-sharing clearfix">
    <div class="col-xs-4 col-sm-3">
-        <a href="#" data-permalink="https://www.garyvaynerchuk.com/digital-fundraising-in-a-post-covid-world/" data-platform="facebook" class="ct-ctrl-share ct-btn ct-btn-block ct-btn-s-fb" title="Share on Facebook">
+        <%= link_to "#",
+             data: { permalink: request.url , platform: 'facebook' }, 
+             class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-s-fb", 
+             title: "Share on Facebook" do %>
             <i class="fab fa-facebook"></i>
-        </a>
-
+        <% end %>
+        
     </div>
+    
     <div class="col-xs-4 col-sm-3">
-
-                                <a href="#" data-permalink="https://www.garyvaynerchuk.com/digital-fundraising-in-a-post-covid-world/" data-platform="twitter" class="ct-ctrl-share ct-btn ct-btn-block ct-btn-s-tw" title="Tweet on Twitter">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
+        <%= link_to "#",
+             data: { permalink: request.url , platform: 'twitter' }, 
+             class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-s-tw", 
+             title: "Tweet on Twitter" do %>
+             <i class="fab fa-twitter"></i>
+        <% end %>
     </div>
     <div class="hidden-xs col-sm-3">
-
-                                <a href="#" data-permalink="https://www.garyvaynerchuk.com/digital-fundraising-in-a-post-covid-world/" data-platform="linkedin" class="ct-ctrl-share ct-btn ct-btn-block ct-btn-s-in" title="Share on LinkedIn">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                </div>
+        <%= link_to "#",
+             data: { permalink: request.url , platform: 'linkedin' }, 
+             class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-s-in", 
+             title: "Share on LinkedIn" do %>
+             <i class="fab fa-linkedin"></i>
+        <% end %>
+    </div>
     <div class="col-xs-4 col-sm-3">
-      <a class="ct-btn ct-btn-block ct-btn-red ct-modal-ctrl"
-           href="#overlay-share|modal-open"
-           title="Share">
-
-                                    <span class="hidden-xs">Share&nbsp;&nbsp;</span>
-                                    <i class="fas fa-share"></i>
-                                
-        </a>
+        <%= link_to "#overlay-share|modal-open", 
+             class: "ct-btn ct-btn-block ct-btn-red ct-modal-ctrl", 
+             title: "Share" do %>
+            <span class="hidden-xs">Share&nbsp;&nbsp;</span>
+            <i class="fas fa-share"></i>
+             
+        <% end %>
+             
     </div>
   </div>

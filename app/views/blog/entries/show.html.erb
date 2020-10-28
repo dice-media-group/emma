@@ -6,8 +6,9 @@
     <div class="container">
       <div class="row">
         <div class="ct-single-content col-md-8">
-          <%= render partial: 'content', locals: {blog_article: @blog_entry.blog_articles.first } %>
+          <%= render partial: 'content', locals: {blog_article: @blog_article } %>
           &nbsp;
+
         </div>
           <%= render '/shared/aside' %>
       </div>

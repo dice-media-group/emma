@@ -16,6 +16,7 @@ class Blog::ArticlesController < ApplicationController
   # GET /blog/articles/new
   def new
     @blog_article = Blog::Article.new
+    @entries      = Blog::Entry.all
   end
 
   # GET /blog/articles/1/edit
@@ -42,6 +43,8 @@ class Blog::ArticlesController < ApplicationController
   # PATCH/PUT /blog/articles/1
   # PATCH/PUT /blog/articles/1.json
   def update
+    @blog_article.user = current_user
+
     respond_to do |format|
       if @blog_article.update(blog_article_params)
         format.html { redirect_to @blog_article, notice: 'Article was successfully updated.' }
@@ -71,6 +74,7 @@ class Blog::ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_article_params
-      params.require(:blog_article).permit(:title, :body, :pinned_value)
+      params.require(:blog_article).permit(:title, 
+        :body, :pinned_value, :entry_id)
     end
 end

@@ -1,0 +1,18 @@
+<div class="page-header">
+  <%= link_to blog_recommendations_path, class: 'btn btn-default' do %>
+    All Blog_recommendations
+  <% end %>
+  <%= link_to edit_blog_recommendation_path(@blog_recommendation), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show blog_recommendation</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Entry:</dt>
+  <dd><%= @blog_recommendation.entry.title %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @blog_recommendation.description %></dd>
+
+</dl>

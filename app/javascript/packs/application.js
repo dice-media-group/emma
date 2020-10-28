@@ -95,3 +95,5 @@ function setPreview(element, file) {
   }
 }
 // finish Uppy
+
+import "controllers"
