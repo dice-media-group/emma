@@ -68,4 +68,6 @@ Rails.application.configure do
 
   # Add ngrok.io hosts
   config.hosts << /[a-z0-9]+\.ngrok\.io/
+
+
 end
