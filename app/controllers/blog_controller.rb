@@ -3,7 +3,7 @@ class BlogController < ApplicationController
   layout "frontdoor"
 
   def index
-    @pagy, @blog_entries = pagy(Blog::Entry.all, items: 10)
+    @pagy, @blog_entries = pagy(Blog::Entry.published, items: 10)
 
     @facebook_url = PublisherAcct.find_by(name: "facebook").url
     @twitter_url  = PublisherAcct.find_by(name: "twitter").url

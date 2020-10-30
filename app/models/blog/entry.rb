@@ -4,6 +4,9 @@ class Blog::Entry < ApplicationRecord
                               .order(pinned_value: :desc)
                               .first(3)}
 
+  scope :published, -> {  where("publish_at is not ?", nil)
+                          .where("publish_at < ?", Time.now)}
+
   has_one   :article, 
             foreign_key: "entry_id", 
             class_name: "Blog::Article"#,
