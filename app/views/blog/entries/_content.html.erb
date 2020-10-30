@@ -1,15 +1,17 @@
-<% blog_article = @blog_entry.articles.first %>
 
 <%= render 'headline' %> 
-<div class="gv-post-author row">
-    <%= render partial: 'author' %>
+<% if   @blog_entry.article.present? %>
 
+<div class="gv-post-author row">
+        <%= render partial: 'author',
+        locals: {blog_article: @blog_entry.article} %>      
     <%#= render 'sharing_top_bar' %>
 </div>
-<% if   blog_article.present? %>
-    <%= render  partial: 'entry_content', locals: {blog_article: blog_article} %>
+    <%= render  partial: 'entry_content', 
+    locals: {blog_article: @blog_entry.article} %>
 <% else %>
-    <p>no article attached</p>
+    <h4>no article attached</h4>
+    <%= link_to 'Create and attach article', new_blog_article_path %>
 <% end %>
 
 
@@ -22,7 +24,7 @@
     <h3 class="ct-h-welter50">
         Check this out
     </h3>
-    <% @recommended_entries  = @blog_entry.recommended_entries %>
-    <%= render @recommended_entries  %>
+    <%#= render partial: "blog/recommended_entries/recommended_entry", collection: @blog_entry.recommended_entries  %>
+    <%= render partial: "blog/recommended_entries/recommended_entry", collection: @blog_entry.recommended_entries, as: :recommended_entry, locals: {title: "Products Page"} %>
 </div>
                 

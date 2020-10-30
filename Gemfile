@@ -73,3 +73,5 @@ gem 'image_processing'
 
 # app-specific
 gem 'pagy', '~> 3.9'
+gem 'rack-cors', '~> 1.1', '>= 1.1.1' #ngrok testing
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.6', groups: [:development, :test] #ngrok testing

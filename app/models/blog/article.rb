@@ -10,12 +10,11 @@ class Blog::Article < ApplicationRecord
   #               through: :blog_entry_assignments,
   #               source: :entry,
   #               class_name: 'Blog::Entry'
-  has_many       :blog_entries, 
-                 :through => :blog_entry_assignments, 
-                 :source => :blog_entry
+  # has_many       :blog_entries, 
+  #                :through => :blog_entry_assignments, 
+  #                :source => :blog_entry
 
-  belongs_to :entry, class_name: 'Blog::Entry',
-  inverse_of: :articles 
+  belongs_to :entry, class_name: 'Blog::Entry'
   ##########################
   # => Methods
   ##########################

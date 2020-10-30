@@ -21,11 +21,13 @@ class Blog::ArticlesController < ApplicationController
 
   # GET /blog/articles/1/edit
   def edit
+    @entries      = Blog::Entry.all
   end
 
   # POST /blog/articles
   # POST /blog/articles.json
   def create
+    # @blog_entry     = Blog::Entry.find(params[:entry_id])
     @blog_article = Blog::Article.new(blog_article_params)
     @blog_article.user = current_user
 

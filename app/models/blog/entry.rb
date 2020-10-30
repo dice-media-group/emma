@@ -1,10 +1,7 @@
 class Blog::Entry < ApplicationRecord
   # connect to blog_articles
-  has_many            :blog_entry_assignments, 
-                      foreign_key: "blog_entry_id", 
-                      class_name: "Blog::EntryAssignment"
 
-  has_many  :articles, 
+  has_one   :article, 
             foreign_key: "entry_id", 
             class_name: "Blog::Article"#,
             # inverse_of: :entry                     

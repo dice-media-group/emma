@@ -14,9 +14,12 @@ class Blog::EntriesController < ApplicationController
   def show
     render :layout => 'frontdoor'
 
-    @blog_entries           = Blog::Entry.all
-    @blog_article         = @blog_entry.articles.first
+    @blog_entries         = Blog::Entry.all
+    @blog_article         = @blog_entry.article
     @recommended_entries  = @blog_entry.recommended_entries
+    if @blog_article.present?
+      @author             = @blog_article.user
+    end
   end
 
   # GET /blog/entries/new
@@ -36,7 +39,7 @@ class Blog::EntriesController < ApplicationController
   # POST /blog/entries.json
   def create
     @blog_entry = Blog::Entry.new(blog_entry_params)
-    # @blog_entry.user = current_user
+    @blog_entry.user = current_user
 
     respond_to do |format|
       if @blog_entry.save
@@ -85,7 +88,8 @@ class Blog::EntriesController < ApplicationController
     def blog_entry_params
       params.require(:blog_entry).permit(:title, :image, 
         :pinned_value, 
-        recommendations_attributes: [:id, :description, :_destroy]
+        :publish_at,
+        :article_id
       )
     end
 end
