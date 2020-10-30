@@ -4,14 +4,9 @@
              id="post-8321">
       <div class="ct-post-img">
         <%= link_to entry do %>
-        <%= image_tag entry.image.variant(resize_to_limit: [768, 614]), size: "768x614" %>
+          <% entry_image = !entry.image.blank? ? entry.image : "https://via.placeholder.com/768x614" %>
 
-<img alt=""
-             class="attachment-large size-large wp-post-image"
-             sizes="(max-width: 700px) 100vw, 700px"
-             src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-700x560.png"
-             srcset=
-             "https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-700x560.png 700w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-250x200.png 250w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-768x614.png 768w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-120x96.png 120w">
+          <%= image_tag entry_image, size: "768x614" %>
         
         <% end %>
         <%# 
@@ -50,8 +45,9 @@
             <%= time_ago_in_words(entry.created_at) %> ago&nbsp;
             <span class="middot">·</span><%#= entry.blog_articles.first.reading_time || 1 %>  min read
           </h5>
-          <p><%#= strip_tags(entry.blog_articles.first.body.to_s).truncate(270) %></p>
+          <% entry_body_intro = !entry.article.blank? ? strip_tags(entry.article.body.to_s).truncate(270) : "no article attached" %>
 
+          <p><%= entry_body_intro  %></p>
           <p>
             <%= link_to entry, class: "ct-post-permalink link-blue" do %>
                 Read More &gt;&gt;
