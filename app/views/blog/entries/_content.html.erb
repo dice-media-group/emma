@@ -21,11 +21,15 @@
     <%#= render 'entry_tags' %>
 </div>
 <div class="ct-post-suggested">
-    <h3 class="ct-h-welter50">
-        Check this out
-    </h3>
-    <%= render  partial: "blog/recommended_entries/recommended_entry", 
-                collection: @blog_entry.recommended_entries, 
-                as: :recommended_entry %>
+    
+    <% if !@blog_entry.recommended_entries.blank? %>
+        <h3 class="ct-h-welter50">
+            Check this out
+        </h3>
+        <%= render  partial: "blog/recommended_entries/recommended_entry", 
+                    collection: @blog_entry.recommended_entries, 
+                    as: :recommended_entry %>
+    <% end %>
+    
 </div>
                 
