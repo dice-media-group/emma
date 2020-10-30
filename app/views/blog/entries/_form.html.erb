@@ -1,5 +1,6 @@
 
 <%= form_with(model: blog_entry, local: true) do |form| %>
+<div class="form-row">
   <% if blog_entry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(blog_entry.errors.count, "error") %> prohibited this blog_entry from being saved:</h2>
@@ -11,55 +12,66 @@
       </ul>
     </div>
   <% end %>
-
+</div>
+<div class="form-row">
+  <div class="col-5">
+<%#    %>
   <div class="form-group">
     <%= form.label :title %>
     <%= form.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="form-group" style="max-width: 22;">
-    <%= form.label :pinned_value %> <p>(set to zero for it not to be pinned)</p>
-    <%= form.number_field :pinned_value, class: 'form-control' %>
+    <%= form.label :pinned_value %> 
+    <p>(set to zero for it not to be pinned)</p>
+    <%= form.number_field :pinned_value, class: 'form-control', style: "max-width: 22;" %>
   </div>
 
 
   <%#  %>
 
 
-<%#  %>
+<%# %>
 <div class="form-group">
-    <%= form.label :publish_at %>
+  <%= form.label :publish_at %>
 
-<%= datetime_select("blog_entry", 
-                    "publish_at", 
-                    prompt: {day: 'Choose day', 
-                            month: 'Choose month', 
-                            year: 'Choose year'
-                            }
-                    )%>
+  <%= datetime_select("blog_entry", 
+                      "publish_at", 
+                      ampm: true,
+                      start_year: DateTime.now.year,
+                      start_month: DateTime.now.month,
+                      default: 3.days.from_now
+                      )%>
 </div>
-  
-  <div class="form-group" data-uppy="blog_entry[image]">
-    <%= form.label :image %>
-    <div>
-      <% if @blog_entry.image.attached? %>
-        <%= image_tag @blog_entry.image, width: 280, data: { behavior: 'uppy-preview' } %>
-      <% else %>
-        <img src="" width="280" data-behavior="uppy-preview" />
-      <% end %>
-    </div>
-
-    <%= link_to "Upload", "#", data: { behavior: "uppy-trigger" } %>
-  </div>
 
 <%#  %>
-  <div>
-    <h4>Recommend another blog entry:</h4>
-    <%= form.fields_for :recommendations do |rec|%>
-      <div class="form-group">
-        <%= rec.label :description %>
-        <%= rec.text_field :description, class: 'form-control' %>
+  </div>
+  <div class="col-7">
+    <div class="form-group" data-uppy="blog_entry[image]">
+      <%= form.label :image %>
+      <div>
+        <% if @blog_entry.image.attached? %>
+          <%= image_tag @blog_entry.image, width: 280, data: { behavior: 'uppy-preview' } %>
+        <% else %>
+          <img src="" width="280" data-behavior="uppy-preview" />
+        <% end %>
       </div>
+
+      <%= link_to "Upload", "#", data: { behavior: "uppy-trigger" } %>
+    </div>
+  
+  </div>
+</div>
+ 
+
+<%#  %>
+  <%# <div>
+    <h4>Recommend another blog entry:</h4> %>
+    <%#= form.fields_for :recommendations do |rec|%>
+      <%# <div class="form-group"> %>
+        <%#= rec.label :description %>
+        <%#= rec.text_field :description, class: 'form-control' %>
+      <%# </div> %>
 
       <%#= rec_attributes.select :blog_entry_id, 
           Blog::Entry.all.collect 
@@ -68,8 +80,8 @@
       %>
       <%#= select_tag "blog_recommendation", 
           options_from_collection_for_select(@blog_entries, "id", "title") %>
-    <% end %>
-  </div>
+    <%# end %>
+  <%# </div> %>
 <%#  %>
   <div class="form-group">
     <% if blog_entry.persisted? %>
