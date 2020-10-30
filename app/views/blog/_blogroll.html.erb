@@ -1,5 +1,9 @@
   <div class="col-lg-8" id="blogroll">
-      <%= render @blog_entries %>
+    <%= render partial: "blog/entries/entry", 
+        collection: Blog::Entry.featured_2nd_and_3rd, 
+        as: :entry %>      
+    
+    <%= render @blog_entries %>
     
       <%== render partial: '/shared/pagy/nav', locals: {pagy: @pagy} %>
   </div>

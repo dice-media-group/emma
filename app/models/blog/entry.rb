@@ -1,8 +1,16 @@
 class Blog::Entry < ApplicationRecord
   # connect to blog_articles
   scope :featured, -> { where("pinned_value > ?", 0)
-                              .order(pinned_value: :desc)
-                              .first(3)}
+                        .order(pinned_value: :desc)
+                        .first(3)}
+
+  scope :featured_2nd_and_3rd, -> { where("pinned_value > ?", 0)
+                        .order(pinned_value: :desc)
+                        .first(3).last(2)}
+
+  scope :featured_on_aside, -> {  where("pinned_value > ?", 0)
+                                  .order(pinned_value: :desc)
+                                  .first(5).last(2)}
 
   scope :published, -> {  where("publish_at is not ?", nil)
                           .where("publish_at < ?", Time.now)}

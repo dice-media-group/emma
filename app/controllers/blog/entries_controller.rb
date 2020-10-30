@@ -37,7 +37,7 @@ class Blog::EntriesController < ApplicationController
   # POST /blog/entries.json
   def create
     @blog_entry = Blog::Entry.new(blog_entry_params)
-    @blog_entry.user = current_user
+    # @blog_entry.user = current_user
 
     respond_to do |format|
       if @blog_entry.save
