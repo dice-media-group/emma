@@ -24,7 +24,7 @@
     <h3 class="ct-h-welter50">
         Check this out
     </h3>
-    <%# @recommended_entries  = @blog_entry.recommended_entries %>
-    <%#= render @recommended_entries  %>
+    <%#= render partial: "blog/recommended_entries/recommended_entry", collection: @blog_entry.recommended_entries  %>
+    <%= render partial: "blog/recommended_entries/recommended_entry", collection: @blog_entry.recommended_entries, as: :recommended_entry, locals: {title: "Products Page"} %>
 </div>
                 

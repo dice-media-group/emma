@@ -20,6 +20,13 @@
     <%= form.label :title %>
     <%= form.text_field :title, class: 'form-control' %>
   </div>
+  <% if @blog_entry.article.blank? %>
+    <div class="article-display">
+      <div class="new-article">
+        <%= link_to 'Create and attach article', new_blog_article_path %>
+      </div>  
+    </div>    
+  <% end %>
 
   <div class="form-group" style="max-width: 22;">
     <%= form.label :pinned_value %> 
