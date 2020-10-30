@@ -1,9 +1,11 @@
 <div class="col-lg-4 ct-global-sidebar">
     <%= render '/shared/aside/subscribe_widget' %>
     <%= render '/shared/aside/social_btns' %>
-    <% 3.times.each do %>
-        <%= render '/shared/aside/featured_blog_entry' %>    
-    <% end %>
+    <%= render partial: "/shared/aside/featured_blog_entry", 
+        collection: Blog::Entry.featured, 
+        as: :entry, 
+        locals: {title: "Products Page"} %>
+
 
     <div class="clearfix"></div>
     <%= render '/shared/aside/meetups' %>

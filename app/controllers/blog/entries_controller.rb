@@ -16,10 +16,8 @@ class Blog::EntriesController < ApplicationController
 
     @blog_entries         = Blog::Entry.all
     @blog_article         = @blog_entry.article
-    @recommended_entries  = @blog_entry.recommended_entries
-    if @blog_article.present?
-      @author             = @blog_article.user
-    end
+    @recommended_entries  = @blog_entry.recommended_entries    
+    @author             = @blog_article.user if @blog_article.present?
   end
 
   # GET /blog/entries/new

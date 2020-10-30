@@ -1,5 +1,8 @@
 class Blog::Entry < ApplicationRecord
   # connect to blog_articles
+  scope :featured, -> { where("pinned_value > ?", 0)
+                              .order(pinned_value: :desc)
+                              .first(3)}
 
   has_one   :article, 
             foreign_key: "entry_id", 
