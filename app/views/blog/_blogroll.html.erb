@@ -1,7 +1,10 @@
   <div class="col-lg-8" id="blogroll">
+  <% if(!params.has_key?(:page) )%>
     <%= render partial: "blog/entries/entry", 
         collection: Blog::Entry.featured_2nd_and_3rd, 
         as: :entry %>      
+    
+    <% end %>
     
     <%= render @blog_entries %>
     
