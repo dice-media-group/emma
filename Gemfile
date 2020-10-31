@@ -75,3 +75,4 @@ gem 'image_processing'
 gem 'pagy', '~> 3.9'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1' #ngrok testing
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6', groups: [:development, :test] #ngrok testing
+gem 'acts-as-taggable-on', '~> 6.5'

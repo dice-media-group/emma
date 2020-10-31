@@ -20,6 +20,13 @@
     <%= form.label :title %>
     <%= form.text_field :title, class: 'form-control' %>
   </div>
+
+  <div class="form-group">
+    <%= form.label :tag_list, "Tags (seperated by commas)" %>
+    <%= form.text_field :tag_list, class: 'form-control' %>
+  </div>
+
+  
   <% if @blog_entry.article.blank? %>
     <div class="article-display">
       <div class="new-article">

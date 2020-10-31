@@ -1,13 +1,19 @@
   <div class="col-lg-8" id="blogroll">
-  <% if(!params.has_key?(:page) )%>
-    <%= render partial: "blog/entries/entry", 
-        collection: Blog::Entry.featured_2nd_and_3rd, 
-        as: :entry %>      
-    
+    <% if(params.has_key?("tag") )%>
+    <%# do nothing %>
+    <% elsif(params.has_key?("page") ) %>
+      <%# do nothing %>
+    <% else %>
+      <%= render partial: "blog/entries/entry", 
+          collection: Blog::Entry.featured_2nd_and_3rd, 
+          as: :entry %>     
     <% end %>
     
     <%= render @blog_entries %>
-    
-      <%== render partial: '/shared/pagy/nav', locals: {pagy: @pagy} %>
+
+    <% if(!params.has_key?(:tag) )%>
+      <%== render partial: '/shared/pagy/nav', locals: {pagy: @pagy} %>      
+    <% end %>
+      
   </div>
 <!-- finish blogroll -->

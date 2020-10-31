@@ -18,7 +18,21 @@
 <div class="ct-post-footer">
     <%#= render 'post_sharing' %>
     <%#= render 'entry_comments' %>
-    <%#= render 'entry_tags' %>
+    <div class="ct-post-tags">
+        <a href="https://www.garyvaynerchuk.com/category/business/" class="link-blue">#Business</a>
+        <a href="https://www.garyvaynerchuk.com/category/leadership/" class="link-blue">#Leadership</a>
+        <%= render partial: "blog/entries/entry", 
+        collection: @blog_entry.tag_list, 
+        as: :entry_tag %>
+
+    </div>
+
+    <%#= render 'entry_tags', locals  %>
+    <%#= render  partial: 'entry_content', 
+    locals: {tag_list: @blog_entry.tag_list} %>    
+        <%#= render partial: "blog/entries/entry", 
+        collection: Blog::Entry.featured_2nd_and_3rd, 
+        as: :entry %>
 </div>
 <div class="ct-post-suggested">
     

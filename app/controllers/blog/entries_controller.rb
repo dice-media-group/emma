@@ -87,7 +87,8 @@ class Blog::EntriesController < ApplicationController
       params.require(:blog_entry).permit(:title, :image, 
         :pinned_value, 
         :publish_at,
-        :article_id
+        :article_id, 
+        :tag_list
       )
     end
 end
