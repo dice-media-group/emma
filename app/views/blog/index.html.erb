@@ -1,4 +1,9 @@
-  <% if(!params.has_key?(:page) )%>
+
+  <% if(params.has_key?("tag") )%>
+    <%# do nothing %>
+  <% elsif(params.has_key?("page") ) %>
+    <%# do nothing %>
+  <% else %>
     <%= render  partial: 'index_billboard', 
     locals: {entry: @billboard_entry} %>
   <% end %>

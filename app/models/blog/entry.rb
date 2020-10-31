@@ -1,4 +1,8 @@
 class Blog::Entry < ApplicationRecord
+  # tag entries
+  acts_as_taggable_on :tags
+  acts_as_taggable_on :skills, :interests #You can also configure multiple tag types per model
+  
   # connect to blog_articles
   scope :featured, -> { where("pinned_value > ?", 0)
                         .order(pinned_value: :desc)
