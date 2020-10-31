@@ -11,11 +11,9 @@
                         <div class="row clearfix ct-post-sharemeta">
                             <div class="col-sm-6 col-md-7 ct-post-tags">
                                 <% entry.tag_list.each do |t| %>
-                                    <%= link_to t, tag_path(t) %>                                
+                                    <%= link_to "##{t}" , tag_path(t) %>                                
                                 <% end %>
-                                
-                                <a href="https://www.garyvaynerchuk.com/category/business/" class="link-blue">#Business</a>
-                                <a href="https://www.garyvaynerchuk.com/category/content/" class="link-blue">#Content</a>
+
                                 <a href="#" data-permalink="https://www.garyvaynerchuk.com/how-to-create-64-pieces-of-content-in-a-day/" class="ct-btn ct-btn-white ct-post-mobileshare pull-right visible-xs-inline-block">
                                     Share <i class="fa fa-share"></i>
                                 </a>
@@ -24,13 +22,29 @@
                                 <div class="ct-post-sharing hidden-xs">
                                     <div class="row">
                                         <div class="col-xs-4">
-                                            <a href="#" data-permalink="https://www.garyvaynerchuk.com/how-to-create-64-pieces-of-content-in-a-day/" data-platform="facebook" class="ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-fb" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+                                            <%= link_to "#", 
+                                                data:  { permalink: "#{request.base_url + url_for(entry)}", platform: "facebook" }, class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-fb", 
+                                                title: "Share on Facebook" \
+                                            do %>
+                                                <i class="fab fa-facebook"></i>
+                                            <% end %>
+\                                            
                                         </div>
                                         <div class="col-xs-4">
-                                            <a href="#" data-permalink="https://www.garyvaynerchuk.com/how-to-create-64-pieces-of-content-in-a-day/" data-platform="twitter" class="ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-tw" title="Tweet on Twitter"><i class="fa fa-twitter"></i></a>
+                                             <%= link_to "#", 
+                                                data:  { permalink: "#{request.base_url + url_for(entry)}", platform: "twitter" }, class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-tw", 
+                                                title: "Share on Twitter" \
+                                            do %>
+                                                <i class="fab fa-twitter"></i>
+                                            <% end %>
                                         </div>
                                         <div class="col-xs-4">
-                                            <a href="#" data-permalink="https://www.garyvaynerchuk.com/how-to-create-64-pieces-of-content-in-a-day/" data-platform="linkedin" class="ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-in" title="Share on LinkedIn"><i class="fa fa-linkedin"></i></a>
+                                             <%= link_to "#", 
+                                                data:  { permalink: "#{request.base_url + url_for(entry)}", platform: "linkedin" }, class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-tw", 
+                                                title: "Share on LinkedIn" \
+                                            do %>
+                                                <i class="fab fa-linkedin"></i>
+                                            <% end %>
                                         </div>
                                     </div>
                                 </div>

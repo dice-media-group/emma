@@ -21,10 +21,10 @@
       </div>
       <div class="row clearfix ct-post-sharemeta">
         <div class="col-sm-5 col-md-6 ct-post-tags">
-          <a class="link-blue"
-               href="https://www.garyvaynerchuk.com/category/social-media/">
-              #Social Media
-          </a> 
+          <% entry.tag_list.each do |t| %>
+            <%= link_to "##{t}" , tag_path(t), class: "link-blue" %>                                
+          <% end %>
+
           <a class="ct-btn ct-btn-white ct-post-mobileshare pull-right visible-xs-inline-block"
               data-permalink="https://www.garyvaynerchuk.com/the-garyvee-content-strategy-how-to-grow-and-distribute-your-brands-social-media-content/"
               href="#">
