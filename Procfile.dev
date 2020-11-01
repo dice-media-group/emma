@@ -1,7 +1,11 @@
  # To run: 
  # foreman start -f Procfile.dev
 
-ngrok:      sleep 2 && ngrok start $APP_TUNNEL $ASSETS_TUNNEL
-web:        sleep 2 && bundle exec rails server -p $APP_PORT
-worker:     sleep 2 && bundle exec sidekiq
-webpack:    sleep 2 && WEBPACKER_DEV_SERVER_PUBLIC=$ASSET_TUNNEL_URI ./bin/webpack-dev-server
+# ngrok:      sleep 2 && ngrok start $APP_TUNNEL $ASSETS_TUNNEL
+# web:        sleep 2 && bundle exec rails server -p $APP_PORT
+# worker:     sleep 2 && bundle exec sidekiq
+# webpack:    sleep 2 && WEBPACKER_DEV_SERVER_PUBLIC=$ASSET_TUNNEL_URI ./bin/webpack-dev-server
+
+web:        bundle exec rails server -p $APP_PORT
+worker:     bundle exec sidekiq
+webpack:    ./bin/webpack-dev-server
