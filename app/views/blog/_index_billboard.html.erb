@@ -23,16 +23,20 @@
                                     <div class="row">
                                         <div class="col-xs-4">
                                             <%= link_to "#", 
-                                                data:  { permalink: "#{request.base_url + url_for(entry)}", platform: "facebook" }, class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-fb", 
+                                                data:  { permalink: "#{request.base_url + url_for(entry)}", 
+                                                platform: "facebook" }, 
+                                                class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-fb", 
                                                 title: "Share on Facebook" \
                                             do %>
                                                 <i class="fab fa-facebook"></i>
                                             <% end %>
-\                                            
+                                            
                                         </div>
                                         <div class="col-xs-4">
                                              <%= link_to "#", 
-                                                data:  { permalink: "#{request.base_url + url_for(entry)}", platform: "twitter" }, class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-tw", 
+                                                data:  { permalink: "#{request.base_url + url_for(entry)}", 
+                                                platform: "twitter" }, 
+                                                class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-tw", 
                                                 title: "Share on Twitter" \
                                             do %>
                                                 <i class="fab fa-twitter"></i>
@@ -40,7 +44,9 @@
                                         </div>
                                         <div class="col-xs-4">
                                              <%= link_to "#", 
-                                                data:  { permalink: "#{request.base_url + url_for(entry)}", platform: "linkedin" }, class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-tw", 
+                                                data:  { permalink: "#{request.base_url + url_for(entry)}", 
+                                                platform: "linkedin" }, 
+                                                class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-tw", 
                                                 title: "Share on LinkedIn" \
                                             do %>
                                                 <i class="fab fa-linkedin"></i>
