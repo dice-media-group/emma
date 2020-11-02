@@ -42,8 +42,6 @@ Rails.application.routes.draw do
 
     resources :press_kit_photos
 
-    resources :press_kit_entries
-
     resources :press_kits
 
     resources :leads
