@@ -5,8 +5,14 @@ class PressKitsController < ApplicationController
   # GET /press_kits
   # GET /press_kits.json
   def index
-    @press_kits = PressKit.all
     render :layout => 'frontdoor'
+
+    @press_kits         = PressKit.all
+    @press_kit          = PressKit.first
+    @press_kit_entries = PressKit.first.press_kit_entries
+    @press_kit_photos   = @press_kit.press_kit_photos.all
+    @press_kit_headshots  = @press_kit.press_kit_photos.published_headshots
+    @press_kit_actionshots  = @press_kit.press_kit_photos.published_action_shots
   end
 
   # GET /press_kits/1

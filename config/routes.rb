@@ -40,6 +40,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
 
+    resources :press_kit_photos
+
+    resources :press_kit_entries
+
+    resources :press_kits
+
     resources :leads
 
     resources :merchandise_links

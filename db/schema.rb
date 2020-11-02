@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_31_000953) do
+ActiveRecord::Schema.define(version: 2020_11_01_223055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -229,9 +229,36 @@ ActiveRecord::Schema.define(version: 2020_10_31_000953) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "press_kit_entries", force: :cascade do |t|
+    t.string "title"
+    t.text "article_link"
+    t.text "article_image_url"
+    t.datetime "release_at"
+    t.bigint "press_kit_id", null: false
+    t.date "published_on"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["press_kit_id"], name: "index_press_kit_entries_on_press_kit_id"
+  end
+
+  create_table "press_kit_photos", force: :cascade do |t|
+    t.string "title"
+    t.string "byline"
+    t.text "description"
+    t.string "dimensions_wxh"
+    t.bigint "press_kit_id", null: false
+    t.string "headshot_or_other"
+    t.text "link"
+    t.datetime "publish_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["press_kit_id"], name: "index_press_kit_photos_on_press_kit_id"
+  end
+
   create_table "press_kits", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
   end
 
   create_table "publisher_accts", force: :cascade do |t|
@@ -324,6 +351,8 @@ ActiveRecord::Schema.define(version: 2020_10_31_000953) do
   add_foreign_key "broadcaster_theme_avatars", "broadcaster_themes"
   add_foreign_key "broadcaster_videos", "broadcaster_themes"
   add_foreign_key "merchandise_links", "books"
+  add_foreign_key "press_kit_entries", "press_kits"
+  add_foreign_key "press_kit_photos", "press_kits"
   add_foreign_key "services", "users"
   add_foreign_key "taggings", "tags"
 end

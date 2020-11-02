@@ -1,48 +1,186 @@
-<% billboard_image_filename = "press_kit_hero.jpg" %>
-<% headline = "Press Kit & Headshots" %>
-<%= render partial: '/shared/static_billboard', 
+<% billboard_image_filename = "press_kit_hero.jpg" %><% headline = "Press Kit & Headshots" %><%= render partial: '/shared/static_billboard', 
     locals: { image_filename: billboard_image_filename,
               headline:       headline
     
     } %>
 
 
-
-<div class="row">
-  <div class="col-sm-6">
-    <h1>Press_kits</h1>
-  </div>
-
-  <div class="col-sm-6 text-right">
-  <%= link_to new_press_kit_path, class: 'btn btn-primary' do %>
-    Add New Press kit
-  <% end %>
-  </div>
-</div>
-
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-      <tr>
-    
-
+  <div class="ct-content-wrapper">
+    <div class="ct-page-wrapper container">
+      <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <div class="ct-page-content">
+            <h2 class="h1 ct-liner-simple">Basic Info</h2>
+            <h6 class="ct-h-slab ct-h-nomargin">Full Name</h6>
+            <p>Gary Vaynerchuk</p>
+            <h6 class="ct-h-slab ct-h-nomargin">Other names</h6>
+            <p>Garyvee</p>
+            <h6 class="ct-h-slab ct-h-nomargin">Born</h6>
+            <p>November 14, 1975 (age 44)<br>
+            Babruysk, Soviet Union</p>
+            <h6 class="ct-h-slab ct-h-nomargin">Website</h6>
+            <p><a href="http://garyvaynerchuk.com">garyvaynerchuk.com</a></p>
+            <h6 class="ct-h-slab ct-h-nomargin">Social</h6>
+            <ul>
+              <li>
+                <a href="http://facebook.com/gary"
+                    rel="noopener"
+                    target="_blank">Facebook</a>
+              </li>
+              <li>
+                <a href="http://instagram.com/garyvee"
+                    rel="noopener"
+                    target="_blank">Instagram</a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/garyveetv">GaryVee TV</a>
+              </li>
+              <li>
+                <a href="http://youtube.com/garyvee">Main YouTube Channel</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/garyvaynerchuk">LinkedIn</a>
+              </li>
+              <li>
+                <a href="http://twitter.com/garyvee"
+                    rel="noopener"
+                    target="_blank">Twitter</a>
+              </li>
+              <li>
+                <a href="https://www.pinterest.com/garyvee/"
+                    rel="noopener"
+                    target="_blank">Pinterest</a>
+              </li>
+              <li>
+                <a href="http://Tiktok.com/@garyvee">TikTok</a>
+              </li>
+            </ul>
+            <p>International pages:</p>
+            <ul>
+              <li>
+                <a href="http://facebook.com/garyveearabic">GaryVee Arabic Facebook</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/garyveearabic/">GaryVee Arabic Instagram</a>
+              </li>
+              <li>
+                <a href="https://facebook.com/garyveechinese">GaryVee Chinese Facebook</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/garyveechinese/">GaryVee Chinese Instagram</a>
+              </li>
+              <li>
+                <a href="https://facebook.com/garyveebrazil">GaryVee Brazil Facebook</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/garyveebrazil/">GaryVee Brazil Instagram</a>
+              </li>
+              <li>
+                <a href="https://facebook.com/garyveeespanol">GaryVee Español Facebook</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/garyveeespanol/">GaryVee Español Instagram</a>
+              </li>
+              <li>
+                <a href="http://facebook.com/garyveepolish">GaryVee Polish Facebook</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/garyveepolish/">GaryVee Polish Instagram</a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/GaryVeeFrench/">GaryVee French Facebook</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/garyveefrancais/">GaryVee French Instagram</a>
+              </li>
+            </ul>
+            <p>&nbsp;</p>
+            <h6 class="ct-h-slab ct-h-nomargin">Lil Vee</h6>
+            <ul>
+              <li>
+                <a href="https://www.youtube.com/channel/UC53HHTJpTQSLn41K2iSggEA">Lil Vee YouTube</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/lilvee/">Lil Vee Instagram</a>
+              </li>
+            </ul>
+            <p><a href="https://www.instagram.com/garyveefrancais/"><br>
+            <img alt="ct-snapcode"
+                 class="aligncenter wp-image-6157 size-full"
+                 height="208"
+                 sizes="(max-width: 209px) 100vw, 209px"
+                 src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20151106222227/ct-snapcode.png"
+                 srcset="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20151106222227/ct-snapcode.png 209w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20151106222227/ct-snapcode-120x119.png 120w"
+                 width="209"></a></p>
+            <h6 class="ct-h-slab ct-h-nomargin">Companies</h6>
+            <p><a href="http://Vaynermedia.com">VaynerMedia</a><br>
+            <a href="http://VaynerRSE.com">Vayner/RSE</a><br>
+            <a href="http://vaynersports.com">VaynerSports</a><br>
+            <a href="https://vaynerspeakers.com">VaynerSpeakers</a><br>
+            <a href="http://empathywines.com">Empathy Wines</a><br>
+            <a href="http://gallerymediagroup.com">Gallery Media Group</a><br>
+            <a href="http://tracer.tech">Tracer</a></p>
+            <p>&nbsp;</p>
+            <h6 class="ct-h-slab ct-h-nomargin">Contact</h6>
+            <p><a href="mailto:zach@vaynerspeakers.com"
+               rel="noopener"
+               target="_blank">Zachary Nadler</a><br>
+            Vayner Speakers<br>
+            <a href="http://www.vaynerspeakers.com"
+               rel="noopener"
+               target="_blank">vaynerspeakers.com</a></p>
+            <p>For VaynerMedia inquiries: <a href="mailto:comms@vaynermedia.com"
+               rel="noopener"
+               target="_blank">Communications Team</a></p>
+            <p>For Gary Vaynerchuk related inquiries: <a href="mailto:maha.abouelenein@vaynermedia.com">Maha Abouelenein</a></p>
+            <div class="page-spacer-sm"></div>
+          </div>
+        </div>
+        <div class="col-sm-8 col-md-8 col-md-push-1">
+          <div class="ct-page-content">
             
-          <th></th>
-        
-      </tr>
-    </thead>
+            <h2 class="h1 ct-liner-half">Biography</h2>
+            <p>Gary Vaynerchuk is a serial entrepreneur and the Chairman of <a href="http://vaynerx.com/">VaynerX</a>, a modern day communications parent company, as well as the CEO and Co-Founder of<a href=
+            "http://www.vaynermedia.com/">&nbsp;VaynerMedia</a>, a full-service digital agency servicing Fortune 500 clients across the company’s 4 locations.</p>
+            <p>His fifth book <a href="https://www.amazon.com/Crushing-Great-Entrepreneurs-Business-Influence/dp/0062674676/ref=sr_1_6?s=books&amp;ie=UTF8&amp;qid=1508884863&amp;sr=1-6&amp;keywords=Gary+Vaynerchuk">“</a><span class="a-size-large"
+                  id="productTitle"><a href="https://www.amazon.com/Crushing-Great-Entrepreneurs-Business-Influence/dp/0062674676/ref=sr_1_6?s=books&amp;ie=UTF8&amp;qid=1508884863&amp;sr=1-6&amp;keywords=Gary+Vaynerchuk">Crushing It!: How Great
+                  Entrepreneurs Build Business and Influence-and How You Can, Too”</a> is available in stores now!</span></p>
+            <p>Gary rose to prominence in the late 90’s after establishing one of the first ecommerce wine sites,&nbsp;<a href="https://winelibrary.com/">WineLibrary</a>&nbsp;helping his father grow the family business from 4 to 60MM in sales.</p>
+            <p>Gary is also one of the most sought after public speakers alive today. He is a venture capitalist,<a href="https://www.garyvaynerchuk.com/books/">&nbsp;5-time New York Times bestselling author</a>, and an early investor in companies
+            such as Twitter, Tumblr, Venmo and Uber. Gary has been named to both&nbsp;<a href="http://www.crainsnewyork.com/40under40/2015/Vaynerchuk">Crain’s</a>&nbsp;and<a href=
+            "http://fortune.com/40-under-40/2014/gary-vaynerchuk-40/">&nbsp;Fortune’s 40 Under 40 lists</a>.</p>
+            <p>Gary is currently the subject of<a href="https://www.youtube.com/playlist?list=PLfA33-E9P7FA-A72QKBw3noWuQbaVXqSD">&nbsp;DailyVee</a>, an online documentary series highlighting what it’s like to be a CEO and public figure in today’s
+            digital world. He is also the host of<a href="https://www.youtube.com/playlist?list=PLfA33-E9P7FC0AoARnMLvgFgESJe4_Ngs">&nbsp;#AskGaryVee</a>, a business and advice Q&amp;A show online.</p>
+            <p>Gary is also the host of a global top 10 business podcast,&nbsp;<a href="https://www.garyvaynerchuk.com/podcast/">The Gary Vaynerchuk Audio Experience</a>.</p>
+            <p>Gary’s signature sneakers, <a href="http://www.kswiss.com/garyvee">The GaryVee 001 &amp; 002</a> in collaboration with K-Swiss sold out on opening day.</p>
+            <p>He is the Co-Founder of <a href="http://vaynersports.com/">VaynerSports,</a>&nbsp;a full service athlete representation agency with more than 20 clients with his brother AJ.</p>
+            <p>Gary also appears with Gwyneth Paltrow, Jessica Alba and&nbsp;Will.i.am on Apple’s first original series “<a href="https://www.planetoftheapps.com/en-us">Planet of the Apps</a>” out now.</p>
+            <p class="text-right"><a href="http://garyvaynerchuk.com/biography">Read Extended Bio &gt;&gt;</a></p>
+          </div>
 
-    <tbody>
-      <% @press_kits.each do |press_kit| %>
-        <%= content_tag :tr, id: dom_id(press_kit), class: dom_class(press_kit) do %>
-          
+          <% @press_kit_entries       = PressKit.first.press_kit_entries %>
+          <% @press_kit_headshots     = PressKit.first.press_kit_photos.published_headshots %>
+          <% @press_kit_actionshots   = PressKit.first.press_kit_photos.published_action_shots %>
+          <div class="ct-page-content"
+               id="gvpg-media-appearances">
+            <h3 class="h1 ct-liner-half">Recent Press</h3>
+            <%= render  partial: "press_kit_entry", 
+            collection: @press_kit_entries, 
+            as: :press_kit_entry %>
 
-          
-          
-            <td><%= link_to 'Show', press_kit %></td>
-          
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+          </div>
+          <div class="ct-page-content"
+               id="gvpg-media-downloads">
+            <h3 class="h1 ct-liner-half">Headshots &amp; Photos</h3>
+            <%= render  partial: "press_kit_photo", 
+            collection: @press_kit_headshots, 
+            as: :press_kit_photo %>
+
+            <%= render  partial: "press_kit_photo", 
+            collection: @press_kit_actionshots, 
+            as: :press_kit_photo %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
