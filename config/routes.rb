@@ -40,6 +40,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
 
+    resources :press_kit_entries
+
+    resources :press_kit_links
+
     resources :press_kit_photos
 
     resources :press_kits
@@ -62,7 +66,6 @@ Rails.application.routes.draw do
   get '/podcast', to: 'podcasts#index'
   get '/events', to: 'meetups#index'
   get '/media-appearances', to: 'media_appearances#index'
-  get '/press-kit', to: 'press_kits#index'
   get '/terms', to: 'home#terms'
   get '/biography', to: 'home#biography'
   get '/first-time-here', to: 'home#first_time_here'
@@ -78,6 +81,10 @@ Rails.application.routes.draw do
   resources :backstage, only: [:index]
   resources :announcements, only: [:index]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  
+  resource :press_kit
+  resolve('PressKit') { [:press_kit] }
+
   root to: 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

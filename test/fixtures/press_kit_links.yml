@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text: MyString
+  url: MyString
+  category: MyString
+  press_kit: one
+
+two:
+  text: MyString
+  url: MyString
+  category: MyString
+  press_kit: two
