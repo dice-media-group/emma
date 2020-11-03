@@ -12,6 +12,7 @@ class PressKitDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     name: Field::String,
+    biography:Field::Text
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -33,6 +34,7 @@ class PressKitDashboard < Administrate::BaseDashboard
   created_at
   updated_at
   name
+  biography
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -40,6 +42,7 @@ class PressKitDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   name
+  biography
   ].freeze
 
   # COLLECTION_FILTERS
