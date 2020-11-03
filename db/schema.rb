@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_01_223055) do
+ActiveRecord::Schema.define(version: 2020_11_03_215435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -241,6 +241,16 @@ ActiveRecord::Schema.define(version: 2020_11_01_223055) do
     t.index ["press_kit_id"], name: "index_press_kit_entries_on_press_kit_id"
   end
 
+  create_table "press_kit_links", force: :cascade do |t|
+    t.string "text"
+    t.string "url"
+    t.string "category"
+    t.bigint "press_kit_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["press_kit_id"], name: "index_press_kit_links_on_press_kit_id"
+  end
+
   create_table "press_kit_photos", force: :cascade do |t|
     t.string "title"
     t.string "byline"
@@ -259,6 +269,8 @@ ActiveRecord::Schema.define(version: 2020_11_01_223055) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.date "birth_date"
+    t.string "birthplace"
   end
 
   create_table "publisher_accts", force: :cascade do |t|
@@ -352,6 +364,7 @@ ActiveRecord::Schema.define(version: 2020_11_01_223055) do
   add_foreign_key "broadcaster_videos", "broadcaster_themes"
   add_foreign_key "merchandise_links", "books"
   add_foreign_key "press_kit_entries", "press_kits"
+  add_foreign_key "press_kit_links", "press_kits"
   add_foreign_key "press_kit_photos", "press_kits"
   add_foreign_key "services", "users"
   add_foreign_key "taggings", "tags"
