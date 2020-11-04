@@ -1,9 +1,20 @@
 <div class="col-sm-3 ct-flex-sidebar left-priority">
-   <p><img class="wp-image-7896 aligncenter" src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180206155530/ct-entreprenuer-cover.jpg" alt="" width="225" height="352"></p>
-   <h2 class="h1 ct-liner text-center">Carl Tanner</h2>
-   <p class="text-center">Family 1st! but after that, Businessman. Chairman of <a href="http://vaynerx.com/">VaynerX</a> and CEO of <a href="http://vaynermedia.com" target="_blank" rel="noopener noreferrer">VaynerMedia</a>. Subject of <a href="https://www.youtube.com/garyvee">#DailyVee</a> and The&nbsp;<a href="https://www.youtube.com/playlist?list=PLfA33-E9P7FC0AoARnMLvgFgESJe4_Ngs" target="_blank" rel="noopener noreferrer">#AskGaryVee Show</a>. A dude who loves the hustle. Oh, and I love the NY Jets… 😉</p>
+   <p>
+      <%= image_tag @first_time.featured_image_src,
+                     size: "225x352",
+                     class: "wp-image-7896 aligncenter"
+      %>
+   </p>
+   <h2 class="h1 ct-liner text-center"><%= "#{@first_time.first_name} #{@first_time.last_name}" %> </h2>
+   <p class="text-center">
+      <%= "#{@first_time.blurb}" %>
+   </p>
 
-   <p><a class="ct-btn ct-btn-tweet ct-btn-block" href="https://twitter.com/garyvee" target="_blank" rel="noreferrer">@gocarlgodotcom</a></p>
+   <p>
+      <a class="ct-btn ct-btn-tweet ct-btn-block" href="https://twitter.com/garyvee" target="_blank" rel="noreferrer">
+         <%= "#{@first_time.twitter_handle}" %>
+      </a>
+   </p>
 
    <div id="gv_widgets_socialprops-3" class="ct-widget ct-widget-socialprops clearfix text-center">
       <div class="sidebar-c-3"> 

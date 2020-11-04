@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     end
   end
   resources :press_kits
+  resources :first_times, only: [:show]
+
   get 'services/index'
   resources :books, only: [:index]
   resources :media_appearances
@@ -39,6 +41,10 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+
+    resources :first_time_entries
+
+    resources :first_times
 
     resources :press_kit_entries
 
@@ -68,7 +74,7 @@ Rails.application.routes.draw do
   get '/media-appearances', to: 'media_appearances#index'
   get '/terms', to: 'home#terms'
   get '/biography', to: 'home#biography'
-  get '/first-time-here', to: 'home#first_time_here'
+  get '/first-time-here', to: 'first_times#show'
   get '/hire-me', to: 'home#hire_me'
   get '/get-in-touch-with-me', to: 'home#contact_me'
 

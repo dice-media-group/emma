@@ -1,0 +1,44 @@
+<style>
+
+</style>
+
+  <div class="col-sm-8 col-sm-push-1 col-md-8 col-md-push-1">
+    <!-- wrap -->
+    <div class="ct-flex-row"
+         id="flex-module-0">
+      <h2 class="h1 ct-liner-half">About <%= "#{@first_time.first_name} #{@first_time.last_name}" %></h2>
+    </div>
+    <div class="ct-flex-row"
+         id="flex-module-1">
+      <p><%= @first_time.biography %></p>
+    </div>
+    <div class="ct-flex-row"
+         id="flex-module-2">
+      <h2 class="h1 ct-liner-half">Must Watch Video</h2>
+    </div>
+    <div class="ct-flex-row"
+         id="flex-module-3">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe allowfullscreen="allowfullscreen"
+             frameborder="0"
+             height="315"
+             src="<%= @first_time.featured_youtube_video_url %>"
+             width="560"></iframe>
+      </div>
+    </div>
+    <div class="ct-flex-row">
+      <div class="ct-flex--wiki ct-wiki-item clearfix ct-wiki-expandable opened"
+           id="flex-module-4">
+        <h4 class="ct-wiki-title has-ctrl"><a class="ct-wiki-expand-ctrl"
+           href="#flex-module-4|toggle">What You Should Read First
+        <div class="ct-wiki-exp-icon"></div></a></h4>
+        <div class="ct-wiki-content">
+          <div class="ct-first-time-grid">
+            <%= render  partial: "first_time_entry", 
+              collection: @first_time.first_time_entries.all, 
+              as: :first_time_entry %>          
+          </div>
+        </div><!-- gv wiki content w/in post-ref -->
+      </div>
+    </div><!-- flex-module wiki -->
+  </div>
