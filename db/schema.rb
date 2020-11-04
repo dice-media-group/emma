@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_215435) do
+ActiveRecord::Schema.define(version: 2020_11_04_003902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -164,6 +164,29 @@ ActiveRecord::Schema.define(version: 2020_11_03_215435) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "broadcaster_theme_id", null: false
     t.index ["broadcaster_theme_id"], name: "index_broadcaster_videos_on_broadcaster_theme_id"
+  end
+
+  create_table "first_time_entries", force: :cascade do |t|
+    t.string "title"
+    t.text "article_link"
+    t.text "article_image_url"
+    t.datetime "release_at"
+    t.bigint "first_time_id", null: false
+    t.date "published_on"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["first_time_id"], name: "index_first_time_entries_on_first_time_id"
+  end
+
+  create_table "first_times", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "blurb"
+    t.string "twitter_handle"
+    t.text "featured_image_src"
+    t.text "featured_youtube_video_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -362,6 +385,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_215435) do
   add_foreign_key "broadcaster_theme_avatars", "broadcaster_avatars"
   add_foreign_key "broadcaster_theme_avatars", "broadcaster_themes"
   add_foreign_key "broadcaster_videos", "broadcaster_themes"
+  add_foreign_key "first_time_entries", "first_times"
   add_foreign_key "merchandise_links", "books"
   add_foreign_key "press_kit_entries", "press_kits"
   add_foreign_key "press_kit_links", "press_kits"
