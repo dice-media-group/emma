@@ -1,3 +1,20 @@
-<h1>New lead</h1>
-
-<%= render 'form', lead: @lead %>
+  <div class="ct-content-wrapper">
+    <div class="ct-page-wrapper container">
+      <h1 class="ct-liner">Contact</h1>
+      <div class="ct-page-content">
+        <div style="width: 100%; display: flex; justify-content: center;">
+          <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  frameborder="0"
+                  height="506"
+                  src="%3C%=%20@getcontactcontent.youtube_url%20%%3E?feature=oembed"
+                  width="900"></iframe></p>
+        </div>
+        <p><%= @getcontactcontent.page_message %></p>
+        <div class="gf_browser_chrome gform_wrapper"
+             id="gform_wrapper_1">
+          <%= render '/shared/lead_form', lead: @lead %>
+        </div>
+      </div>
+    </div>
+  </div>

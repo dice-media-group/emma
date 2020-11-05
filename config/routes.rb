@@ -42,6 +42,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
 
+    resources :get_in_contact_contents
+
     resources :first_time_entries
 
     resources :first_times
@@ -76,7 +78,7 @@ Rails.application.routes.draw do
   get '/biography', to: 'home#biography'
   get '/first-time-here', to: 'first_times#show'
   get '/hire-me', to: 'home#hire_me'
-  get '/get-in-touch-with-me', to: 'home#contact_me'
+  get '/get-in-touch-with-me', to: 'leads#new'
 
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'

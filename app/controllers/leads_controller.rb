@@ -10,6 +10,7 @@ class LeadsController < ApplicationController
   # GET /leads/new
   def new
     @lead = Lead.new
+    @getcontactcontent = GetInContactContent.first
   end
 
 
