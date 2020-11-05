@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       resources :theme_avatars
     end
   end
-  resources :press_kits
+  resources :press_kits, only: [:show]
   resources :first_times, only: [:show]
 
   get 'services/index'
@@ -79,6 +79,7 @@ Rails.application.routes.draw do
   get '/first-time-here', to: 'first_times#show'
   get '/hire-me', to: 'home#hire_me'
   get '/get-in-touch-with-me', to: 'leads#new'
+  get '/press-kit', to: 'press_kits#show'
 
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
@@ -90,9 +91,6 @@ Rails.application.routes.draw do
   resources :announcements, only: [:index]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   
-  resource :press_kit
-  resolve('PressKit') { [:press_kit] }
-
   root to: 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
