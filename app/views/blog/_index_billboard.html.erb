@@ -1,61 +1,14 @@
+
 <section class="ct-billboard-wrapper ct-post-feature">
             <article class="ct-billboard">
                 <div class="ct-billboard-poster" style="opacity: 1;">
                     <%= image_tag entry.image %>
-                    <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20191113205121/CONTENTDECK_ARTICLEIMAGESArtboard-1.png" 
-                    class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" 
-                    srcset="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20191113205121/CONTENTDECK_ARTICLEIMAGESArtboard-1.png 1400w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20191113205121/CONTENTDECK_ARTICLEIMAGESArtboard-1-250x200.png 250w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20191113205121/CONTENTDECK_ARTICLEIMAGESArtboard-1-768x614.png 768w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20191113205121/CONTENTDECK_ARTICLEIMAGESArtboard-1-700x560.png 700w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20191113205121/CONTENTDECK_ARTICLEIMAGESArtboard-1-120x96.png 120w" sizes="(max-width: 1400px) 100vw, 1400px">                
+
+
                 </div>
                 <div class="ct-billboard-postwrap">
                     <div class="ct-post-container container">
-                        <div class="row clearfix ct-post-sharemeta">
-                            <div class="col-sm-6 col-md-7 ct-post-tags">
-                                <% entry.tag_list.each do |t| %>
-                                    <%= link_to "##{t}" , tag_path(t) %>                                
-                                <% end %>
-
-                                <a href="#" data-permalink="https://www.garyvaynerchuk.com/how-to-create-64-pieces-of-content-in-a-day/" class="ct-btn ct-btn-white ct-post-mobileshare pull-right visible-xs-inline-block">
-                                    Share <i class="fa fa-share"></i>
-                                </a>
-                            </div>
-                            <div class="hidden-xs col-sm-6 col-md-4 pull-right text-right">
-                                <div class="ct-post-sharing hidden-xs">
-                                    <div class="row">
-                                        <div class="col-xs-4">
-                                            <%= link_to "#", 
-                                                data:  { permalink: "#{request.base_url + url_for(entry)}", 
-                                                platform: "facebook" }, 
-                                                class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-fb", 
-                                                title: "Share on Facebook" \
-                                            do %>
-                                                <i class="fab fa-facebook"></i>
-                                            <% end %>
-                                            
-                                        </div>
-                                        <div class="col-xs-4">
-                                             <%= link_to "#", 
-                                                data:  { permalink: "#{request.base_url + url_for(entry)}", 
-                                                platform: "twitter" }, 
-                                                class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-tw", 
-                                                title: "Share on Twitter" \
-                                            do %>
-                                                <i class="fab fa-twitter"></i>
-                                            <% end %>
-                                        </div>
-                                        <div class="col-xs-4">
-                                             <%= link_to "#", 
-                                                data:  { permalink: "#{request.base_url + url_for(entry)}", 
-                                                platform: "linkedin" }, 
-                                                class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-tw", 
-                                                title: "Share on LinkedIn" \
-                                            do %>
-                                                <i class="fab fa-linkedin"></i>
-                                            <% end %>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <%= render partial: '/blog/article_sharing_bar', locals: { entry: entry } %>
                         <div class="row clearfix">
                             <div class="col-sm-6">
                                 <h1 class="ct-ctrl-title ct-liner-simple ct-post-title">

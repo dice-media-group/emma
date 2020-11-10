@@ -9,30 +9,8 @@
           <%= image_tag entry_image, size: "768x614" %>
         
         <% end %>
-        <%# 
-        <a href="https://www.garyvaynerchuk.com/the-garyvee-content-strategy-how-to-grow-and-distribute-your-brands-social-media-content/">
-          <img alt=""
-             class="attachment-large size-large wp-post-image"
-             sizes="(max-width: 700px) 100vw, 700px"
-             src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-700x560.png"
-             srcset=
-             "https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-700x560.png 700w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-250x200.png 250w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-768x614.png 768w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-120x96.png 120w">
-        </a>  %>
       </div>
-      <div class="row clearfix ct-post-sharemeta">
-        <div class="col-sm-5 col-md-6 ct-post-tags">
-          <% entry.tag_list.each do |t| %>
-            <%= link_to "##{t}" , tag_path(t), class: "link-blue" %>                                
-          <% end %>
-
-          <a class="ct-btn ct-btn-white ct-post-mobileshare pull-right visible-xs-inline-block"
-              data-permalink="https://www.garyvaynerchuk.com/the-garyvee-content-strategy-how-to-grow-and-distribute-your-brands-social-media-content/"
-              href="#">
-            Share 
-          </a>
-        </div>
-        <%= render '/blog/article_sharing_bar' %>
-      </div>
+        <%= render partial: '/blog/article_sharing_bar', locals: { entry: entry } %>
       <div class="row clearfix">
         <div class="col-sm-6">
           <h1 class="ct-ctrl-title ct-post-title ct-liner-simple">

@@ -15,10 +15,10 @@ function fbInit(t) {
 function onYouTubeIframeAPIReady() {
   if (window.is_askgaryveee_post === !0) {
     var t, e, n, o, s, r;
-    if ($(".gv-post-content").html()) {
+    if ($(".ct-post-content").html()) {
       var a = document.getElementsByTagName("iframe");
       for (
-        r = $(".gv-post-content")
+        r = $(".ct-post-content")
           .html()
           .match(/\d+:\d+/g),
           i = 0;
@@ -79,7 +79,7 @@ var GV = (window.GV = {
       this.module("mq") && this.module("mq").init(),
       $("body").removeClass("modal-active"),
       Cookies.get("gvctafirst") ||
-        ($("#gv-main-nav").addClass("has-cta"), Cookies.set("gvctafirst", !0)),
+        ($("#ct-main-nav").addClass("has-cta"), Cookies.set("gvctafirst", !0)),
       this
     );
   },
@@ -147,8 +147,8 @@ var GV = (window.GV = {
     GV.init();
 })(window.jQuery),
   (function(t, e, i) {
-    t("#gv-main-nav").on("click", ".gv-nav-toggle", function() {
-      var e = t("#gv-main-footer").offset().top + t("#gv-main-nav").height();
+    t("#ct-main-nav").on("click", ".ct-nav-toggle", function() {
+      var e = t("#ct-main-footer").offset().top + t("#ct-main-nav").height();
       t("html,body").animate({ scrollTop: e }, 250);
     });
   })(window.jQuery, GV, GV.module("nav")),
@@ -174,9 +174,9 @@ var GV = (window.GV = {
         s + "?" + i.join("&")
       );
     }
-    var o = ".gv-modal-ctrl",
+    var o = ".ct-modal-ctrl",
       s = (i.specs = {
-        "#gv-search": function(e, i, n) {
+        "#ct-search": function(e, i, n) {
           switch (n) {
             case "modal-open":
               t(i)
@@ -189,7 +189,7 @@ var GV = (window.GV = {
       });
     i.players = {};
     t(o).length > 0 &&
-      t(".gv-body-wrapper").on("click", o, function() {
+      t(".ct-body-wrapper").on("click", o, function() {
         var i,
           o,
           r,
@@ -250,9 +250,9 @@ var GV = (window.GV = {
     });
   })(window.jQuery, window.GV, window.GV.module("popup")),
   (function(t, e, i) {
-    var n = ".gv-anchor-ctrl";
+    var n = ".ct-anchor-ctrl";
     t(n).length > 0 &&
-      t(".gv-body-wrapper").on("click", n, function() {
+      t(".ct-body-wrapper").on("click", n, function() {
         var e,
           i,
           n,
@@ -266,7 +266,7 @@ var GV = (window.GV = {
         if (
           ((i = e[0]),
           (n = e[1]),
-          (o = t(".gv-anchor-pt[name=" + i.replace("#") + "]").first()),
+          (o = t(".ct-anchor-pt[name=" + i.replace("#") + "]").first()),
           !(o.length <= 0 && t(i).length > 0))
         )
           return !1;
@@ -284,24 +284,24 @@ var GV = (window.GV = {
   })(window.jQuery, window.GV, window.GV.module("anchorscroll")),
   (function(t, e, i) {
     var n = [
-      ".gv-post h1",
-      ".gv-post h2",
-      ".gv-post h3",
-      ".gv-post .h1",
-      ".gv-post .h2",
-      ".gv-post .h3",
+      ".ct-post h1",
+      ".ct-post h2",
+      ".ct-post h3",
+      ".ct-post .h1",
+      ".ct-post .h2",
+      ".ct-post .h3",
       ".stack-row h1",
       ".stack-row h2",
       ".stack-row h3",
       ".stack-row .h1",
       ".stack-row .h2",
       ".stack-row .h3",
-      ".gv-articleunit-content h1",
-      ".gv-articleunit-content h2",
-      ".gv-articleunit-content h3",
-      ".gv-articleunit-content .h1",
-      ".gv-articleunit-content .h2",
-      ".gv-articleunit-content .h3",
+      ".ct-articleunit-content h1",
+      ".ct-articleunit-content h2",
+      ".ct-articleunit-content h3",
+      ".ct-articleunit-content .h1",
+      ".ct-articleunit-content .h2",
+      ".ct-articleunit-content .h3",
     ];
     (i.routine = function() {
       t(n.join(",")).each(function() {
@@ -321,7 +321,7 @@ var GV = (window.GV = {
     (i = function(e) {
       (this.MAX_SHIFT =
         2 *
-        t(".gv-nav-wrapper")
+        t(".ct-nav-wrapper")
           .first()
           .height()),
         (this.bb = e),
@@ -331,7 +331,7 @@ var GV = (window.GV = {
         initEvents: function() {
           function e(e) {
             var n = t("body").scrollTop(),
-              s = i.bb.hasClass("gv-post-feature");
+              s = i.bb.hasClass("ct-post-feature");
             o.isAtLeast("md") &&
               n <= i.MAX_SHIFT &&
               (n > i.MAX_SHIFT && (n = i.MAX_SHIFT),
@@ -340,7 +340,7 @@ var GV = (window.GV = {
                 marginBottom: s ? 0 : n / -2 + "px",
               }),
               i.bb
-                .find(".gv-billboard-poster")
+                .find(".ct-billboard-poster")
                 .css({ opacity: 1 - n / (5 * i.MAX_SHIFT) }));
           }
           var i = this;
@@ -356,12 +356,12 @@ var GV = (window.GV = {
                 marginBottom: i.MAX_SHIFT / -2 + "px",
               }),
               i.bb
-                .find(".gv-billboard-poster")
+                .find(".ct-billboard-poster")
                 .css({ opacity: 1 - i.MAX_SHIFT / (5 * i.MAX_SHIFT) }));
         },
       }),
-      t(".gv-billboard-wrapper").length > 0 &&
-        t(".gv-billboard-wrapper").each(function() {
+      t(".ct-billboard-wrapper").length > 0 &&
+        t(".ct-billboard-wrapper").each(function() {
           n.push(new i(t(this)));
         });
   })(window.jQuery, GV, GV.module("billboard")),
@@ -380,8 +380,8 @@ var GV = (window.GV = {
         o = e.attr("data-picture") || !1,
         s =
           e
-            .parents(".post, .gv-post-container")
-            .find(".gv-ctrl-title")
+            .parents(".post, .ct-post-container")
+            .find(".ct-ctrl-title")
             .first()
             .text()
             .trim() || e.attr("data-title");
@@ -492,9 +492,9 @@ var GV = (window.GV = {
       }
       return !1;
     }),
-      t(".gv-body-wrapper, .gv-single-wrapper").on(
+      t(".ct-body-wrapper, .ct-single-wrapper").on(
         "click",
-        ".gv-ctrl-share",
+        ".ct-ctrl-share",
         function() {
           return (
             _.isUndefined(FB)
@@ -506,7 +506,7 @@ var GV = (window.GV = {
           );
         }
       ),
-      t(".gv-body-wrapper").on("click", ".gv-btn-tweet", function() {
+      t(".ct-body-wrapper").on("click", ".ct-btn-tweet", function() {
         return (
           window.open(
             "https://twitter.com/intent/tweet?text=" +
@@ -518,11 +518,11 @@ var GV = (window.GV = {
           !1
         );
       }),
-      t(".gv-body-wrapper").on("click", ".gv-post-mobileshare", function() {
+      t(".ct-body-wrapper").on("click", ".ct-post-mobileshare", function() {
         var e = t(this).attr("data-permalink"),
           i = t(this)
-            .parents(".post, .gv-post-container")
-            .find(".gv-ctrl-title")
+            .parents(".post, .ct-post-container")
+            .find(".ct-ctrl-title")
             .first()
             .text()
             .trim();
@@ -531,7 +531,7 @@ var GV = (window.GV = {
           (window.current_share_perma = e),
           (window.current_share_title = i),
           console.log("PERMA", window.current_share_perma, e),
-          t("#gv-mobile-share")
+          t("#ct-mobile-share")
             .stop()
             .fadeIn(250, function() {}),
           !1
@@ -563,8 +563,8 @@ var GV = (window.GV = {
   (function(t, e, i) {
     function n(e) {
       var i, n, s, r;
-      t(".gv-post-sharing.sidebar").length > 0 &&
-        ((i = t(".gv-post-sharing.sidebar.init")),
+      t(".ct-post-sharing.sidebar").length > 0 &&
+        ((i = t(".ct-post-sharing.sidebar.init")),
         (n = t("body").scrollTop() || t("html").scrollTop()),
         (r = parseInt(i.attr("data-top"))),
         (s = r - n),
@@ -578,20 +578,20 @@ var GV = (window.GV = {
         n,
         s,
         r,
-        a = t(".gv-single-wrapper .container").first();
+        a = t(".ct-single-wrapper .container").first();
       a.length > 0 &&
         ((i = a.offset().top),
         (n = a.offset().left),
-        t(".gv-post-sharing.sidebar").length > 0 &&
+        t(".ct-post-sharing.sidebar").length > 0 &&
           e.module("mq").isAtLeast("md_mid") &&
-          ((o = t(".gv-post-footer").offset().top),
+          ((o = t(".ct-post-footer").offset().top),
           (r = t("article.post")
-            .find(".gv-post-sharing.sidebar")
+            .find(".ct-post-sharing.sidebar")
             .first()),
           (s =
             i +
             a
-              .find("h1.gv-ctrl-title")
+              .find("h1.ct-ctrl-title")
               .first()
               .height() +
             50),
@@ -611,16 +611,16 @@ var GV = (window.GV = {
           var e = t("#fb-comments-display"),
             i = t(this);
           return (
-            i.hasClass("gv-btn-grey")
+            i.hasClass("ct-btn-grey")
               ? (i
-                  .removeClass("gv-btn-grey")
-                  .addClass("gv-btn-red")
+                  .removeClass("ct-btn-grey")
+                  .addClass("ct-btn-red")
                   .text("Hide Comments"),
                 e.stop().slideDown(250))
-              : i.hasClass("gv-btn-red") &&
+              : i.hasClass("ct-btn-red") &&
                 (i
-                  .removeClass("gv-btn-red")
-                  .addClass("gv-btn-grey")
+                  .removeClass("ct-btn-red")
+                  .addClass("ct-btn-grey")
                   .text("Show Comments"),
                 e.stop().slideUp(250)),
             t("body")
@@ -636,8 +636,8 @@ var GV = (window.GV = {
   (function(t, e, i) {
     var n = [];
     (i = function(t) {
-      (this.pclass = ".gv-wiki-expandable"),
-        (this.conclass = ".gv-wiki-content"),
+      (this.pclass = ".ct-wiki-expandable"),
+        (this.conclass = ".ct-wiki-content"),
         (this.wiki_block = t),
         this.initEvents();
     }),
@@ -645,7 +645,7 @@ var GV = (window.GV = {
         initEvents: function() {
           var e = this,
             i = e.wiki_block;
-          i.on("click", ".gv-wiki-expand-ctrl", function() {
+          i.on("click", ".ct-wiki-expand-ctrl", function() {
             var i = (t(this).attr("href"), t(this)),
               n = i.parents(e.pclass);
             return (
@@ -661,14 +661,14 @@ var GV = (window.GV = {
           });
         },
       }),
-      t(".gv-wiki-expandable").length > 0 &&
-        t(".gv-wiki-expandable").each(function() {
+      t(".ct-wiki-expandable").length > 0 &&
+        t(".ct-wiki-expandable").each(function() {
           n.push(new i(t(this)));
         });
   })(window.jQuery, window.GV, window.GV.module("wikirows")),
   (function(t, e, i) {
     var n = [],
-      o = ".gv-widget-mailinglist",
+      o = ".ct-widget-mailinglist",
       s = window.gvlocals.app_base + "wp-admin/admin-ajax.php",
       r = "Valid email required.",
       a = "Name required.",
@@ -699,7 +699,7 @@ var GV = (window.GV = {
         },
         dismissAlert: function() {
           this.$widget
-            .find(".gv-widget-alert")
+            .find(".ct-widget-alert")
             .stop()
             .slideUp(100, function() {
               t(this)
@@ -710,7 +710,7 @@ var GV = (window.GV = {
         },
         formAlert: function(t, e) {
           var i = "success",
-            n = this.$widget.find(".gv-widget-alert").first();
+            n = this.$widget.find(".ct-widget-alert").first();
           switch (t) {
             case "valid_error":
             case "mc_error":
@@ -754,7 +754,7 @@ var GV = (window.GV = {
               }
               return !1;
             }),
-            i.$widget.on("click", ".gv-widget-ctrl.close", function(t) {
+            i.$widget.on("click", ".ct-widget-ctrl.close", function(t) {
               return t.preventDefault(), i.dismissAlert(), !1;
             });
         },
@@ -792,12 +792,12 @@ var GV = (window.GV = {
           var e,
             i = this.$block,
             o = this;
-          (e = '<div class="gv-caption-sharing">'),
+          (e = '<div class="ct-caption-sharing">'),
             (e +=
-              '<a href="#facebook" data-platform="facebook" class="gv-btn gv-btn-s-fb"><span class="lift"><i class="fa fa-facebook"></i></span></a>'),
+              '<a href="#facebook" data-platform="facebook" class="ct-btn ct-btn-s-fb"><span class="lift"><i class="fa fa-facebook"></i></span></a>'),
             (e += "</div>"),
             i.find(".wp-caption-text").append(e),
-            i.on("click", ".gv-caption-sharing .gv-btn", function() {
+            i.on("click", ".ct-caption-sharing .ct-btn", function() {
               var e = t(this);
               e.attr("data-permalink", s),
                 e.attr("data-picture", o.img_src),
@@ -805,8 +805,8 @@ var GV = (window.GV = {
             });
         },
       }),
-      t(".gv-post-content .wp-caption").length > 0 &&
-        t(".gv-post-content .wp-caption").each(function() {
+      t(".ct-post-content .wp-caption").length > 0 &&
+        t(".ct-post-content .wp-caption").each(function() {
           o.push(new i(t(this)));
         });
   })(
