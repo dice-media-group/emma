@@ -17,7 +17,8 @@ class FirstTimeDashboard < Administrate::BaseDashboard
     twitter_handle: Field::String,
     featured_image_src: Field::Text,
     featured_youtube_video_url: Field::Text,
-    biography: Field::Text
+    biography: TrixField
+
 
   }.freeze
 
