@@ -14,7 +14,8 @@ class PressKitDashboard < Administrate::BaseDashboard
     name: Field::String,
     birth_date: Field::Date,
     birthplace: Field::String,
-    biography:Field::Text
+    biography: TrixField
+
   }.freeze
 
   # COLLECTION_ATTRIBUTES
