@@ -25,7 +25,7 @@ def first_time_here
   end
 
   def biography
-    @biography = Biography.last
+    @biography = Biography.last || 'No entry yet.  Update at <a href="/admin">admin</a>.'
   end
 
   def contact_me
