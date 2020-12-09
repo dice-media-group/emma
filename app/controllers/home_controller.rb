@@ -15,7 +15,7 @@ class HomeController < ApplicationController
   def privacy
   end
 
-  def first_time_here
+def first_time_here
     
   end
 
@@ -25,7 +25,7 @@ class HomeController < ApplicationController
   end
 
   def biography
-    
+    @biography = Biography.last
   end
 
   def contact_me

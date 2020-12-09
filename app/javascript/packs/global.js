@@ -2,6 +2,7 @@
 // source: https://2pyzcd2sdlnr1r3xjh15mrbn-wpengine.netdna-ssl.com/wp-content/themes/garysixteen/assets/js/global.min.js?v=2
 //
 //  front.js popupWindow might be needed for sharing
+// links to scroll
 
 function fbInit(t) {
   "undefined" != typeof FB
@@ -815,3 +816,4 @@ var GV = (window.GV = {
     window.GV.module("imgsharing"),
     window.GV.module("social")
   );
+
