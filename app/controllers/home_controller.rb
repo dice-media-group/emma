@@ -25,7 +25,10 @@ def first_time_here
   end
 
   def biography
-    @biography = Biography.last || 'No entry yet.  Update at <a href="/admin">admin</a>.'
+    @bio_hash   = { title:  "filler title",
+                    body:   "Whoops! There's no entry for your story yet.  Please update your story in <a href='/admin/biographies/new'>admin</a>.".html_safe
+                  }
+    @biography  = Biography.last || OpenStruct.new(@bio_hash)
   end
 
   def contact_me
@@ -34,4 +37,5 @@ def first_time_here
   def wallpapers
     
   end
+
 end

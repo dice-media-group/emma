@@ -1,7 +1,6 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  resources :biographies
   get 'tags/:tag', to: 'blog#index', as: :tag
   namespace :blog do
   end
