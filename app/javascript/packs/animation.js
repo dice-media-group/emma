@@ -1,28 +1,18 @@
+// animation will be available _after_ page has loaded
+document.addEventListener("DOMContentLoaded", function() {
+    // scroll to different parts of the page
+    // scroll into 
+    // https://github.com/iamdustan/smoothscroll
+    // scroll from the menu button to the menu in the footer
 
-// animate moving 'text me' coin //
-const coin      = document.querySelector(".coin");
-// sectionOne .home-intro
-const footer    = document.querySelector('footer');
+    menuTarget = document.querySelector('.ct-nav-mobile');
+    footerTarget = document.querySelector('#footer-menu');
 
-const footerOptions     = {
-        root: null, // Sets the framing element to the viewport
-    rootMargin: "0px",
-    threshold: 0.5
-};
-const footerObserver    = new IntersectionObserver(function(
-    entries, 
-    footerObserver
-) {
-    entries.forEach(entry => {
-        console.log(entry.target);
-      if (entry.isIntersecting){
-        coin.classList.add("pushed_to_right");
-      }else{
-        coin.classList.remove("pushed_to_right")
-      }
-    })
-}, footerOptions)
+    console.log(menuTarget);
+    console.log(footerTarget);
+    menuTarget.addEventListener('click', function(e) {
+            e.preventDefault();
+            footerTarget.scrollIntoView({ behavior: 'smooth' });
+    });
 
-footerObserver.observe(footer);
-
-
+});
