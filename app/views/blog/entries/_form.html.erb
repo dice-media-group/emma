@@ -14,7 +14,7 @@
   <% end %>
 </div>
 <div class="form-row">
-  <div class="col-5">
+  <div class="col-8">
 <%#    %>
   <div class="form-group">
     <%= form.label :title %>
@@ -24,6 +24,11 @@
   <div class="form-group">
     <%= form.label :tag_list, "Tags (seperated by commas)" %>
     <%= form.text_field :tag_list, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :summary %>
+    <%= form.rich_text_area :summary, class: 'form-control' %>
   </div>
 
   
@@ -60,7 +65,7 @@
 
 <%#  %>
   </div>
-  <div class="col-7">
+  <div class="col-4">
     <div class="form-group" data-uppy="blog_entry[image]">
       <%= form.label :image %>
       <div>

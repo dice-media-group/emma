@@ -1,4 +1,3 @@
-<title> Carl Tanner GoCarlGo.com<%#= Rails.configuration.application_name %></title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -8,8 +7,27 @@
   href="https://fonts.googleapis.com/css?family=Bowlby+One">
 
  <link rel="stylesheet" href="https://use.typekit.net/hmd6exz.css">
-<%= csrf_meta_tags %>
-<%= csp_meta_tag %>
+ <%= csrf_meta_tags %>
+ <!-- display_meta_tags -->
+      <%= display_meta_tags site: 'Carl Tanner @ GoCarlGo.com',
+                          reverse: true,
+                          image_src: '/assets/favicons/favicon-192.png',
+                          keywords: %W[ web development software webapp],
+                          description: 'Family first, but after that, full-stack web developer - a guy that loves people, business &amp; web app developer',
+                          canonical: request.original_url,
+                          og: {
+                            title:     "About Me | Carl Tanner @ GoCarlGo.com",
+                            site_name: 'Carl Tanner @ GoCarlGo.com',
+                            type:      'website',
+                            url:       request.original_url,
+                            image:     "https://pbs.twimg.com/media/EqSNJ8NU8AIgUQS?format=jpg&name=small"
+                          },
+                          twitter: {
+                            card: 'summary',
+                            site: 'Carl Tanner @ GoCarlGo.com'
+                          } %>
+
+ <%= csp_meta_tag %>
 
 <%= stylesheet_link_tag 'frontdoor', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>

@@ -19,6 +19,8 @@ class Blog::Entry < ApplicationRecord
   scope :published, -> {  where("publish_at is not ?", nil)
                           .where("publish_at < ?", Time.now)}
 
+  has_rich_text :summary
+
   has_one   :article, 
             foreign_key: "entry_id", 
             class_name: "Blog::Article"#,

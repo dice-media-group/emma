@@ -1,3 +1,12 @@
+<% set_meta_tags title: "#{@blog_entry.id} #{@blog_entry.title}",
+                 description: "Information and patch issues from #{@blog_entry.id} #{@blog_entry.title}",
+                 keywords: (%W[ web software development mobile app] + @blog_entry.tag_list),
+                 image_src: ("https://pbs.twimg.com/media/EqSNJ8NU8AIgUQS?format=jpg&name=small"),
+                 og: {
+                   title:     "#{@blog_entry.title} | Carl Tanner",
+                   image:     ("https://pbs.twimg.com/media/EqSNJ8NU8AIgUQS?format=jpg&name=small")
+                 } %>
+
 <article id="post-10701" class="post-10701 post type-post status-publish format-standard has-post-thumbnail hentry category-business category-leadership">
   
   <%= render 'billboard', locals: {billboard_image: @blog_entry.image } %>

@@ -78,3 +78,4 @@ gem 'dotenv-rails', '~> 2.7', '>= 2.7.6', groups: [:development, :test] #ngrok t
 gem 'acts-as-taggable-on', '~> 6.5'
 # gem 'trix-rails', require: 'trix' # trix for administrate is seperate from actiontext in main app
 # gem 'administrate-field-trix' # supporting code for the trix field
+gem 'meta-tags', '~> 2.14'
