@@ -1,0 +1,49 @@
+<%= form_with(model: hire_me, local: true) do |form| %>
+  <% if hire_me.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hire_me.errors.count, "error") %> prohibited this hire_me from being saved:</h2>
+
+      <ul>
+      <% hire_me.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :billboard_image_filename %>
+    <%= form.text_area :billboard_image_filename, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :headline %>
+    <%= form.text_field :headline, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :body %>
+    <%= form.text_field :body, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :site_id %>
+    <%= form.text_field :site_id, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if hire_me.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', hire_me, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if hire_me.persisted? %>
+      <%= link_to "Cancel", hire_me, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", hire_mes_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

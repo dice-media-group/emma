@@ -10,7 +10,6 @@ class BiographyDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    body: Field::RichText,
     header_photo_url: Field::Text,
     body: TrixField,
     created_at: Field::DateTime,

@@ -1,5 +1,5 @@
 class PressKitPhoto < ApplicationRecord
-  belongs_to :press_kit
+  belongs_to :press_kit, dependent: :destroy
 
     # connect to blog_articles
   scope :published_headshots,     -> { where("headshot_or_other = ?", "headshot").where("publish_at <= ?", Time.now)}

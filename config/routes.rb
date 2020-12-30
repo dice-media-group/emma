@@ -1,6 +1,9 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :home_infos
+  resources :hire_mes
+  resources :sites
   get 'tags/:tag', to: 'blog#index', as: :tag
   namespace :blog do
   end
@@ -26,6 +29,36 @@ Rails.application.routes.draw do
   resources :press_kits, only: [:show]
   resources :first_times, only: [:show]
 
+  resources :backstage, only: [:index]
+  namespace :backstage do
+    resources :agenda # agendum
+    resources :publisher_accts
+    resources :blog, only: [:index]
+    namespace :blog do
+      resources :entries
+      resources :recommendations
+      resources :articles
+    end
+    resources :site, shallow: true do
+      resources :biography
+      resources :first_time
+      resources :get_in_contact_contents
+      resources :hire_me
+      resources :home_info
+      resources :press_kit, shallow: true do
+        resources :press_kit_entries
+        resources :press_kit_links
+        resources :press_kit_photos    
+      end
+      resources :books
+    end
+    resources :media_appearances
+    resources :meetups
+    resources :merchandise_links
+    # resources :tasks
+    resources :wallpapers
+  end
+
   get 'services/index'
   resources :books, only: [:index]
   resources :media_appearances
@@ -42,29 +75,19 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
-
     resources :announcements
-
     resources :biographies
-
     resources :books
-
     resources :first_times
     resources :first_time_entries
-
     resources :get_in_contact_contents
-
     resources :meetups
-
     resources :merchandise_links
-
     resources :notifications
-
     resources :press_kits
     resources :press_kit_entries
     resources :press_kit_links
     resources :press_kit_photos
-
     resources :publisher_accts
 
     # resources :leads

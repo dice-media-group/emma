@@ -1,0 +1,49 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Home_infos</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_home_info_path, class: 'btn btn-primary' do %>
+    Add New Home info
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Biography blurb</th>
+            <th>Video billboard url</th>
+            <th>Watch this video url</th>
+            <th>Site</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @home_infos.each do |home_info| %>
+        <%= content_tag :tr, id: dom_id(home_info), class: dom_class(home_info) do %>
+          
+
+                      <td><%= home_info.biography_blurb %></td>
+                      <td><%= home_info.video_billboard_url %></td>
+                      <td><%= home_info.watch_this_video_url %></td>
+                      <td><%= home_info.site %></td>
+          
+          
+            <td><%= link_to 'Show', home_info %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

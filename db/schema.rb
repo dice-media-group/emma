@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_015423) do
+ActiveRecord::Schema.define(version: 2020_12_30_064537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2020_12_09_015423) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "header_photo_url"
+    t.bigint "site_id", null: false
+    t.index ["site_id"], name: "index_biographies_on_site_id"
   end
 
   create_table "blog_articles", force: :cascade do |t|
@@ -194,6 +196,8 @@ ActiveRecord::Schema.define(version: 2020_12_09_015423) do
     t.text "featured_youtube_video_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "site_id", null: false
+    t.index ["site_id"], name: "index_first_times_on_site_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -213,6 +217,28 @@ ActiveRecord::Schema.define(version: 2020_12_09_015423) do
     t.string "youtube_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "site_id", null: false
+    t.index ["site_id"], name: "index_get_in_contact_contents_on_site_id"
+  end
+
+  create_table "hire_mes", force: :cascade do |t|
+    t.text "billboard_image_filename"
+    t.string "headline"
+    t.string "body"
+    t.bigint "site_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["site_id"], name: "index_hire_mes_on_site_id"
+  end
+
+  create_table "home_infos", force: :cascade do |t|
+    t.text "biography_blurb"
+    t.text "video_billboard_url"
+    t.text "watch_this_video_url"
+    t.bigint "site_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["site_id"], name: "index_home_infos_on_site_id"
   end
 
   create_table "leads", force: :cascade do |t|
@@ -309,6 +335,8 @@ ActiveRecord::Schema.define(version: 2020_12_09_015423) do
     t.string "name"
     t.date "birth_date"
     t.string "birthplace"
+    t.bigint "site_id", null: false
+    t.index ["site_id"], name: "index_press_kits_on_site_id"
   end
 
   create_table "publisher_accts", force: :cascade do |t|
@@ -333,6 +361,11 @@ ActiveRecord::Schema.define(version: 2020_12_09_015423) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_services_on_user_id"
+  end
+
+  create_table "sites", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -387,6 +420,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_015423) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "biographies", "sites"
   add_foreign_key "blog_articles", "blog_entries", column: "entry_id"
   add_foreign_key "blog_articles", "users"
   add_foreign_key "blog_entry_assignments", "blog_articles"
@@ -401,10 +435,15 @@ ActiveRecord::Schema.define(version: 2020_12_09_015423) do
   add_foreign_key "broadcaster_theme_avatars", "broadcaster_themes"
   add_foreign_key "broadcaster_videos", "broadcaster_themes"
   add_foreign_key "first_time_entries", "first_times"
+  add_foreign_key "first_times", "sites"
+  add_foreign_key "get_in_contact_contents", "sites"
+  add_foreign_key "hire_mes", "sites"
+  add_foreign_key "home_infos", "sites"
   add_foreign_key "merchandise_links", "books"
   add_foreign_key "press_kit_entries", "press_kits"
   add_foreign_key "press_kit_links", "press_kits"
   add_foreign_key "press_kit_photos", "press_kits"
+  add_foreign_key "press_kits", "sites"
   add_foreign_key "services", "users"
   add_foreign_key "taggings", "tags"
 end

@@ -1,7 +1,10 @@
 class PressKit < ApplicationRecord
-    has_many :press_kit_photos
-    has_many :press_kit_entries
-    has_many :press_kit_links
+    has_many :press_kit_photos, dependent: :destroy
+    has_many :press_kit_entries, dependent: :destroy
+    has_many :press_kit_links, dependent: :destroy
+    
+    belongs_to :site, dependent: :destroy
+
     has_rich_text :biography
 
 
