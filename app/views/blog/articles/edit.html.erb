@@ -1,3 +1,8 @@
-<h1>Edit: <%= @blog_article.title %> </h1>
+<div class="backstage">
+    <%= render '/backstage/sidebar' %>
+    <section id="main-dashboard-content">
+        <h1>Edit: <%= @blog_article.title %> </h1>
 
-<%= render 'form', blog_article: @blog_article %>
+        <%= render 'form', blog_article: @blog_article %>
+    </section>
+</div>

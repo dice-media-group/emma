@@ -168,6 +168,13 @@
 
   }
 
+  li {
+    margin: 1em;
+  }
+
+  ul {
+    list-style: none;
+  }
   @media (max-width: 1400px) {
     #grid-container {
       grid-template-columns: 100%;
