@@ -31,14 +31,20 @@ Rails.application.routes.draw do
 
   resources :backstage, only: [:index]
   namespace :backstage do
-    resources :agenda # agendum
-    resources :publisher_accts
-    resources :blog, only: [:index]
-    namespace :blog do
-      resources :entries
-      resources :recommendations
-      resources :articles
-    end
+    # resources :agenda # agendum
+    resources :agenda
+    resources :blog_hub
+    resources :books
+    # namespace :blog do
+    #   resources :entries
+    #   resources :recommendations
+    #   resources :articles
+    # end
+    resources :meetups
+    resources :merchandise_links
+    resources :messages
+    resources :publisher_accounts
+    resources :settings, only: [:index]
     resources :site, shallow: true do
       resources :biography
       resources :first_time
@@ -50,8 +56,9 @@ Rails.application.routes.draw do
         resources :press_kit_links
         resources :press_kit_photos    
       end
-      resources :books
     end
+
+
     resources :media_appearances
     resources :meetups
     resources :merchandise_links
@@ -96,7 +103,7 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
 
-  # get '/blog', to: 'blog#index'
+  ## home links
   get '/privacy', to: 'home#privacy'
   get '/podcast', to: 'podcasts#index'
   get '/events', to: 'meetups#index'
@@ -107,6 +114,10 @@ Rails.application.routes.draw do
   get '/hire-me', to: 'home#hire_me'
   get '/get-in-touch-with-me', to: 'leads#new'
   get '/press-kit', to: 'press_kits#show'
+
+  ## backstage links
+  get '/backstage/blog', to: 'backstage#blog'
+  get '/backstage/site_settings', to: 'backstage#site_settings'
 
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'

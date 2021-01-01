@@ -1,0 +1,2 @@
+module Backstage::AgendaHelper
+end

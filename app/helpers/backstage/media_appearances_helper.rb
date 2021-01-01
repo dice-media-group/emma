@@ -1,0 +1,2 @@
+module Backstage::MediaAppearancesHelper
+end
