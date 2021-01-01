@@ -30,9 +30,9 @@ Rails.application.routes.draw do
   resources :first_times, only: [:show]
 
   resources :backstage, only: [:index]
+
   namespace :backstage do
-    # resources :agenda # agendum
-    resources :agenda
+    resources :agenda, only: [:index] # agendum
     resources :blog_hub
     resources :books
     # namespace :blog do
@@ -40,11 +40,12 @@ Rails.application.routes.draw do
     #   resources :recommendations
     #   resources :articles
     # end
+    resources :media_appearances
     resources :meetups
     resources :merchandise_links
     resources :messages
     resources :publisher_accounts
-    resources :settings, only: [:index]
+  
     resources :site, shallow: true do
       resources :biography
       resources :first_time
@@ -57,13 +58,12 @@ Rails.application.routes.draw do
         resources :press_kit_photos    
       end
     end
-
-
     resources :media_appearances
     resources :meetups
+    resources :settings, only: [:index]
     resources :merchandise_links
-    # resources :tasks
     resources :wallpapers
+    # resources :tasks
   end
 
   get 'services/index'
@@ -117,7 +117,6 @@ Rails.application.routes.draw do
 
   ## backstage links
   get '/backstage/blog', to: 'backstage#blog'
-  get '/backstage/site_settings', to: 'backstage#site_settings'
 
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
