@@ -7,6 +7,7 @@
 @import "bootstrap";
 @import "jumpstart/sticky-footer";
 @import "jumpstart/announcements";
+@import "backstage";
 
 // actiontext editor styles
 @import "trix/dist/trix.css";
@@ -25,3 +26,5 @@
 body > .alert {
   margin-bottom: 0;
 }
+
+
