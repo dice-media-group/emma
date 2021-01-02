@@ -5,5 +5,4 @@ class Site < ApplicationRecord
     has_one :hire_me, dependent: :destroy
     has_one :home_info, dependent: :destroy
     has_one :press_kit, dependent: :destroy
-    
 end
