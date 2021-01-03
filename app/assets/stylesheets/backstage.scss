@@ -175,6 +175,10 @@
   ul {
     list-style: none;
   }
+
+  form {
+    z-index: 10;
+  }
   @media (max-width: 1400px) {
     #grid-container {
       grid-template-columns: 100%;

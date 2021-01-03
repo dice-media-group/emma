@@ -1,0 +1,2 @@
+module Backstage::FirstTimeHelper
+end

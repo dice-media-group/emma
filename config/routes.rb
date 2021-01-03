@@ -1,12 +1,18 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  namespace :backstage do
+    get 'get_in_contact_content/edit'
+  end
+  namespace :site do
+    get 'biography/edit'
+  end
+  namespace :backstage do
+    get 'first_time/edit'
+  end
   resources :home_infos
   resources :hire_mes
-  resources :sites
   get 'tags/:tag', to: 'blog#index', as: :tag
-  namespace :blog do
-  end
   resource :lead
   resources :wallpapers
   get 'wallpapers/index'
@@ -33,8 +39,11 @@ Rails.application.routes.draw do
 
   namespace :backstage do
     resources :agenda, only: [:index] # agendum
+    resources :biography, only: [:edit, :update]
     resources :blog_hub
-    resources :books
+    resources :books      
+    resources :get_in_contact_content, only: [:edit, :update]
+
     # namespace :blog do
     #   resources :entries
     #   resources :recommendations
@@ -46,10 +55,8 @@ Rails.application.routes.draw do
     resources :messages
     resources :publisher_accounts
   
-    resources :site, shallow: true do
-      resources :biography
+    resources :site, only: [:index], shallow: true do
       resources :first_time
-      resources :get_in_contact_contents
       resources :hire_me
       resources :home_info
       resources :press_kit, shallow: true do

@@ -1,24 +1,31 @@
-
-
 <div class="backstage">
+
+
 <%= render '/backstage/sidebar' %>
 <section id="main-dashboard-content">
-    <section id="top-section">
-    <h1 id="welcome-title">Welcome Back, <%= current_user.first_name %>!</h1>
-    </section>
-    <section id="grid-container">
-    <div class="grid-item blockone"><h1>Backstage::BlogHub#index</h1>
-<p>Find me in app/views/backstage/blog_hub/index.html.erb</p>
-</div>
-    <div class="grid-item mail">Item 2</div>
-    <div class="grid-item  agenda">agenda</div>
-    <div class="grid-item  tasks">tasks</div>            
-    <div class="grid-item blockthree">Item 3: Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Inc
-
-    </div>
-    <div class="grid-item blockfour">Item 4</div>
-    <div class="grid-item trends">Trends:  Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Inc</div>
-    </section>
+    <ul>
+        <li>
+            <div>
+                <%= link_to 'biography', edit_backstage_biography_path(@biography), class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'first time', edit_backstage_first_time_path(@first_time), class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'edit backstage get in contact content ', edit_backstage_get_in_contact_content_path(@get_in_contact_content), class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'hire me ', edit_backstage_hire_me_path(@get_in_contact_content), class:"btn btn-primary" %>
+            </div>
+        </li>
+    </ul>
 </section>
 
 </div>
+

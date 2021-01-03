@@ -1,0 +1,50 @@
+<%= form_with(model: [ :backstage, @get_in_contact_content], local: true) do |form| %>
+  <% if @get_in_contact_content.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(get_in_contact_content.errors.count, "error") %> prohibited this get_in_contact_content from being saved:</h2>
+
+      <ul>
+      <% get_in_contact_content.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%#  
+  <GetInContactContent id: 3, first_name: "first_name", last_name: "last_name", youtube_url: "https://www.youtube.com/embed/z5tugxy70MY", created_at: "2021-01-02 01:01:22", updated_at: "2021-01-02 01:01:22", site_id: 5>
+  page_message
+  %>
+
+
+  <div class="form-group">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :youtube_url %>
+    <%= form.text_area :youtube_url, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :page_message %>
+    <%= form.rich_text_area :page_message, class: 'form-control' %>
+  </div>
+
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if @get_in_contact_content.persisted? %>
+      <%= link_to "Cancel", backstage_site_index_path, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", backstage_site_index_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
