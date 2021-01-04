@@ -1,5 +1,60 @@
+<style>
+  .grid-1-1-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .flexgrid {
+    display: flex;
+  }
+
+  .flexgrid .item {
+    margin: 1em;
+    padding: 1em;
+    background-color: Wheat;
+  }
+
+  img {
+    width: 250px;
+  }
+</style>
 <div class="backstage">
-    <%= render 'backstage/sidebar' %>
-<h1>Backstage::MediaAppearances#index</h1>
-<p>Find me in app/views/backstage/media_appearances/index.html.erb</p>
+
+
+<%= render '/backstage/sidebar' %>
+
+    <section id="main-dashboard-content">
+      <section id="top-section">
+        <h1>Backstage::MediaAppearances <%= "(#{@media_appearances.count})" %></h1>
+        <%= link_to 'new', 
+            new_backstage_media_appearance_path, 
+            class: "btn btn-primary" %>
+      </section>
+      <section class="flexgrid">
+        <% @media_appearances.each do |media_appearance| %>
+          <div class="item">
+            <p>
+              title: <%= link_to media_appearance.title, edit_backstage_media_appearance_path(media_appearance) %>
+            </p>
+            <p>Published: <%= media_appearance.published_on %> </p>            
+            <p>
+              <% if media_appearance.image.attached? %>
+                <%= image_tag media_appearance.image %>
+              <% else %>
+                image 
+              <% end %>
+            </p>
+        </div>
+        <% end %>
+              
+
+      </section>
+    </section>
+
 </div>
+
+<%# 
+=> MediaAppearance(id: integer, title: string, published_on: datetime, created_at: datetime, updated_at: datetime)%>
