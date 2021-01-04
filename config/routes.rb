@@ -53,7 +53,7 @@ Rails.application.routes.draw do
     resources :meetups
     resources :merchandise_links
     resources :messages
-    resources :publisher_accounts
+    resources :publisher_accts
   
     resources :site, only: [:index], shallow: true do
       resources :first_time
