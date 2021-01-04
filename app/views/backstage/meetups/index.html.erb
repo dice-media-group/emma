@@ -1,5 +1,52 @@
+<style>
+  .grid-1-1-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .flexgrid {
+    display: flex;
+  }
+
+  .flexgrid .item {
+    margin: 1em;
+    padding: 1em;
+    background-color: Wheat;
+  }
+
+
+</style>
 <div class="backstage">
-    <%= render 'backstage/sidebar' %>
-<h1>Backstage::Meetups#index</h1>
-<p>Find me in app/views/backstage/meetups/index.html.erb</p>
+
+
+<%= render '/backstage/sidebar' %>
+
+    <section id="main-dashboard-content">
+      <section id="top-section">
+        <h1>Backstage::Meetups <%= "(#{@meetups.count})" %></h1>
+        <%= link_to 'new', 
+            new_backstage_meetup_path, 
+            class: "btn btn-primary" %>
+      </section>
+      <section class="flexgrid">
+        <% @meetups.each do |meetup| %>
+          <div class="item">
+            <p>
+              title: <%= link_to meetup.title, edit_backstage_meetup_path(meetup) %>
+            </p>
+            <p>start <%= meetup.start_date %> </p>            
+            <p>finish <%= meetup.end_date %></p>
+        </div>
+        <% end %>
+              
+
+      </section>
+    </section>
+
 </div>
+
+<%# 
+=> #<Meetup id: 1, title: "first up", start_date: "2020-11-30", end_date: "2020-12-05", more_info_url: "https://www.garyvaynerchuk.com/first-time-here/", location: "Hometown Buff...%>

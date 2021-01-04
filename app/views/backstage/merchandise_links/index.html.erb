@@ -1,5 +1,46 @@
+<style>
+  .grid-1-1-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+
+</style>
 <div class="backstage">
-    <%= render 'backstage/sidebar' %>
-    <h1>Backstage::MerchandiseLinks#index</h1>
-    <p>Find me in app/views/backstage/merchandise_links/index.html.erb</p>
+
+
+<%= render '/backstage/sidebar' %>
+
+    <section id="main-dashboard-content">
+      <section id="top-section">
+        <h1>MerchandiseLinks#index</h1>
+        <%= link_to 'new', 
+            new_backstage_merchandise_link_path, 
+            class: "btn btn-primary" %>
+      </section>
+      <section class="grid-1-1-2">
+        <div class="grid-item header">seller_name</div>
+        <div class="grid-item header">url</div>
+        <div class="grid-item  header">Book</div>
+        <% @merchandise_links.each do |link| %>
+
+        <div class="grid-item  cell">
+          <%= link_to link.seller_name, edit_mechandise_link_path(link.id) %>
+        </div>
+        <div class="grid-item  cell"><%= link.url %> </div>            
+        <div class="grid-item  cell"><%= link.book.title %></div>
+        
+        <% end %>
+              
+
+      </section>
+    </section>
+
 </div>
+
+<%# 
+seller_name: string, url: text, book_id: integer
+ %>
