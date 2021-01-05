@@ -4,15 +4,57 @@
         <h1 id="welcome-title">Welcome Back, <%= current_user.first_name %>!</h1>
       </section>
       <section id="grid-container">
-        <div class="grid-item blockone">Item 1: lorem</div>
-        <div class="grid-item mail">Item 2</div>
-        <div class="grid-item  agenda">agenda</div>
-        <div class="grid-item  tasks">tasks</div>            
-        <div class="grid-item blockthree">Item 3: Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Inc
+        <div class="grid-item blockone">
+          <h2>
+            <%= link_to backstage_meetups_path do |meetup| %>
+              <i class="far fa-star"></i> Events              
+            <% end %>
+          </h2>
+          <ul>
+            <%= render partial: "event", collection: @events %>          
+          </ul>
 
         </div>
-        <div class="grid-item blockfour">Item 4</div>
-        <div class="grid-item trends">Trends:  Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Inc</div>
+        <div class="grid-item mail">
+          <h2>
+            <%= link_to backstage_messages_path do |meetup| %>
+              <i class="far fa-calendar-alt"></i> messages
+            <% end %>          
+          </h2>
+          <ul>
+            <li>link to hubspot</li>
+            <li>links to individual messages</li>
+          </ul>
+          <ul>
+            <%= render partial: "lead", collection: @leads %>          
+          </ul>
+        </div>
+        <div class="grid-item  agenda">
+          <h2>agenda</h2>
+          <ul>
+            <%= render partial: "agendum", collection: @agenda %>          
+          </ul>
+        </div>
+        <div class="grid-item  tasks">
+          <h2><i class="far fa-calendar-check"></i> tasks</h2>
+          <%= render partial: "task", collection: @tasks %>
+        </div>            
+        <div class="grid-item blockthree">
+          <h2>
+            <%= link_to backstage_meetups_path do |meetup| %>
+              <i class="far fa-share-square"></i> platforms
+            <% end %>
+          </h2>
+          <%#= render partial: "platform", collection: @platforms %>
+
+        </div>
+        <div class="grid-item blockfour">
+          <h2><i class="far fa-comments"></i> Comments</h2>
+          <%= render partial: "comment", collection: @comments %>
+        </div>
+        <div class="grid-item trends">
+          <h2><i class="fas fa-chart-line"></i> Trending</h2>
+          <p>Current stats will go here.</p>
       </section>
     </section>
 

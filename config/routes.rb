@@ -52,7 +52,7 @@ Rails.application.routes.draw do
     resources :media_appearances
     resources :meetups
     resources :merchandise_links
-    resources :messages
+    resources :messages, only: [:index]
     # resources :press_kit_entries
     # resources :press_kit, only: [:index]
     # resources :press_kit_links
