@@ -179,6 +179,35 @@
   form {
     z-index: 10;
   }
+
+  textarea.styled {
+    width: 600px;
+    height: 120px;
+    border: 3px solid #cccccc;
+    padding: 5px;
+  }
+  .grid-1-1-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .flexgrid {
+    display: flex;
+  }
+
+  .flexgrid .item {
+    margin: 1em;
+    padding: 1em;
+    background-color: Wheat;
+  }
+
+  .flexgrid  img {
+    width: 250px;
+  }
+
   @media (max-width: 1400px) {
     #grid-container {
       grid-template-columns: 100%;

@@ -1,3 +1,24 @@
+<style>
+  .grid-1-1-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .flexgrid {
+    display: flex;
+  }
+
+  .flexgrid .item {
+    margin: 1em;
+    padding: 1em;
+    background-color: Wheat;
+  }
+
+
+</style>
 <div class="backstage">
 
 
@@ -5,19 +26,35 @@
 
     <section id="main-dashboard-content">
       <section id="top-section">
-        <h1 id="welcome-title">Welcome Back, <%= current_user.first_name %>!</h1>
+        <h1>Backstage::Books <%= "(#{@books.count})" %></h1>
+        <%= link_to 'new', 
+            new_backstage_book_path, 
+            class: "btn btn-primary" %>
       </section>
-      <section id="grid-container">
-        <div class="grid-item blockone">Item 1: lorem</div>
-        <div class="grid-item mail">Item 2</div>
-        <div class="grid-item  agenda">agenda</div>
-        <div class="grid-item  tasks">tasks</div>            
-        <div class="grid-item blockthree">Item 3: Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Inc
-
+      <section class="flexgrid">
+        <% @books.each do |book| %>
+          <div class="item">
+            <p>
+              title: <%= link_to book.title, edit_backstage_book_path(book) %>
+            </p>
+            <p>By: <%= book.byline %> </p>            
+            <p>
+              <% if book.jacket_location %>
+                <%= image_tag book.jacket_location %>
+              <% else %>
+                image 
+              <% end %>
+            </p>
         </div>
-        <div class="grid-item blockfour">Item 4</div>
-        <div class="grid-item trends">Trends:  Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Inc</div>
+        <% end %>
+              
+
       </section>
     </section>
 
 </div>
+
+<%# 
+=> Book(id: integer, title: string, byline: string, description: string, created_at: datetime, updated_at: datetime, jacket_location: text)
+
+%>

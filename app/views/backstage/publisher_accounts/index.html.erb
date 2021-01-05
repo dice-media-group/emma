@@ -21,16 +21,19 @@
             new_backstage_publisher_acct_path, 
             class: "btn btn-primary" %>
       </section>
-      <section class="flexgrid">
+      <section class="grid-1-1-2">
+        <div class="grid-item header">Name</div>
+        <div class="grid-item header">Network Kind</div>
+        <div class="grid-item  header">Blurb</div>
         <% @publisher_accts.each do |acct| %>
-        <div class="item">
-          <p >
-            <i class="<%= acct.font_awesome_class %> "></i> 
-            <%= link_to acct.name, edit_backstage_publisher_acct_path(acct.id) %>
-          </p>
-          <p ><%= acct.network_kind %> </p>            
-          <p ><%= acct.blurb %></p>
-        </div>        
+
+        <div class="grid-item  cell">
+          <i class="<%= acct.font_awesome_class %> "></i> 
+          <%= link_to acct.name, edit_backstage_publisher_acct_path(acct.id) %>
+        </div>
+        <div class="grid-item  cell"><%= acct.network_kind %> </div>            
+        <div class="grid-item  cell"><%= acct.blurb %></div>
+        
         <% end %>
               
 
