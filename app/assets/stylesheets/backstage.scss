@@ -50,6 +50,7 @@
   
   .links span {
     padding: 0px 20px;
+    text-transform: capitalize;
   }
   
   #main-dashboard-content {
@@ -138,6 +139,9 @@
     color: #949694;
   }
   
+  .grid-item h2 {
+    text-transform: capitalize;
+  }
   .blockone {
       grid-area: blockone;
   }
