@@ -1,6 +1,6 @@
 class Backstage::PressKitEntriesController < ApplicationController
   before_action :set_press_kit_entry, only: [:show, :edit, :update, :destroy]
-  before_action :  def set_press, only: [:new, :create]
+  before_action :set_press, only: [:new, :create]
 
   def index
     @press_kit_entries = PressKitEntry.all  
@@ -60,6 +60,7 @@ class Backstage::PressKitEntriesController < ApplicationController
   def set_press_kit_entry
     @press_kit_entry = PressKitEntry.find(params[:id])
   end
+
   def set_press_kit
     @press_kit_entry = PressKit.first
 
