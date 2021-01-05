@@ -1,20 +1,39 @@
 <div class="backstage">
-    <%= render 'backstage/sidebar' %>
+
+
+<%= render '/backstage/sidebar' %>
+
     <section id="main-dashboard-content">
       <section id="top-section">
-        <h1 id="welcome-title">Welcome Back, wallpaper!</h1>
+        <h1>Backstage::Wallpapers <%= "(#{@wallpapers.count})" %></h1>
+        <%= link_to 'new', 
+            new_backstage_wallpaper_path, 
+            class: "btn btn-primary" %>
       </section>
-      <section id="grid-container">
-        <div class="grid-item blockone">Item 1: lorem</div>
-        <div class="grid-item mail">Item 2</div>
-        <div class="grid-item  agenda">agenda</div>
-        <div class="grid-item  tasks">tasks</div>            
-        <div class="grid-item blockthree">Item 3: Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Inc
-
+      <section class="flexgrid">
+        <% @wallpapers.each do |wallpaper| %>
+          <div class="item">
+            <p>
+              title: <%= link_to wallpaper.title, edit_backstage_wallpaper_path(wallpaper) %>
+            </p>
+            <p>Size: <%= wallpaper.device_size %> </p>            
+            <p>
+              <% if wallpaper.image.attached? %>
+                <%= image_tag wallpaper.image %>
+              <% else %>
+                image 
+              <% end %>
+            </p>
         </div>
-        <div class="grid-item blockfour">Item 4</div>
-        <div class="grid-item trends">Trends:  Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor IncLorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Inc</div>
+        <% end %>
+              
+
       </section>
     </section>
 
 </div>
+
+<%# 
+=> Book(id: integer, title: string, byline: string, description: string, created_at: datetime, updated_at: datetime, jacket_location: text)
+
+%>
