@@ -2,6 +2,9 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   namespace :backstage do
+    get 'press_kit/index'
+  end
+  namespace :backstage do
     get 'get_in_contact_content/edit'
   end
   namespace :site do
@@ -53,6 +56,9 @@ Rails.application.routes.draw do
     resources :meetups
     resources :merchandise_links
     resources :messages
+    resources :press_kit_entries
+    resources :press_kit, only: [:index]
+    resources :press_kit_links
     resources :publisher_accts
   
     resources :site, only: [:index], shallow: true do
