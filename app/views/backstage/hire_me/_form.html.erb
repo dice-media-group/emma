@@ -1,0 +1,45 @@
+<%= form_with(model: [ :backstage, @hire_me], local: true) do |form| %>
+  <% if @hire_me.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hire_me.errors.count, "error") %> prohibited this hire_me from being saved:</h2>
+
+      <ul>
+      <% hire_me.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%#  
+  <GetInContactContent id: 3, first_name: "first_name", last_name: "last_name", youtube_url: "https://www.youtube.com/embed/z5tugxy70MY", created_at: "2021-01-02 01:01:22", updated_at: "2021-01-02 01:01:22", site_id: 5>
+  page_message
+  %>
+
+
+  <div class="form-group">
+    <%= form.label :billboard_image_filename %>
+    <%= form.text_field :billboard_image_filename, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :headline %>
+    <%= form.text_field :headline, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :rt_body %>
+    <%= form.rich_text_area :rt_body, class: 'form-control' %>
+  </div>
+
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if @hire_me.persisted? %>
+      <%= link_to "Cancel", backstage_site_index_path, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", backstage_site_index_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

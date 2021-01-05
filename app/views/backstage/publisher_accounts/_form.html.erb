@@ -1,0 +1,57 @@
+<%= form_with(model: [ :backstage, publisher_acct], local: true) do |form| %>
+  <% if publisher_acct.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(publisher_acct.errors.count, "error") %> prohibited this publisher_acct from being saved:</h2>
+
+      <ul>
+      <% publisher_acct.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%#  
+  => #<PublisherAcct id: 1, name: "instagram", url: "http://instagram.com", created_at: "2020-11-29 23:48:58", updated_at: "2020-11-29 23:48:58", font_awesome_class: "fab fa-instagram", network_kind: "social", blurb: "Get a glimpse of some of my funnier moments on Tik...">
+  %>
+
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :font_awesome_class %>
+    <%= form.text_field :font_awesome_class, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :url %>
+    <%= form.text_field :url, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :blurb %>
+    <%= form.text_area :blurb, class: 'form-control' %>
+  </div>
+
+
+
+
+
+  <%#  %>
+    <div class="form-group">
+    <% if publisher_acct.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', backstage_publisher_acct_path, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+      <%= link_to "Cancel", backstage_publisher_accts_path, class: "btn btn-link" %>
+  </div>
+
+<% end %>

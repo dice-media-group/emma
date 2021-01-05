@@ -1,12 +1,10 @@
-<style>
-
-</style>
-
 <footer id="ct-main-footer" class="ct-widget-wrapper ct-widget-fulllength ct-footer">
     <div class="container">
         <div class="form-group row">
             <div class="col-md-3">
                 <div class="ct-mark-type">
+                    <!--a name="mobile-menu"></a -->
+                    <div id="footer-menu"></div>
                     <a href="/" class="no-hover">Carl<br/>Tanner</a>
                 </div>
             </div>
@@ -16,9 +14,9 @@
                     <li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="/blog/">Blog</a></li>
                     <li id="menu-item-7096" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7096"><a href="/podcast/">Podcast</a></li>
                     <li id="menu-item-87" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87"><a href="/events/">Events</a></li>
-                    <li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85"><a href="/media-appearances/">Recent Press</a></li>
+                    <!-- Get some press first:  <li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85"><a href="/media-appearances/">Recent Press</a></li> -->
                     <li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="/books/">Books</a></li>
-                    <li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="/hire-me/">Hire Me to Speak</a></li>
+                    <li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="/hire-me/">Hire Me</a></li>
                     <li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="/biography/">My Story</a></li>
                     <li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="/press-kit/">Press Kit</a></li>
                     <li id="menu-item-6528" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6528"><a href="/first-time-here/">First Time Here</a></li>
@@ -31,42 +29,18 @@
             <div class="col-sm-12 col-md-3">
             <h6 class="ct-h-slab ct-h-slab-normal ct-h-grey">Keep in Touch</h6>
             <div id="gv_widgets_socialprops-4" class="ct-widget ct-widget-socialprops clearfix text-left">
-                <div class="sidebar-c-7">            
+                <div class="sidebar-c-7">
+                    <%# social_spots start %>
+                    <% @linked_icons_for_footer.each do |spot_name| %>
                     <span class="wrap-social-item">
-                        <a class="hover-social sp-instagram" href="https://www.instagram.com/gocarlgodotcom/" alt="" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                        <% icon = @linked_icon_data.find_by(name: spot_name) %>
+                        <%= link_to  icon.url, class: "hover-social sp-#{icon.name}", target: "_blank" do %>
+                            <i class="<%= icon.font_awesome_class %> "></i>
+                        <% end %>
+
                     </span>
-                    <span class="wrap-social-item">
-                        <a class="hover-social sp-youtube" href="https://youtube.com/channel/UCQHqzmjiyTJfmDln9DmawoA" alt="" target="_blank">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </span>
-                    <span class="wrap-social-item">
-                        <a class="hover-social sp-facebook" href="https://www.facebook.com/gocarltannergo/" alt="" target="_blank">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </span>
-                    <span class="wrap-social-item">
-                        <a class="hover-social sp-twitter" href="https://twitter.com/gocarlgodotcom" alt="" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </span>
-                    <span class="wrap-social-item">
-                        <a class="hover-social sp-snapchat" href="https://www.snapchat.com/add/gocarlgodotcom" alt="" target="_blank">
-                            <%= icon('fab', 'snapchat-ghost') %>
-                        </a>
-                    </span>
-                    <span class="wrap-social-item">
-                        <a class="hover-social sp-linkedin" href="https://www.linkedin.com/in/gocarlgo/" alt="" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </span>
-                    <span class="wrap-social-item">
-                        <a class="hover-social sp-mobile" href="/podcast" alt="" target="_blank">
-                            <i class="fas fa-mobile-alt"></i>
-                        </a>
-                    </span>
+                    <%# social_spots finish %>
+                    <% end %>
                 </div>
             </div>                                            
             </div>

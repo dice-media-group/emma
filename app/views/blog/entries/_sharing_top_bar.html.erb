@@ -1,0 +1,41 @@
+  <div class="col-xs-12 col-sm-5">
+    <div class="ct-post-sharing topbar">
+      <div class="row">
+        <div class="col-xs-3">
+               <%= link_to "#",
+                data: { permalink: request.url , platform: 'facebook' }, 
+                class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-fb", 
+                title: "Share on Facebook" do %>
+                <i class="fab fa-facebook"></i>
+               <% end %>
+
+        </div>
+        <div class="col-xs-3">
+               <%= link_to "#",
+                data: { permalink: request.url , platform: 'twitter' }, 
+                class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-tw", 
+                title: "Tweet on Twitter" do %>
+                <i class="fab fa-twitter"></i>
+               <% end %>
+
+        </div>
+        <div class="col-xs-3">
+               <%= link_to "#",
+                data: { permalink: request.url , platform: 'linkedin' }, 
+                class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-in", 
+                title: "Share on LinkedIn" do %>
+                <i class="fab fa-linkedin"></i>
+               <% end %>
+        </div>
+        <div class="col-xs-3">
+               <%= link_to "#",
+                data: { permalink: request.url , platform: 'pinterest' }, 
+                class: "ct-ctrl-share ct-btn ct-btn-block ct-btn-short ct-btn-s-pin", 
+                title: "Share on Pinterest" do %>
+                <i class="fab fa-pinterest"></i>
+               <% end %>
+        </div>
+      </div>
+    </div>
+    <h6 class="ct-h-slab ct-post-date text-right">2 months ago <span class="middot">·</span> 5 min read</h6>
+  </div>

@@ -1,0 +1,49 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Hire_mes</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_hire_me_path, class: 'btn btn-primary' do %>
+    Add New Hire me
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Billboard image filename</th>
+            <th>Headline</th>
+            <th>Body</th>
+            <th>Site</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @hire_mes.each do |hire_me| %>
+        <%= content_tag :tr, id: dom_id(hire_me), class: dom_class(hire_me) do %>
+          
+
+                      <td><%= hire_me.billboard_image_filename %></td>
+                      <td><%= hire_me.headline %></td>
+                      <td><%= hire_me.body %></td>
+                      <td><%= hire_me.site %></td>
+          
+          
+            <td><%= link_to 'Show', hire_me %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,4 +1,6 @@
 <div id="ct-sect-blog" class="ct-section">
-        <%= render partial: "pinned_blog_entry", collection: @pinned_entries %>
+        <%= render partial: "pinned_blog_entry", 
+        collection: Blog::Entry.featured, 
+        as: :entry %>
 </div>
 

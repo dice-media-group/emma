@@ -1,0 +1,53 @@
+<div class="col-sm-3 ct-flex-sidebar left-priority">
+   <p>
+      <%= image_tag @first_time.featured_image_src,
+                     size: "225x352",
+                     class: "wp-image-7896 aligncenter"
+      %>
+   </p>
+   <h2 class="h1 ct-liner text-center"><%= "#{@first_time.first_name} #{@first_time.last_name}" %> </h2>
+   <p class="text-center">
+      <%= "#{@first_time.blurb}" %>
+   </p>
+
+   <p>
+      <a class="ct-btn ct-btn-tweet ct-btn-block" href="https://twitter.com/garyvee" target="_blank" rel="noreferrer">
+         <%= "#{@first_time.twitter_handle}" %>
+      </a>
+   </p>
+
+   <div id="gv_widgets_socialprops-3" class="ct-widget ct-widget-socialprops clearfix text-center">
+      <div class="sidebar-c-3"> 
+            <% ['facebook', 'youtube', 'instagram'].each do |icon_name| %>
+               <% icon = @linked_icon_data.find_by(name: icon_name) %>
+               <span class="wrap-social-item">
+                  <a alt=""
+                  class=" <%= "sp-circle sp-#{icon.name}" %> "
+                  href="<%= icon.url %>"
+                  target="_blank">
+                     <i class='<%= "fab fa-#{icon.font_awesome_class}" %>'></i>
+                  </a>
+               </span>          
+            <% end %>
+
+
+            </div>
+         </div>
+         <div id="gv_widgets_socialprops-6" class="ct-widget ct-widget-socialprops clearfix text-center">
+         <div class="sidebar-c-3">
+            <% ['twitter', 'snapchat', 'linkedin'].each do |icon_name| %>
+               <% icon = @linked_icon_data.find_by(name: icon_name) %>
+               <span class="wrap-social-item">
+                  <a alt=""
+                  class=" <%= "sp-circle sp-#{icon.name}" %> "
+                  href="<%= icon.url %>"
+                  target="_blank">
+                     <i class='<%= "fab fa-#{icon.font_awesome_class}" %>'></i>
+                  </a>
+               </span>          
+            <% end %>
+
+
+         </div>
+      </div>
+   </div>

@@ -1,0 +1,24 @@
+<div class="page-header">
+  <%= link_to hire_mes_path, class: 'btn btn-default' do %>
+    All Hire_mes
+  <% end %>
+  <%= link_to edit_hire_me_path(@hire_me), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show hire_me</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Billboard image filename:</dt>
+  <dd><%= @hire_me.billboard_image_filename %></dd>
+
+  <dt>Headline:</dt>
+  <dd><%= @hire_me.headline %></dd>
+
+  <dt>Body:</dt>
+  <dd><%= @hire_me.body %></dd>
+
+  <dt>Site:</dt>
+  <dd><%= @hire_me.site %></dd>
+
+</dl>

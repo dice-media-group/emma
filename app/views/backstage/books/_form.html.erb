@@ -1,0 +1,63 @@
+
+<%= form_with(model: [ :backstage, book], local: true) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :byline %>
+    <%= form.text_field :byline, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'form-control styled' %>
+  </div>
+
+
+  <div class="form-group">
+    <div class="form-group" data-uppy="book[image]">
+      <%= form.label :jacket_location %>
+      <div>
+        <% if book.jacket_location? %>
+                <%= image_tag book.jacket_location %>
+        <% end %>
+        <%= form.text_field :jacket_location, class: 'form-control' %>
+      </div>
+    </div>
+  
+  </div>
+
+<%#  %>
+
+
+  <div class="form-group">
+    <% if book.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', backstage_book_path, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+      <%= link_to "Cancel", backstage_books_path, class: "btn btn-link" %>
+  </div>
+
+<% end %>
+<%# 
+=> Book(id: integer, title: string, byline: string, description: string, created_at: datetime, updated_at: datetime, jacket_location: text)
+
+%>

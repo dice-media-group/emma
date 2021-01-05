@@ -95,3 +95,14 @@ function setPreview(element, file) {
   }
 }
 // finish Uppy
+
+// start select2 https://yarnpkg.com/package/select2
+import select2 from "select2";
+import "select2/dist/css/select2.css";
+
+$(document).ready(function() {
+  $("select").select2();
+});
+// finish select2
+
+import "controllers";

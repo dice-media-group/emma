@@ -1,0 +1,9 @@
+<script src="https://github.com/basecamp/trix/blame/master/dist/trix.js"></script>
+
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+</div>
+<div class="field-unit__field">
+  <%= f.text_field field.attribute, id: field.attribute %>
+  <trix-editor input="<%= field.attribute >"></trix-editor>
+</div>

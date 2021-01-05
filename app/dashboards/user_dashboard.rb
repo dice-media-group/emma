@@ -33,6 +33,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
   avatar_attachment
+  first_name
   avatar_blob
   notifications
   services

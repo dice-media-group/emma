@@ -1,6 +1,5 @@
 # Emma
 
-
 Emma is named after the first female telephone switchboard operator, hired September 1, 1878 (https://time.com/4011936/emma-nutt/). This rails app connects its blogger with its audience in a faster, more comfortable, more effective way.
 
 This README would normally document whatever steps are necessary to get the
@@ -8,30 +7,39 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+- Ruby version
 
-* System dependencies
+- System dependencies
 
-* Configuration
+  - redis
+  - ngrok for development and testing
+  - sidekiq
 
-* Database creation
+- Configuration
 
-* Database initialization
+  - A .env file needs to written. An example is provided, dot-env.example
+  - The Procfile.dev tells the command `foreman start` how to launch supporting services
 
-* How to run the test suite
+- Database creation
 
-* Services (job queues, cache servers, search engines, etc.)
+- Database initialization
 
-* Deployment instructions
+- How to run the test suite
 
-* ...
+- Services (job queues, cache servers, search engines, etc.)
+
+- Deployment instructions
+
+- ...
 
 #### Heroku Deploy
+
 ```
 git push heroku master
 ```
 
 #### Heroku Seed
+
 ```
 heroku rake db:schema:load
 heroku run rake db:migrate
@@ -39,6 +47,7 @@ heroku run rake db:seed
 ```
 
 #### Heroku Database
+
 ```
 heroku maintenance:on
 heroku pg:reset DATABASE
@@ -49,19 +58,20 @@ heroku restart
 ```
 
 #### Heroku Server
+
 ```
 heroku restart
 ```
 
 #### Heroku Console
+
 ```
 heroku run rails console
 ```
 
 #### Heroku Logs
+
 ```
 heroku logs -p web -t
 heroku logs -p worker -t
 ```
-
-

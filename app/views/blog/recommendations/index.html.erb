@@ -1,0 +1,50 @@
+
+<div class="backstage">
+    <%= render '/backstage/sidebar' %>
+    <section id="main-dashboard-content">
+      <div class="row">
+        <div class="col-sm-6">
+          <h1>Blog_recommendations</h1>
+        </div>
+
+        <div class="col-sm-6 text-right">
+        <%= link_to new_blog_recommendation_path, class: 'btn btn-primary' do %>
+          Add New Recommendation
+        <% end %>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+          
+
+                  <th>Entry</th>
+                  <th>Recommended Entry</th>
+                  <th>Description</th>
+                  
+                <th></th>
+              
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @blog_recommendations.each do |blog_recommendation| %>
+              <%= content_tag :tr, id: dom_id(blog_recommendation), class: dom_class(blog_recommendation) do %>
+                
+
+                <td><%= blog_recommendation.entry.title %></td>
+                <td><%= blog_recommendation.recommended_entry.title %></td>
+                <td><%= blog_recommendation.description %></td>
+              
+              
+                <td><%= link_to 'Show', blog_recommendation %></td>
+                
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </section>
+</div>    

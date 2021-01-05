@@ -1,0 +1,66 @@
+
+<%= form_with(model: [ :backstage, meetup], local: true) do |form| %>
+  <% if meetup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meetup.errors.count, "error") %> prohibited this meetup from being saved:</h2>
+
+      <ul>
+      <% meetup.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%#  
+  => #<PublisherAcct id: 1, name: "instagram", url: "http://instagram.com", created_at: "2020-11-29 23:48:58", updated_at: "2020-11-29 23:48:58", font_awesome_class: "fab fa-instagram", network_kind: "social", blurb: "Get a glimpse of some of my funnier moments on Tik...">
+  %>
+
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :more_info_url %>
+    <%= form.text_area :more_info_url, class: 'form-control styled' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :location %>
+    <%= form.text_field :location, class: 'form-control' %>
+  </div>
+
+
+
+
+  <%# 
+  seller_name: string, url: text, book_id
+   %>
+    <div class="form-group">
+    <% if meetup.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', backstage_meetup_path, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+      <%= link_to "Cancel", backstage_meetups_path, class: "btn btn-link" %>
+  </div>
+
+<% end %>
+<%# 
+=> #<Meetup id: 1, title: "first up", start_date: "2020-11-30", end_date: "2020-12-05", more_info_url: "https://www.garyvaynerchuk.com/first-time-here/", location: "Hometown Buff...%>

@@ -1,0 +1,11 @@
+# .env.example
+
+APP_TUNNEL=subdomain-rails
+APP_SUBDOMAIN=subdomain
+APP_URL=subdomain
+APP_PORT=3330
+ASSET_TUNNEL=subdomain-webpack
+ASSET_TUNNEL_URI=subdomain.ngrok.io
+ASSETS_SUBDOMAIN=subdomain
+ASSETS_PORT=3035
+ASSETS_URL=https://subdomain.ngrok.com

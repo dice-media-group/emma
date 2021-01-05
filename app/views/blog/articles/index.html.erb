@@ -1,49 +1,51 @@
+<div class="backstage">
+  <%= render '/backstage/sidebar' %>
+  <section id="main-dashboard-content">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1>Blog_articles</h1>
+      </div>
 
-
-
-<div class="row">
-  <div class="col-sm-6">
-    <h1>Blog_articles</h1>
-  </div>
-
-  <div class="col-sm-6 text-right">
-  <%= link_to new_blog_article_path, class: 'btn btn-primary' do %>
-    Add New Article
-  <% end %>
-  </div>
-</div>
-
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-      <tr>
-    
-
-            <th>Title</th>
-            <th>Body</th>
-            <th>User</th>
-            <th>Pinned Order</th>
-            
-          <th></th>
-        
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @blog_articles.each do |blog_article| %>
-        <%= content_tag :tr, id: dom_id(blog_article), class: dom_class(blog_article) do %>
-          
-
-            <td><%= link_to blog_article.title,  edit_blog_article_path(blog_article) %></td>
-            <td><%= blog_article.body %></td>
-            <td><%= blog_article.user.name.full %></td>
-            <td><%= blog_article.pinned_value %></td>
-          
-          
-            <td><%= link_to 'Show', blog_article %></td>
-          
-        <% end %>
+      <div class="col-sm-6 text-right">
+      <%= link_to new_blog_article_path, class: 'btn btn-primary' do %>
+        Add New Article
       <% end %>
-    </tbody>
-  </table>
-</div>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+        
+
+                <th>Title</th>
+                <th>Body</th>
+                <th>User</th>
+                <th>Pinned Order</th>
+                
+              <th></th>
+            
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @blog_articles.each do |blog_article| %>
+            <%= content_tag :tr, id: dom_id(blog_article), class: dom_class(blog_article) do %>
+              
+
+                <td><%= link_to blog_article.title,  edit_blog_article_path(blog_article) %></td>
+                <td><%= blog_article.body %></td>
+                <td><%= blog_article.user.name.full %></td>
+                <td><%= blog_article.pinned_value %></td>
+              
+              
+                <td><%= link_to 'Show', blog_article %></td>
+              
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>    

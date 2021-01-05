@@ -1,40 +1,41 @@
 class HomeController < ApplicationController
+  layout "frontdoor"
+
+
   def index
     @pinned_entries = Blog::Entry.all_pinned
-    @coming_soon = Meetup.coming_soon
-    render :layout => 'frontdoor'
+    @coming_soon    = Meetup.coming_soon
+    @lead           = Lead.new
   end
 
   def terms
-        render :layout => 'frontdoor'
 
   end
 
   def privacy
-    render :layout => 'frontdoor'
   end
 
-  def first_time_here
-    render :layout => 'frontdoor'
+def first_time_here
     
   end
 
   def hire_me
-    render :layout => 'frontdoor'
+    @lead           = Lead.new
     
   end
 
   def biography
-    render :layout => 'frontdoor'
-    
+    @bio_hash   = { title:  "filler title",
+                    body:   "Whoops! There's no entry for your story yet.  Please update your story in <a href='/admin/biographies/new'>admin</a>.".html_safe
+                  }
+    @biography  = Biography.last || OpenStruct.new(@bio_hash)
   end
 
   def contact_me
-    render :layout => 'frontdoor'    
   end
 
   def wallpapers
-    render :layout => 'frontdoor'
     
   end
+
 end

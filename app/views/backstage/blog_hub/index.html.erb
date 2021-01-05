@@ -1,0 +1,26 @@
+<div class="backstage">
+
+
+<%= render '/backstage/sidebar' %>
+<section id="main-dashboard-content">
+    <ul>
+        <li>
+            <div>
+                <%= link_to 'blog entries', blog_entries_path, class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'blog articles', blog_articles_path, class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'blog recommendations', blog_recommendations_path, class:"btn btn-primary" %>
+            </div>
+        </li>
+    </ul>
+</section>
+
+</div>
+

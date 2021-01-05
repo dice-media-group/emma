@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  byline: MyString
+  description: MyText
+  dimensions_wxh: MyString
+  press_kit: one
+  headshot_or_other: MyString
+  link: MyText
+  publish_at: MyString
+
+two:
+  title: MyString
+  byline: MyString
+  description: MyText
+  dimensions_wxh: MyString
+  press_kit: two
+  headshot_or_other: MyString
+  link: MyText
+  publish_at: MyString

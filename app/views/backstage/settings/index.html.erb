@@ -1,0 +1,31 @@
+<div class="backstage">
+
+
+<%= render '/backstage/sidebar' %>
+<section id="main-dashboard-content">
+    <ul>
+        <li>
+            <div>
+                <%= link_to 'biography', edit_backstage_biography_path(@biography), class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'first time', edit_backstage_first_time_path(@first_time), class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'edit backstage get in contact content ', edit_backstage_get_in_contact_content_path(@get_in_contact_content), class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'hire me ', edit_backstage_hire_me_path(@get_in_contact_content), class:"btn btn-primary" %>
+            </div>
+        </li>
+    </ul>
+</section>
+
+</div>
+

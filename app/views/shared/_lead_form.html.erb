@@ -1,0 +1,58 @@
+      <%= form_for @lead, 
+          url: lead_path do |f| 
+      %>
+
+        <div class="gform_body">
+          <ul class="gform_fields top_label form_sublabel_below description_below"
+              id="gform_fields_1">
+            <li class="gfield form-control-wrapper form-col form-col-2 form-col-first gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible"
+                id="field_1_7">
+                <%= f.label :name, class: "gfield_label" %>
+              <div class="ginput_container ginput_container_text">
+                <%= f.text_field :name, placeholder: "Your Name Here", class: "medium" %>
+                     
+              </div>
+            </li>
+            <li class="gfield form-control-wrapper form-col form-col-2 form-col-last gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible"
+                id="field_1_6">
+              <%= f.label :email_address, class: "gfield_label" %>
+              <div class="ginput_container ginput_container_email">
+                <%= f.text_field :email_address, placeholder: "yourname@email.com", class: "medium" %>
+              </div>
+            </li>
+            <li class="gfield form-control-wrapper form-col form-col-2 form-col-first gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible"
+                id="field_1_20">
+              <%= f.label :phone, class: "gfield_label" %>
+              <div class="ginput_container ginput_container_phone">
+                <%= f.text_field :phone, placeholder: "(555)-555-5555", class: "medium", type: "tel" %>
+              </div>
+            </li>
+            <li class="gfield form-control-wrapper form-col-2 gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible"
+                id="field_1_4">
+              <%= f.label :subject, class: "gfield_label" %>
+              <div class="ginput_container ginput_container_select">
+                <%= f.select :subject, 
+                    options_for_select(["General Inquiry", "Hire Me", "Press", "Hire Second Star Labs to Help"]) %>
+              </div>
+            </li>
+            <li class="gfield gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below field_description_below gfield_visibility_visible"
+                id="field_1_9"></li>
+            <li class="gfield field_sublabel_below field_description_below gfield_visibility_visible"
+                id="field_1_18">
+              <%= f.label :Message, class: "gfield_label" %>
+              <div class="ginput_container ginput_container_textarea">
+                <%= f.text_area :email_address,
+                    class: "textarea medium", 
+                    rows: "10",
+                    cols: "50" %>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="gform_footer top_label">
+          <%= f.submit "Submit", class: "gform_button button" %>
+
+        </div>
+        
+      <% end %>

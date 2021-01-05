@@ -1,4 +1,9 @@
 Rails.application.configure do
+
+  # Allow all ngrok hosts access
+  config.hosts << /[a-z0-9]+\.ngrok\.io/
+
+
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -63,4 +68,6 @@ Rails.application.configure do
 
   # Add ngrok.io hosts
   config.hosts << /[a-z0-9]+\.ngrok\.io/
+
+
 end

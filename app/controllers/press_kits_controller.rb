@@ -5,13 +5,32 @@ class PressKitsController < ApplicationController
   # GET /press_kits
   # GET /press_kits.json
   def index
-    @press_kits = PressKit.all
     render :layout => 'frontdoor'
+
+    @press_kits             = PressKit.all
+    @press_kit              = PressKit.first
+    @press_kit_entries      = @press_kit.press_kit_entries
+    @press_kit_photos       = @press_kit.press_kit_photos.all
+    @press_kit_headshots    = @press_kit.press_kit_photos.published_headshots
+    @press_kit_actionshots  = @press_kit.press_kit_photos.published_action_shots
+    @social_links           = @press_kit.press_kit_links.social
+    @website_links          = @press_kit.press_kit_links.website
+    @company_links          = @press_kit.press_kit_links.company
   end
 
   # GET /press_kits/1
   # GET /press_kits/1.json
   def show
+    render :layout => 'frontdoor'
+
+    @press_kits             = PressKit.all
+    @pk_entries      = @press_kit.press_kit_entries
+    @press_kit_photos       = @press_kit.press_kit_photos.all
+    @press_kit_headshots    = @press_kit.press_kit_photos.published_headshots
+    @press_kit_actionshots  = @press_kit.press_kit_photos.published_action_shots
+    @social_links           = @press_kit.press_kit_links.social
+    @website_links          = @press_kit.press_kit_links.website
+    @company_links          = @press_kit.press_kit_links.company
   end
 
   # GET /press_kits/new
@@ -66,7 +85,7 @@ class PressKitsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_press_kit
-      @press_kit = PressKit.find(params[:id])
+      @press_kit = PressKit.first
     end
 
     # Only allow a list of trusted parameters through.

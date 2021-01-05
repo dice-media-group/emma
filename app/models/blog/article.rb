@@ -10,10 +10,20 @@ class Blog::Article < ApplicationRecord
   #               through: :blog_entry_assignments,
   #               source: :entry,
   #               class_name: 'Blog::Entry'
-  has_many            :blog_entries, 
-                    :through => :blog_entry_assignments, 
-                    :source => :blog_entry
+  # has_many       :blog_entries, 
+  #                :through => :blog_entry_assignments, 
+  #                :source => :blog_entry
 
+  belongs_to :entry, class_name: 'Blog::Entry'
+  ##########################
+  # => Methods
+  ##########################
+  def reading_time
+    # https://alexanderpaterson.com/posts/showing-estimated-reading-time-on-a-rails-blog-post
+    words_per_minute = 150
+    text =  self.body.to_plain_text
+    result = (text.scan(/\w+/).length / WORDS_PER_MINUTE).to_i
+  end
 
   def self.collect_pinned
     where("pinned_value > ?", 0)
