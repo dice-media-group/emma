@@ -196,6 +196,7 @@
 
   .flexgrid {
     display: flex;
+      flex-wrap: wrap;
   }
 
   .flexgrid .item {

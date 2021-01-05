@@ -1,14 +1,3 @@
-<style>
-  .grid-1-1-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) 2fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
-
-
-</style>
 <div class="backstage">
 
 
@@ -16,22 +5,22 @@
 
     <section id="main-dashboard-content">
       <section id="top-section">
-        <h1>MerchandiseLinks#index</h1>
+        <h1>Backstage::MerchandiseLinks <%= "(#{@merchandise_links.count})" %></h1>
         <%= link_to 'new', 
-            new_backstage_merchandise_link_path, 
+            new_backstage_media_appearance_path, 
             class: "btn btn-primary" %>
       </section>
-      <section class="grid-1-1-2">
-        <div class="grid-item header">seller_name</div>
-        <div class="grid-item header">url</div>
-        <div class="grid-item  header">Book</div>
+      <section class="flexgrid">
         <% @merchandise_links.each do |link| %>
-
-        <div class="grid-item  cell">
-          <%= link_to link.seller_name, edit_mechandise_link_path(link.id) %>
-        </div>
-        <div class="grid-item  cell"><%= link.url %> </div>            
-        <div class="grid-item  cell"><%= link.book.title %></div>
+          <div class="item">
+            <p >Book:  
+                <%= link_to link.book.title, edit_backstage_merchandise_link_path(link.id) %>
+            </p>
+            <p >
+              Seller:
+              <%= link_to link.seller_name, link.url, target: "_blank" %>
+            </p>
+          </div>
         
         <% end %>
               

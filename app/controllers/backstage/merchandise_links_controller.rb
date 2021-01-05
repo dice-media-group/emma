@@ -1,5 +1,6 @@
 class Backstage::MerchandiseLinksController < ApplicationController
   before_action :set_merchandise_link, only: [:show, :edit, :update, :destroy]
+  before_action :set_books, only: [:new, :edit]
 
   def index
     @merchandise_links = MerchandiseLink.all  
@@ -58,6 +59,9 @@ class Backstage::MerchandiseLinksController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_merchandise_link
     @merchandise_link = MerchandiseLink.find(params[:id])
+  end
+  def set_books
+    @books = Book.all
   end
 
   
