@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_30_064537) do
+ActiveRecord::Schema.define(version: 2021_01_06_174341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -238,6 +238,8 @@ ActiveRecord::Schema.define(version: 2020_12_30_064537) do
     t.bigint "site_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "bio_link_text"
+    t.text "watch_this_poster_url"
     t.index ["site_id"], name: "index_home_infos_on_site_id"
   end
 

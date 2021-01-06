@@ -87,14 +87,36 @@
 # set up site and dependents
 @site = Site.first_or_create
 
-@bio  = Biography.first_or_create!(title: "my title", header_photo_url:"https://image.freepik.com/free-vector/happy-new-year-2021-blue-geometric-banner-design_1055-9725.jpg", site: @site)
+@bio  = Biography.first_or_create!(title: "my title", 
+                                    header_photo_url:"https://image.freepik.com/free-vector/happy-new-year-2021-blue-geometric-banner-design_1055-9725.jpg", 
+                                    site: @site)
 
-@first_time = FirstTime.first_or_create!(first_name: "first name", last_name: "last_name", blurb: "blurb", twitter_handle: "@handle", featured_image_src: "https://4.bp.blogspot.com/-uzWg-6Gdekw/WbFva2ldcvI/AAAAAAABOBI/IKII8WoG_AYAAZMJumu_H8I88kr3jRuGgCLcBGAs/s640/southworth-beauty.jpg", featured_youtube_video_url:"https://www.youtube.com/embed/z5tugxy70MY", site: @site)
+@first_time = FirstTime.first_or_create!(first_name: "first name", 
+                                          last_name: "last_name", 
+                                          blurb: "blurb", 
+                                          twitter_handle: "@handle", 
+                                          featured_image_src: "https://4.bp.blogspot.com/-uzWg-6Gdekw/WbFva2ldcvI/AAAAAAABOBI/IKII8WoG_AYAAZMJumu_H8I88kr3jRuGgCLcBGAs/s640/southworth-beauty.jpg", 
+                                          featured_youtube_video_url:"https://www.youtube.com/embed/z5tugxy70MY", 
+                                          site: @site)
 
-@get_in_contact = GetInContactContent.first_or_create!(first_name: "first_name", last_name: "last_name", youtube_url: "https://www.youtube.com/embed/z5tugxy70MY", site: @site)
+@get_in_contact = GetInContactContent.first_or_create!(first_name: "first_name", 
+                                                        last_name: "last_name", 
+                                                        youtube_url: "https://www.youtube.com/embed/z5tugxy70MY", 
+                                                        site: @site)
 
-@hire_me = HireMe.first_or_create!( billboard_image_filename: "text", headline: "string", site: @site)
+@hire_me = HireMe.first_or_create!(billboard_image_filename: "billboard_image_filename", 
+                                    headline: "string", 
+                                    site: @site)
 
-@home_info = HomeInfo.first_or_create!(biography_blurb: "biography_blurb", video_billboard_url: "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4", watch_this_video_url: "https://www.youtube.com/embed/z5tugxy70MY", site: @site)
+@home_info = HomeInfo.first_or_create!(bio_link_text: "default text for bio_link_text",
+                                        biography_blurb: "biography_blurb", 
+                                        bio_link_text: "bio link text"
+                                        video_billboard_url: "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4", 
+                                        watch_this_video_url: "https://www.youtube.com/embed/z5tugxy70MY", 
+                                        watch_this_poster_url: "https://www.youtube.com/embed/z5tugxy70MY", 
+                                        site: @site)
 
-@press_kit = PressKit.first_or_create!( name: "name", birth_date: Date.new, birthplace: "birthplace", site: @site)
+@press_kit = PressKit.first_or_create!( name: "name", 
+                                        birth_date: Date.new, 
+                                        birthplace: "birthplace", 
+                                        site: @site)
