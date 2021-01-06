@@ -97,4 +97,4 @@
 
 @home_info = HomeInfo.first_or_create!(biography_blurb: "biography_blurb", video_billboard_url: "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4", watch_this_video_url: "https://www.youtube.com/embed/z5tugxy70MY", site: @site)
 
-@press_kit = PressKit.first_or_create!( name: "name", birth_date: Date.new, birthplace: "birthplace", site_id: @site)
+@press_kit = PressKit.first_or_create!( name: "name", birth_date: Date.new, birthplace: "birthplace", site: @site)
