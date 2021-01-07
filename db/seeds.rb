@@ -145,6 +145,3 @@
                                         birth_date: Date.new, 
                                         birthplace: "birthplace", 
                                         site: @site)
-
-
-                                        => #<Podcast id: nil, billboard_image_url: nil, headline: nil, title: nil, podcast_player_src: nil, created_at: nil, updated_at: nil, site_id: nil>#
