@@ -21,7 +21,7 @@ class Backstage::BiographyController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def biography_params
-    params.require(:biography).permit(:title, :body)
+    params.require(:biography).permit(:title, :body, :header_photo_url)
   end
 
 

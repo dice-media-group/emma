@@ -6,10 +6,12 @@ class Backstage::PublisherAcctsController < ApplicationController
   end
 
   def new
+    @network_kinds = PublisherAcct.all.map {|x| x.network_kind}.uniq!
     @publisher_acct = PublisherAcct.new
   end
 
   def edit
+    @network_kinds = PublisherAcct.all.map {|x| x.network_kind}.uniq!
   end
 
   # POST /publisher_accts

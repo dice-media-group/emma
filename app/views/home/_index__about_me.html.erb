@@ -1,9 +1,19 @@
+<%
+
+
+
+%>
+
   <section class="ct-section">
     <div class="container">
     <div class="about-me-text-and-billboard">
       <div class="ct-col-module">
-        <h1 class="ct-liner"><a href="/biography/">Carl Tanner Builds Full-Stack Builds Web Apps</a></h1>
-        <p>Carl Tanner is the Chairman of Second Star Labs, a modern, full-stack online software development agency, and the active Lead Developer of Dice Media Group, a full-service marketing agency for small to medium businesses operating in the United States.</p>
+        <h1 class="ct-liner">
+          <%= link_to @home_info.bio_link_text, biography_path %>
+        </h1>          
+        <p>
+          <%= @home_info.biography_blurb %>
+        </p>
         <p>&nbsp;</p>
         <div class="ct-section-footer text-right">
           <a class="link-blue link-bold"
@@ -16,8 +26,8 @@
             <h4 class="h3 ct-h-welter50">Watch This</h4>
           </div>
           <div class="ct-billboard-poster">
-            <img class="ct-billboard-poster-img"
-                 src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180530232839/image.png"> <a alt="Open Video"
+            <%= image_tag @home_info.watch_this_poster_url, class: "ct-billboard-poster-img" %>
+             <a alt="Open Video"
                  class="ct-modal-ctrl ct-billboard-interact all play-btn"
                  href="#overlay_2068|modal-open-autoplay"></a>
           </div>

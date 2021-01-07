@@ -1,6 +1,6 @@
     <div class="row stack-row">
         <div class="col-sm-4 col-md-3">
-            <%= image_tag("#{book.jacket_location}")%>
+            <%= image_tag("#{book.jacket_location}", size: "250x300")%>
         </div>
         <div class="col-sm-8 col-md-4">
             <h2 class="h1 ct-liner-simple">
@@ -15,7 +15,7 @@
             <a href="" class="em" target="_blank"></a>
             <div class="hidden-md hidden-lg">
                 <div class="stack-item-content">
-                    <h6 class="ct-h-slab ct-h-inherit">by Gary Vaynerchuk</h6>
+                    <h6 class="ct-h-slab ct-h-inherit">by <%= book.byline %></h6>
                     <p>
                         <span style="font-weight: 400;">
                             <%= book.description %>
@@ -24,7 +24,10 @@
                     <p>&nbsp;</p>
                 </div>
                 <div class="stack-item-footer">
-                    <%= link_to 'Buy Now', book.merchandise_links.first.url, class: "ct-btn ct-btn-red", target: "_blank" %>
+                    <% if !book.merchandise_links.blank? %>
+                        <%= link_to 'Buy Now', book.merchandise_links.first.url, class: "ct-btn ct-btn-red", target: "_blank" %>                    
+                    <% end %>
+                    
                 </div>
             </div>
         </div>
@@ -37,7 +40,9 @@
                 <p>&nbsp;</p>
             </div>
                 <div class="stack-item-footer">
-                    <%= link_to 'Buy Now', book.merchandise_links.first.url, class: "ct-btn ct-btn-red", target: "_blank" %>
+                    <% if !book.merchandise_links.blank? %>
+                        <%= link_to 'Buy Now', book.merchandise_links.first.url, class: "ct-btn ct-btn-red", target: "_blank" %>                    
+                    <% end %>
             </div>
         </div>
     </div>

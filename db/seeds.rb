@@ -87,14 +87,64 @@
 # set up site and dependents
 @site = Site.first_or_create
 
-@bio  = Biography.first_or_create!(title: "my title", header_photo_url:"https://image.freepik.com/free-vector/happy-new-year-2021-blue-geometric-banner-design_1055-9725.jpg", site: @site)
+@bio  = Biography.first_or_create!(title: "my title", 
+                                    header_photo_url:"https://image.freepik.com/free-vector/happy-new-year-2021-blue-geometric-banner-design_1055-9725.jpg", 
+                                    site: @site)
+#  
+@book_info = BookInfo.first_or_create!(billboard_image_url: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
+                                    billboard_image_title: "favorite books", 
+                                    site: @site)
 
-@first_time = FirstTime.first_or_create!(first_name: "first name", last_name: "last_name", blurb: "blurb", twitter_handle: "@handle", featured_image_src: "https://4.bp.blogspot.com/-uzWg-6Gdekw/WbFva2ldcvI/AAAAAAABOBI/IKII8WoG_AYAAZMJumu_H8I88kr3jRuGgCLcBGAs/s640/southworth-beauty.jpg", featured_youtube_video_url:"https://www.youtube.com/embed/z5tugxy70MY", site: @site)
+@first_time = FirstTime.first_or_create!(billboard_image_url: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
+                                          billboard_image_title: "billboard image headline",
+                                          first_name: "first name", 
+                                          last_name: "last_name", 
+                                          blurb: "blurb", 
+                                          twitter_handle: "@handle", 
+                                          featured_image_src: "https://4.bp.blogspot.com/-uzWg-6Gdekw/WbFva2ldcvI/AAAAAAABOBI/IKII8WoG_AYAAZMJumu_H8I88kr3jRuGgCLcBGAs/s640/southworth-beauty.jpg", 
+                                          featured_youtube_video_url:"https://www.youtube.com/embed/z5tugxy70MY", 
+                                          site: @site)
 
-@get_in_contact = GetInContactContent.first_or_create!(first_name: "first_name", last_name: "last_name", youtube_url: "https://www.youtube.com/embed/z5tugxy70MY", site: @site)
+@general_info = GeneralInfo.first_or_create!(site_name: "Site name", 
+                                          text_number: "555-555-1212", 
+                                          site: @site)
 
-@hire_me = HireMe.first_or_create!( billboard_image_filename: "text", headline: "string", site: @site)
+@get_in_contact = GetInContactContent.first_or_create!(first_name: "first_name", 
+                                          last_name: "last_name", 
+                                          youtube_url: "https://www.youtube.com/embed/z5tugxy70MY", 
+                                          site: @site)
 
-@home_info = HomeInfo.first_or_create!(biography_blurb: "biography_blurb", video_billboard_url: "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4", watch_this_video_url: "https://www.youtube.com/embed/z5tugxy70MY", site: @site)
 
-@press_kit = PressKit.first_or_create!( name: "name", birth_date: Date.new, birthplace: "birthplace", site: @site)
+@hire_me = HireMe.first_or_create!(billboard_image_filename: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
+                                    headline: "hire me", 
+                                    learn_more_text: "Learn More Here",
+                                    learn_more_pdf_link: "/GV_SPEAKING_ONEPAGER_10-16-1.pdf",
+                                    site: @site)
+
+@home_info = HomeInfo.first_or_create!(bio_link_text: "default text for bio_link_text",
+                                        biography_blurb: "biography_blurb", 
+                                        bio_link_text: "bio link text",
+                                        video_billboard_url: "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4", 
+                                        watch_this_video_url: "https://www.youtube.com/embed/z5tugxy70MY", 
+                                        watch_this_poster_url: "https://via.placeholder.com/1024x576?text=Watch+This", 
+                                        site: @site)
+
+@podcast = Podcast.first_or_create!(billboard_image_url: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
+                                      headline: "billboard image headline", 
+                                      title: "Podcast page title", 
+                                      podcast_player_src: "podcast_player_src", 
+                                      site: @site)
+  
+@meetup_info = MeetupInfo.first_or_create!(billboard_image_url: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
+                                        billboard_image_title: "billboard image headline", 
+                                        site: @site)
+  
+@press_kit = PressKit.first_or_create!(billboard_image_url: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
+                                        billboard_image_title: "recent press", 
+                                        name: "name", 
+                                        birth_date: Date.new, 
+                                        birthplace: "birthplace", 
+                                        site: @site)
+
+
+                                        => #<Podcast id: nil, billboard_image_url: nil, headline: nil, title: nil, podcast_player_src: nil, created_at: nil, updated_at: nil, site_id: nil>#

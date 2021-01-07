@@ -24,7 +24,7 @@ class PressKitsController < ApplicationController
     render :layout => 'frontdoor'
 
     @press_kits             = PressKit.all
-    @pk_entries      = @press_kit.press_kit_entries
+    @pk_entries             = @press_kit.press_kit_entries
     @press_kit_photos       = @press_kit.press_kit_photos.all
     @press_kit_headshots    = @press_kit.press_kit_photos.published_headshots
     @press_kit_actionshots  = @press_kit.press_kit_photos.published_action_shots
@@ -85,7 +85,8 @@ class PressKitsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_press_kit
-      @press_kit = PressKit.first
+      @site       = Site.first
+      @press_kit  = @site.press_kit
     end
 
     # Only allow a list of trusted parameters through.

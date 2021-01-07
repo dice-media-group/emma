@@ -1,9 +1,9 @@
 
-<% billboard_image_filename = "events_hero.jpg" %>
-<% headline = "Carl Tanner" %>
+<%# billboard_image_filename = "events_hero.jpg" %>
+<%# headline = "Carl Tanner" %>
 <%= render partial: '/shared/static_billboard', 
-    locals: { image_filename: billboard_image_filename,
-              headline:       headline
+    locals: { image_filename: @meetup_info.billboard_image_title,
+              headline:       @meetup_info.billboard_image_url
     
     } %>
 

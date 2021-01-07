@@ -1,0 +1,37 @@
+<%= form_with(model: [ :backstage, book_info], local: true) do |form| %>
+  <% if book_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book_info.errors.count, "error") %> prohibited this book_info from being saved:</h2>
+
+      <ul>
+      <% book_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="form-group">
+    <%= form.label :billboard_image_title %>
+    <%= form.text_field :billboard_image_title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :billboard_image_url %>
+    <%= form.text_area :billboard_image_url, class: 'form-control styled' %>
+  </div>
+
+
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if book_info.persisted? %>
+      <%= link_to "Cancel", backstage_settings_path, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", backstage_settings_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
+

@@ -1,0 +1,51 @@
+<%= form_with(model: [ :backstage, podcast], local: true) do |form| %>
+  <% if podcast.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(podcast.errors.count, "error") %> prohibited this podcast from being saved:</h2>
+
+      <ul>
+      <% podcast.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="form-group">
+    <%= form.label :billboard_image_url %>
+    <%= form.text_area :billboard_image_url, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :headline %>
+    <%= form.text_field :headline, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control styled' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :body %>
+    <%= form.rich_text_area :body, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :podcast_player_src %>
+    <%= form.text_area :podcast_player_src, class: 'form-control styled' %>
+  </div>
+
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if podcast.persisted? %>
+      <%= link_to "Cancel", backstage_site_index_path, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", backstage_site_index_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
+

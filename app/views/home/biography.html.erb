@@ -1,5 +1,5 @@
-<% billboard_image_filename = "biography_hero.jpg" %>
-<% headline = "Carl Tanner" %>
+<% billboard_image_filename = @biography.header_photo_url %>
+<% headline = @biography.title %>
 <%= render partial: '/shared/static_billboard', 
     locals: { image_filename: billboard_image_filename,
               headline:       headline

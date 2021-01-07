@@ -6,22 +6,52 @@
     <ul>
         <li>
             <div>
-                <%= link_to 'biography', edit_backstage_biography_path(@biography), class:"btn btn-primary" %>
+                <%= link_to 'biography page', edit_backstage_biography_path(@biography), class:"btn btn-primary" %>
             </div>
         </li>
         <li>
             <div>
-                <%= link_to 'first time', edit_backstage_first_time_path(@first_time), class:"btn btn-primary" %>
+                <%= link_to 'book info page', edit_backstage_book_info_path(BookInfo.first), class:"btn btn-primary" %>
             </div>
         </li>
         <li>
             <div>
-                <%= link_to 'edit backstage get in contact content ', edit_backstage_get_in_contact_content_path(@get_in_contact_content), class:"btn btn-primary" %>
+                <%= link_to 'general info page', edit_backstage_general_info_path(BookInfo.first), class:"btn btn-primary" %>
             </div>
         </li>
         <li>
             <div>
-                <%= link_to 'hire me ', edit_backstage_hire_me_path(@get_in_contact_content), class:"btn btn-primary" %>
+                <%= link_to 'home page', edit_backstage_home_info_path(@home_info), class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'first time page', edit_backstage_first_time_path(@first_time), class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'get in contact page ', edit_backstage_get_in_contact_content_path(@get_in_contact_content), class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'hire me page', edit_backstage_hire_me_path(@get_in_contact_content), class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'meetup info page', edit_backstage_meetup_info_path(@meetup_info), class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'podcast page', edit_backstage_podcast_path(@podcast), class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
+                <%= link_to 'press kit page', edit_backstage_press_kit_path(@press_kit), class:"btn btn-primary" %>
             </div>
         </li>
     </ul>

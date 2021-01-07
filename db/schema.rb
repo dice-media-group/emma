@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_30_064537) do
+ActiveRecord::Schema.define(version: 2021_01_07_113847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,6 +112,15 @@ ActiveRecord::Schema.define(version: 2020_12_30_064537) do
     t.index ["blog_entry_id"], name: "index_blog_video_embeds_on_blog_entry_id"
   end
 
+  create_table "book_infos", force: :cascade do |t|
+    t.string "billboard_image_title"
+    t.text "billboard_image_url"
+    t.bigint "site_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["site_id"], name: "index_book_infos_on_site_id"
+  end
+
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "byline"
@@ -197,6 +206,8 @@ ActiveRecord::Schema.define(version: 2020_12_30_064537) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "site_id", null: false
+    t.string "billboard_image_title"
+    t.text "billboard_image_url"
     t.index ["site_id"], name: "index_first_times_on_site_id"
   end
 
@@ -209,6 +220,15 @@ ActiveRecord::Schema.define(version: 2020_12_30_064537) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "general_infos", force: :cascade do |t|
+    t.string "site_name"
+    t.string "text_number"
+    t.bigint "site_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["site_id"], name: "index_general_infos_on_site_id"
   end
 
   create_table "get_in_contact_contents", force: :cascade do |t|
@@ -228,6 +248,8 @@ ActiveRecord::Schema.define(version: 2020_12_30_064537) do
     t.bigint "site_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "learn_more_text"
+    t.text "learn_more_pdf_link"
     t.index ["site_id"], name: "index_hire_mes_on_site_id"
   end
 
@@ -238,6 +260,8 @@ ActiveRecord::Schema.define(version: 2020_12_30_064537) do
     t.bigint "site_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "bio_link_text"
+    t.text "watch_this_poster_url"
     t.index ["site_id"], name: "index_home_infos_on_site_id"
   end
 
@@ -256,6 +280,15 @@ ActiveRecord::Schema.define(version: 2020_12_30_064537) do
     t.datetime "published_on"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "meetup_infos", force: :cascade do |t|
+    t.string "billboard_image_title"
+    t.text "billboard_image_url"
+    t.bigint "site_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["site_id"], name: "index_meetup_infos_on_site_id"
   end
 
   create_table "meetups", force: :cascade do |t|
@@ -291,6 +324,17 @@ ActiveRecord::Schema.define(version: 2020_12_30_064537) do
   create_table "photos", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "podcasts", force: :cascade do |t|
+    t.text "billboard_image_url"
+    t.string "headline"
+    t.string "title"
+    t.text "podcast_player_src"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "site_id", null: false
+    t.index ["site_id"], name: "index_podcasts_on_site_id"
   end
 
   create_table "press_kit_entries", force: :cascade do |t|
@@ -336,6 +380,8 @@ ActiveRecord::Schema.define(version: 2020_12_30_064537) do
     t.date "birth_date"
     t.string "birthplace"
     t.bigint "site_id", null: false
+    t.text "billboard_image_url"
+    t.string "billboard_image_title"
     t.index ["site_id"], name: "index_press_kits_on_site_id"
   end
 
@@ -428,6 +474,7 @@ ActiveRecord::Schema.define(version: 2020_12_30_064537) do
   add_foreign_key "blog_recommendations", "blog_entries", column: "entry_id"
   add_foreign_key "blog_recommendations", "blog_entries", column: "recommended_entry_id"
   add_foreign_key "blog_video_embeds", "blog_entries"
+  add_foreign_key "book_infos", "sites"
   add_foreign_key "broadcaster_audios", "broadcaster_themes"
   add_foreign_key "broadcaster_outlines", "broadcaster_themes"
   add_foreign_key "broadcaster_social_entries", "broadcaster_themes"
@@ -436,10 +483,13 @@ ActiveRecord::Schema.define(version: 2020_12_30_064537) do
   add_foreign_key "broadcaster_videos", "broadcaster_themes"
   add_foreign_key "first_time_entries", "first_times"
   add_foreign_key "first_times", "sites"
+  add_foreign_key "general_infos", "sites"
   add_foreign_key "get_in_contact_contents", "sites"
   add_foreign_key "hire_mes", "sites"
   add_foreign_key "home_infos", "sites"
+  add_foreign_key "meetup_infos", "sites"
   add_foreign_key "merchandise_links", "books"
+  add_foreign_key "podcasts", "sites"
   add_foreign_key "press_kit_entries", "press_kits"
   add_foreign_key "press_kit_links", "press_kits"
   add_foreign_key "press_kit_photos", "press_kits"

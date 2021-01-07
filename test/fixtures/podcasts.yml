@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  billboard_image_url: MyText
+  headline: MyString
+  title: MyString
+  podcast_player_src: MyText
+
+two:
+  billboard_image_url: MyText
+  headline: MyString
+  title: MyString
+  podcast_player_src: MyText

@@ -42,6 +42,8 @@ Rails.application.routes.draw do
     resources :biography, only: [:edit, :update]
     resources :blog_hub
     resources :books      
+    resources :book_info, only: [:edit, :update]
+    resources :general_info, only: [:edit, :update]
     resources :get_in_contact_content, only: [:edit, :update]
 
     # namespace :blog do
@@ -50,15 +52,19 @@ Rails.application.routes.draw do
     #   resources :articles
     # end
     resources :media_appearances
+    resources :meetup_info, only: [:edit, :update]
     resources :meetups
     resources :merchandise_links
     resources :messages, only: [:index]
+    resources :podcast, only: [:edit, :update]
+    resources :press_kit, only: [:edit, :update]
     # resources :press_kit_entries
     # resources :press_kit, only: [:index]
     # resources :press_kit_links
     resources :publisher_accts
   
     resources :site, only: [:index], shallow: true do
+      resources :general_info
       resources :first_time
       resources :hire_me
       resources :home_info
