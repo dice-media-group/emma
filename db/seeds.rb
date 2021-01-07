@@ -91,6 +91,10 @@
                                     header_photo_url:"https://image.freepik.com/free-vector/happy-new-year-2021-blue-geometric-banner-design_1055-9725.jpg", 
                                     site: @site)
 
+@book_info = BookInfo.first_or_create!(billboard_image_url: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
+                                    billboard_image_title: "favorite books", 
+                                    site: @site)
+
 @first_time = FirstTime.first_or_create!(first_name: "first name", 
                                           last_name: "last_name", 
                                           blurb: "blurb", 
@@ -122,8 +126,8 @@
                                       podcast_player_src: "podcast_player_src", 
                                       site: @site)
   
-@meetup_info = MeetupInfo.first_or_create!(billboard_image_title: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
-                                        billboard_image_url: "billboard image headline", 
+@meetup_info = MeetupInfo.first_or_create!(billboard_image_url: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
+                                        billboard_image_title: "billboard image headline", 
                                         site: @site)
   
 @press_kit = PressKit.first_or_create!( name: "name", 

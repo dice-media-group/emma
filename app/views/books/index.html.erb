@@ -1,15 +1,19 @@
 
-<% billboard_image_filename = "biography_hero.jpg" %>
-<% headline = "Favorite Books" %>
+<%# billboard_image_filename = "biography_hero.jpg" %>
+<%# headline = "Favorite Books" %>
 <%= render partial: '/shared/static_billboard', 
-    locals: { image_filename: billboard_image_filename,
-              headline:       headline
+    locals: { image_filename: @book_info.billboard_image_url,
+              headline:       @book_info.billboard_image_title
     
     } %>
 
 <div class="ct-content-wrapper">
   <div class="ct-page-wrapper container">
-    <%= render @books %>
+  <% if !@books.count.blank?  %>
+    <%= render @books %>    
+  <% else %>
+    <%= render '_no_books_listed' %>
+  <% end %>
   </div>
 </div>
 

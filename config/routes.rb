@@ -42,6 +42,7 @@ Rails.application.routes.draw do
     resources :biography, only: [:edit, :update]
     resources :blog_hub
     resources :books      
+    resources :book_info, only: [:edit, :update]
     resources :get_in_contact_content, only: [:edit, :update]
 
     # namespace :blog do

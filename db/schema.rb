@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_050012) do
+ActiveRecord::Schema.define(version: 2021_01_07_063141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,15 @@ ActiveRecord::Schema.define(version: 2021_01_07_050012) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["blog_entry_id"], name: "index_blog_video_embeds_on_blog_entry_id"
+  end
+
+  create_table "book_infos", force: :cascade do |t|
+    t.string "billboard_image_title"
+    t.text "billboard_image_url"
+    t.bigint "site_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["site_id"], name: "index_book_infos_on_site_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -450,6 +459,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_050012) do
   add_foreign_key "blog_recommendations", "blog_entries", column: "entry_id"
   add_foreign_key "blog_recommendations", "blog_entries", column: "recommended_entry_id"
   add_foreign_key "blog_video_embeds", "blog_entries"
+  add_foreign_key "book_infos", "sites"
   add_foreign_key "broadcaster_audios", "broadcaster_themes"
   add_foreign_key "broadcaster_outlines", "broadcaster_themes"
   add_foreign_key "broadcaster_social_entries", "broadcaster_themes"
