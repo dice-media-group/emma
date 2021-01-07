@@ -26,7 +26,7 @@ class Backstage::HireMeController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def hire_me_params
-    params.require(:hire_me).permit(:rt_body, :billboard_image_filename, :headline)
+    params.require(:hire_me).permit(:rt_body, :billboard_image_filename, :headline, :learn_more_text, :learn_more_pdf_link)
     end
     
 end

@@ -23,7 +23,9 @@ def first_time_here
   end
 
   def hire_me
-    @lead           = Lead.new
+    @lead     = Lead.new
+    @site     = Site.first
+    @hire_me  = @site.hire_me
     
   end
 

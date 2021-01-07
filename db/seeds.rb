@@ -108,8 +108,10 @@
                                                         youtube_url: "https://www.youtube.com/embed/z5tugxy70MY", 
                                                         site: @site)
 
-@hire_me = HireMe.first_or_create!(billboard_image_filename: "billboard_image_filename", 
-                                    headline: "string", 
+@hire_me = HireMe.first_or_create!(billboard_image_filename: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
+                                    headline: "hire me", 
+                                    learn_more_text: "Learn More Here",
+                                    learn_more_pdf_link: "/GV_SPEAKING_ONEPAGER_10-16-1.pdf",
                                     site: @site)
 
 @home_info = HomeInfo.first_or_create!(bio_link_text: "default text for bio_link_text",
