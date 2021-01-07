@@ -122,6 +122,10 @@
                                       podcast_player_src: "podcast_player_src", 
                                       site: @site)
   
+@meetup_info = MeetupInfo.first_or_create!(billboard_image_title: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
+                                        billboard_image_url: "billboard image headline", 
+                                        site: @site)
+  
 @press_kit = PressKit.first_or_create!( name: "name", 
                                         birth_date: Date.new, 
                                         birthplace: "birthplace", 

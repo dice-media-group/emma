@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_06_222405) do
+ActiveRecord::Schema.define(version: 2021_01_07_050012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -260,6 +260,15 @@ ActiveRecord::Schema.define(version: 2021_01_06_222405) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "meetup_infos", force: :cascade do |t|
+    t.string "billboard_image_title"
+    t.text "billboard_image_url"
+    t.bigint "site_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["site_id"], name: "index_meetup_infos_on_site_id"
+  end
+
   create_table "meetups", force: :cascade do |t|
     t.string "title"
     t.date "start_date"
@@ -452,6 +461,7 @@ ActiveRecord::Schema.define(version: 2021_01_06_222405) do
   add_foreign_key "get_in_contact_contents", "sites"
   add_foreign_key "hire_mes", "sites"
   add_foreign_key "home_infos", "sites"
+  add_foreign_key "meetup_infos", "sites"
   add_foreign_key "merchandise_links", "books"
   add_foreign_key "podcasts", "sites"
   add_foreign_key "press_kit_entries", "press_kits"

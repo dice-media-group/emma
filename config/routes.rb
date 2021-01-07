@@ -50,6 +50,7 @@ Rails.application.routes.draw do
     #   resources :articles
     # end
     resources :media_appearances
+    resources :meetup_info, only: [:edit, :update]
     resources :meetups
     resources :merchandise_links
     resources :messages, only: [:index]

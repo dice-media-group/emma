@@ -4,7 +4,9 @@ class MeetupsController < ApplicationController
   # GET /meetups
   # GET /meetups.json
   def index
-    @meetups = Meetup.all
+    @site         = Site.first
+    @meetup_info  = @site.meetup_info
+    @meetups      = Meetup.all
   end
 
   # GET /meetups/1
