@@ -21,7 +21,7 @@ class Backstage::PodcastController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def podcast_params
-    params.require(:podcast).permit(:billboard_image_url, :headline,:title, :podcast_player_src, :body)
+    params.require(:podcast).permit(:billboard_image_url, :headline,:title, :podcast_player_src, :body, :network_kind)
   end
 
 
