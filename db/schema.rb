@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_06_174341) do
+ActiveRecord::Schema.define(version: 2021_01_06_222405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -295,6 +295,17 @@ ActiveRecord::Schema.define(version: 2021_01_06_174341) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "podcasts", force: :cascade do |t|
+    t.text "billboard_image_url"
+    t.string "headline"
+    t.string "title"
+    t.text "podcast_player_src"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "site_id", null: false
+    t.index ["site_id"], name: "index_podcasts_on_site_id"
+  end
+
   create_table "press_kit_entries", force: :cascade do |t|
     t.string "title"
     t.text "article_link"
@@ -442,6 +453,7 @@ ActiveRecord::Schema.define(version: 2021_01_06_174341) do
   add_foreign_key "hire_mes", "sites"
   add_foreign_key "home_infos", "sites"
   add_foreign_key "merchandise_links", "books"
+  add_foreign_key "podcasts", "sites"
   add_foreign_key "press_kit_entries", "press_kits"
   add_foreign_key "press_kit_links", "press_kits"
   add_foreign_key "press_kit_photos", "press_kits"

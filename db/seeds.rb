@@ -116,7 +116,16 @@
                                         watch_this_poster_url: "https://via.placeholder.com/1024x576?text=Watch+This", 
                                         site: @site)
 
+@podcast = Podcast.first_or_create!(billboard_image_url: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
+                                      headline: "billboard image headline", 
+                                      title: "Podcast page title", 
+                                      podcast_player_src: "podcast_player_src", 
+                                      site: @site)
+  
 @press_kit = PressKit.first_or_create!( name: "name", 
                                         birth_date: Date.new, 
                                         birthplace: "birthplace", 
                                         site: @site)
+
+
+                                        => #<Podcast id: nil, billboard_image_url: nil, headline: nil, title: nil, podcast_player_src: nil, created_at: nil, updated_at: nil, site_id: nil>#
