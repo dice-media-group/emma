@@ -25,7 +25,15 @@ class Backstage::FirstTimeController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def first_time_params
-    params.require(:first_time).permit(:first_name, :last_name, :blurb, :twitter_handle, :featured_image_src, :biography, :body)
+    params.require(:first_time).permit(:billboard_image_url, 
+                                        :billboard_image_title,
+                                        :first_name, 
+                                        :last_name, 
+                                        :blurb, 
+                                        :twitter_handle, 
+                                        :featured_image_src, 
+                                        :biography, 
+                                        :body)
   end
 
 end

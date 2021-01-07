@@ -1,8 +1,8 @@
-<% billboard_image_filename = "first_time_here_hero.jpg" %>
-<% headline = "First Time Here?" %>
+<%# billboard_image_filename = "first_time_here_hero.jpg" %>
+<%# headline = "First Time Here?" %>
 <%= render partial: '/shared/static_billboard', 
-    locals: { image_filename: billboard_image_filename,
-              headline:       headline
+    locals: { image_filename: @first_time.billboard_image_url,
+              headline:       @first_time.billboard_image_title
     
     } %>
 

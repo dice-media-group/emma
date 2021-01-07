@@ -95,7 +95,9 @@
                                     billboard_image_title: "favorite books", 
                                     site: @site)
 
-@first_time = FirstTime.first_or_create!(first_name: "first name", 
+@first_time = FirstTime.first_or_create!(billboard_image_url: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
+                                          billboard_image_title: "billboard image headline",
+                                          first_name: "first name", 
                                           last_name: "last_name", 
                                           blurb: "blurb", 
                                           twitter_handle: "@handle", 

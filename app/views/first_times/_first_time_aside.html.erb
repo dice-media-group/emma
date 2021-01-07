@@ -11,8 +11,12 @@
    </p>
 
    <p>
-      <a class="ct-btn ct-btn-tweet ct-btn-block" href="https://twitter.com/garyvee" target="_blank" rel="noreferrer">
-         <%= "#{@first_time.twitter_handle}" %>
+      <a class="ct-btn ct-btn-tweet ct-btn-block" 
+         href='<%= "https://twitter.com/#{@first_time.twitter_handle}" %>' 
+         target="_blank" 
+         rel="noreferrer">
+         
+         @<%= "#{@first_time.twitter_handle}" %>
       </a>
    </p>
 

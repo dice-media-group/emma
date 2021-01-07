@@ -19,7 +19,8 @@ class HomeController < ApplicationController
   end
 
 def first_time_here
-    
+    @site = Site.first
+    @first_time = @site.first_time
   end
 
   def hire_me
