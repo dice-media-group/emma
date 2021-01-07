@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_103928) do
+ActiveRecord::Schema.define(version: 2021_01_07_113847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -220,6 +220,15 @@ ActiveRecord::Schema.define(version: 2021_01_07_103928) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "general_infos", force: :cascade do |t|
+    t.string "site_name"
+    t.string "text_number"
+    t.bigint "site_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["site_id"], name: "index_general_infos_on_site_id"
   end
 
   create_table "get_in_contact_contents", force: :cascade do |t|
@@ -474,6 +483,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_103928) do
   add_foreign_key "broadcaster_videos", "broadcaster_themes"
   add_foreign_key "first_time_entries", "first_times"
   add_foreign_key "first_times", "sites"
+  add_foreign_key "general_infos", "sites"
   add_foreign_key "get_in_contact_contents", "sites"
   add_foreign_key "hire_mes", "sites"
   add_foreign_key "home_infos", "sites"

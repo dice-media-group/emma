@@ -105,10 +105,15 @@
                                           featured_youtube_video_url:"https://www.youtube.com/embed/z5tugxy70MY", 
                                           site: @site)
 
+@general_info = GeneralInfo.first_or_create!(site_name: "Site name", 
+                                          text_number: "555-555-1212", 
+                                          site: @site)
+
 @get_in_contact = GetInContactContent.first_or_create!(first_name: "first_name", 
-                                                        last_name: "last_name", 
-                                                        youtube_url: "https://www.youtube.com/embed/z5tugxy70MY", 
-                                                        site: @site)
+                                          last_name: "last_name", 
+                                          youtube_url: "https://www.youtube.com/embed/z5tugxy70MY", 
+                                          site: @site)
+
 
 @hire_me = HireMe.first_or_create!(billboard_image_filename: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
                                     headline: "hire me", 

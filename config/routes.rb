@@ -43,6 +43,7 @@ Rails.application.routes.draw do
     resources :blog_hub
     resources :books      
     resources :book_info, only: [:edit, :update]
+    resources :general_info, only: [:edit, :update]
     resources :get_in_contact_content, only: [:edit, :update]
 
     # namespace :blog do
@@ -63,6 +64,7 @@ Rails.application.routes.draw do
     resources :publisher_accts
   
     resources :site, only: [:index], shallow: true do
+      resources :general_info
       resources :first_time
       resources :hire_me
       resources :home_info

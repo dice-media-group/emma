@@ -16,6 +16,11 @@
         </li>
         <li>
             <div>
+                <%= link_to 'general info page', edit_backstage_general_info_path(BookInfo.first), class:"btn btn-primary" %>
+            </div>
+        </li>
+        <li>
+            <div>
                 <%= link_to 'home page', edit_backstage_home_info_path(@home_info), class:"btn btn-primary" %>
             </div>
         </li>
