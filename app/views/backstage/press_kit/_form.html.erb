@@ -1,0 +1,50 @@
+<%= form_with(model: [ :backstage, press_kit], local: true) do |form| %>
+  <% if press_kit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(press_kit.errors.count, "error") %> prohibited this press_kit from being saved:</h2>
+
+      <ul>
+      <% press_kit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :billboard_image_title %>
+    <%= form.text_field :billboard_image_title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :billboard_image_url %>
+    <%= form.text_area :billboard_image_url, class: 'form-control styled' %>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control styled' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :birth_date %>
+    <%= form.date_select :birth_date, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :birthplace %>
+    <%= form.text_field :birthplace, class: 'form-control' %>
+  </div>
+
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if press_kit.persisted? %>
+      <%= link_to "Cancel", backstage_site_index_path, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", backstage_site_index_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
+

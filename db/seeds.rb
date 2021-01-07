@@ -90,7 +90,7 @@
 @bio  = Biography.first_or_create!(title: "my title", 
                                     header_photo_url:"https://image.freepik.com/free-vector/happy-new-year-2021-blue-geometric-banner-design_1055-9725.jpg", 
                                     site: @site)
-
+#  
 @book_info = BookInfo.first_or_create!(billboard_image_url: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
                                     billboard_image_title: "favorite books", 
                                     site: @site)
@@ -132,7 +132,9 @@
                                         billboard_image_title: "billboard image headline", 
                                         site: @site)
   
-@press_kit = PressKit.first_or_create!( name: "name", 
+@press_kit = PressKit.first_or_create!(billboard_image_url: "https://via.placeholder.com/1425x356?text=Billboard+Poster", 
+                                        billboard_image_title: "recent press", 
+                                        name: "name", 
                                         birth_date: Date.new, 
                                         birthplace: "birthplace", 
                                         site: @site)

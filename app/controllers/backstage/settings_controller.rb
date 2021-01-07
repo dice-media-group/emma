@@ -8,5 +8,6 @@ class Backstage::SettingsController < ApplicationController
     @get_in_contact_content   = @site.get_in_contact_content
     @meetup_info              = @site.meetup_info
     @podcast                  = @site.podcast
+    @press_kit                  = @site.press_kit
   end
 end
