@@ -30,10 +30,8 @@ def first_time_here
   end
 
   def biography
-    @bio_hash   = { title:  "filler title",
-                    body:   "Whoops! There's no entry for your story yet.  Please update your story in <a href='/admin/biographies/new'>admin</a>.".html_safe
-                  }
-    @biography  = Biography.last || OpenStruct.new(@bio_hash)
+    @site           = Site.first
+    @biography      = @site.biography
   end
 
   def contact_me
