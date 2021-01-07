@@ -1,4 +1,5 @@
-<% billboard_image_filename = "hire_me_hero.jpg" %><% headline = "Hire Me" %><%= render partial: '/shared/static_billboard', 
+<% billboard_image_filename = @hire_me.billboard_image_filename %><% headline = @hire_me.headline %>
+<%= render partial: '/shared/static_billboard', 
     locals: { image_filename: billboard_image_filename,
               headline:       headline
     
@@ -7,7 +8,8 @@
     <div class="ct-page-wrapper container">
       <div class="ct-page-content">
         <h2 class="h1 ct-liner-half">Services</h2>
-        <h5 class="ct-h-slab-caps ct-h-nomargin">Keynote Speaking | Fireside Chat | Q&amp;A</h5>
+        <%= @hire_me.rt_body %>
+        <%# <h5 class="ct-h-slab-caps ct-h-nomargin">Keynote Speaking | Fireside Chat | Q&amp;A</h5>
         <p>Not afraid to tell it like he sees it, Carl Tanner is an entertaining, thought-provoking full-stack developer rooted in the notion of creating code for the year we live in and betting on one’s strengths to ensure a path to success and happiness. Carl will leave your audience entertained, motivated, and begging for more.</p>
         <p>If you’re interested in landing Carl for an event, use the form below to send him a message.</p>
 
@@ -20,8 +22,10 @@
           <li>Abstraction</li>
           <li>Inheritance</li>
           <li>Polymorphism</li>
-        </ul>
-        <p class="text-right"><a href="/public/CT_SPEAKING_ONEPAGER_10-20-1.pdf">Learn More About My Consulting Gigs Here</a></p>
+        </ul> %>
+        <p class="text-right">
+          <%= link_to @hire_me.learn_more_text, @hire_me.learn_more_pdf_link %>
+        </p>
         <h2 class="h1 ct-liner-half"
             id="page-contact-form">Want to get in touch with me?</h2>
         <div class="gf_browser_gecko gform_wrapper"
