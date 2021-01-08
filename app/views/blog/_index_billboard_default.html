@@ -7,26 +7,25 @@
                 </div>
                 <div class="ct-billboard-postwrap">
                     <div class="ct-post-container container">
-                        <%#= render partial: '/blog/article_sharing_bar', locals: { entry: entry } %>
                         <div class="row clearfix">
                             <div class="col-sm-6">
                                 <h1 class="ct-ctrl-title ct-liner-simple ct-post-title">
                                     Default Title
-                                    <%#= link_to entry.title, entry %>
                                 </h1>
                             </div>
                             <div class="col-sm-6 text-left">
                                 <h5 class="ct-h-slab ct-post-date">
                                     <%#= time_ago_in_words(entry.created_at) %> 30 years ago                                    
                                     <span class="middot">·</span>
-                                    <%#= entry.article.reading_time || 1 %> 0 min read                                </h5>
-                                    <%# entry_body_intro = !entry.article.blank? ? strip_tags(entry.article.body.to_s).truncate(270) : "no article attached" %>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam eveniet culpa vero beatae iusto, deserunt vel obcaecati odio optio quas sint rerum sit facilis perspiciatis quidem voluptatum. Neque, sunt beatae!
-</p>
+                                    0 min read                                
+                                </h5>
+                                    
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam 
+                                    eveniet culpa vero beatae iusto, deserunt vel obcaecati odio optio quas sint 
+                                    rerum sit facilis perspiciatis quidem voluptatum. Neque, sunt beatae!
+                                </p>
                                 <div class="text-right">
-                                    <%#= link_to entry, class: "ct-post-permalink link-blue" do %>
                                         Read More &gt;&gt;
-                                    <%# end %>
                                 </div>
                             </div>
                         </div>
