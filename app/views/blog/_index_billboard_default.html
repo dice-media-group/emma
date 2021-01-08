@@ -1,15 +1,9 @@
 <%# this substitution is to preserve layout %>
-<% hash = { image:"https://via.placeholder.com/1400x1120",
-            created_at: 30.years.ago,
-            title: "Default Title"
-    }  
-    entry = OpenStruct.new(hash)
- %>
 
 <section class="ct-billboard-wrapper ct-post-feature">
             <article class="ct-billboard">
                 <div class="ct-billboard-poster" style="opacity: 1;">
-                        <%= image_tag entry.image %>
+                        <img src="https://via.placeholder.com/1400x1120" alt="">
                 </div>
                 <div class="ct-billboard-postwrap">
                     <div class="ct-post-container container">
@@ -17,13 +11,13 @@
                         <div class="row clearfix">
                             <div class="col-sm-6">
                                 <h1 class="ct-ctrl-title ct-liner-simple ct-post-title">
-                                    <%= entry.title%>
+                                    Default Title
                                     <%#= link_to entry.title, entry %>
                                 </h1>
                             </div>
                             <div class="col-sm-6 text-left">
                                 <h5 class="ct-h-slab ct-post-date">
-                                    <%= time_ago_in_words(entry.created_at) %> 3000 days ago                                    
+                                    <%#= time_ago_in_words(entry.created_at) %> 30 years ago                                    
                                     <span class="middot">·</span>
                                     <%#= entry.article.reading_time || 1 %> 0 min read                                </h5>
                                     <%# entry_body_intro = !entry.article.blank? ? strip_tags(entry.article.body.to_s).truncate(270) : "no article attached" %>
