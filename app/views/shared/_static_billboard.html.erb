@@ -13,7 +13,11 @@
     #hero-1 {
       width: 100vw;
       height: 67vh;
-      /* background-image: url(<%= image_url(image_filename) %>)  center; */
+      <% 
+      if image_filename.to_s.length == 0
+        image_filename = "https://image.freepik.com/free-vector/happy-new-year-2021-blue-geometric-banner-design_1055-9725.jpg"
+      end
+      %>
       background: url(<%= image_url(image_filename) %>) no-repeat center center fixed; 
       -webkit-background-size: cover;
       -moz-background-size: cover;
