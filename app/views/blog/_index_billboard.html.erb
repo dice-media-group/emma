@@ -2,12 +2,9 @@
 <section class="ct-billboard-wrapper ct-post-feature">
             <article class="ct-billboard">
                 <div class="ct-billboard-poster" style="opacity: 1;">
-                    <% if entry.image.present? %>
-                        <%= image_tag entry.image %>
-                    <% else %>
-                        <%= image_tag "https://via.placeholder.com/1400x1120" %>
-                      
-                    <% end %>
+                    <%= image_tag entry.image %>
+
+
                 </div>
                 <div class="ct-billboard-postwrap">
                     <div class="ct-post-container container">
