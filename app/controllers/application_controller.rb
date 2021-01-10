@@ -23,7 +23,6 @@ class ApplicationController < ActionController::Base
 
   def set_general_info
     @site = Site.first
-    @site.general_info.text_number
   end
 
   protected

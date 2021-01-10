@@ -1,5 +1,5 @@
 <% billboard_image_filename = "events_hero.jpg" %>
-<% headline = "Carl Tanner" %>
+<% headline = @site.general_info.site_name.to_s.html_safe %>
 <% podcast  =  Site.first.podcast %>
 <%#= render partial: '/shared/static_billboard', 
     locals: { image_filename: billboard_image_filename,

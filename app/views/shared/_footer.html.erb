@@ -5,7 +5,7 @@
                 <div class="ct-mark-type">
                     <!--a name="mobile-menu"></a -->
                     <div id="footer-menu"></div>
-                    <a href="/" class="no-hover">Carl<br/>Tanner</a>
+                    <a href="/" class="no-hover"><%= @site.general_info.site_name.to_s.html_safe %></a>
                 </div>
             </div>
             <div class="col-sm-10 col-lg-9 ct-nav-footer">
@@ -66,7 +66,7 @@
         <div class="row">
 
             <div class="col-sm-8 col-md-6 ct-footer-fineprint">
-                <p>&copy; Carl Tanner <%= DateTime.current.year %><br>
+                <p>&copy; <%=  "#{@site.general_info.plain_text_name}" %> <%= DateTime.current.year %><br>
                 <a href="/privacy/">Privacy&nbsp;Policy |</a>
                 <a href="/terms/">&nbsp;Terms of Use</a></p>
             </div>

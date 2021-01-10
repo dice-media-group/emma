@@ -9,22 +9,22 @@
  <link rel="stylesheet" href="https://use.typekit.net/hmd6exz.css">
  <%= csrf_meta_tags %>
  <!-- display_meta_tags -->
-      <%= display_meta_tags site: 'Carl Tanner @ GoCarlGo.com',
+      <%= display_meta_tags site: "#{@site.general_info.plain_text_name}",
                           reverse: true,
                           image_src: '/assets/favicons/favicon-192.png',
                           keywords: %W[ web development software webapp],
                           description: 'Family first, but after that, full-stack web developer - a guy that loves people, business &amp; web app developer',
                           canonical: request.original_url,
                           og: {
-                            title:     "About Me | Carl Tanner @ GoCarlGo.com",
-                            site_name: 'Carl Tanner @ GoCarlGo.com',
+                            title:     "About Me | #{@site.general_info.plain_text_name}",
+                            site_name: "#{@site.general_info.plain_text_name}",
                             type:      'website',
                             url:       request.original_url,
                             image:     "https://pbs.twimg.com/media/EqSNJ8NU8AIgUQS?format=jpg&name=small"
                           },
                           twitter: {
                             card: 'summary',
-                            site: 'Carl Tanner @ GoCarlGo.com'
+                            site: "#{@site.general_info.plain_text_name}"
                           } %>
 
  <%= csp_meta_tag %>
