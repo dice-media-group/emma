@@ -23,6 +23,12 @@ class ApplicationController < ActionController::Base
 
   def set_general_info
     @site = Site.first
+    @text_number = @site.general_info.text_number
+    if @site.general_info.is_team_website? == true
+      @texting_phrase = "TEXT US"
+    else
+      @texting_phrase = "TEXT ME"
+    end   
   end
 
   protected

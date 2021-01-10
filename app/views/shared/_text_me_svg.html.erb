@@ -128,16 +128,30 @@
      style="display:inline"
      transform="translate(-51.78267,-108.55479)" />
   <g
-     inkscape:groupmode="layer"
+     <%# inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="text_me"
      style="display:inline"
      transform="translate(-51.78267,-108.55479)">
-    <g
+    <g %>
        aria-label="TEXT ME"
        id="text905"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:45.8611px;line-height:1.25;font-family:'League Gothic';-inkscape-font-specification:'League Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:2.91042px;display:inline;opacity:0.998;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583">
-      <path
+         <%# <path id="bottom-sector" fill="none"
+          stroke="none"
+          stroke-width="3"
+          d="M20,160 A29,29 0 1,0 185,160" /> %>
+         <path id="top-sector" 
+            style="fill:none;stroke:none" 
+            stroke-width="8"
+            d="M 5,35 A 50,50 0 0 1 100,37" />
+         <text text-anchor="middle">
+            <textPath xlink:href="#top-sector" startOffset="50%" style="font-size: 45px; font-weight:700;">
+            <%= @texting_phrase.to_s %>
+            </textPath>
+         </text>
+
+      <%# <path
          d="m 30.638494,125.43628 -4.384866,-2.58592 7.268524,-12.32503 4.384867,2.58592 -2.376248,4.02934 24.650061,14.53705 -2.516028,4.26635 -24.650061,-14.53705 z"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:45.8611px;font-family:'League Gothic';-inkscape-font-specification:'League Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
          id="path941" />
@@ -160,7 +174,7 @@
       <path
          d="m 173.33067,111.46162 5.85832,9.69519 -4.35695,2.63269 -3.29679,-5.456 -7.57559,4.57755 2.37178,3.92518 -4.63171,2.7987 -2.37178,-3.92518 -7.92887,4.79101 3.29679,5.456 -4.35695,2.63269 -5.85831,-9.6952 z"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:45.8611px;font-family:'League Gothic';-inkscape-font-specification:'League Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
-         id="path951" />
+         id="path951" /> %>
     </g>
   </g>
   <g
@@ -196,7 +210,7 @@
           stroke-width="3"
           d="M20,160 A29,29 0 1,0 185,160" />
          <text text-anchor="middle">
-            <textPath xlink:href="#bottom-sector" startOffset="50%" style="font-size: 45px; font-weight:700;"><%= @site.general_info.text_number %></textPath>
+            <textPath xlink:href="#bottom-sector" startOffset="50%" style="font-size: 45px; font-weight:700;"><%= @text_number %></textPath>
          </text>
       <%# <path
          d="m 26.382739,174.08398 -1.324153,-7.54346 4.291194,-0.75326 22.934612,3.33098 0.856338,4.87841 -21.681821,3.80595 0.396453,2.25852 -4.291194,0.75326 -0.396453,-2.25852 -7.227274,1.26865 -0.784976,-4.47188 z m 3.696514,-4.14104 0.594679,3.38778 11.382956,-1.99812 -0.04757,-0.27102 -1.041324,-0.0966 z"
