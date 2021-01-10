@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :masquerade_user!
 
   before_action :collect_sets_for_the_frontdoor
+  before_action :set_general_info
 
   def collect_sets_for_the_frontdoor
     @upcoming_meetups ||=  Meetup.where('end_date >= ?',  Date.today).order("start_date DESC").first(5)
@@ -18,6 +19,11 @@ class ApplicationController < ActionController::Base
   def add_body_css_class(css_class)
     @body_css_classes ||= []
     @body_css_classes << css_class
+  end
+
+  def set_general_info
+    @site = Site.first
+    @site.general_info.text_number
   end
 
   protected
