@@ -4,8 +4,13 @@
   <% elsif(params.has_key?("page") ) %>
     <%# do nothing %>
   <% else %>
-    <%= render  partial: 'index_billboard', 
-    locals: {entry: @billboard_entry} %>
+    <%  if @billboard_entry.present? %>
+      <%= render  partial: 'index_billboard', locals: {entry: @billboard_entry}  %>
+    <% else %>
+      <%= render  partial: 'index_billboard_default'  %>
+
+      
+    <% end %>
   <% end %>
 
   <div class="ct-content-wrapper no-shadow">

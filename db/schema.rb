@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_113847) do
+ActiveRecord::Schema.define(version: 2021_01_10_032108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -228,6 +228,8 @@ ActiveRecord::Schema.define(version: 2021_01_07_113847) do
     t.bigint "site_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "plain_text_name"
+    t.boolean "is_team_website", default: false, null: false
     t.index ["site_id"], name: "index_general_infos_on_site_id"
   end
 
