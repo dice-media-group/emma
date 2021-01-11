@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_10_032108) do
+ActiveRecord::Schema.define(version: 2021_01_11_173739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -395,6 +395,7 @@ ActiveRecord::Schema.define(version: 2021_01_10_032108) do
     t.string "font_awesome_class"
     t.string "network_kind"
     t.string "blurb"
+    t.text "svg_logo"
   end
 
   create_table "services", force: :cascade do |t|

@@ -6,7 +6,10 @@ class Backstage::PublisherAcctsController < ApplicationController
   end
 
   def new
-    @network_kinds = PublisherAcct.all.map {|x| x.network_kind}.uniq!
+    @network_kinds = PublisherAcct.all.map {|x| x.network_kind}.uniq 
+    # @h              = {}
+    # @network_kinds = PublisherAcct.all.map {|x| @h[x.network_kind]=  x.network_kind}.uniq
+    # @network_kinds  = OpenStruct.new(@h)
     @publisher_acct = PublisherAcct.new
   end
 
