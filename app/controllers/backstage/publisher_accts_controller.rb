@@ -6,7 +6,10 @@ class Backstage::PublisherAcctsController < ApplicationController
   end
 
   def new
-    @network_kinds = PublisherAcct.all.map {|x| x.network_kind}.uniq!
+    @network_kinds = PublisherAcct.all.map {|x| x.network_kind}.uniq 
+    # @h              = {}
+    # @network_kinds = PublisherAcct.all.map {|x| @h[x.network_kind]=  x.network_kind}.uniq
+    # @network_kinds  = OpenStruct.new(@h)
     @publisher_acct = PublisherAcct.new
   end
 
@@ -66,7 +69,7 @@ class Backstage::PublisherAcctsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def publisher_acct_params
-    params.require(:publisher_acct).permit(:name, :url, :font_awesome_class, :network_kind, :blurb)
+    params.require(:publisher_acct).permit(:name, :url, :font_awesome_class, :network_kind, :blurb, :svg_logo)
   end
 
 end

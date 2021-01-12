@@ -38,18 +38,14 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :network_kind %>
-    <select class="js-example-basic-single" 
-      name="publisher_acct[network_kind]" 
-      id="publisher_acct_network_kind">
-        <% @network_kinds.each do |a| %>
-          <option value="<%= a.to_s %>"><%= a.to_s %> </option>    
-        <% end %>    
-    </select>
+    <%= form.label :svg_logo %>
+    <%= form.text_area :svg_logo, class: 'form-control' %>
   </div>
 
-
-
+  <div class="form-group">
+    <%= form.label :network_kind %>
+    <%= form.select( :network_kind, @network_kinds, { :prompt => true } )  %>
+  </div>
 
 
   <%#  %>
