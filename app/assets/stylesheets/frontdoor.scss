@@ -6653,6 +6653,11 @@ a.hover-social.sp-snapchat-square:focus {
   font-size: 38pt;
   line-height: 32pt;
 }
+
+.ct-single-content img {
+  max-width: 98%
+}
+
 @media (min-width: 768px) {
   .ct-single-content {
     padding-right: 20px;
