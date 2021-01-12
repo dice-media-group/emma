@@ -69,7 +69,7 @@ class Backstage::PublisherAcctsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def publisher_acct_params
-    params.require(:publisher_acct).permit(:name, :url, :font_awesome_class, :network_kind, :blurb)
+    params.require(:publisher_acct).permit(:name, :url, :font_awesome_class, :network_kind, :blurb, :svg_logo)
   end
 
 end
