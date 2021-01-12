@@ -19,17 +19,10 @@
         $('.js-example-basic-single').select2();
     });
   </script>
-  <div class="form-group">
 
+  <div class="form-group js-example-basic-single">
     <%= form.label :entry_id %>
-
-    <select class="js-example-basic-single" 
-      name="blog_article[entry_id]" 
-      id="blog_article_entry_id">
-        <% @entries.each do |a| %>
-          <option value="<%= a.id %>"><%= a.title %> </option>    
-        <% end %>    
-    </select>
+     <%= form.collection_select(:entry_id, @entries, :id, :title) %>
   </div>
 
 <%#  %>
