@@ -20,9 +20,10 @@
     });
   </script>
 
-  <div class="form-group js-example-basic-single">
+  <div class="form-group">
     <%= form.label :entry_id %>
-     <%= form.collection_select(:entry_id, @entries, :id, :title) %>
+    <%#= form.select(:entry_id, Blog::Entry.all, :id, :title) %>
+    <%= form.select(:entry_id, Blog::Entry.all.collect {|u| [u.title, u.id]}, :prompt => 'Select') %>
   </div>
 
 <%#  %>

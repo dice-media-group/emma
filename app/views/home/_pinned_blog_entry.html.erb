@@ -5,8 +5,12 @@
             <div class="col-sm-6 col-md-8">
                 <div class="ct-post-img">
                     <%= link_to blog_entry_path(entry) do %>
-                        <%= image_tag  entry.image %>
-                        <%# <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new.png 2800w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-250x200.png 250w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-768x614.png 768w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-700x560.png 700w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-120x96.png 120w" sizes="(max-width: 2800px) 100vw, 2800px">  %>
+                        <% if entry.image.attached? %>
+                            <%= image_tag entry.image %>
+                        <% else %>
+                            <img src="" width="280" />
+                        <% end %>
+
                     
                     <% end %>
                     
