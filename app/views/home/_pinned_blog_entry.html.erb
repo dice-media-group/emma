@@ -5,39 +5,49 @@
             <div class="col-sm-6 col-md-8">
                 <div class="ct-post-img">
                     <%= link_to blog_entry_path(entry) do %>
-                        <%= image_tag  entry.image %>
-                        <%# <img src="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new.png 2800w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-250x200.png 250w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-768x614.png 768w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-700x560.png 700w, https://s3.amazonaws.com/gv2016wp/wp-content/uploads/20180803182618/Blog-posts-new-120x96.png 120w" sizes="(max-width: 2800px) 100vw, 2800px">  %>
+                        <% if entry.image.attached? %>
+                            <%= image_tag entry.image %>
+                        <% else %>
+                            <img src="" width="280" />
+                        <% end %>
+
                     
                     <% end %>
                     
 
                 </div>
             </div>
+            
             <div class="col-sm-6 col-md-4">
-                <h1 class="ct-liner-simple">
-                    <a href="/the-garyvee-content-strategy-how-to-grow-and-distribute-your-brands-social-media-content/">
-                        <%= link_to entry.title, blog_entry_path(entry) %>
-                                            </a>
-                </h1>
-                <h5 class="ct-h-slab ct-post-date">
-                <%# https://alexanderpaterson.com/posts/showing-estimated-reading-time-on-a-rails-blog-post %>
-                    <%= time_ago_in_words(entry.created_at) %> ago                    
-                    <span class="middot">·</span>
-                    <% text = entry.article.body.to_plain_text
-                       @reading_time = (text.scan(/\w+/).length / 150).to_i  %>
-                    <span>
-                        <%= pluralize(@reading_time, 'minute') %>
-                    </span> || 3 min read                
-                </h5>
-                <p>
-                     <%= entry.article.body.to_plain_text[0..404] %> &#8230;
-                </p>
-                <div class="text-right">
-                    <%= link_to  blog_entry_path(entry), class: "ct-post-permalink link-blue" do %>
-                        Read More &gt;&gt;
-                    <% end %>
+                
+                <% if entry.article.present? %>
+                    <h1 class="ct-liner-simple">
+                        <a href="/the-garyvee-content-strategy-how-to-grow-and-distribute-your-brands-social-media-content/">
+                            <%= link_to entry.title, blog_entry_path(entry) %>
+                                                </a>
+                    </h1>
+                    <h5 class="ct-h-slab ct-post-date">
+                    <%# https://alexanderpaterson.com/posts/showing-estimated-reading-time-on-a-rails-blog-post %>
+                        <%= time_ago_in_words(entry.created_at) %> ago                    
+                        <span class="middot">·</span>
+                        <% text = entry.article.body.to_plain_text
+                        @reading_time = (text.scan(/\w+/).length / 150).to_i  %>
+                        <span>
+                            <%= pluralize(@reading_time, 'minute') %>
+                        </span> || 3 min read                
+                    </h5>
+                    <p>
+                        <%= entry.article.body.to_plain_text[0..404] %> &#8230;
+                    </p>
+                    <div class="text-right">
+                        <%= link_to  blog_entry_path(entry), class: "ct-post-permalink link-blue" do %>
+                            Read More &gt;&gt;
+                        <% end %>
+                        
+                    </div>
                     
-                </div>
+                <% end %>
+                
             </div>
         </div>
     </div>
