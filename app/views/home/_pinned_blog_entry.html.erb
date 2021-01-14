@@ -34,7 +34,7 @@
                         @reading_time = (text.scan(/\w+/).length / 150).to_i  %>
                         <span>
                             <%= pluralize(@reading_time, 'minute') %>
-                        </span> || 3 min read                
+                        </span>               
                     </h5>
                     <p>
                         <%= entry.article.body.to_plain_text[0..404] %> &#8230;
