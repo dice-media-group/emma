@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   before_action :set_general_info
 
   def collect_sets_for_the_frontdoor
-    @upcoming_meetups ||=  Meetup.where('end_date >= ?',  Date.today).order("start_date DESC").first(5)
+    @upcoming_meetups ||=  Meetup.coming_soon
     @linked_icon_data ||=  PublisherAcct.all_links_and_icons
     @linked_icons_for_footer = ["instagram",  "youtube", "facebook", "twitter", "snapchat", "linkedin", "podcast"]
 
