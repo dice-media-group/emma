@@ -21,12 +21,12 @@ class Backstage::HomeInfoController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def home_info_params
-    params.require(:home_info).permit(
-                                      :biography_blurb, 
+    params.require(:home_info).permit(:biography_blurb, 
                                       :video_billboard_url, 
                                       :watch_this_video_url, 
-                                      :site_id,:bio_link_text, :watch_this_poster_url                                      
-                                      )
+                                      :site_id,
+                                      :bio_link_text, 
+                                      :watch_this_poster_url)
   end
 
 

@@ -1,5 +1,5 @@
 class Meetup < ApplicationRecord
     def self.coming_soon
-        Meetup.all.order('start_date DESC').limit(5).select(:title, :start_date, :location, :more_info_url)
+        where('end_date >= ?',  Date.today).order("start_date ASC").first(5)
     end
 end
