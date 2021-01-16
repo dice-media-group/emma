@@ -3,9 +3,10 @@
       <div class="container">
         <div class="row clearfix">
           <div class="ct-widget-mailinglist mobile gvmc-ctrl-nojs">
-            <a class="ct-btn ct-btn-red"
+            <!-- a class="ct-btn ct-btn-red"
                  href="https://connect.gocarlgo.com/connect-with-go-carl-go"
-                 target="_blank">Subscribe</a>
+                 target="_blank">Subscribe</a -->
+            <a href="<%= @newsletter_subscription_url %>" target="_blank" class="ct-btn ct-btn-red">Subscribe</a>
           </div>
           <div class="ct-widget-mailinglist fullwidth desktop">
             <div class="ct-widget-content">
@@ -15,9 +16,11 @@
                 <h3 class="ct-h-serif">Directly into your inbox every Monday morning.</h3>
                 <div class="ct-form">
                   <div class="ct-widget-mailinglist">
-                    <a class="ct-btn ct-btn-red"
+                    <!-- a class="ct-btn ct-btn-red"
                          href="https://connect.gocarlgo.com/connect-with-go-carl-go"
-                         target="_blank">Subscribe</a>
+                         target="_blank">Subscribe</a -->
+                    <a href="<%= @newsletter_subscription_url %>" target="_blank" class="ct-btn ct-btn-red">Subscribe</a>
+
                   </div>
                 </div>
               </form>

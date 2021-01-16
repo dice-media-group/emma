@@ -22,8 +22,10 @@ class ApplicationController < ActionController::Base
   end
 
   def set_general_info
-    @site = Site.first
-    @text_number = @site.general_info.text_number
+    @site                         = Site.first
+    @text_number                  = @site.general_info.text_number
+    @newsletter_subscription_url  = @site.general_info.newsletter_sub_url
+
     if @site.general_info.is_team_website? == true
       @texting_phrase = "TEXT US"
       @possesive      = "our"
@@ -32,7 +34,8 @@ class ApplicationController < ActionController::Base
       @texting_phrase = "TEXT ME"
       @possesive      = "my"
       @objective_case = "me"
-    end   
+    end
+
   end
 
   protected
