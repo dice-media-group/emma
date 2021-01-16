@@ -26,7 +26,7 @@ class Backstage::GeneralInfoController < ApplicationController
   # Only allow a list of trusted parameters through.
   def general_info_params
     params.require(:general_info).permit(:site_name,
-                                        :plain_site_name,
+                                        :plain_text_name,
                                         :text_number,
                                         :is_team_website)
   end
