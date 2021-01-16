@@ -29,6 +29,11 @@
     <%= form.text_field :text_number, class: 'form-control' %>
   </div>
 
+  <div class="form-group">
+    <%= form.label :newsletter_sub_url %>
+    <%= form.text_area :newsletter_sub_url, class: 'form-control' %>
+  </div>
+
   <div class="form-check">
     <%= form.check_box :is_team_website, class: 'form-check-input' %>
     <label class="form-check-label" for="general_info_is_team_website">This website is for a team, not an individual person.</label>
