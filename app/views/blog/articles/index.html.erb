@@ -35,7 +35,7 @@
               
 
                 <td><%= link_to blog_article.title,  edit_blog_article_path(blog_article) %></td>
-                <td><%= blog_article.body %></td>
+                <td><%= strip_tags(blog_article.body.to_s).truncate(270) %></td> 
                 <td><%= blog_article.user.name.full %></td>
                 <td><%= blog_article.pinned_value %></td>
               
