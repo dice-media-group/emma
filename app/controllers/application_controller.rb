@@ -26,8 +26,12 @@ class ApplicationController < ActionController::Base
     @text_number = @site.general_info.text_number
     if @site.general_info.is_team_website? == true
       @texting_phrase = "TEXT US"
+      @possesive      = "our"
+      @objective_case = "us"
     else
       @texting_phrase = "TEXT ME"
+      @possesive      = "my"
+      @objective_case = "me"
     end   
   end
 
