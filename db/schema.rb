@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_16_195153) do
+ActiveRecord::Schema.define(version: 2021_01_19_223253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -398,6 +398,9 @@ ActiveRecord::Schema.define(version: 2021_01_16_195153) do
     t.string "blurb"
     t.text "svg_logo"
     t.text "svg_logo_style"
+    t.integer "frontpage_ranking", default: 0, null: false
+    t.integer "sidebar_ranking", default: 0, null: false
+    t.integer "footer_ranking", default: 0, null: false
   end
 
   create_table "services", force: :cascade do |t|

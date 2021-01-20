@@ -6,7 +6,7 @@
                    title:     "#{@blog_entry.title} |  #{@site.general_info.plain_text_name}",
                    image:     ("https://pbs.twimg.com/media/EqSNJ8NU8AIgUQS?format=jpg&name=small")
                  } %>
-
+<% @sidebar_icons        = PublisherAcct.sidebar_icons.first(5) %>
 <article id="post-10701" class="post-10701 post type-post status-publish format-standard has-post-thumbnail hentry category-business category-leadership">
   
   <%= render 'billboard', locals: {billboard_image: @blog_entry.image } %>
@@ -19,7 +19,8 @@
               locals: {blog_article: @blog_article } 
           %>
         </div>
-          <%= render '/shared/aside' %>
+              <%= render partial: '/shared/aside', 
+              locals: { sidebar_icons: @sidebar_icons } %>
       </div>
     </div>
   </div>

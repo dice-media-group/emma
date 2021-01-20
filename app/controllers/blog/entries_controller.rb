@@ -18,7 +18,6 @@ class Blog::EntriesController < ApplicationController
     @recommended_entries  = @blog_entry.recommended_entries    
     @author               = @blog_article.user if @blog_article.present?
 
-  
   end
 
   # GET /blog/entries/new

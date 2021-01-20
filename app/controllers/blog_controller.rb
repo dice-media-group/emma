@@ -8,10 +8,9 @@ class BlogController < ApplicationController
     else
       @pagy, @blog_entries  = pagy(Blog::Entry.published, items: 10)
     end
-    @billboard_entry      = Blog::Entry.featured.first
-    @blog_featured_2nd_and_3rd = Blog::Entry.featured_2nd_and_3rd
-    @facebook_url         = PublisherAcct.find_by(name: "facebook").url
-    @twitter_url          = PublisherAcct.find_by(name: "twitter").url
-    @linkedin_url         = PublisherAcct.find_by(name: "linkedin").url
+    @billboard_entry            = Blog::Entry.featured.first
+    @blog_featured_2nd_and_3rd  = Blog::Entry.featured_2nd_and_3rd
+    @sidebar_icons              = PublisherAcct.sidebar_icons.first(5)
+
   end
 end

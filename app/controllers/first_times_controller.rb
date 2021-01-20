@@ -4,6 +4,8 @@ class FirstTimesController < ApplicationController
   layout "frontdoor"
 
   def show
+    @sidebar_icons  = PublisherAcct.sidebar_icons.first(6)
+
   end
 
   # GET /first_times/new
