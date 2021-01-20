@@ -28,6 +28,7 @@ class Backstage::GeneralInfoController < ApplicationController
     params.require(:general_info).permit(:site_name,
                                         :plain_text_name,
                                         :text_number,
+                                        :newsletter_sub_url,
                                         :is_team_website)
   end
 

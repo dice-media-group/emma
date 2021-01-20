@@ -10,9 +10,10 @@ class ApplicationController < ActionController::Base
   before_action :set_general_info
 
   def collect_sets_for_the_frontdoor
-    @upcoming_meetups ||=  Meetup.coming_soon
-    @linked_icon_data ||=  PublisherAcct.all_links_and_icons
-    @linked_icons_for_footer = ["instagram",  "youtube", "facebook", "twitter", "snapchat", "linkedin", "podcast"]
+    @upcoming_meetups         ||=  Meetup.coming_soon
+    @linked_icon_data         ||=  PublisherAcct.all_links_and_icons
+    @linked_icons_for_footer  ||= PublisherAcct.linked_icons_for_footer
+
 
   end
   # Controllers can call this to add classes to the body tag
@@ -22,13 +23,20 @@ class ApplicationController < ActionController::Base
   end
 
   def set_general_info
-    @site = Site.first
-    @text_number = @site.general_info.text_number
+    @site                         = Site.first
+    @text_number                  = @site.general_info.text_number
+    @newsletter_subscription_url  = @site.general_info.newsletter_sub_url
+
     if @site.general_info.is_team_website? == true
       @texting_phrase = "TEXT US"
+      @possesive      = "our"
+      @objective_case = "us"
     else
       @texting_phrase = "TEXT ME"
-    end   
+      @possesive      = "my"
+      @objective_case = "me"
+    end
+
   end
 
   protected

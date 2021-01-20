@@ -20,38 +20,19 @@
       </a>
    </p>
 
-   <div id="gv_widgets_socialprops-3" class="ct-widget ct-widget-socialprops clearfix text-center">
-      <div class="sidebar-c-3"> 
-            <% ['facebook', 'youtube', 'instagram'].each do |icon_name| %>
-               <% icon = @linked_icon_data.find_by(name: icon_name) %>
-               <span class="wrap-social-item">
-                  <a alt=""
-                  class=" <%= "sp-circle sp-#{icon.name}" %> "
-                  href="<%= icon.url %>"
-                  target="_blank">
-                     <i class='<%= "fab fa-#{icon.font_awesome_class}" %>'></i>
-                  </a>
-               </span>          
-            <% end %>
-
-
-            </div>
-         </div>
-         <div id="gv_widgets_socialprops-6" class="ct-widget ct-widget-socialprops clearfix text-center">
-         <div class="sidebar-c-3">
-            <% ['twitter', 'snapchat', 'linkedin'].each do |icon_name| %>
-               <% icon = @linked_icon_data.find_by(name: icon_name) %>
-               <span class="wrap-social-item">
-                  <a alt=""
-                  class=" <%= "sp-circle sp-#{icon.name}" %> "
-                  href="<%= icon.url %>"
-                  target="_blank">
-                     <i class='<%= "fab fa-#{icon.font_awesome_class}" %>'></i>
-                  </a>
-               </span>          
-            <% end %>
-
-
-         </div>
+   <div id="ct_widgets_socialprops-3" class="ct-widget ct-widget-socialprops clearfix text-center">
+      <div class="sidebar-c-3 sidebar-social-grid"> 
+         <% @sidebar_icons.each do |icon| %>
+            <span >
+               <a alt=""
+               class=" <%= "sp-circle sp-#{icon.name}" %> "
+               href="<%= icon.url %>"
+               target="_blank">
+                  <i class='<%= "fab fa-#{icon.font_awesome_class}" %>'></i>
+               </a>
+            </span>          
+         <% end %>
       </div>
    </div>
+
+</div>

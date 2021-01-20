@@ -19,7 +19,8 @@
               locals: {blog_article: @blog_article } 
           %>
         </div>
-          <%= render '/shared/aside' %>
+              <%= render partial: '/shared/aside', 
+              locals: { sidebar_icons: @sidebar_icons } %>
       </div>
     </div>
   </div>
