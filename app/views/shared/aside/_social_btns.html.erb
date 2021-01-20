@@ -1,10 +1,9 @@
-<% @linked_icon_names   = [ "facebook", "youtube", "instagram", "twitter", "snapchat" ] %>
 
   <div class="ct-widget ct-widget-socialprops clearfix text-center"
        id="gv_widgets_socialprops-2">
     <div class="sidebar-c-5">
-      <% @linked_icon_names.each do |icon_name| %>
-         <% icon = @linked_icon_data.find_by(name: icon_name) %>
+    <%#= sidebar_icons %>
+      <% social_btns.sidebar_icons.each do |icon| %>
          <span class="wrap-social-item">
             <a alt=""
             class=" <%= "sp-circle sp-#{icon.name}" %> "

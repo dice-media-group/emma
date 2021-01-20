@@ -4848,6 +4848,7 @@ hr {
   padding-top: 12px;
   padding-bottom: 9px;
   position: relative;
+  min-width: 180px;
 }
 .ct-btn-tweet:hover,
 .ct-btn-tweet:active,
@@ -7799,4 +7800,11 @@ a.hover-social.sp-snapchat-square:focus {
 
 .home .ct-billboard video {
   max-height: 556px;
+}
+
+// set sidebar-social-grid to make layout automatic
+.sidebar-social-grid {
+  display: grid;
+  grid-row-gap: 1em;
+  grid-template-columns: repeat(3, minmax(50px, 1fr))
 }

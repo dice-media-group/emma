@@ -10,9 +10,10 @@ class ApplicationController < ActionController::Base
   before_action :set_general_info
 
   def collect_sets_for_the_frontdoor
-    @upcoming_meetups ||=  Meetup.coming_soon
-    @linked_icon_data ||=  PublisherAcct.all_links_and_icons
-    @linked_icons_for_footer = ["instagram",  "youtube", "facebook", "twitter", "snapchat", "linkedin", "podcast"]
+    @upcoming_meetups         ||=  Meetup.coming_soon
+    @linked_icon_data         ||=  PublisherAcct.all_links_and_icons
+    @linked_icons_for_footer  ||= PublisherAcct.linked_icons_for_footer
+
 
   end
   # Controllers can call this to add classes to the body tag

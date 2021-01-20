@@ -12,7 +12,8 @@
         <%= render 'biography_text' %>
 
         <!--aside start -->
-        <%= render '/shared/aside' %>
+        <%= render partial: '/shared/aside', 
+          locals: { sidebar_icons: @sidebar_icons } %>
         <!--aside finish -->
       </div>
     </div>

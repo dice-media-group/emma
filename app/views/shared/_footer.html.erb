@@ -31,9 +31,8 @@
             <div id="gv_widgets_socialprops-4" class="ct-widget ct-widget-socialprops clearfix text-left">
                 <div class="sidebar-c-7">
                     <%# social_spots start %>
-                    <% @linked_icons_for_footer.each do |spot_name| %>
+                    <% @linked_icons_for_footer.each do |icon| %>
                     <span class="wrap-social-item">
-                        <% icon = @linked_icon_data.find_by(name: spot_name) %>
                         <%= link_to  icon.url, class: "hover-social sp-#{icon.name}", target: "_blank" do %>
                             <i class="<%= icon.font_awesome_class %> "></i>
                         <% end %>

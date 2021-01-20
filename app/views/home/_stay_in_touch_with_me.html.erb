@@ -1,4 +1,3 @@
-<% @linked_icon_names   = [ 'instagram', 'youtube', "facebook", "twitter", "linkedin", "podcast", "tiktok" ] %>
 <div id="ct-sect-kit" class="ct-section ct-section-invert">
     <div class="container">
         <div class="row">
@@ -14,11 +13,9 @@
                         </div>
                     </div>
 -->
-            <%# ['instagram', 'youtube', "facebook", "twitter", "spotify", "linkedin", "podcast", "tiktok" ] %>
-            <% @linked_icon_names.each do |icon_name| %>
+            <% @frontpage_icons.each do |icon| %>
                 <div class="col-sm-3 col-md-3 text-center">
                     <div class="ct-widget-unit home">
-                        <% icon = @linked_icon_data.find_by(name: icon_name) %>
                         <%= link_to  icon.url, 
                             class: "sp-circle sp-circle-lg sp-circle-invert sp-#{icon.name}", 
                             target: "_blank" do %>
