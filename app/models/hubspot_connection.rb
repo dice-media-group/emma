@@ -1,0 +1,2 @@
+class HubspotConnection < ApplicationRecord
+end
