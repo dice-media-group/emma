@@ -1,33 +1,46 @@
 class HubspotClient
-
-    require 'uri'
-    require 'net/http'
-    require 'openssl'
-
-    YOUR_HUBSPOT_API_KEY = "cc142a22-8659-4609-a66d-3d1c030bfac9"
+    attr_reader(:connection, :routes)
     
-    
-    def send_contact_info(contact_params)
-        prop_hash = {}
-        prop_hash["properties"] = contact_params
-        # request.body = "{\"properties\":{\"company\":\"Biglytics\",\"email\":\"bcooper@biglytics.net\",\"firstname\":\"Bryan\",\"lastname\":\"Cooper\",\"phone\":\"(877) 929-0687\",\"website\":\"biglytics.net\"}}"
-        url = URI("https://api.hubapi.com/crm/v3/objects/contacts?hapikey=cc142a22-8659-4609-a66d-3d1c030bfac9")
-    
-        http = Net::HTTP.new(url.host, url.port)
-        http.use_ssl = true
-        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-        
-        request = Net::HTTP::Post.new(url)
-        request["accept"] = 'application/json'
-        request["content-type"] = 'application/json'
-        request.body = "{\"properties\":{\"company\":\"Biglytics\",\"email\":\"bcooper@biglytics.net\",\"firstname\":\"Bryan\",\"lastname\":\"Cooper\",\"phone\":\"(877) 929-0687\",\"website\":\"biglytics.net\"}}"
-        
-        response = http.request(request)
-        puts response.read_body
-    
+    def initialize(connection:, routes:)
+        @connection = connection
+        @routes     = routes
     end
 
-    def _contact_params(params)
-        lead = OpenStruct.new(params).lead || {}
+    def method_missing(query_method, *request_arguments)
+        # super unless respond_to?(query_method)
+
+        # puts "Method #{query_method} called with #{request_args}"
+        # retrieve the route map
+        puts "###"
+        puts "query method #{query_method} "
+        puts "request_arguments #{request_arguments} "
+        puts "body #{request_arguments.first} "
+        puts "###"
+        route_map = routes.fetch(query_method)
+    
+        # make request via the connection
+        response_from_route(route_map, request_arguments)
+    end
+
+    def respond_to_missing?(method, include_private = false)
+        ROUTES.any? { |route| route == method.to_sym  } || super
+    end
+
+    def response_from_route(route_map, request_arguments)
+        # gather the routes required parameters
+        http_method     = route_map.fetch(:method)
+        relative_path   = route_map.fetch(:path)
+        body            = request_arguments.first
+
+        # puts "### response_from_route"
+        # puts "http_method #{http_method} "
+        # puts "relative_path #{relative_path} "
+        # puts "body #{body} "
+        # puts "###"
+
+        # puts "Response from route:" [http_method.to_s, relative_path.to_s]
+        # puts "request_arguments: #{request_arguments} "
+        # call the connection for records
+        connection.send(http_method, relative_path, *request_arguments)
     end
 end

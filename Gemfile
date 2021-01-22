@@ -81,5 +81,5 @@ gem 'acts-as-taggable-on', '~> 6.5'
 gem 'meta-tags', '~> 2.14'
 gem 'aws-sdk-s3', '~> 1.87'
 # external api's
-# gem 'hubspot-api-client', '~> 9.2', '>= 9.2.1'
+gem 'hubspot-api-client', '~> 9.2', '>= 9.2.1'
 gem 'httparty', '~> 0.18.1'
