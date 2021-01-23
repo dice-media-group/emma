@@ -15,21 +15,25 @@
 
 <dl>
     <dt>
-<% if @photo.image.attached? %>
-<%= link_to 'link to image', url_for(@photo.image), id: "imagelink" %>&nbsp;&nbsp;
-<button onclick="copyToClipboard('#imagelink')" class="btn btn-primary">Copy link to image</button>
+      <% if @photo.image.attached? %>
+          <%= link_to 'link to image', url_for(@photo.image), id: "imagelink" %>&nbsp;&nbsp;
+          <button onclick="copyToClipboard('#imagelink')" class="btn btn-primary">Copy link to image</button>
 
-<% end %>
+      <% end %>
     </dt>
     <dd>
     <% if @photo.image.attached? %>
+
       <%= link_to url_for(@photo.image) do  %>
         <%= image_tag @photo.image %>
-        <% else %>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpj0DBTVsaja01_xWh37bcutvpd7rh7zEd528HD0d_l6A73osY" width="280" data-behavior="uppy-preview" />
-                <br />
-                <p>photo missing</p>
       <% end %>
+      
+    <% else %>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpj0DBTVsaja01_xWh37bcutvpd7rh7zEd528HD0d_l6A73osY" 
+        width="280"
+      />
+      <br />
+      <p>photo missing</p>
     <% end %>
     
     </dd>
