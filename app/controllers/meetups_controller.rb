@@ -6,7 +6,7 @@ class MeetupsController < ApplicationController
   def index
     @site         = Site.first
     @meetup_info  = @site.meetup_info
-    @meetups      = Meetup.all
+    @meetups      = Meetup.coming_soon
   end
 
   # GET /meetups/1
