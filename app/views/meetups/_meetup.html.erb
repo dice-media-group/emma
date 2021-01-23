@@ -1,8 +1,8 @@
             <div class="event clearfix">
             <div class="ecol col-sm-2 col-md-3 col-lg-2 event-date">
-                <h3 class="ct-h-welter70">
-                    Dec 09                    <span class="visible-xs-inline">, 2020</span>
-                    <span class="event-date-day">Wed</span>
+            <h3 class="gv-h-welter70">
+                    <%= meetup.start_date.strftime("%b %d") %>                    <span class="visible-xs-inline">, <%= meetup.start_date.strftime("%Y") %></span>
+                    <span class="event-date-day"><%= meetup.start_date.strftime("%a") %></span>
                 </h3>
             </div>
             <div class="ecol col-sm-3 col-md-3 col-lg-4">
