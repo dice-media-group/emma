@@ -26,6 +26,10 @@ class Backstage::GetInContactContentController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def get_in_contact_content_params
-    params.require(:get_in_contact_content).permit(:title, :body)
+    params.require(:get_in_contact_content).permit(:title, 
+                                                  :body,
+                                                  :youtube_url,
+                                                  :page_message,
+                                                  :first_name)
   end
 end
