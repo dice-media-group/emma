@@ -3,7 +3,14 @@
       <h1 class="ct-liner">Contact</h1>
       <div class="ct-page-content">
         <div style="width: 100%; display: flex; justify-content: center;">
-          <p><iframe width="900" height="506" src="<%= @getcontactcontent.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+          <p>
+            <iframe width="900" 
+                    height="506" 
+                    src="<%= @getcontactcontent.youtube_url %>" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+          </p>
         </div>
         <p><%= @getcontactcontent.page_message %></p>
 
