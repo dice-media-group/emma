@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_19_223253) do
+ActiveRecord::Schema.define(version: 2021_01_25_050346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -208,6 +208,7 @@ ActiveRecord::Schema.define(version: 2021_01_19_223253) do
     t.bigint "site_id", null: false
     t.string "billboard_image_title"
     t.text "billboard_image_url"
+    t.text "featured_youtube_image_url", default: "", null: false
     t.index ["site_id"], name: "index_first_times_on_site_id"
   end
 
