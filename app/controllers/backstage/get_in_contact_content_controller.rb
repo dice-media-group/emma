@@ -31,6 +31,7 @@ class Backstage::GetInContactContentController < ApplicationController
                                                   :youtube_url,
                                                   :youtube_image_url,
                                                   :page_message,
-                                                  :first_name)
+                                                  :first_name,
+                                                  :last_name)
   end
 end
