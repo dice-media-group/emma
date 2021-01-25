@@ -10,7 +10,16 @@ class LeadsController < ApplicationController
   # GET /leads/new
   def new
     @lead = Lead.new
-    @getcontactcontent = GetInContactContent.first
+    @site = Site.first
+    @getcontactcontent = @site.get_in_contact_content
+
+    @youtube_video_id = @getcontactcontent.youtube_url.to_s.split('/').last 
+    
+    @featured_youtube_image_url                 = @getcontactcontent.youtube_image_url
+    if @featured_youtube_image_url.to_s.length  == 0
+      @featured_youtube_image_url   = "https://via.placeholder.com/727x384.png?text=Featured+YouTube+Video"
+    end
+
   end
 
 

@@ -5,6 +5,12 @@ class FirstTimesController < ApplicationController
 
   def show
     @sidebar_icons  = PublisherAcct.sidebar_icons.first(6)
+    @youtube_video_id = @first_time.featured_youtube_video_url.to_s.split('/').last 
+    
+    @featured_youtube_image_url                 = @first_time.featured_youtube_image_url
+    if @featured_youtube_image_url.to_s.length  == 0
+      @featured_youtube_image_url   = "https://via.placeholder.com/727x384.png?text=Featured+YouTube+Video"
+    end
 
   end
 

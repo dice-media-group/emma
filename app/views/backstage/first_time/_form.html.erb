@@ -57,9 +57,15 @@
 
   <div class="form-group">
     <%= form.label :featured_youtube_video_url %>
+    <p>(copy the the shared embed url for the youtube video)</p>
     <%= form.text_area :featured_youtube_video_url, class: 'form-control' %>
   </div>
 
+  <div class="form-group">
+    <%= form.label :featured_youtube_image_url %>
+    <p>(the url for the clickable image to watch the youtube video)</p>
+    <%= form.text_area :featured_youtube_image_url, class: 'form-control' %>
+  </div>
 
     <%= form.submit class: 'btn btn-primary' %>
 

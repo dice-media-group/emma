@@ -27,14 +27,12 @@ style and script for the watch this modal is on the home index.html.erb
           <div class="ct-billboard-poster">
             <%= image_tag @home_info.watch_this_poster_url, class: "ct-billboard-poster-img" %>
             <% youtube_video_id = @home_info.watch_this_video_url.split('v=').last %>
-             <a alt="Open Video"
+              <a alt="Open Video"
                  class="video-banner js-trigger-video-modal ct-modal-ctrl ct-billboard-interact all play-btn"
                 href="<%= @home_info.watch_this_video_url %>" 
-                data-youtube-id="<%= youtube_video_id %>" 
-                 
-                 >
-                 
-                 </a>
+                data-youtube-id="<%= youtube_video_id %>"                  
+              >
+              </a>
           </div>
         </div>
       </div>

@@ -32,7 +32,8 @@ class Backstage::FirstTimeController < ApplicationController
                                         :blurb, 
                                         :twitter_handle, 
                                         :featured_image_src,
-                                        :featured_youtube_video_url, 
+                                        :featured_youtube_video_url,
+                                        :featured_youtube_image_url,
                                         :biography, 
                                         :body)
   end
