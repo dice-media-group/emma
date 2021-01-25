@@ -27,7 +27,7 @@
           <%= link_to @hire_me.learn_more_text, @hire_me.learn_more_pdf_link %>
         </p>
         <h2 class="h1 ct-liner-half"
-            id="page-contact-form">Want to get in touch with me?</h2>
+            id="page-contact-form">Want to get in touch with <%= @objective_case%>?</h2>
         <div class="gf_browser_gecko gform_wrapper"
              id="gform_wrapper_1">
           <%# contact form here %><%= render '/shared/lead_form', lead: @lead %>
