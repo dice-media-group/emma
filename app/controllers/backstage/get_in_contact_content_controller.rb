@@ -29,7 +29,9 @@ class Backstage::GetInContactContentController < ApplicationController
     params.require(:get_in_contact_content).permit(:title, 
                                                   :body,
                                                   :youtube_url,
+                                                  :youtube_image_url,
                                                   :page_message,
-                                                  :first_name)
+                                                  :first_name,
+                                                  :last_name)
   end
 end
