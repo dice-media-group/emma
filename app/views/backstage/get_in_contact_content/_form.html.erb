@@ -34,6 +34,12 @@
   </div>
 
   <div class="form-group">
+    <%= form.label :youtube_image_url %>
+    <p>(the url for the clickable image to watch the youtube video)</p>
+    <%= form.text_area :youtube_image_url, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
     <%= form.label :page_message %>
     <%= form.rich_text_area :page_message, class: 'form-control' %>
   </div>
