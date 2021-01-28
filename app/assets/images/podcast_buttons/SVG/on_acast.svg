@@ -1,68 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 72.01">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 67.5">
   <defs>
     <style>
-      .cls-1, .cls-2, .cls-3 {
+      .cls-1, .cls-2, .cls-4 {
         fill: #fff;
       }
 
-      .cls-2, .cls-3 {
-        font-size: 20.51px;
-        letter-spacing: 0em;
+      .acast-white {
+        fill: #fff;
+      }
+      .cls-2, .cls-3, .cls-4, .cls-8 {
+        isolation: isolate;
       }
 
-      .cls-2 {
-        font-family: Helvetica-Bold, Helvetica;
+      .cls-2, .cls-3 {
+        font-size: 18px;
+        font-family: Monaco;
+      }
+
+      .cls-3, .cls-8 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4, .cls-8 {
+        font-size: 24px;
+        font-family: MyriadPro-Bold, Myriad Pro;
         font-weight: 700;
       }
 
-      .cls-3 {
-        font-family: MyriadPro-Regular, Myriad Pro;
-      }
-
-      .cls-4 {
-        letter-spacing: -0.04em;
-      }
-
       .cls-5 {
-        letter-spacing: -0.04em;
+        letter-spacing: -0.01em;
       }
 
       .cls-6 {
-        letter-spacing: 0.01em;
+        letter-spacing: 0em;
       }
 
-      .tunein-green {
-        fill: #35b3a6;
+      .cls-7 {
+        letter-spacing: -0.01em;
       }
     </style>
-
-    <symbol id="podcast_logo" data-name="podcast_logo" viewBox="0 0 512 512">
-      <g>
-        <path d="M256 64c98 0 179 73 191 168L295 444A192 192 0 0 1 64 256c0 -106 86 -192 192 -192z"/>
-        <path fill="#c53827" d="M264 138c-70 0 -109 29 -109 59 0 24 18 39 47 39 27 0 45 -10 45 -24l-1 -7c-1 -1 -1 -4 -1 -7 0 -3 1 -14 18 -14 19 0 19 16 19 24v42h-4c-93 2 -141 25 -141 68 0 35 31 58 79 58 28 0 56 -14 68 -33L377 209c0 -34 -37 -71 -113 -71zm16 167c0 12 -10 22 -23 22 -13 0 -21 -7 -21 -20 0 -15 10 -30 40 -33h5z"/>
-      </g>
-    </symbol>
-
   </defs>
   <g id="Layer_2" data-name="Layer 2">
-    <g id="pill">
-      <g id="pill_with_arrow">
-        <g id="pill_with_circle">
-          <rect x="29.95" y="0.59" width="222.94" height="66.61"/>
-          <circle cx="33.6" cy="33.9" r="33.6"/>
-          <circle cx="254.4" cy="33.6" r="33.6"/>
-          <circle class="cls-1" cx="32.55" cy="33.6" r="26.65"/>
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g id="graphics">
+        <g id="pill_with_arrow" data-name="pill with arrow">
+          <g id="pill_with_circle" data-name="pill with circle">
+            <rect x="30" y="0.6" width="222.9" height="66.6"/>
+            <circle cx="33.6" cy="33.9" r="33.6"/>
+            <circle cx="254.4" cy="33.6" r="33.6"/>
+            <circle class="cls-1" cx="32.5" cy="33.6" r="26.6"/>
+          </g>
+          <path class="cls-1" d="M252.8,25.2l14.7,8.4L252.8,42Z"/>
         </g>
-        <path class="cls-1" d="M252.8,25.16l14.69,8.43L252.8,42Z"/>
       </g>
-    </g>
-    <g id="podcast_host_text">
-      <text class="cls-2" transform="translate(64.92 24.47)">m ipsum fantacy</text>
-      <text class="cls-3" transform="translate(66.38 61.68)">on<tspan class="cls-4" x="22.68" y="0"> </tspan><tspan class="cls-5" x="26.21" y="0">T</tspan><tspan x="35.5" y="0">une</tspan><tspan class="cls-6" x="68.52" y="0">I</tspan><tspan x="73.64" y="0">n</tspan></text>
-    </g>
-    <g id="logo">
-      <use width="55.43" height="64" transform="matrix(0.73, 0, 0, -0.73, 12.35, 57.22)" xlink:href="#podcast_logo"/>
-
+      <g id="button-text">
+        <text class="cls-2" transform="translate(57.13 55.44)">on Google Podcasts</text>
+        <text class="cls-3" transform="translate(57.13 55.44)">on Google Podcasts</text>
+        <text class="cls-4" transform="translate(85.68 28.58)"><tspan class="cls-5">L</tspan><tspan class="cls-6" x="12.05" y="0">o</tspan><tspan class="cls-7" x="25.9" y="0">r</tspan><tspan x="34.82" y="0">em ipsum</tspan></text>
+        <text class="cls-8" transform="translate(85.68 28.58)"><tspan class="cls-5">L</tspan><tspan class="cls-6" x="12.05" y="0">o</tspan><tspan class="cls-7" x="25.9" y="0">r</tspan><tspan x="34.82" y="0">em ipsum</tspan></text>
+      </g>
+      <g id="logo">
+        <path id="acast-logo-background" d="M32.56,9.32A24.63,24.63,0,0,1,57,30.82L37.56,58a24.58,24.58,0,1,1-5-48.65Z"/>
+        <path id="acast-logo-foreground" class="acast-white" d="M33.59,18.79c-9,0-14,3.71-14,7.55,0,3.08,2.31,5,6,5,3.46,0,5.76-1.28,5.76-3.08l-.13-.89a1.75,1.75,0,0,1-.12-.9c0-.38.12-1.79,2.3-1.79,2.43,0,2.43,2.05,2.43,3.07v5.38h-.51c-11.91.26-18.05,3.2-18.05,8.7,0,4.49,4,7.43,10.11,7.43,3.59,0,7.17-1.79,8.71-4.22l11.9-17.16C48.05,23.53,43.32,18.79,33.59,18.79Zm2,21.38a2.87,2.87,0,0,1-3,2.82A2.4,2.4,0,0,1,30,40.43c0-1.92,1.28-3.84,5.12-4.23h.64Z"/>
+      </g>
     </g>
   </g>
 </svg>
