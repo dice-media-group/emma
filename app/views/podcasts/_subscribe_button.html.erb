@@ -1,47 +1,16 @@
-      <a href="https://www.stitcher.com/podcast/go-carl-go" rel="noopener noreferrer" target="_blank"
-       class="podcastbtn img-responsive alignnone wp-image-7295 size-large"
-       style= "margin-bottom: 3px;" 
-      >
-<%#  %>
+<%= link_to subscribe_button.url, 
+    rel: "noopener noreferrer", 
+    target: "_blank",
+    class: "podcastbtn img-responsive alignnone wp-image-7295 size-large",
+    style:  "margin-bottom: 3px;"  do %>
 
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 288 67.5">
-  <defs>
-    <style>
-            <%= subscribe_button.svg_logo_style.to_s.html_safe %>
+    <%= render partial: "podcast_button", 
+        locals: { name: subscribe_button.name,
+                  svg_logo: subscribe_button.svg_logo,
+                  svg_logo_style: subscribe_button.svg_logo_style,
+                  podcast_title: podcast_title
+                }, 
+        :as => :podcast_button 
+    %>
 
-      <%# .cls-1 {
-        fill: #f25c31;
-      }
-
-      .cls-2 {
-        fill: #fefefe;
-      }
-
-      .cls-3 {
-        fill: #fff;
-      } %>
-    </style>
-    <symbol id="podcast_logo" data-name="podcast_logo" viewBox="0 0 55.43 64">
-        <%= subscribe_button.svg_logo.to_s.html_safe %>
-
-    </symbol>
-  </defs>
-  <g id="Layer_2" data-name="Layer 2">
-    <g id="Layer_1-2" data-name="Layer 1">
-      <g id="pill_with_arrow">
-        <g id="pill_with_circle">
-          <rect x="29.95" y="0.59" width="222.94" height="66.61"/>
-          <circle cx="33.6" cy="33.9" r="33.6"/>
-          <circle cx="254.4" cy="33.6" r="33.6"/>
-          <circle class="cls-3" cx="32.55" cy="33.6" r="26.65"/>
-        </g>
-        <path class="cls-3" d="M252.8,25.16l14.69,8.43L252.8,42Z"/>
-      </g>
-    </g>
-    <g id="logo">
-      <use width="55.43" height="64" transform="matrix(0.73, 0, 0, -0.73, 12.35, 57.22)" xlink:href="#podcast_logo"/>
-    </g>
-  </g>
-</svg>
-</a>
-        <%#= subscribe_button.svg_logo.to_s.html_safe %>
+<% end %>

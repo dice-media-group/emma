@@ -2,28 +2,29 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #fff;
+        fill: #fff
       }
 
-      .cls-2 {
+      .stitcher-blue {
         fill: #3590c5;
       }
 
-      .cls-3 {
+      .stitcher-red {
         fill: #c53827;
       }
 
-      .cls-4 {
+      .stitcher-orange {
         fill: #ec8b24;
       }
 
-      .cls-5 {
+      .stitcher-yellow {
         fill: #fbc618;
       }
 
-      .cls-6 {
+      .stitcher-purple {
         fill: #612268;
       }
+
     </style>
   </defs>
   <g id="Layer_2" data-name="Layer 2">
@@ -39,11 +40,14 @@
       </g>
     </g>
     <g id="logo">
-      <path class="cls-2" d="M10.67,28.32h7.66V42.21H10.67Z"/>
-      <path class="cls-3" d="M46.77,27.55h7.65v12.8H46.77Z"/>
-      <path class="cls-4" d="M37.8,24.71h7.65V41.34H37.8Z"/>
-      <path class="cls-5" d="M28.83,27.12h7.65v16H28.83Z"/>
-      <path class="cls-6" d="M19.75,25.8H27.4V41.23H19.75Z"/>
+      <g>
+        <path class="stitcher-blue" d="M10.67,28.32h7.66V42.21H10.67Z"/>
+        <path class="stitcher-red" d="M46.77,27.55h7.65v12.8H46.77Z"/>
+        <path class="stitcher-orange" d="M37.8,24.71h7.65V41.34H37.8Z"/>
+        <path class="stitcher-yellow" d="M28.83,27.12h7.65v16H28.83Z"/>
+        <path class="stitcher-purple" d="M19.75,25.8H27.4V41.23H19.75Z"/>
+      </g>
+
     </g>
   </g>
 </svg>

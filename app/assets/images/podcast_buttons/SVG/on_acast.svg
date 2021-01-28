@@ -35,6 +35,14 @@
         fill: #35b3a6;
       }
     </style>
+
+    <symbol id="podcast_logo" data-name="podcast_logo" viewBox="0 0 512 512">
+      <g>
+        <path d="M256 64c98 0 179 73 191 168L295 444A192 192 0 0 1 64 256c0 -106 86 -192 192 -192z"/>
+        <path fill="#c53827" d="M264 138c-70 0 -109 29 -109 59 0 24 18 39 47 39 27 0 45 -10 45 -24l-1 -7c-1 -1 -1 -4 -1 -7 0 -3 1 -14 18 -14 19 0 19 16 19 24v42h-4c-93 2 -141 25 -141 68 0 35 31 58 79 58 28 0 56 -14 68 -33L377 209c0 -34 -37 -71 -113 -71zm16 167c0 12 -10 22 -23 22 -13 0 -21 -7 -21 -20 0 -15 10 -30 40 -33h5z"/>
+      </g>
+    </symbol>
+
   </defs>
   <g id="Layer_2" data-name="Layer 2">
     <g id="pill">
@@ -53,7 +61,8 @@
       <text class="cls-3" transform="translate(66.38 61.68)">on<tspan class="cls-4" x="22.68" y="0"> </tspan><tspan class="cls-5" x="26.21" y="0">T</tspan><tspan x="35.5" y="0">une</tspan><tspan class="cls-6" x="68.52" y="0">I</tspan><tspan x="73.64" y="0">n</tspan></text>
     </g>
     <g id="logo">
-      <path class="tunein-green" d="M11,27.91H30.12c5.36.77,8.65,3.6,9.19,9.19v4H18.61c-5.53-.66-7.45-3.73-7.83-7.83Zm30.39,13.2V35.42c.34-4.24,1.89-7.57,7.7-7.7h5.24v5.37c-.25,4.46-2.07,7.81-8.15,8.15Zm-15.91,3H40V49.9c0,5.22-2.84,6.93-7,7H25.46V44.08ZM40.08,17.82a7.44,7.44,0,1,1-7.44-7.51,7.47,7.47,0,0,1,7.44,7.51Z"/>
+      <use width="55.43" height="64" transform="matrix(0.73, 0, 0, -0.73, 12.35, 57.22)" xlink:href="#podcast_logo"/>
+
     </g>
   </g>
 </svg>
