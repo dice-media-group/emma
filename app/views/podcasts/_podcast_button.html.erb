@@ -20,9 +20,6 @@
         font-size: 24px;
         font-family: MyriadPro-Regular, Myriad Pro;
       }
-      .logo-color01 {
-        fill: #1ed760;
-      }
 
       .logo-height {
         height: 64px;
@@ -34,6 +31,7 @@
       <%= svg_logo_style.to_s.html_safe %>
 
     </style>
+    <%# if you need to be specific with podcast_logo %>
     <symbol id="podcast_logo-<%= name %>" data-name="podcast_logo">
         <%= svg_logo.to_s.html_safe %>
     </symbol>
@@ -51,7 +49,6 @@
         <path class="button-arrow" d="M252.8,25.16l14.69,8.43L252.8,42Z"/>
       </g>
       <g id="logo" >
-        <%#= svg_logo.to_s.html_safe %>
         <use  xlink:href="#podcast_logo-<%= name %>"/>
       </g>
     </g>
