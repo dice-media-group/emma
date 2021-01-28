@@ -78,7 +78,8 @@ class Backstage::PublisherAcctsController < ApplicationController
                                             :svg_logo_style,
                                             :frontpage_ranking,
                                             :sidebar_ranking,
-                                            :footer_ranking)
+                                            :footer_ranking,
+                                            :podcast_ranking)
   end
 
 end
