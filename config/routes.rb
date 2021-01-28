@@ -128,6 +128,7 @@ Rails.application.routes.draw do
   get '/biography', to: 'home#biography'
   get '/first-time-here', to: 'first_times#show'
   get '/hire-me', to: 'home#hire_me'
+  get '/hire-us', to: 'home#hire_me'
   get '/get-in-touch', to: 'leads#new'
   get '/press-kit', to: 'press_kits#show'
 

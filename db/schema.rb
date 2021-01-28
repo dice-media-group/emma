@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_060124) do
+ActiveRecord::Schema.define(version: 2021_01_28_183513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -403,6 +403,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_060124) do
     t.integer "frontpage_ranking", default: 0, null: false
     t.integer "sidebar_ranking", default: 0, null: false
     t.integer "footer_ranking", default: 0, null: false
+    t.integer "podcast_ranking", default: 0, null: false
   end
 
   create_table "services", force: :cascade do |t|

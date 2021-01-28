@@ -39,45 +39,45 @@
       font_awesome_class: "fas fa-podcast", network_kind: "social", 
       blurb: "Perfect for your commute. Listen daily to keynotes, interviews, rants, business meetings, and more."},
 
-    { name: 'stitcher', url: "http://tiktok.com", 
+    { name: 'stitcher', url: "https://www.stitcher.com/", 
       font_awesome_class: "fas fa-music", network_kind: "podcast", 
-      blurb: "Get a glimpse of some of my funnier moments on TikTok" },
+      blurb: "https://www.stitcher.com/" },
 
-    { name: 'soundcloud', url: "http://tiktok.com", 
+    { name: 'soundcloud', url: "https://soundcloud.com/", 
       font_awesome_class: "fas fa-music", network_kind: "podcast", 
-      blurb: "Get a glimpse of some of my funnier moments on TikTok" },
+      blurb: "https://soundcloud.com/" },
 
-    { name: 'spotify', url: "http://tiktok.com", 
+    { name: 'spotify', url: "https://open.spotify.com/genre/podcasts-page", 
       font_awesome_class: "fas fa-music", network_kind: "podcast", 
-      blurb: "Get a glimpse of some of my funnier moments on TikTok" },
+      blurb: "https://open.spotify.com/genre/podcasts-page" },
 
-    { name: 'castbox', url: "http://tiktok.com", 
+    { name: 'castbox', url: "https://castbox.fm/", 
       font_awesome_class: "fas fa-music", network_kind: "podcast", 
-      blurb: "Get a glimpse of some of my funnier moments on TikTok" },
+      blurb: "https://castbox.fm/" },
 
-    { name: 'apple-podcasts', url: "http://tiktok.com", 
+    { name: 'apple-podcasts', url: "https://podcasts.apple.com/us/genre/podcasts/id26", 
       font_awesome_class: "fas fa-music", network_kind: "podcast", 
-      blurb: "Get a glimpse of some of my funnier moments on TikTok" },
+      blurb: "https://podcasts.apple.com/us/genre/podcasts/id26" },
 
-    { name: 'overcast', url: "http://tiktok.com", 
+    { name: 'overcast', url: "https://overcast.fm/", 
       font_awesome_class: "fas fa-music", network_kind: "podcast", 
-      blurb: "Get a glimpse of some of my funnier moments on TikTok" },
+      blurb: "https://overcast.fm/" },
 
-    { name: 'iheart', url: "http://tiktok.com", 
+    { name: 'iheart', url: "https://www.iheart.com/", 
       font_awesome_class: "fas fa-music", network_kind: "podcast", 
-      blurb: "Get a glimpse of some of my funnier moments on TikTok" },
+      blurb: "https://www.iheart.com/" },
 
-    { name: 'tunein', url: "http://tiktok.com", 
+    { name: 'tunein', url: "https://tunein.com/podcasts/", 
       font_awesome_class: "fas fa-music", network_kind: "podcast", 
-      blurb: "Get a glimpse of some of my funnier moments on TikTok" },
+      blurb: "https://tunein.com/podcasts/" },
 
-    { name: 'acast', url: "http://tiktok.com", 
+    { name: 'acast', url: "https://www.acast.com/en", 
       font_awesome_class: "fas fa-music", network_kind: "podcast", 
-      blurb: "Get a glimpse of some of my funnier moments on TikTok" },
+      blurb: "https://www.acast.com/en" },
       
-    { name: 'google-podcasts', url: "http://tiktok.com", 
+    { name: 'google-podcasts', url: "https://podcasts.google.com/", 
       font_awesome_class: "fas fa-music", network_kind: "podcast", 
-      blurb: "Get a glimpse of some of my funnier moments on TikTok" }
+      blurb: "https://podcasts.google.com/" }
     
     ])
 # set up site and dependents
