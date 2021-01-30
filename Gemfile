@@ -80,6 +80,10 @@ gem 'acts-as-taggable-on', '~> 6.5'
 # gem 'administrate-field-trix' # supporting code for the trix field
 gem 'meta-tags', '~> 2.14'
 gem 'aws-sdk-s3', '~> 1.87'
-# external api's
+##  external api's
+#   send leads to hubspot
 gem 'hubspot-api-client', '~> 9.2', '>= 9.2.1'
+#   overall api client
 gem 'httparty', '~> 0.18.1'
+#   contact lead email
+gem 'sendgrid-ruby'

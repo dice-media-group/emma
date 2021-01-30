@@ -22,6 +22,8 @@ class Lead
             puts "================================"
             puts "saving the message #{@lead} "
             puts "================================"
+
+            self.notify_sales_rep
             true
         else
             false
@@ -52,5 +54,10 @@ class Lead
         hubspot_contact_hash[:lastname]     = lastname
 
         hubspot_contact_hash
+    end
+
+    def notify_sales_rep
+        @user = User.first
+        UserNotifierMailer.send_signup_email(@user).deliver_now
     end
 end
