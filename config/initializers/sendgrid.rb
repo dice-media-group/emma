@@ -1,6 +1,6 @@
 ActionMailer::Base.smtp_settings = {
   :user_name => 'apikey',
-  :password => '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',
+  :password =>  ENV['SENDGRID_API_KEY'],
   :domain => 'dicemediagroup.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
