@@ -7,4 +7,10 @@ class UserNotifierMailer < ApplicationMailer
       mail( :to => @user.email,
       :subject => 'Thanks for signing up for our amazing app' )
     end    
+
+    def alert_about_contact(user, lead)
+      mail( :to => @user.email,
+      :subject => 'New sales lead' )
+    end    
+
 end
