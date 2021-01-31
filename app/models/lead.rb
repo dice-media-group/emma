@@ -23,7 +23,8 @@ class Lead
             puts "saving the message #{@lead} "
             puts "================================"
 
-            self.notify_sales_rep
+            self.notify_sales_team(@lead)
+            self.send_welcome_signup_email(@lead)
             true
         else
             false
@@ -56,8 +57,17 @@ class Lead
         hubspot_contact_hash
     end
 
-    def notify_sales_rep
+    def self.notify_sales_team(@lead)
+        (@user, lead)
+        UserNotifierMailer.notify_sales_team_member(@user).deliver_later
+    end
+
+    def thanks_autoreply(lead)
+        NotifierMailer.be_in_touch_soon(lead).deliver_later
+    end
+
+    def send_welcome_signup_email(lead)
         @user = User.first
-        UserNotifierMailer.send_signup_email(@user).deliver_now
+        UserNotifierMailer.send_signup_email(@user).deliver_later        
     end
 end
