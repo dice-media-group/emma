@@ -1,0 +1,67 @@
+  <%= form_with(model: [ :backstage, first_time_entry], local: true) do |form| %>
+
+<div class="form-grid">
+  <div class="form-header">
+    <% if first_time_entry.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(first_time_entry.errors.count, "error") %> prohibited this first_time from being saved:</h2>
+
+        <ul>
+        <% first_time_entry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <aside class="form-sidebar-left">
+
+  </aside>
+
+  <div class="form-article">
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :article_link %>
+      <%= form.text_area :article_link, class: 'form-control styled' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :article_image_url %>
+      <%= form.text_area :article_image_url, class: 'form-control styled' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :published_on %>
+      <%= form.date_select :published_on, class: 'form-control' %>
+
+    </div>
+
+    <div class="form-group">
+      <%= form.label :release_at %>
+      <%= form.date_select :release_at, class: 'form-control' %>
+
+    </div>
+
+  <aside class="form-sidebar-right">
+  </aside>
+  
+  <div class="form-footer">
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if first_time_entry.persisted? %>
+      <%= link_to "Cancel", edit_backstage_first_time_path(@first_time), class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", edit_backstage_first_time_path(@first_time), class: "btn btn-link" %>
+    <% end %>
+
+  </div>
+</div>
+
+<% end %>
+
+

@@ -7,14 +7,17 @@
         </div>
 
         <h3 class="h2 ct-liner-simple">
-            <a href="https://www.garyvaynerchuk.com/how-to-start/" target="">
-                How To Start                    </a>
+            <%= link_to first_time_entry.title, first_time_entry.article_link %>
+            
         </h3>
     </div>
     <div class="ct-articleunit-footer">
-        <span class="ct-articuleunit-date">Aug 24, 2017</span>
-        <a href="https://www.garyvaynerchuk.com/how-to-start/" target="">
+        <span class="ct-articuleunit-date"><%= first_time_entry.published_on.strftime("%b %d, %Y") %></span>
+        <%= link_to  first_time_entry.article_link do %>
             Read More &gt;&gt;
-        </a>
+        
+        <% end %>
+        
+
     </div>
 </div>

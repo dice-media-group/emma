@@ -1,72 +1,152 @@
-<%= form_with(model: [ :backstage, first_time], local: true) do |form| %>
-  <% if first_time.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(first_time.errors.count, "error") %> prohibited this first_time from being saved:</h2>
+<style>
+  figure {
+      border: thin #c0c0c0 solid;
+      display: flex;
+      flex-flow: column;
+      padding: 5px;
+      max-width: 220px;
+      margin: auto;
+  }
 
-      <ul>
-      <% first_time.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  img {
+      max-width: 220px;
+      max-height: 150px;
+  }
+
+  figcaption {
+      background-color: #222;
+      color: #fff;
+      font: italic smaller sans-serif;
+      padding: 3px;
+      text-align: center;
+  }
+
+  .flex {
+        display: flex;
+  }
+
+  .flex-form-group {
+    min-width: max-content;
+    margin:5px;
+  }
+</style>
+
+  <%= form_with(model: [ :backstage, first_time], local: true) do |form| %>
+
+<div class="form-grid">
+  <div class="form-header">
+    <% if first_time.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(first_time.errors.count, "error") %> prohibited this first_time from being saved:</h2>
+
+        <ul>
+        <% first_time.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <aside class="form-sidebar-left">
+          <div class="form-group">
+        <%= form.label :featured_image_src %>
+        <%= form.text_area :featured_image_src, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :twitter_handle %>
+        <%= form.text_field :twitter_handle, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :blurb %>
+        <%= form.text_area :blurb, class: 'form-control' %>
+      </div>
+
+  </aside>
+
+  <div class="form-article">
+    
+      <div class="billboard flex">
+        <div class="form-group flex-form-group">
+          <%= form.label :billboard_image_title %>
+          <%= form.text_field :billboard_image_title, class: 'form-control' %>
+        </div>
+
+        <div class="form-group flex-form-group">
+          <%= form.label :billboard_image_url %>
+          <%= form.text_area :billboard_image_url, class: 'form-control styled' %>
+        </div>
+
+      </div>
+      
+      <div class="first-and-last-name flex">
+        <div class="form-group flex-form-group">
+          <%= form.label :first_name %>
+          <%= form.text_field :first_name, class: 'form-control' %>
+        </div>
+
+        <div class="form-group flex-form-group">
+          <%= form.label :last_name %>
+          <%= form.text_field :last_name, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :biography %>
+        <%= form.rich_text_area :biography, class: 'form-control' %>
+      </div>
+
+      <div class="youtube flex">
+        <div class="form-group flex-form-group">
+          <%= form.label :featured_youtube_video_url %>
+          <p>(copy the the shared embed url for the youtube video)</p>
+          <%= form.text_area :featured_youtube_video_url, class: 'form-control' %>
+        </div>
+
+        <div class="form-group flex-form-group">
+          <%= form.label :featured_youtube_image_url %>
+          <p>(the url for the clickable image to watch the youtube video)</p>
+          <%= form.text_area :featured_youtube_image_url, class: 'form-control' %>
+        </div>
+      
+      </div>
+
+  </div>
+
+  <aside class="form-sidebar-right">
+    <h3>Featured Entries</h3>
+
+    <%= link_to new_backstage_first_time_entry_path do %>
+    <div class="new-first-time-entry">
+      <i class="fas fa-plus-square"></i>&nbsp;Add one featured entry    
     </div>
-  <% end %>
+    <% end %>
+    <% first_time.first_time_entries.each do |entry| %>
+      <div>
+        <% if entry.article_image_url.present? %>
+          <%= link_to edit_backstage_first_time_entry_path(entry) do %>
+            <figure>
+              <%= image_tag entry.article_image_url, width:140, hieght:94 %>
+              <figcaption><%= entry.title.to_s %></figcaption>
+            </figure>
+          <% end %>
+          
 
-
-  <%#  %>
-
-  <div class="form-group">
-    <%= form.label :billboard_image_title %>
-    <%= form.text_field :billboard_image_title, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :billboard_image_url %>
-    <%= form.text_area :billboard_image_url, class: 'form-control styled' %>
-  </div>
-
-
-  <div class="form-group">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :twitter_handle %>
-    <%= form.text_field :twitter_handle, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :blurb %>
-    <%= form.text_area :blurb, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :biography %>
-    <%= form.rich_text_area :biography, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :featured_image_src %>
-    <%= form.text_area :featured_image_src, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :featured_youtube_video_url %>
-    <p>(copy the the shared embed url for the youtube video)</p>
-    <%= form.text_area :featured_youtube_video_url, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :featured_youtube_image_url %>
-    <p>(the url for the clickable image to watch the youtube video)</p>
-    <%= form.text_area :featured_youtube_image_url, class: 'form-control' %>
-  </div>
-
+        <% else %>
+          <%= link_to edit_backstage_first_time_entry_path(entry) do %>
+            <figure>
+              <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpj0DBTVsaja01_xWh37bcutvpd7rh7zEd528HD0d_l6A73osY", width:140, hieght:94 %>
+              <figcaption><%= entry.title.to_s %></figcaption>
+            </figure>
+          <% end %>
+        <% end %>    
+      </div>
+    <% end %>
+  </aside>
+  
+  <div class="form-footer">
     <%= form.submit class: 'btn btn-primary' %>
 
     <% if first_time.persisted? %>
@@ -74,5 +154,10 @@
     <% else %>
       <%= link_to "Cancel", backstage_site_index_path, class: "btn btn-link" %>
     <% end %>
+
   </div>
+</div>
+
 <% end %>
+
+
