@@ -17,12 +17,12 @@ class Backstage::FirstTimeEntriesController < ApplicationController
   # POST /books.json
   def create
     @site               = Site.first
-    @first_time         = Site.first.first_time
+    @first_time         = @site.first_time
     @first_time_entry   = @first_time.first_time_entries.new(first_time_entries_params)
 
     respond_to do |format|
       if @first_time_entry.save
-        format.html { redirect_to  edit_backstage_first_time_url(@first_time_entry.first_time), notice: 'Entry for First Time was successfully created.' }
+        format.html { redirect_to  edit_backstage_first_time_url(@first_time), notice: 'Entry for First Time was successfully created.' }
         # format.json { render :show, status: :created, location: @first_time_entry }
       else
         format.html { render :new }
@@ -38,7 +38,6 @@ class Backstage::FirstTimeEntriesController < ApplicationController
   def update
     @site = Site.first
     @first_time = @site.first_time
-    @first_time_entry   = @first_time.first_time_entries.find(params[:id])
     respond_to do |format|
       if @first_time_entry.update(first_time_entries_params)
         format.html { redirect_to backstage_index_path, notice: 'first_time was successfully updated.' }
@@ -50,13 +49,26 @@ class Backstage::FirstTimeEntriesController < ApplicationController
     end
   end
 
+  # DELETE /books/1
+  # DELETE /books/1.json
+  def destroy
+    @site               = Site.first
+    @first_time         = @site.first_time
+
+    @first_time_entry.destroy
+    respond_to do |format|
+      format.html { redirect_to edit_backstage_first_time_url(@first_time), notice: 'First Time Entry was successfully destroyed.' }
+      # format.json { head :no_content }
+    end
+  end
+
   private
 
   # Only allow a list of trusted parameters through.
   def first_time_entries_params
     params.require(:first_time_entry).permit(:title, 
                                         :article_link,
-                                        :article_image_url, 
+                                        :article_image_link, 
                                         :release_at, 
                                         :published_on
                                       )
@@ -67,14 +79,5 @@ class Backstage::FirstTimeEntriesController < ApplicationController
     @first_time_entry = FirstTimeEntry.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
-  def wallpaper_params
-    params.require(:first_time_entry).permit(:title,
-    :article_link,
-    :article_image_url, 
-    :release_at, 
-    :published_on
-    )
-  end
 
 end

@@ -31,8 +31,8 @@
     </div>
 
     <div class="form-group">
-      <%= form.label :article_image_url %>
-      <%= form.text_area :article_image_url, class: 'form-control styled' %>
+      <%= form.label :article_image_link %>
+      <%= form.text_area :article_image_link, class: 'form-control styled' %>
     </div>
 
     <div class="form-group">
@@ -51,17 +51,24 @@
   </aside>
   
   <div class="form-footer">
-    <%= form.submit class: 'btn btn-primary' %>
 
-    <% if first_time_entry.persisted? %>
+    <div class="form-group">
+      <% if first_time_entry.persisted? %>
+        <div class="float-right">
+          <%= link_to 'Destroy', 
+              backstage_first_time_entry_path, 
+              method: :delete, class: "text-danger", 
+              data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
+
+      <%= form.submit class: 'btn btn-primary' %>
+
       <%= link_to "Cancel", edit_backstage_first_time_path(@first_time), class: "btn btn-link" %>
-    <% else %>
-      <%= link_to "Cancel", edit_backstage_first_time_path(@first_time), class: "btn btn-link" %>
-    <% end %>
+    </div>
+
 
   </div>
 </div>
 
 <% end %>
-
-

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_02_005236) do
+ActiveRecord::Schema.define(version: 2021_02_04_223616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -187,7 +187,7 @@ ActiveRecord::Schema.define(version: 2021_02_02_005236) do
   create_table "first_time_entries", force: :cascade do |t|
     t.string "title"
     t.text "article_link"
-    t.text "article_image_url"
+    t.text "article_image_link"
     t.datetime "release_at"
     t.bigint "first_time_id", null: false
     t.date "published_on"
