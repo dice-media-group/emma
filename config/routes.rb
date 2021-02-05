@@ -57,6 +57,7 @@ Rails.application.routes.draw do
     resources :meetups
     resources :merchandise_links
     resources :messages, only: [:index]
+    resources :photos
     resources :podcast, only: [:edit, :update]
     resources :press_kit, only: [:edit, :update]
     # resources :press_kit_entries

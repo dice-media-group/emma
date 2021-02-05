@@ -5,9 +5,9 @@
 
     <section id="main-dashboard-content">
       <section id="top-section">
-        <h1>Backstage::MerchandiseLinks <%= "(#{@merchandise_links.count})" %></h1>
+        <h1>Merchandise Links <%= "(#{@merchandise_links.count})" %></h1>
         <%= link_to 'new', 
-            new_backstage_media_appearance_path, 
+            new_backstage_merchandise_link_path, 
             class: "btn btn-primary" %>
       </section>
       <section class="flexgrid">
