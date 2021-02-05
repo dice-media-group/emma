@@ -43,6 +43,7 @@ Rails.application.routes.draw do
     resources :blog_hub
     resources :books      
     resources :book_info, only: [:edit, :update]
+    resources :first_time_entries
     resources :general_info, only: [:edit, :update]
     resources :get_in_contact_content, only: [:edit, :update]
 

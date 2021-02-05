@@ -49,16 +49,10 @@
 
     <section id="main-dashboard-content">
       <section id="top-section">
-        <h1>Backstage::FirstTime#edit
-          <%= link_to 'Show Page', 
-            first_time_here_path, 
-            class: "btn btn-primary",
-            target: "blank" %>
-
-        </h1>
+        <h1>Edit First Time Entry</h1>
       </section>
       <section class="first-time-form">
-        <%= render 'form', first_time: @first_time %>
+        <%= render 'form', first_time_entry: @first_time_entry %>
       </section>
     </section>
 </div>
