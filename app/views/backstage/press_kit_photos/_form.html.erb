@@ -56,7 +56,7 @@
   <div class="form-group">
     <% if press_kit_photo.persisted? %>
       <div class="float-right">
-        <%= link_to 'Destroy', press_kit_photo, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Destroy', backstage_press_kit_photo_path(press_kit_photo), method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
 

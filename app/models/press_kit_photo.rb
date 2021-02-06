@@ -1,6 +1,6 @@
 class PressKitPhoto < ApplicationRecord
   has_one_attached :image
-  belongs_to :press_kit, dependent: :destroy
+  belongs_to :press_kit
 
   validates_presence_of :title
   validates_presence_of :headshot_or_other

@@ -44,7 +44,12 @@
             
               <td>
                   <% if photo.image.attached? %>
-                    <%= link_to (image_tag photo.image, style: "max-width: 100px"), backstage_press_kit_photo_path(photo) %>
+                    <%= link_to (image_tag photo.image, style: "max-width: 100px"), edit_backstage_press_kit_photo_path(photo) %>
+                  <% else %>
+                    <%= link_to  edit_backstage_press_kit_photo_path(photo)  do %>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpj0DBTVsaja01_xWh37bcutvpd7rh7zEd528HD0d_l6A73osY" width="90"  />
+
+                    <% end %>
                   <% end %>            
               </td>
               <td><%= link_to 'Show', backstage_press_kit_photo_path(photo) %></td>
