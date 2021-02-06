@@ -1,0 +1,71 @@
+
+  <%= form_with(model: [ :backstage, press_kit_photo], local: true) do |form| %>
+  <% if press_kit_photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(press_kit_photo.errors.count, "error") %> prohibited this press_kit_photo from being saved:</h2>
+
+      <ul>
+      <% press_kit_photo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group" data-uppy="press_kit_photo[image]">
+    <%= form.label :image %>
+    <div>
+      <% if press_kit_photo.image.attached? %>
+        <%= image_tag @press_kit_photo.image, width: 280, data: { behavior: 'uppy-preview' } %>
+      <% else %>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpj0DBTVsaja01_xWh37bcutvpd7rh7zEd528HD0d_l6A73osY" width="280" data-behavior="uppy-preview" />
+      <% end %>    
+    </div>
+
+    <%= link_to "Upload", "#", data: { behavior: "uppy-trigger" } %>
+  </div>
+
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: 'form-control' %>
+    </div>
+
+
+    <div class="form-group">
+      <%= form.label :dimensions_wxh %>
+      <%= form.text_field :dimensions_wxh, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :headshot_or_other %>
+      <%= form.text_field :headshot_or_other, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :publish_at %>
+      <%= form.date_select :publish_at, class: 'form-control' %>
+
+    </div>
+
+
+  <div class="form-group">
+    <% if press_kit_photo.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', press_kit_photo, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if press_kit_photo.persisted? %>
+      <%= link_to "Cancel", backstage_press_kit_photo_path(press_kit_photo), class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", backstage_press_kit_photos_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
