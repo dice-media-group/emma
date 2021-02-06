@@ -1,9 +1,33 @@
+<style>
+  ul {
+    display: flex;
+  }
+</style>
+
 <div class="backstage">
     <%= render 'backstage/sidebar' %>
 
     <section id="main-dashboard-content">
       <section id="top-section">
-        <h1>Backstage::PressKit#edit</h1>
+        <h1>Edit PressKit</h1>
+          <ul>
+            <li>
+                <div>
+                    <%= link_to 'kit entries', backstage_press_kit_entries_path, class:"btn btn-primary" %>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <%= link_to 'kit photos and headshots', backstage_press_kit_photos_path, class:"btn btn-primary" %>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <%= link_to 'show page', '/press-kit', class:"btn btn-primary", target: "blank" %>
+                </div>
+            </li>
+          </ul>
+
       </section>
       <section id="grid-container">
         <%= render 'form', press_kit: @press_kit %>

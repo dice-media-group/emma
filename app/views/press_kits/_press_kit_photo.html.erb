@@ -1,6 +1,6 @@
 <div class="form-group col-md-6">
     <div class="ct-article-unit-thumb">
-        <%= image_tag press_kit_photo.link, class: "img-full-responsive", title: "#{press_kit_photo.headshot_or_other}: #{press_kit_photo.title}"  %>
+        <%= image_tag press_kit_photo.image, class: "img-full-responsive", title: "#{press_kit_photo.headshot_or_other}: #{press_kit_photo.title}"  %>
     </div>
     <div class="ct-articleunit">
         <div class="h4 ct-h-slab-caps ct-presskit-cta">
@@ -8,11 +8,10 @@
         </div>
         <ul class="ct-presskit-list">
         <li>
-            <%= link_to press_kit_photo.dimensions_wxh, 
-                press_kit_photo.link, 
-                class: "link-blue link-bold", 
-                download: ""\
-            %>
+            <%= link_to  press_kit_photo.image, 
+                class: "link-blue link-bold", download: url_for(press_kit_photo.image) do %>
+                <%= press_kit_photo.dimensions_wxh %>    
+            <% end %>
         </li>
         </ul>
     </div>

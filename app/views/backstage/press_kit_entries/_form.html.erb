@@ -1,0 +1,74 @@
+  <%= form_with(model: [ :backstage, press_kit_entry], local: true) do |form| %>
+
+<div class="form-grid">
+  <div class="form-header">
+    <% if press_kit_entry.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(press_kit_entry.errors.count, "error") %> prohibited this first_time from being saved:</h2>
+
+        <ul>
+        <% press_kit_entry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <aside class="form-sidebar-left">
+
+  </aside>
+
+  <div class="form-article">
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :article_link %>
+      <%= form.text_area :article_link, class: 'form-control styled' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :article_image_url %>
+      <%= form.text_area :article_image_url, class: 'form-control styled' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :published_on %>
+      <%= form.date_select :published_on, class: 'form-control' %>
+
+    </div>
+
+    <div class="form-group">
+      <%= form.label :release_at %>
+      <%= form.date_select :release_at, class: 'form-control' %>
+
+    </div>
+
+  <aside class="form-sidebar-right">
+  </aside>
+  
+  <div class="form-footer">
+
+    <div class="form-group">
+      <% if press_kit_entry.persisted? %>
+        <div class="float-right">
+          <%= link_to 'Destroy', 
+              backstage_press_kit_entry_path, 
+              method: :delete, class: "text-danger", 
+              data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
+
+      <%= form.submit class: 'btn btn-primary' %>
+
+      <%= link_to "Cancel", backstage_press_kit_entries_path, class: "btn btn-link" %>
+    </div>
+
+
+  </div>
+</div>
+
+<% end %>

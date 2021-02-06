@@ -60,7 +60,9 @@ Rails.application.routes.draw do
     resources :photos
     resources :podcast, only: [:edit, :update]
     resources :press_kit, only: [:edit, :update]
-    # resources :press_kit_entries
+    resources :press_kit_entries
+    resources :press_kit_photos
+
     # resources :press_kit, only: [:index]
     # resources :press_kit_links
     resources :publisher_accts

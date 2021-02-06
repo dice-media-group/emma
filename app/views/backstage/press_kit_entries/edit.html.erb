@@ -1,0 +1,58 @@
+<style>
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 150px auto 150px;
+    grid-template-rows: repeat(3, minmax(150px, auto));
+    grid-gap: 1em;
+    grid-template-areas: "header header header"
+                        "sidebar-1 article sidebar-2"
+                        "footer footer footer";
+  }
+
+  .form-header,
+  .form-aside,
+  .form-article,
+  .form-footer {
+    padding: 1em;
+  }
+
+  .form-header {
+    grid-area: header;
+  }
+
+  .form-article {
+    grid-area: article;
+  }
+
+  .form-footer {
+    grid-area: footer;
+  }
+
+  .form-sidebar-left {
+    grid-area: sidebar-1;
+  }
+
+  .form-sidebar-right {
+    grid-area: sidebar-2;
+  }
+
+  label {
+      font-weight: bold;
+  }
+</style>
+
+
+
+<div class="backstage">
+    <%= render 'backstage/sidebar' %>
+
+    <section id="main-dashboard-content">
+      <section id="top-section">
+        <h1>Edit First Time Entry</h1>
+      </section>
+      <section class="first-time-form">
+        <%= render 'form', press_kit_entry: @press_kit_entry %>
+      </section>
+    </section>
+</div>

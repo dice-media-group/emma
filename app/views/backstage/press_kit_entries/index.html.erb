@@ -1,2 +1,74 @@
-<h1>Backstage::PressKitEntries#index</h1>
-<p>Find me in app/views/backstage/press_kit_entries/index.html.erb</p>
+<div class="backstage">
+
+
+  <%= render '/backstage/sidebar' %>
+    <section id="main-dashboard-content">
+      <section id="top-section">
+
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>Press Entries</h1>
+    </div>
+
+    <div class="col-sm-6 text-right" style="display: flex">
+    <%= link_to edit_backstage_press_kit_path(@press_kit), class: '' do %>
+      &lt; &lt; Press Kit
+    <% end %>&nbsp;&nbsp;
+    <%= link_to new_backstage_press_kit_entry_path, class: 'btn btn-primary' do %>
+      Add New Entry
+    <% end %>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+      
+
+              
+            <th>Image</th>
+            <th>Link</th>
+          
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @press_kit_entries.each do |entry| %>
+          <%= content_tag :tr, id: dom_id(entry), class: dom_class(entry) do %>
+            
+
+            
+            
+              <td>
+                <% if entry.article_image_url.present? %>
+                    <%= link_to edit_backstage_press_kit_entry_path(entry) do %>
+                    <figure>
+                        <%= image_tag entry.article_image_url, width:140, hieght:94 %>
+                        <figcaption><%= entry.title.to_s %></figcaption>
+                    </figure>
+                    <% end %>
+                    
+
+                <% else %>
+                    <%= link_to edit_backstage_press_kit_entry_path(entry) do %>
+                    <figure>
+                        <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpj0DBTVsaja01_xWh37bcutvpd7rh7zEd528HD0d_l6A73osY", width:140, hieght:94 %>
+                        <figcaption><%= entry.title.to_s %></figcaption>
+                    </figure>
+                    <% end %>
+                <% end %>    
+
+              </td>
+              <td><%= link_to 'Edit', edit_backstage_press_kit_entry_path(entry) %></td>
+            
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  </section>
+  </section>
+</div>

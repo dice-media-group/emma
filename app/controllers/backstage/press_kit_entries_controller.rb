@@ -1,9 +1,11 @@
 class Backstage::PressKitEntriesController < ApplicationController
   before_action :set_press_kit_entry, only: [:show, :edit, :update, :destroy]
-  before_action :set_press_kit, only: [:new, :create]
+  before_action :set_press_kit, only: [:index, :new, :create]
 
   def index
-    @press_kit_entries = PressKitEntry.all  
+    @site               = Site.first
+    @press_kit          = @site.press_kit
+    @press_kit_entries = @press_kit.press_kit_entries.all  
   end
 
   def new
@@ -20,7 +22,7 @@ class Backstage::PressKitEntriesController < ApplicationController
 
     respond_to do |format|
       if @press_kit_entry.save
-        format.html { redirect_to  backstage_press_kit_entrys_url, notice: 'press_kit_entry was successfully created.' }
+        format.html { redirect_to  backstage_press_kit_entries_url, notice: 'press_kit_entry was successfully created.' }
         # format.json { render :show, status: :created, location: @press_kit_entry }
       else
         format.html { render :new }
@@ -36,7 +38,7 @@ class Backstage::PressKitEntriesController < ApplicationController
 
     respond_to do |format|
       if @press_kit_entry.update(press_kit_entry_params)
-        format.html { redirect_to backstage_press_kit_entrys_url, notice: 'press_kit_entry was successfully updated.' }
+        format.html { redirect_to backstage_press_kit_entries_url, notice: 'press_kit_entry was successfully updated.' }
         # format.json { render :show, status: :ok, location: @press_kit_entry }
       else
         format.html { render :edit }
@@ -48,11 +50,15 @@ class Backstage::PressKitEntriesController < ApplicationController
    # DELETE /press_kit_entrys/1
   # DELETE /press_kit_entrys/1.json
   def destroy
+    @site               = Site.first
+    @press_kit         = @site.press_kit
+
     @press_kit_entry.destroy
     respond_to do |format|
-      format.html { redirect_to backstage_press_kit_entrys_url, notice: 'press_kit_entry was successfully destroyed.' }
+      format.html { redirect_to backstage_press_kit_entries_url, notice: 'First Time Entry was successfully destroyed.' }
       # format.json { head :no_content }
     end
+
   end
 
  private
@@ -62,15 +68,22 @@ class Backstage::PressKitEntriesController < ApplicationController
   end
 
   def set_press_kit
-    @press_kit_entry = PressKit.first
-
+    @site               = Site.first
+    @press_kit          = @site.press_kit
   end
 
   
 
   # Only allow a list of trusted parameters through.
   def press_kit_entry_params
-    params.require(:press_kit_entry).permit(:seller_name, :url, :book_id)
+    params.require(:press_kit_entry).permit(:title, 
+      :article_link,
+      :article_image_url, 
+      :release_at, 
+      :published_on
+    )
+
+
   end
 
 end
