@@ -1,3 +1,7 @@
+# for now, it's just easier to use hubspot's form
+# this class is inactive.
+# We might use this with hubspot or another API in the furture.
+
 class Lead
     include ActiveModel::Model
 
