@@ -3,7 +3,7 @@
 <head>
   <%= render 'shared/head' %>
 </head>
-<body class="<%= body_css_class %>">
+<body class="<%= body_css_class %>" data-segment="<%= "#{ENV["SEGMENT_ID"]}"  %>">
   <div aria-describedby="cookieconsent:desc"
       aria-label="cookieconsent"
       aria-live="polite"

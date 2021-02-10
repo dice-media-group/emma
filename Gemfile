@@ -87,3 +87,5 @@ gem 'hubspot-api-client', '~> 9.2', '>= 9.2.1'
 gem 'httparty', '~> 0.18.1'
 #   contact lead email
 gem 'sendgrid-ruby'
+#   pass rails vars to javascript
+gem 'gon', '~> 6.4'

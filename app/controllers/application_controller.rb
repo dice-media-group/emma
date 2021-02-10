@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
   before_action :collect_sets_for_the_frontdoor
   before_action :set_general_info
+  before_action :set_js_environment
 
   def collect_sets_for_the_frontdoor
     @upcoming_meetups         ||=  Meetup.coming_soon
@@ -44,5 +45,9 @@ class ApplicationController < ActionController::Base
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
       devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avatar])
+    end
+
+    def set_js_environment
+      gon.segment_id = ENV["SEGMENT_ID"]
     end
 end
