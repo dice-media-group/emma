@@ -22,7 +22,7 @@ class Backstage::PressKitController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def press_kit_params
-    params.require(:press_kit).permit(:billboard_image_url, :billboard_image_title, :name, :birth_date, :birthplace)
+    params.require(:press_kit).permit(:billboard_image_url, :billboard_image_title, :name, :birth_date, :birthplace, :biography)
   end
 
 end
