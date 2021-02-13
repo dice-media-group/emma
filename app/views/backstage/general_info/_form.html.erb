@@ -1,3 +1,4 @@
+
 <%= form_with(model: [ :backstage, general_info], local: true) do |form| %>
   <% if general_info.errors.any? %>
     <div id="error_explanation">
@@ -34,11 +35,42 @@
     <%= form.text_area :newsletter_sub_url, class: 'form-control' %>
   </div>
 
+  
   <div class="form-check">
     <%= form.check_box :is_team_website, class: 'form-check-input' %>
     <label class="form-check-label" for="general_info_is_team_website">This website is for a team, not an individual person.</label>
     
   </div>
+
+  <h3>Meta tags</h3>
+  <div class="col-4">
+    <div class="form-group" data-uppy="general_info[meta_image]">
+      <%= form.label :meta_image %>
+      <div>
+        <% if @general_info.meta_image.attached? %>
+          <%= image_tag @general_info.meta_image, width: 280, data: { behavior: 'uppy-preview' } %>
+        <% else %>
+                <%= link_to image_tag("svgs/image-regular.svg", width: 280, data: { behavior: 'uppy-preview' }), "#", width: 280, data: { behavior: "uppy-trigger" } %>
+
+        <% end %>
+      </div>
+
+      <%= link_to "Upload Meta Image", "#", data: { behavior: "uppy-trigger" } %>
+    </div>
+  
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :default_meta_blurb %>
+    <%= form.text_area :default_meta_blurb, class: 'form-control' %>
+  </div>
+
+    <div class="form-group">
+    <%= form.label :tag_list, "Tags (seperated by commas)" %>
+    <%= form.text_field :tag_list, class: 'form-control' %>
+  </div>
+
 
   <%# check_box("accepted", { class: 'eula_check' }, "yes", "no") %>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_223616) do
+ActiveRecord::Schema.define(version: 2021_02_12_180931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -232,6 +232,8 @@ ActiveRecord::Schema.define(version: 2021_02_04_223616) do
     t.string "plain_text_name"
     t.boolean "is_team_website", default: false, null: false
     t.text "newsletter_sub_url"
+    t.text "default_meta_image"
+    t.text "default_meta_blurb"
     t.index ["site_id"], name: "index_general_infos_on_site_id"
   end
 
