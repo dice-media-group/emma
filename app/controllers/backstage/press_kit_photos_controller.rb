@@ -46,7 +46,7 @@ class Backstage::PressKitPhotosController < ApplicationController
   def update
     respond_to do |format|
       if @press_kit_photo.update(press_kit_photo_params)
-        format.html { redirect_to backstage_press_kit_photo(@press_kit_photo), notice: 'Photo was successfully updated.' }
+        format.html { redirect_to backstage_press_kit_photo_url(@press_kit_photo), notice: 'Photo was successfully updated.' }
         format.json { render :show, status: :ok, location: @press_kit_photo }
       else
         format.html { render :edit }
