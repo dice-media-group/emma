@@ -1,12 +1,7 @@
-<div class="backstage">
-    <%= render 'backstage/sidebar' %>
 
-    <section id="main-dashboard-content">
-      <section id="top-section">
-        <h1>Backstage::GeneralInfo#edit</h1>
-      </section>
-      <section id="grid-container">
-        <%= render 'form', general_info: @general_info %>
-      </section>
-    </section>
-</div>
+<section id="top-section">
+  <h1>Backstage::GeneralInfo#edit</h1>
+</section>
+<section id="form-container">
+  <%= render 'form', general_info: @general_info %>
+</section>

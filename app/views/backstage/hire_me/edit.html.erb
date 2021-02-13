@@ -1,13 +1,7 @@
-<div class="backstage">
-    <%= render 'backstage/sidebar' %>
+<section id="top-section">
+  <h1>Backstage::HireMe#edit</h1>
+</section>
+<section id="form-container">
+  <%= render 'form', hire_me: @hire_me %>
 
-    <section id="main-dashboard-content">
-      <section id="top-section">
-<h1>Backstage::HireMe#edit</h1>
-      </section>
-      <section id="grid-container">
-        <%= render 'form', hire_me: @hire_me %>
-
-      </section>
-    </section>
-</div>
+</section>
