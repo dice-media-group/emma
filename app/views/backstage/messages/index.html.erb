@@ -1,43 +1,29 @@
-<div class="backstage">
+  <section id="top-section">
+    <h1>Backstage::Messages <%#= "(#{@messages.count})" %></h1>
+    <%#= link_to 'new', 
+        new_backstage_message_path, 
+        class: "btn btn-primary" %>
 
+  </section>
+  <section class="flexgrid">
+    <p>This is the future place of where to reply to incoming messages
+        from external platforms like 'contact us,' and newsletters.
+    </p>
+    <%# @messages.each do |message| %>
+      <%# <div class="item"> %>
+        <%# <p> %>
+          title: <%#= link_to message.title, edit_backstage_message_path(message) %>
+        <%# </p> %>
+        <%# <p>Size: = message.device_size </p>             %>
+        <%# <p> %>
+          <%# if message.image.attached? %>
+            <%#= image_tag message.image %>
+          <%# else %>
+            <%# image  %>
+          <%# end %>
+        <%# </p> %>
+    <%# </div> %>
+    <%# end %>
+          
 
-<%= render '/backstage/sidebar' %>
-
-    <section id="main-dashboard-content">
-      <section id="top-section">
-        <h1>Backstage::Messages <%#= "(#{@messages.count})" %></h1>
-        <%#= link_to 'new', 
-            new_backstage_message_path, 
-            class: "btn btn-primary" %>
-
-      </section>
-      <section class="flexgrid">
-        <p>This is the future place of where to reply to incoming messages
-            from external platforms like 'contact us,' and newsletters.
-        </p>
-        <%# @messages.each do |message| %>
-          <%# <div class="item"> %>
-            <%# <p> %>
-              title: <%#= link_to message.title, edit_backstage_message_path(message) %>
-            <%# </p> %>
-            <%# <p>Size: = message.device_size </p>             %>
-            <%# <p> %>
-              <%# if message.image.attached? %>
-                <%#= image_tag message.image %>
-              <%# else %>
-                <%# image  %>
-              <%# end %>
-            <%# </p> %>
-        <%# </div> %>
-        <%# end %>
-              
-
-      </section>
-    </section>
-
-</div>
-
-<%# 
-=> Book(id: integer, title: string, byline: string, description: string, created_at: datetime, updated_at: datetime, jacket_location: text)
-
-%>
+  </section>

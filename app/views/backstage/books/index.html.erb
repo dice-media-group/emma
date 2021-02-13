@@ -1,9 +1,3 @@
-<div class="backstage">
-
-
-<%= render '/backstage/sidebar' %>
-
-    <section id="main-dashboard-content">
       <section id="top-section">
         <h1>Backstage::Books <%= "(#{@books.count})" %></h1>
         <%= link_to 'new', 
@@ -29,11 +23,3 @@
               
 
       </section>
-    </section>
-
-</div>
-
-<%# 
-=> Book(id: integer, title: string, byline: string, description: string, created_at: datetime, updated_at: datetime, jacket_location: text)
-
-%>
