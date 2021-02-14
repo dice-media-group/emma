@@ -72,11 +72,12 @@
         <% if @blog_entry.image.attached? %>
           <%= image_tag @blog_entry.image, width: 280, data: { behavior: 'uppy-preview' } %>
         <% else %>
-          <img src="" width="280" data-behavior="uppy-preview" />
+          <%= link_to image_tag("svgs/image-regular.svg", width: 280, data: { behavior: 'uppy-preview' }), "#", width: 280, data: { behavior: "uppy-trigger" } %>
+
         <% end %>
       </div>
 
-      <%= link_to "Upload", "#", data: { behavior: "uppy-trigger" } %>
+      <%= link_to "Upload Image", "#", data: { behavior: "uppy-trigger" } %>
     </div>
   
   </div>
@@ -112,7 +113,7 @@
     <%= form.submit class: 'btn btn-primary' %>
 
     <% if blog_entry.persisted? %>
-      <%= link_to "Cancel", blog_entry, class: "btn btn-link" %>
+      <%= link_to "Cancel", blog_entries_path, class: "btn btn-link" %>
     <% else %>
       <%= link_to "Cancel", blog_entries_path, class: "btn btn-link" %>
     <% end %>
