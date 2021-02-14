@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
   namespace :backstage do
     get 'first_time/edit'
+    put 'first_time/update'
+    
   end
   resources :home_infos
   resources :hire_mes

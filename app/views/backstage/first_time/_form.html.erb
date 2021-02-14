@@ -157,34 +157,7 @@
     </div>
 
     <aside class="form-sidebar-right">
-      <h3>Featured Entries</h3>
-
-      <%= link_to new_backstage_first_time_entry_path do %>
-      <div class="new-first-time-entry">
-        <i class="fas fa-plus-square"></i>&nbsp;Add one featured entry    
-      </div>
-      <% end %>
-      <% first_time.first_time_entries.each do |entry| %>
-        <div>
-          <% if entry.article_image_link.present? %>
-            <%= link_to edit_backstage_first_time_entry_path(entry) do %>
-              <figure>
-                <%= image_tag entry.article_image_link, width:140, hieght:94 %>
-                <figcaption><%= entry.title.to_s %></figcaption>
-              </figure>
-            <% end %>
-            
-
-          <% else %>
-            <%= link_to edit_backstage_first_time_entry_path(entry) do %>
-              <figure>
-                <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpj0DBTVsaja01_xWh37bcutvpd7rh7zEd528HD0d_l6A73osY", width:140, hieght:94 %>
-                <figcaption><%= entry.title.to_s %></figcaption>
-              </figure>
-            <% end %>
-          <% end %>    
-        </div>
-      <% end %>
+      &nbsp;
     </aside>
     
     <div class="form-footer">

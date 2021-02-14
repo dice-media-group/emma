@@ -9,13 +9,13 @@
 
     <%= render 'shared/navbar_original' %>
     <%= render 'shared/notices' %>
-      <div style="background-color: orange;width:100vw;height: 20px;"></div>
+    <div style="background-color: orange;width:100vw;height: 20px;"></div>
+    
     <div class="backstage__sidebar-content-grid">
       <%= render '/backstage/sidebar' %>
       <section id="main-dashboard-content">
         <%= yield %>
       </section>
-
     </div>
 
     <%= render 'shared/footer_original' %>
