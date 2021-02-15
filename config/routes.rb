@@ -100,6 +100,8 @@ Rails.application.routes.draw do
     resources :recommendations
     # root to: "entries#index"
     resources :articles
+    resources :lists
+    resources :cards
   end
 
   namespace :admin do

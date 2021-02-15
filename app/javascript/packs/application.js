@@ -13,10 +13,24 @@ window.Rails = Rails;
 
 import "bootstrap";
 import "data-confirm-modal";
+import Vue from 'vue/dist/vue.esm'
+import App from '../app.vue'
 
 $(document).on("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip();
   $('[data-toggle="popover"]').popover();
+  // draggable lists
+  var element = document.querySelector("#boards")
+  if (element != undefined ) {
+    const app = new Vue({
+      el: element,
+      data: {
+        lists: JSON.parse(element.dataset.lists)
+      },
+      template: "<App :original_lists='lists' />",
+      components: { App }
+    })
+  }
 });
 
 require("trix");
