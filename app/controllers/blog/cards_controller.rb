@@ -1,5 +1,5 @@
 class Blog::CardsController < ApplicationController
-  before_action :set_blog_card, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog_card, only: [:show, :edit, :update, :destroy, :move]
 
   # GET /blog/cards
   # GET /blog/cards.json
@@ -61,6 +61,11 @@ class Blog::CardsController < ApplicationController
     end
   end
 
+  def move
+    @blog_card.update(blog_card_params)
+    render action: :show
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog_card
@@ -69,6 +74,6 @@ class Blog::CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_card_params
-      params.require(:blog_card).permit(:list_id, :name, :position)
+      params.require(:card).permit(:list_id, :name, :position)
     end
 end
