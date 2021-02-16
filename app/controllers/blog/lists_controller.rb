@@ -1,5 +1,5 @@
 class Blog::ListsController < ApplicationController
-  before_action :set_blog_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_list, only: [:show, :edit, :update, :destroy, :move]
 
   # GET /blog/lists
   # GET /blog/lists.json
@@ -14,7 +14,7 @@ class Blog::ListsController < ApplicationController
 
   # GET /blog/lists/new
   def new
-    @blog_list = Blog::List.new
+    @list = Blog::List.new
   end
 
   # GET /blog/lists/1/edit
@@ -24,15 +24,15 @@ class Blog::ListsController < ApplicationController
   # POST /blog/lists
   # POST /blog/lists.json
   def create
-    @blog_list = Blog::List.new(blog_list_params)
+    @list = Blog::List.new(list_params)
 
     respond_to do |format|
-      if @blog_list.save
-        format.html { redirect_to @blog_list, notice: 'List was successfully created.' }
-        format.json { render :show, status: :created, location: @blog_list }
+      if @list.save
+        format.html { redirect_to @list, notice: 'List was successfully created.' }
+        format.json { render :show, status: :created, location: @list }
       else
         format.html { render :new }
-        format.json { render json: @blog_list.errors, status: :unprocessable_entity }
+        format.json { render json: @list.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -41,12 +41,12 @@ class Blog::ListsController < ApplicationController
   # PATCH/PUT /blog/lists/1.json
   def update
     respond_to do |format|
-      if @blog_list.update(blog_list_params)
-        format.html { redirect_to @blog_list, notice: 'List was successfully updated.' }
-        format.json { render :show, status: :ok, location: @blog_list }
+      if @list.update(list_params)
+        format.html { redirect_to @list, notice: 'List was successfully updated.' }
+        format.json { render :show, status: :ok, location: blog_list_path(@list) }
       else
         format.html { render :edit }
-        format.json { render json: @blog_list.errors, status: :unprocessable_entity }
+        format.json { render json: @list.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,21 +54,29 @@ class Blog::ListsController < ApplicationController
   # DELETE /blog/lists/1
   # DELETE /blog/lists/1.json
   def destroy
-    @blog_list.destroy
+    @list.destroy
     respond_to do |format|
-      format.html { redirect_to blog_lists_url, notice: 'List was successfully destroyed.' }
+      format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
+  def move
+    puts "***"
+    puts "position is #{list_params[:position].to_i}"
+    puts "list is #{@list.name.to_s}"
+    @list.insert_at(list_params[:position].to_i)
+    render action: :show
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_blog_list
-      @blog_list = Blog::List.find(params[:id])
+    def set_list
+      @list = Blog::List.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def blog_list_params
-      params.require(:blog_list).permit(:name, :position)
+    def list_params
+      params.require(:list).permit(:name, :position)
     end
 end
