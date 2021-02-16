@@ -1,5 +1,5 @@
 <template>
-<draggable v-model="lists"  group="lists" class="row dragArea" @start="dragging = true" @end="listMoved" >
+<draggable  class="row dragArea" :list="lists"  group="lists" @end="listMoved" >
     <div v-for="(list, index) in original_lists" class="col-3">
       <h4>{{ list.name }}</h4>
       <hr />
