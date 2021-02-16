@@ -1,11 +1,15 @@
 <template>
   <div id="app" class="row">
-    <div v-for="list in original_lists" class="col-3">
+    <div v-for="(list, index) in original_lists" class="col-3">
       <h4>{{ list.name }}</h4>
       <hr />
 
-      <div v-for="(card, index) in list.cards" class="card, card-body" >
+      <div v-for="(card, index) in list.cards" class="card card-body mb-3" >
         {{ card.name }}
+      </div>
+      <div class="card card-body mb-3">
+        <textarea v-model="messages[list.id]" class="form-control" ></textarea>
+        <button v-on:click="submitMessages(list.id)" class="btn btn-secondary">Add</button>
       </div>
     </div>
   </div>
@@ -14,6 +18,31 @@
 <script>
 export default {
   props: ["original_lists"],
+  data: function () {
+    return {
+      messages: {},
+      lists: this.original_lists,
+    }
+  },
+  methods: {
+    submitMessages: function(list_id) {
+      var data = new FormData
+      data.append("blog_card[list_id]", list_id)
+      data.append("blog_card[name]", this.messages[list_id])
+
+      Rails.ajax({
+        url: "/blog/cards",
+        type: "POST",
+        data: data,
+        dataType: 'json',
+        success: (data) => {
+          const index = this.lists.findIndex(item => item.id == list_id)
+          this.lists[index].cards.push(data)
+          this.messages[list_id] = undefined
+        }
+      })
+    }
+  }
 }
 </script>
 

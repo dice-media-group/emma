@@ -29,7 +29,7 @@ class Blog::CardsController < ApplicationController
     respond_to do |format|
       if @blog_card.save
         format.html { redirect_to @blog_card, notice: 'Card was successfully created.' }
-        format.json { render :show, status: :created, location: @blog_card }
+        format.json { render :show, status: :created, location: blog_card_path(@blog_card)  }
       else
         format.html { render :new }
         format.json { render json: @blog_card.errors, status: :unprocessable_entity }
@@ -69,6 +69,6 @@ class Blog::CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_card_params
-      params.require(:blog_card).permit(:blog_list_id, :name, :position)
+      params.require(:blog_card).permit(:list_id, :name, :position)
     end
 end
