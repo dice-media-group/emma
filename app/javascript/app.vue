@@ -1,20 +1,22 @@
 <template>
-<draggable  class="row dragArea" :list="lists"  group="lists" @end="listMoved" >
-    <div v-for="(list, index) in original_lists" class="col-3">
-      <h4>{{ list.name }}</h4>
-      <hr />
-      <draggable :list="list.cards" group="cards" class="dragArea" @change="cardMoved">
-        <div v-for="(card, index) in list.cards" class="card card-body mb-3" >
-          {{ card.name }}
+  <div class="board">
+    <draggable  class="row dragArea" :list="lists"  group="lists" @end="listMoved" >
+      <div v-for="(list, index) in original_lists" class="list">
+        <h4>{{ list.name }}</h4>
+        <div>
+        <draggable :list="list.cards" group="cards" class="dragArea" @change="cardMoved">
+          <div v-for="(card, index) in list.cards" class="card card-body mb-3" >
+            {{ card.name }}
+          </div>
+        </draggable>
         </div>
-      </draggable>
-      <div class="card card-body mb-3">
-        <textarea v-model="messages[list.id]" class="form-control" ></textarea>
-        <button v-on:click="submitMessages(list.id)" class="btn btn-secondary">Add</button>
+        <div class="card card-body mb-3">
+          <textarea v-model="messages[list.id]" class="form-control mb-1" ></textarea>
+          <button v-on:click="submitMessages(list.id)" class="btn btn-secondary">Add</button>
+        </div>
       </div>
-    </div>
+    </draggable>
   </div>
-  </draggable>
 </template>
 
 <script>
@@ -69,8 +71,8 @@ export default {
     },
     submitMessages: function(list_id) {
       var data = new FormData
-      data.append("blog_card[list_id]", list_id)
-      data.append("blog_card[name]", this.messages[list_id])
+      data.append("card[list_id]", list_id)
+      data.append("card[name]", this.messages[list_id])
 
       Rails.ajax({
         url: "/blog/cards",
@@ -89,12 +91,26 @@ export default {
 </script>
 
 <style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
+  p {
+    font-size: 2em;
+    text-align: center;
+  }
 
-.dragArea {
-  min-height: 20px;
-}
+  .dragArea {
+    min-height: 20px;
+  }
+
+  .board {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .list {
+    background: #E2E4E6;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px;
+    vertical-align: top;
+    width: 270px;
+  }
 </style>
