@@ -89,3 +89,5 @@ gem 'httparty', '~> 0.18.1'
 gem 'sendgrid-ruby'
 #   pass rails vars to javascript
 gem 'gon', '~> 6.4'
+#   create lists with a position 
+gem 'acts_as_list', '~> 1.0', '>= 1.0.3'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_12_180931) do
+ActiveRecord::Schema.define(version: 2021_02_15_184319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,15 @@ ActiveRecord::Schema.define(version: 2021_02_12_180931) do
     t.index ["user_id"], name: "index_blog_articles_on_user_id"
   end
 
+  create_table "blog_cards", force: :cascade do |t|
+    t.bigint "list_id"
+    t.string "name"
+    t.integer "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_id"], name: "index_blog_cards_on_list_id"
+  end
+
   create_table "blog_entries", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
@@ -92,6 +101,13 @@ ActiveRecord::Schema.define(version: 2021_02_12_180931) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["blog_article_id"], name: "index_blog_entry_assignments_on_blog_article_id"
     t.index ["blog_entry_id"], name: "index_blog_entry_assignments_on_blog_entry_id"
+  end
+
+  create_table "blog_lists", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "blog_recommendations", force: :cascade do |t|
@@ -487,6 +503,7 @@ ActiveRecord::Schema.define(version: 2021_02_12_180931) do
   add_foreign_key "biographies", "sites"
   add_foreign_key "blog_articles", "blog_entries", column: "entry_id"
   add_foreign_key "blog_articles", "users"
+  add_foreign_key "blog_cards", "blog_lists", column: "list_id"
   add_foreign_key "blog_entry_assignments", "blog_articles"
   add_foreign_key "blog_entry_assignments", "blog_entries"
   add_foreign_key "blog_recommendations", "blog_entries", column: "entry_id"

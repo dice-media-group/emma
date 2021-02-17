@@ -1,0 +1,2 @@
+module Blog::ListsHelper
+end
