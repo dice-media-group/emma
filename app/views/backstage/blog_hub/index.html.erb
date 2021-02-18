@@ -1,26 +1,65 @@
-<div class="backstage">
+<style>
+  .card-grid {
+    /* Grid Fallback */
+    display: flex;
+    flex-wrap: wrap;
+    
+    /* Supports Grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 1em;
+  }
+
+  .card-grid .card {
+    background: #eaeaea;
+    display: flex;
+    flex-direction: column;
+
+    /* Flex Fallback */
+    margin-left: 5px;
+    margin-right: 5px;
+    flex: 1 1 200px;
+  }
+
+  .card-button {
+      margin-top: auto;
+  }
+  /* If Grid is supported, remove the margin we set for the fallback */
+  @supports (display: grid) {
+    .card-grid .card{
+      margin: 0;
+    }
+
+  }
+
+</style>
 
 
-<%= render '/backstage/sidebar' %>
-<section id="main-dashboard-content">
-    <ul>
-        <li>
-            <div>
+    <ul class="card-grid">
+        <li class="card">
+            <p>
+                Are you ready to publish an new article or republish one for Throwback Thursday?  Schedule its release here.
+            </p>
+            <div class="card-button">
                 <%= link_to 'blog entries', blog_entries_path, class:"btn btn-primary" %>
             </div>
         </li>
-        <li>
-            <div>
+        <li class="card">
+            <p>
+                Got influential thoughts?  Create an article here to later release as a blog entry.
+            </p>
+            <div class="card-button">
                 <%= link_to 'blog articles', blog_articles_path, class:"btn btn-primary" %>
             </div>
         </li>
-        <li>
-            <div>
+        <li class="card">
+            <p>
+                Create blog entry cards throughout your site to link to important blog entries.
+            </p>
+            <div class="card-button">
                 <%= link_to 'blog recommendations', blog_recommendations_path, class:"btn btn-primary" %>
             </div>
         </li>
     </ul>
-</section>
-
-</div>
 

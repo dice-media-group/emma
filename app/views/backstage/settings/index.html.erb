@@ -1,61 +1,120 @@
-<div class="backstage">
+<style>
+  .card-grid {
+    /* Grid Fallback */
+    display: flex;
+    flex-wrap: wrap;
+    
+    /* Supports Grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 1em;
+  }
+
+  .card-grid .card {
+    background: #eaeaea;
+    display: flex;
+    flex-direction: column;
+
+    /* Flex Fallback */
+    margin-left: 5px;
+    margin-right: 5px;
+    flex: 1 1 200px;
+  }
+
+  .card-button {
+      margin-top: auto;
+  }
+  /* If Grid is supported, remove the margin we set for the fallback */
+  @supports (display: grid) {
+    .card-grid .card{
+      margin: 0;
+    }
+
+  }
+
+</style>
 
 
-<%= render '/backstage/sidebar' %>
-<section id="main-dashboard-content">
-    <ul>
-        <li>
-            <div>
+    <ul class="card-grid">
+        <li class="card">
+            <p>
+                What is the story you want to tell about you or your team?
+            </p>
+            <div class="card-button">
                 <%= link_to 'biography page', edit_backstage_biography_path(@biography), class:"btn btn-primary" %>
             </div>
         </li>
-        <li>
-            <div>
+        <li class="card">
+            <p>
+                Set the billboard image and title for your Books section.
+            </p>
+            <div class="card-button">
                 <%= link_to 'book info page', edit_backstage_book_info_path(BookInfo.first), class:"btn btn-primary" %>
             </div>
         </li>
-        <li>
-            <div>
+        <li class="card">
+            <p>
+                Set information to be used througout your site: name of the site, text number, the URL to subscribe to your newsletter, plus default meta tags.
+            </p>
+           <div class="card-button">
                 <%= link_to 'general info page', edit_backstage_general_info_path(BookInfo.first), class:"btn btn-primary" %>
             </div>
         </li>
-        <li>
-            <div>
+        <li class="card">
+            <p>
+                Your first chance to tell the world the site's topic: Set the headline and intro blurb. Set the url for the "Watch This" video and it's poster.
+            </p>
+           <div class="card-button">
                 <%= link_to 'home page', edit_backstage_home_info_path(@home_info), class:"btn btn-primary" %>
             </div>
         </li>
-        <li>
-            <div>
+        <li class="card">
+            <p>
+                Set a welcoming tone while over-indexing on search engines.  Let folks concisely know what the topic while giving more to learn.
+            </p>
+           <div class="card-button">
                 <%= link_to 'first time page', edit_backstage_first_time_path(@first_time), class:"btn btn-primary" %>
             </div>
         </li>
-        <li>
-            <div>
+        <li class="card">
+            <p>
+                Tell a bit more about yourself while your visitor reaches out to
+            </p>
+           <div class="card-button">
                 <%= link_to 'get in contact page ', edit_backstage_get_in_contact_content_path(@get_in_contact_content), class:"btn btn-primary" %>
             </div>
         </li>
-        <li>
-            <div>
+        <li class="card">
+            <p>
+                Let this page work for you.  Pitch your services while giving your visitor a chance to reach out to you.
+            </p>
+           <div class="card-button">
                 <%= link_to 'hire me page', edit_backstage_hire_me_path(@get_in_contact_content), class:"btn btn-primary" %>
             </div>
         </li>
-        <li>
-            <div>
+        <li class="card">
+            <p>
+                Set the title and billboard image for this section.
+            </p>
+           <div class="card-button">
                 <%= link_to 'meetup info page', edit_backstage_meetup_info_path(@meetup_info), class:"btn btn-primary" %>
             </div>
         </li>
-        <li>
-            <div>
+        <li class="card">
+            <p>
+                The page for the podcast should be inviting.  Set the image for the billboard, the title for the page, the embed link for the podcast player, and the text that invites your visitor to listen to the podcast.
+            </p>
+           <div class="card-button">
                 <%= link_to 'podcast page', edit_backstage_podcast_path(@podcast), class:"btn btn-primary" %>
             </div>
         </li>
-        <li>
-            <div>
+        <li class="card">
+            <p>
+                Tell search engines, the press, and your visitor what you have been up to.  Set the billboard image, the page title, details about your topic, and a biography or the inspiring background of your topic.
+            </p>
+           <div class="card-button">
                 <%= link_to 'press kit page', edit_backstage_press_kit_path(@press_kit), class:"btn btn-primary" %>
             </div>
         </li>
     </ul>
-</section>
-
-</div>
-

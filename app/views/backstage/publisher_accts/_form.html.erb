@@ -1,3 +1,54 @@
+<style>
+  .form-group-grid {
+    /* Grid Fallback */
+    display: flex;
+    flex-wrap: wrap;
+    
+    /* Supports Grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 1em;
+  }
+
+  .form-group-grid .form-group {
+    background: #eaeaea;
+    display: flex;
+    
+    /* Flex Fallback */
+    margin-left: 5px;
+    margin-right: 5px;
+    flex: 1 1 200px;
+  }
+
+  /* selects can't be display flex */
+  .form-group-grid .form-group-select {
+    display: block;
+    background: #eaeaea;
+    
+    margin-left: 5px;
+    margin-right: 5px;
+
+  }
+
+
+  /* If Grid is supported, remove the margin we set for the fallback */
+  @supports (display: grid) {
+    .form-group-grid .form-group {
+      margin: 0;
+    }
+
+    .form-group-grid .form-group label {
+      margin: 22px;
+    }
+    .form-group-grid .form-group input .form-control {
+      margin: 22px;
+      align: right;
+    }
+  }
+
+</style>
+
 <%= form_with(model: [ :backstage, publisher_acct], local: true) do |form| %>
   <% if publisher_acct.errors.any? %>
     <div id="error_explanation">
@@ -12,10 +63,7 @@
   <% end %>
 
 
-  <%#  
-  => #<PublisherAcct id: 1, name: "instagram", url: "http://instagram.com", created_at: "2020-11-29 23:48:58", updated_at: "2020-11-29 23:48:58", font_awesome_class: "fab fa-instagram", network_kind: "social", blurb: "Get a glimpse of some of my funnier moments on Tik...">
-  %>
-
+<div class="form-group-grid">
 
   <div class="form-group">
     <%= form.label :name %>
@@ -47,7 +95,7 @@
     <%= form.text_area :svg_logo_style, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group-select">
     <%= form.label :network_kind %>
     <%= form.select( :network_kind, @network_kinds, { :prompt => true } )  %>
   </div>
@@ -71,7 +119,7 @@
     <%= form.label :podcast_ranking %> <p>(set to zero for it not to appear)</p>
     <%= form.number_field :podcast_ranking, class: 'form-control' %>
   </div>
-
+</div>
   <%#  %>
     <div class="form-group">
     <% if publisher_acct.persisted? %>

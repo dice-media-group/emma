@@ -44,21 +44,15 @@
 
 
 
-<div class="backstage">
-    <%= render 'backstage/sidebar' %>
+<section id="top-section">
+  <h1>Backstage::FirstTime#edit
+    <%= link_to 'Show Page', 
+      first_time_here_path, 
+      class: "btn btn-primary",
+      target: "blank" %>
 
-    <section id="main-dashboard-content">
-      <section id="top-section">
-        <h1>Backstage::FirstTime#edit
-          <%= link_to 'Show Page', 
-            first_time_here_path, 
-            class: "btn btn-primary",
-            target: "blank" %>
-
-        </h1>
-      </section>
-      <section class="first-time-form">
-        <%= render 'form', first_time: @first_time %>
-      </section>
-    </section>
-</div>
+  </h1>
+</section>
+<section class="first-time-form">
+  <%= render 'form', first_time: @first_time %>
+</section>

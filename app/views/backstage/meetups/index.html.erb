@@ -19,12 +19,6 @@
 
 
 </style>
-<div class="backstage">
-
-
-<%= render '/backstage/sidebar' %>
-
-    <section id="main-dashboard-content">
       <section id="top-section">
         <h1>Backstage::Meetups <%= "(#{@meetups.count})" %></h1>
         <%= link_to 'new', 
@@ -44,9 +38,3 @@
               
 
       </section>
-    </section>
-
-</div>
-
-<%# 
-=> #<Meetup id: 1, title: "first up", start_date: "2020-11-30", end_date: "2020-12-05", more_info_url: "https://www.garyvaynerchuk.com/first-time-here/", location: "Hometown Buff...%>

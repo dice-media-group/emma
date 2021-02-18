@@ -1,20 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 
-.backstage, .settings {
+.backstage, .index, .new, .edit, .show {
   font-family: "Poppins";
 
   #sidebar {
     background-color: #f2f2f2;
-    width: 300px;
     height: 100%;
-    position: fixed;
     top: 0;
     left: 0;
     box-shadow: 3px 0px 5px 1px rgba(0, 0, 0, 0.1);
     transition: 200ms width;
   }
+
   
+
   #sidebar a {
     color: #212529;
   }
@@ -54,7 +54,6 @@
   }
   
   #main-dashboard-content {
-    margin-left: 300px;
     box-sizing: border-box;
     height: 100%;
     padding: 20px 25px;
@@ -239,3 +238,11 @@
   
 }
 
+.backstage__sidebar-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+  }

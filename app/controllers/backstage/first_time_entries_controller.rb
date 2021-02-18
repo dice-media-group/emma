@@ -40,7 +40,7 @@ class Backstage::FirstTimeEntriesController < ApplicationController
     @first_time = @site.first_time
     respond_to do |format|
       if @first_time_entry.update(first_time_entries_params)
-        format.html { redirect_to backstage_index_path, notice: 'first_time was successfully updated.' }
+        format.html { redirect_to edit_backstage_first_time_url(@first_time), notice: 'first_time was successfully updated.' }
         # format.json { render :show, status: :ok, location: @first_time }
       else
         format.html { render :edit }

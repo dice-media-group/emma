@@ -29,6 +29,9 @@ class Backstage::GeneralInfoController < ApplicationController
                                         :plain_text_name,
                                         :text_number,
                                         :newsletter_sub_url,
+                                        :meta_image,
+                                        :default_meta_blurb,
+                                        :tag_list,
                                         :is_team_website)
   end
 
