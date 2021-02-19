@@ -1,12 +1,11 @@
 <template>
   <div class="board">
     <draggable  class="board dragArea" :list="lists"  group="lists" @end="listMoved" >
-      <list v-for="(list, index) in original_lists"  :list="list"></list>
-
+      <list v-for="(list, index) in lists" :key="list.id" :list="list"></list> 
       <div class="list">
         <a v-if="!editing" v-on:click="startEditing">Add a list…</a>
         <textarea v-if="editing" ref="message" v-model="message" class="form-control mb-1" ></textarea>
-        <button v-if="editing" v-on:click="submitMessage" class="btn btn-secondary">Add</button>
+        <button v-if="editing" v-on:click="createList" class="btn btn-secondary">Add</button>
         <a v-if="editing" v-on:click="editing=false">Cancel</a>
       </div>
     </draggable>
@@ -18,18 +17,23 @@ import draggable from 'vuedraggable'
 import list from 'components/list'
 
 export default {
-  components: { draggable, list }, 
-  props: ["original_lists"],
+  components: { draggable, list },
+
   data: function () {
     return {
-      lists: this.original_lists,
       editing: false,
       message: "",
-
     }
   },
+
+  computed: {
+    lists() {
+      return this.$store.state.lists;
+    }
+  },
+
   methods: {
-    submitMessage: function() {
+    createList: function() {
         var data = new FormData
         data.append("list[name]", this.message)
 
@@ -39,9 +43,8 @@ export default {
             data: data,
             dataType: 'json',
             success: (data) => {
-                window.store.lists.push(data)
-                this.messages = ""
-                this.editing = false
+              this.message = ""
+              this.editing = false
             }
         })
     },

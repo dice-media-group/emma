@@ -7,8 +7,8 @@
         </draggable>
     </div>
         <a v-if="!editing" v-on:click="startEditing">Add a card…</a>
-        <textarea v-if="editing" ref="message" v-model="messages" class="form-control mb-1" ></textarea>
-        <button v-if="editing" v-on:click="submitMessage" class="btn btn-secondary">Add</button>
+        <textarea v-if="editing" ref="message" v-model="message" class="form-control mb-1" ></textarea>
+        <button v-if="editing" v-on:click="createCard" class="btn btn-secondary">Add</button>
         <a v-if="editing" v-on:click="editing=false">Cancel</a>
 
     </div>
@@ -26,7 +26,7 @@
         data: function () {
             return {
                 editing: false,
-                messages: ""
+                message: ""
             }
         },
 
@@ -61,10 +61,10 @@
             })
             },
             
-            submitMessage: function() {
+            createCard: function() {
                 var data = new FormData
                 data.append("card[list_id]", this.list.id)
-                data.append("card[name]", this.messages)
+                data.append("card[name]", this.message)
 
                 Rails.ajax({
                     url: "/blog/cards",
@@ -72,10 +72,8 @@
                     data: data,
                     dataType: 'json',
                     success: (data) => {
-                        const index = window.store.lists.findIndex(item => item.id == this.list.id)
-                        window.store.lists[index].cards.push(data)
-                        this.messages = ""
-                        this.editiing = false
+                        this.message = ""
+                        this.$nextTick(() => { this.$refs.message.focus() })
                     }
                 })
             },

@@ -26,8 +26,12 @@ class Blog::CardsController < ApplicationController
   def create
     @blog_card = Blog::Card.new(blog_card_params)
 
+
+
     respond_to do |format|
       if @blog_card.save
+        ActionCable.server.broadcast "board", { commit: 'addCard', payload: render_to_string(:show, formats: [:json]) }
+
         format.html { redirect_to @blog_card, notice: 'Card was successfully created.' }
         format.json { render :show, status: :created, location: blog_card_path(@blog_card)  }
       else
@@ -42,6 +46,10 @@ class Blog::CardsController < ApplicationController
   def update
     respond_to do |format|
       if @blog_card.update(blog_card_params)
+
+
+        ActionCable.server.broadcast "board", { commit: 'editCard', payload: render_to_string(:show, formats: [:json]) }
+        
         format.html { redirect_to @blog_card, notice: 'Card was successfully updated.' }
         format.json { render :show, status: :ok, location: @blog_card }
       else
