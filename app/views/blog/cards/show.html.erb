@@ -17,5 +17,32 @@
 
   <dt>Position:</dt>
   <dd><%= @blog_card.position %></dd>
+</dl>
+
+<dl>
+    <dt>
+      <% if @blog_card.image.attached? %>
+          <%= link_to 'link to image', url_for(@blog_card.image), id: "imagelink" %>&nbsp;&nbsp;
+          <button onclick="copyToClipboard('#imagelink')" class="btn btn-primary">Copy link to image</button>
+
+      <% end %>
+    </dt>
+    <dd>
+    <% if @blog_card.image.attached? %>
+
+      <%= link_to url_for(@blog_card.image) do  %>
+        <%= image_tag @blog_card.image %>
+      <% end %>
+      
+    <% else %>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpj0DBTVsaja01_xWh37bcutvpd7rh7zEd528HD0d_l6A73osY" 
+        width="280"
+      />
+      <br />
+      <p>blog_card missing</p>
+    <% end %>
+    
+    </dd>
+
 
 </dl>

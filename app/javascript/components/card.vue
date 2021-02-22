@@ -1,7 +1,9 @@
 <template>
     <div class="carl">
         <div @click="editing=true" class="card card-body mb-3">
-            {{card.name}}
+        <img class="rounded" :src="card.image_url" width="120" height="auto">
+                    
+            {{card.name}} <br>
         </div>
 
 
@@ -32,7 +34,7 @@ export default {
     data: function() {
         return{
             editing: false,
-            name: this.card.name,
+            image_url: this.card.image_url,
         }
     },
     
