@@ -91,3 +91,4 @@ gem 'sendgrid-ruby'
 gem 'gon', '~> 6.4'
 #   create lists with a position 
 gem 'acts_as_list', '~> 1.0', '>= 1.0.3'
+gem 'gon', '~> 6.4'
