@@ -3,7 +3,7 @@
 <h6>{{ list.name }}</h6>
     <div>
         <draggable :list="list.cards" group="cards" class="dragArea" @change="cardMoved">
-            <card v-for="card in list.cards" :card="card" :list="list"  ></card>
+
         </draggable>
     </div>
         <a v-if="!editing" v-on:click="startEditing">Add a card…</a>
