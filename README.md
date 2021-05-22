@@ -36,6 +36,18 @@ Things you may want to cover:
 
 ```
 git push heroku master
+
+heroku config:set APPLICATION_HOST='www.mydomain.com' AWS_ACCESS_KEY_ID=AWS1ACCESS1KEY AWS_SECRET_ACCESS_KEY=AWS1SECRET1ACCESS1KEY GOOGLE_ANALYTICS_ID=G-MY1KEY S3_BUCKET=assets.mydomain.com S3_REGION=us-east-1 SEGMENT_ID=MY1SEGMENT_ID SENDGRID_API_KEY=SG.MYSENDGRIDID.3CsncCfDvQjpxOvHdnAkUYl-Af4M85p9XBis5XB3KfQ -r production
+
+** go into the dashboard and turn on the sidekiq worker under resources
+
+heroku run rake db:migrate
+
+heroku run rake db:seed
+
+heroku addons:create heroku-redis:hobby-dev
+
+
 ```
 
 #### Heroku Seed
