@@ -17,7 +17,7 @@ Things you may want to cover:
 
 - Configuration
 
-  - A .env file needs to written. An example is provided, dot-env.example
+  - A .env file needs to written if you plan to develop further. An example is provided, dot-env.example
   - The Procfile.dev tells the command `foreman start` how to launch supporting services
 
 - Database creation
@@ -35,7 +35,20 @@ Things you may want to cover:
 #### Heroku Deploy
 
 ```
-git push heroku master
+heroku create myapp -r production
+git push production master:master
+
+heroku config:set APPLICATION_HOST='www.mydomain.com' AWS_ACCESS_KEY_ID=AWS1ACCESS1KEY AWS_SECRET_ACCESS_KEY=AWS1SECRET1ACCESS1KEY GOOGLE_ANALYTICS_ID=G-MY1KEY S3_BUCKET=assets.mydomain.com S3_REGION=us-east-1 SEGMENT_ID=MY1SEGMENT_ID SENDGRID_API_KEY=SG.MYSENDGRIDID.3CsncCfDvQjpxOvHdnAkUYl-Af4M85p9XBis5XB3KfQ -r production
+
+** go into the dashboard and turn on the sidekiq worker under resources
+
+heroku run rake db:migrate -r production
+
+heroku run rake db:seed -r production
+
+heroku addons:create heroku-redis:hobby-dev -r production
+
+
 ```
 
 #### Heroku Seed
