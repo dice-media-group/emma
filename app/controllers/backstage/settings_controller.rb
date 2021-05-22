@@ -1,4 +1,6 @@
 class Backstage::SettingsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @site = Site.first
     @biography                = @site.biography

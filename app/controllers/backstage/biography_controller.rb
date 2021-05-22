@@ -1,4 +1,6 @@
 class Backstage::BiographyController < ApplicationController
+  before_action :authenticate_user!
+
   def edit
     @biography = Site.first.biography
   end

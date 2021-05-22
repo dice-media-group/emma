@@ -1,4 +1,6 @@
 class Backstage::GetInContactContentController < ApplicationController
+  before_action :authenticate_user!
+
     def edit
     @site = Site.first
     @get_in_contact_content = @site.get_in_contact_content

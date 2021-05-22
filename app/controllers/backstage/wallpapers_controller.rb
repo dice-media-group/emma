@@ -1,4 +1,5 @@
 class Backstage::WallpapersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_wallpaper, only: [:show, :edit, :update, :destroy]
   SIZES = {:large=>"1080x1920", :medium=>"720x1280", :small=>"540x960", :tiny=>"480x800"}
   def index

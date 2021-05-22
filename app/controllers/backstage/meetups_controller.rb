@@ -1,4 +1,5 @@
 class Backstage::MeetupsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_meetup, only: [:show, :edit, :update, :destroy]
 
   def index

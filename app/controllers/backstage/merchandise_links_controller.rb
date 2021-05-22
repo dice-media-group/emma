@@ -1,4 +1,6 @@
 class Backstage::MerchandiseLinksController < ApplicationController
+  before_action :authenticate_user!
+
   before_action :set_merchandise_link, only: [:show, :edit, :update, :destroy]
   before_action :set_books, only: [:new, :edit]
 
