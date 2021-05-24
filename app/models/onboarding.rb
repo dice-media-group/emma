@@ -56,7 +56,7 @@ class Onboarding
     end
 
     def completed_steps_percentage
-        steps = site_settings_models.concat(content_models)
+        steps = site_settings_models    #.concat(content_models) #add after initial test works
         completed_steps = []
         steps.each do |step|
             klass = _get_klass_from_string(step)
