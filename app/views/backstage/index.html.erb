@@ -35,6 +35,25 @@
         </div>
         <div class="grid-item  tasks">
           <h2><i class="far fa-calendar-check"></i> tasks</h2>
+          <%# onboarding start %>
+            <div class="onboarding" style="margin: 10px;">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" 
+                      style="width: <%= @onboarding_steps_completed_percentage %>%" 
+                      aria-valuenow=<%= @onboarding_steps_completed_percentage %> aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+              <ul>
+                <% @onboarding.site_settings_models.each do |model_name| %>
+                  <li>
+                  <% @onboarding.model_to_test = model_name %>
+                  <%= onboarding_step_icon(@onboarding.model_completed?)%>                   
+                    <%= model_name %> 
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          <%# onboarding finish %>
           <%= render partial: "task", collection: @tasks %>
         </div>            
         <div class="grid-item blockthree">

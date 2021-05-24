@@ -31,4 +31,10 @@ module ApplicationHelper
 
     @body_css_classes.unshift(view_css_class).join(' ')
   end
+
+  def onboarding_step_icon(step_completed)
+    color = step_completed ? "text-success" : "text-muted"
+    content_tag(:i, nil, class: "far fa-check-square #{color}")
+
+  end
 end

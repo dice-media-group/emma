@@ -8,5 +8,11 @@ class BackstageController < ApplicationController
     @platforms  = []
     @comments   = []
 
+    @biography = Biography.last
+    @book_info = BookInfo.last
+    @onboarding   = Onboarding.new
+    @onboarding_steps_completed_percentage = @onboarding.completed_steps_percentage
+
+
   end
 end
