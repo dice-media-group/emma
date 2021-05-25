@@ -33,8 +33,9 @@ module ApplicationHelper
   end
 
   def onboarding_step_icon(step_completed)
-    color = step_completed ? "text-success" : "text-muted"
-    content_tag(:i, nil, class: "far fa-check-square #{color}")
+    colored_icon     = step_completed ? "fas fa-check-square text-success" : "far fa-square text-muted"
+    filling   = step_completed ? "fas"          : "far"
+    content_tag(:i, nil, class: "#{colored_icon}")
 
   end
 end

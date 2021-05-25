@@ -47,8 +47,9 @@
                 <% @onboarding.site_settings_models.each do |model_name| %>
                   <li>
                   <% @onboarding.model_to_test = model_name %>
-                  <%= onboarding_step_icon(@onboarding.model_completed?)%>                   
-                  <%= model_name %> 
+                  <% step_completed = @onboarding.step_completed? %>
+                  <%= onboarding_step_icon(step_completed)%>   
+                                      <%= model_name.titleize %>
                   </li>
                 <% end %>
               </ul>

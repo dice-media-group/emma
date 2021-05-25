@@ -31,37 +31,27 @@ class Onboarding
       @content_models       = content_models
     end
  
-    def single_model_changed?
-        model = _get_klass_from_string(model_to_test)
-        last = model.last
-        last.created_at != last.updated_at
-    end
+    def step_completed?
 
-    def site_settings_model?
-        site_settings_models.include?(model_to_test.to_s)
-    end
-
-    def at_least_one_item_created?
-        model = _get_klass_from_string(model_to_test)
-        model.count >= 1
-    end
-
-    def model_completed?
-        if site_settings_model?
-            single_model_changed?
+        if _site_settings_model?
+            puts "#{model_to_test} is a settings model"
+            completion_status = _single_model_changed?
         else
             # content entry model
-            at_least_one_item_created?
+            puts "#{model_to_test} is false since it's a content model"
+            completion_status = _at_least_one_item_created?
         end
+        # puts "#{model_to_test} is #{completion_status}"
+        completion_status
     end
 
     def completed_steps_percentage
-        steps = site_settings_models    #.concat(content_models) #add after initial test works
+        steps = site_settings_models.concat(content_models) #add after initial test works
         completed_steps = []
         steps.each do |step|
             klass = _get_klass_from_string(step)
             self.model_to_test = klass
-            completed_steps << self.model_completed? if self.model_completed? == true
+            completed_steps << self.step_completed? if self.step_completed? == true
         end
         
         fraction = (completed_steps.length / steps.length.to_f)
@@ -71,4 +61,20 @@ class Onboarding
     def _get_klass_from_string(string)
         klass = Object.const_get string.to_s
     end
+
+    def _single_model_changed?
+        model = _get_klass_from_string(model_to_test)
+        last = model.last
+        last.created_at != last.updated_at
+    end
+
+    def _site_settings_model?
+        site_settings_models.include?(model_to_test.to_s)
+    end
+
+    def _at_least_one_item_created?
+        model = _get_klass_from_string(model_to_test)
+        model.count >= 1
+    end
+
   end
