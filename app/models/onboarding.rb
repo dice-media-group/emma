@@ -34,7 +34,7 @@ class Onboarding
     def step_completed?
 
         if _site_settings_model?
-            puts "#{model_to_test} is a settings model"
+            puts "#{model_to_test} is truly a settings model"
             completion_status = _single_model_changed?
         else
             # content entry model
