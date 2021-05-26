@@ -10,8 +10,9 @@ class BackstageController < ApplicationController
 
     @biography = Biography.last
     @book_info = BookInfo.last
+
+    @publisher_accts = PublisherAcct.all
     @onboarding   = Onboarding.new
-    @onboarding_completed_settings_steps_percentage = @onboarding.completed_settings_steps_percentage
     @onboarding_completed_content_steps_percentage = @onboarding.completed_content_steps_percentage
 
 
