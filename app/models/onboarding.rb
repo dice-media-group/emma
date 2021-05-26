@@ -45,6 +45,17 @@ class Onboarding
         completion_status
     end
 
+    def settings_step_completed?
+        puts "#{model_to_test} is truly a settings model"
+        completion_status = _single_model_changed?
+    end
+
+    def content_step_completed?
+        # content entry model
+        puts "#{model_to_test} is a content model"
+        completion_status = _at_least_one_item_created?
+    end
+
     def completed_steps_percentage
         steps = site_settings_models.concat(content_models) #add after initial test works
         completed_steps = []
@@ -58,6 +69,33 @@ class Onboarding
         percentage  = (fraction * 100).round
     end
 
+    def completed_settings_steps_percentage
+        steps = site_settings_models #add after initial test works
+        completed_steps = []
+        steps.each do |step|
+            klass = _get_klass_from_string(step)
+            self.model_to_test = klass
+            completed_steps << self.step_completed? if self.step_completed? == true
+        end
+        
+        fraction = (completed_steps.length / steps.length.to_f)
+        percentage  = (fraction * 100).round
+
+    end
+
+    def completed_content_steps_percentage
+        steps = content_models #add after initial test works
+        completed_steps = []
+        steps.each do |step|
+            klass = _get_klass_from_string(step)
+            self.model_to_test = klass
+            completed_steps << self.step_completed? if self.step_completed? == true
+        end
+        
+        fraction = (completed_steps.length / steps.length.to_f)
+        percentage  = (fraction * 100).round
+
+    end
     def _get_klass_from_string(string)
         klass = Object.const_get string.to_s
     end
