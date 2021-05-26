@@ -1,4 +1,6 @@
 class Backstage::GeneralInfoController < ApplicationController
+  before_action :authenticate_user!
+  
   def edit
     @site = Site.first
     @general_info = Site.first.general_info

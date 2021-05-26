@@ -1,4 +1,5 @@
 class Backstage::BookInfoController < ApplicationController
+    before_action :authenticate_user!
     def edit
         @site = Site.first
         @book_info = @site.book_info

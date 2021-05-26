@@ -1,4 +1,5 @@
 class Backstage::MediaAppearancesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_media_appearance, only: [:show, :edit, :update, :destroy]
 
   def index

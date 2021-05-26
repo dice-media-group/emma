@@ -12,7 +12,12 @@
     <div style="background-color: orange;width:100vw;height: 20px;"></div>
     
     <div class="backstage__sidebar-content-grid">
-      <%= render '/backstage/sidebar' %>
+      <% if user_signed_in? %>
+        <%= render '/backstage/sidebar' %>   
+        <% else %>     
+          <section id="sidebar">
+          </section>
+      <% end %>
       <section id="main-dashboard-content">
         <%= yield %>
       </section>

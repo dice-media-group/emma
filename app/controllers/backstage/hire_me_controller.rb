@@ -1,4 +1,6 @@
 class Backstage::HireMeController < ApplicationController
+    before_action :authenticate_user!
+
     def edit
         @site = Site.first
         @hire_me = @site.hire_me

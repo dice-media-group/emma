@@ -1,4 +1,5 @@
 class Backstage::SiteController < ApplicationController
+  before_action :authenticate_user!
   # before_action :set_site, only: [:show, :edit, :update, :destroy]
 
   # GET /site

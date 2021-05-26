@@ -1,4 +1,6 @@
 class Backstage::MeetupInfoController < ApplicationController
+    before_action :authenticate_user!
+
     def edit
         @site = Site.first
         @meetup_info = @site.meetup_info

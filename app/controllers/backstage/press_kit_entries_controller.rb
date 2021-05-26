@@ -1,4 +1,5 @@
 class Backstage::PressKitEntriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_press_kit_entry, only: [:show, :edit, :update, :destroy]
   before_action :set_press_kit, only: [:index, :new, :create]
 

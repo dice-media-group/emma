@@ -1,4 +1,6 @@
 class Backstage::HomeInfoController < ApplicationController
+  before_action :authenticate_user!
+
   def edit
     @home_info = Site.first.home_info
   end

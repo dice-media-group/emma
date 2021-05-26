@@ -1,4 +1,6 @@
 class Backstage::FirstTimeController < ApplicationController
+  before_action :authenticate_user!
+  
   def edit
     @site = Site.first
     @first_time = Site.first.first_time

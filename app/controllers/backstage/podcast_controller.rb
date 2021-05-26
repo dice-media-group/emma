@@ -1,4 +1,6 @@
 class Backstage::PodcastController < ApplicationController
+  before_action :authenticate_user!
+
   def edit
     @podcast = Site.first.podcast
   end

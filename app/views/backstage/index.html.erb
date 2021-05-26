@@ -35,6 +35,78 @@
         </div>
         <div class="grid-item  tasks">
           <h2><i class="far fa-calendar-check"></i> tasks</h2>
+          <%# onboarding start %>
+            <%# settings %>
+            <h3>update site settings</h3>
+
+            <div class="onboarding" style="margin: 10px;">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" 
+                      style="width: <%= @onboarding.completed_settings_steps_percentage %>%" 
+                      aria-valuenow=<%= @onboarding.completed_settings_steps_percentage %> aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+              <p>progress: <%= @onboarding.completed_settings_steps_percentage %>%</p>
+
+              <ul>
+                <% @onboarding.site_settings_models.each do |model_name| %>
+                  <li>
+                  <% @onboarding.model_to_test = model_name %>
+                  <% step_completed = @onboarding.settings_step_completed? %>
+                  <%= onboarding_step_icon(step_completed)%>   
+                                      <%= model_name.titleize %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+
+            <%# content %>
+            <h3>update content</h3>
+            <div class="onboarding" style="margin: 10px;">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" 
+                      style="width: <%= @onboarding.completed_content_steps_percentage %>%" 
+                      aria-valuenow=<%= @onboarding.completed_content_steps_percentage %> aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+              <p>progress: <%= @onboarding.completed_content_steps_percentage %>%</p>
+
+              <ul>
+                <% @onboarding.content_models.each do |model_name| %>
+                  <li>
+                  <% @onboarding.model_to_test = model_name %>
+                  <% step_completed = @onboarding.content_step_completed? %>
+                  <%= onboarding_step_icon(step_completed)%>   
+                                      <%= model_name.titleize %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+
+            <%# content %>
+            <h3>update publisher accounts</h3>
+            <div class="onboarding" style="margin: 10px;">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" 
+                      style="width: <%= @onboarding.completed_publisher_steps_percentage %>%" 
+                      aria-valuenow=<%= @onboarding.completed_publisher_steps_percentage %> aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+              <p>progress: <%= @onboarding.completed_publisher_steps_percentage %>%</p>
+
+              <ul>
+                <% @publisher_accts.each do |account| %>
+                  <li>
+                  <% @onboarding.publisher_acct = account %>
+                  <% step_completed = @onboarding.publisher_acct_step_completed? %>
+                  <%= onboarding_step_icon(step_completed)%>   
+                                      <%= account.name %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+
+          <%# onboarding finish %>
           <%= render partial: "task", collection: @tasks %>
         </div>            
         <div class="grid-item blockthree">
