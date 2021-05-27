@@ -38,4 +38,17 @@ module ApplicationHelper
     content_tag(:i, nil, class: "#{colored_icon}")
 
   end
+
+  def link_to_edit_backstage_setting(step)
+    target = step.classify.constantize.where("site_id IS NOT NULL").first
+    model_name = target.class.to_s.underscore
+    link_to step.titleize, send("edit_backstage_#{model_name}_path", target)
+    # link_to edit_polymorphic_path(step)
+    # link_to 'biography page', edit_backstage_biography_path(@biography), class:"btn btn-primary"
+
+  end
+  def link_to_new_step(step_model_name)
+    step_path = step_model_name.tableize
+    content_tag(:a, step_model_name, href: "/#{step_path}/new")
+  end
 end

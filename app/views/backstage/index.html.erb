@@ -51,10 +51,10 @@
               <ul>
                 <% @onboarding.site_settings_models.each do |model_name| %>
                   <li>
-                  <% @onboarding.model_to_test = model_name %>
-                  <% step_completed = @onboarding.settings_step_completed? %>
-                  <%= onboarding_step_icon(step_completed)%>   
-                                      <%= model_name.titleize %>
+                    <% @onboarding.model_to_test = model_name %>
+                    <% step_completed = @onboarding.settings_step_completed? %>
+                    <%= onboarding_step_icon(step_completed)%>   
+                    <%= link_to_edit_backstage_setting(model_name)%>
                   </li>
                 <% end %>
               </ul>
@@ -100,7 +100,7 @@
                   <% @onboarding.publisher_acct = account %>
                   <% step_completed = @onboarding.publisher_acct_step_completed? %>
                   <%= onboarding_step_icon(step_completed)%>   
-                                      <%= account.name %>
+                  <%= account.name %>
                   </li>
                 <% end %>
               </ul>

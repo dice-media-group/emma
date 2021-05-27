@@ -8,8 +8,16 @@ class BackstageController < ApplicationController
     @platforms  = []
     @comments   = []
 
-    @biography = Biography.last
-    @book_info = BookInfo.last
+    # site settings
+    @site = Site.first
+    @biography                = @site.biography
+    @book_info                = @site.book_info
+    @home_info                = @site.home_info
+    @first_time               = @site.first_time
+    @get_in_contact_content   = @site.get_in_contact_content
+    @meetup_info              = @site.meetup_info
+    @podcast                  = @site.podcast
+    @press_kit                  = @site.press_kit
 
     @publisher_accts = PublisherAcct.all
     @onboarding   = Onboarding.new
