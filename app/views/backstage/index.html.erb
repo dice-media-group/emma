@@ -77,7 +77,9 @@
                   <% @onboarding.model_to_test = model_name %>
                   <% step_completed = @onboarding.content_step_completed? %>
                   <%= onboarding_step_icon(step_completed)%>   
-                                      <%= model_name.titleize %>
+                      <%= model_name.titleize %>
+                      <%#= link_to_edit_backstage_setting(model_name)%>
+                      
                   </li>
                 <% end %>
               </ul>
@@ -97,10 +99,10 @@
               <ul>
                 <% @publisher_accts.each do |account| %>
                   <li>
-                  <% @onboarding.publisher_acct = account %>
-                  <% step_completed = @onboarding.publisher_acct_step_completed? %>
-                  <%= onboarding_step_icon(step_completed)%>   
-                  <%= account.name %>
+                    <% @onboarding.publisher_acct = account %>
+                    <% step_completed = @onboarding.publisher_acct_step_completed? %>
+                    <%= onboarding_step_icon(step_completed)%>  
+                    <%= link_to account.name, edit_backstage_publisher_acct_path(account) %>
                   </li>
                 <% end %>
               </ul>
