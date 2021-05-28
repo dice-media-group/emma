@@ -66,7 +66,8 @@
               <div class="progress">
                 <div class="progress-bar" role="progressbar" 
                       style="width: <%= @onboarding.completed_content_steps_percentage %>%" 
-                      aria-valuenow=<%= @onboarding.completed_content_steps_percentage %> aria-valuemin="0" aria-valuemax="100">
+                      aria-valuenow=<%= @onboarding.completed_content_steps_percentage %> 
+                      aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
               <p>progress: <%= @onboarding.completed_content_steps_percentage %>%</p>
@@ -74,12 +75,10 @@
               <ul>
                 <% @onboarding.content_models.each do |model_name| %>
                   <li>
-                  <% @onboarding.model_to_test = model_name %>
-                  <% step_completed = @onboarding.content_step_completed? %>
-                  <%= onboarding_step_icon(step_completed)%>   
-                      <%= model_name.titleize %>
-                      <%#= link_to_edit_backstage_setting(model_name)%>
-                      
+                    <% @onboarding.model_to_test = model_name %>
+                    <% step_completed = @onboarding.content_step_completed? %>
+                    <%= onboarding_step_icon(step_completed)%>   
+                    <%= link_to_edit_backstage_content(model_name) %>
                   </li>
                 <% end %>
               </ul>
