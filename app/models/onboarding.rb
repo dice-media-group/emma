@@ -17,7 +17,6 @@ class Onboarding
         content_models: [
             "Blog::Entry",
             "Blog::Article",
-            "Blog::RecommendedEntry",
             "Meetup",
             "MediaAppearance",
             "MerchandiseLink",

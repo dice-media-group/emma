@@ -38,4 +38,22 @@ module ApplicationHelper
     content_tag(:i, nil, class: "#{colored_icon}")
 
   end
+
+  def link_to_edit_backstage_setting(step)
+    target = step.classify.constantize.where("site_id IS NOT NULL").first
+    model_name = target.class.to_s.underscore
+    model_title = step.titleize.gsub("/", " ")
+    link_to "Customize #{model_title}" , send("edit_backstage_#{model_name}_path", target)
+  end
+
+  def link_to_edit_backstage_content(step)
+    model = step.classify.constantize
+    model_path = "#{model.to_s.underscore.gsub("/", "_")}" 
+    model_path = model_path =~ /blog/i ? model_path : "backstage_#{model_path}"
+
+    model_title = step.titleize.gsub("/", " ")
+
+    link_to "Create #{model_title}", send("new_#{model_path}_path")
+  end
+  
 end

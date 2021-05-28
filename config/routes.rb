@@ -48,12 +48,6 @@ Rails.application.routes.draw do
     resources :first_time_entries
     resources :general_info, only: [:edit, :update]
     resources :get_in_contact_content, only: [:edit, :update]
-
-    # namespace :blog do
-    #   resources :entries
-    #   resources :recommendations
-    #   resources :articles
-    # end
     resources :media_appearances
     resources :meetup_info, only: [:edit, :update]
     resources :meetups
