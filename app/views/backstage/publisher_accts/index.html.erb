@@ -11,21 +11,45 @@
 </style>
 
       <section id="top-section">
-        <h1>PublisherAccounts#index</h1>
+        <h1>PublisherAccounts#index</h1> 
+        &nbsp;&nbsp;
         <%= link_to 'new', 
             new_backstage_publisher_acct_path, 
             class: "btn btn-primary" %>
       </section>
-      <section class="flexgrid">
-        <% @publisher_accts.each do |acct| %>
-        <div class="item">
-          <p >
-            <i class="<%= acct.font_awesome_class %> "></i> 
-            <%= link_to acct.name, edit_backstage_publisher_acct_path(acct.id) %>
-          </p>
-          <p ><%= acct.network_kind %> </p>            
-          <p ><%= acct.blurb %></p>
-        </div>        
-        <% end %>
+              <a href="#social_accts">social</a> <a href="#podcast_accts">podcasts</a>
+
+      <section class="publisher-accts flexgrid">
+      <div class="social-accts">
+        <h3 id="social_accts">Social Accounts</h3>
+        <div class="flexgrid">
+          <% @social_accounts.each do |acct| %>
+          <div class="item">
+            <p >
+              <i class="<%= acct.font_awesome_class %> "></i> 
+              <%= link_to acct.name, edit_backstage_publisher_acct_path(acct.id) %>
+            </p>
+            <p ><%= acct.network_kind %> </p>            
+            <p ><%= acct.blurb %></p>
+          </div>        
+          <% end %>        
+        </div>
+      </div>
+      <div class="podcast-accts">
+        <h3 id="podcast_accts">Podcast Accounts</h3>
+        <div class="flexgrid">
+          <% @podcast_accounts.each do |acct| %>
+            <div class="item">
+              <p >
+                <i class="<%= acct.font_awesome_class %> "></i> 
+                <%= link_to acct.name, edit_backstage_publisher_acct_path(acct.id) %>
+              </p>
+              <p ><%= acct.network_kind %> </p>            
+              <p ><%= acct.blurb %></p>
+            </div>        
+          <% end %>
+        </div>
+      </div>
+        </section>
               
 
