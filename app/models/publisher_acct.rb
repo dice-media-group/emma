@@ -1,6 +1,7 @@
 class PublisherAcct < ApplicationRecord
-    scope :published_to,     -> { where("podcast_ranking > ?", 0).order("podcast_ranking DESC")}
-
+    scope :published_to,    -> { where("podcast_ranking > ?", 0).order("podcast_ranking DESC")}
+    # scope :sorted_by_network_kind_n_name, -> { order('network_kind DESC', :name) }
+    scope :social_accts,    -> { where("network_kind = ?", 'social').order(:name) }
     def self.link(account_name)
         url = self.find_by(name: account_name).url
     end
@@ -33,4 +34,19 @@ class PublisherAcct < ApplicationRecord
             .select(:name, :url, :font_awesome_class, :network_kind, :blurb)
     end
 
+    def self.sorted_by_network_kind_n_name
+        order('network_kind DESC', :name)
+    end
+
+    def self.palooza
+        "love"
+    end
+
+    def self.index_social_accounts
+        where("network_kind = ?", 'social').order(:name).select(:id, :name, :font_awesome_class, :network_kind, :blurb)
+    end
+
+    def self.index_podcast_accounts
+        where("network_kind = ?", 'podcast').order(:name).select(:id, :name, :font_awesome_class, :network_kind, :blurb)
+    end
 end

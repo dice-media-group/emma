@@ -4,6 +4,8 @@ class Backstage::PublisherAcctsController < ApplicationController
 
   def index
     @publisher_accts = PublisherAcct.all  
+    @social_accounts = PublisherAcct.index_social_accounts
+    @podcast_accounts   = PublisherAcct.index_podcast_accounts
   end
 
   def new
