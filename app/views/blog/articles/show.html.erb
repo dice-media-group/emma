@@ -5,8 +5,6 @@
   <%= link_to edit_blog_article_path(@blog_article), class: 'btn btn-primary' do %>
     Edit
   <% end %>
-  <h1>Blog article: <%= @blog_article.title %></h1>
-  <h4><%= link_to 'Parent Entry', blog_entry_path(@blog_article.entry), target: "_blank" %> </h4>
 </div>
 
 <dl class="dl-horizontal">

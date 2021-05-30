@@ -13,8 +13,7 @@ class Blog::Article < ApplicationRecord
   # has_many       :blog_entries, 
   #                :through => :blog_entry_assignments, 
   #                :source => :blog_entry
-
-  belongs_to :entry, class_name: 'Blog::Entry'
+  
   ##########################
   # => Methods
   ##########################
