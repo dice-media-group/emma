@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_30_005249) do
+ActiveRecord::Schema.define(version: 2021_05_31_191245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2021_05_30_005249) do
     t.string "slug"
     t.integer "pinned_value"
     t.datetime "publish_at"
-    t.integer "blog_article_id"
+    t.integer "article_id"
     t.string "seo_title"
     t.text "seo_description"
     t.index ["slug"], name: "index_blog_entries_on_slug", unique: true

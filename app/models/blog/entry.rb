@@ -4,6 +4,11 @@ class Blog::Entry < ApplicationRecord
   acts_as_taggable_on :skills, :interests #You can also configure multiple tag types per model
   
   # connect to blog_articles
+  belongs_to  :article,
+              class_name:   "Blog::Article",
+              foreign_key:  "article_id",
+              inverse_of:   :entry
+  
   scope :featured, -> { where("pinned_value > ?", 0)
                         .order(pinned_value: :desc)
                         .first(3)}
@@ -21,9 +26,9 @@ class Blog::Entry < ApplicationRecord
 
   has_rich_text :summary
 
-  has_one   :article, 
-            foreign_key: "entry_id", 
-            class_name: "Blog::Article"#,
+  # has_one   :article, 
+  #           foreign_key: "entry_id", 
+  #           class_name: "Blog::Article"#,
             # inverse_of: :entry                     
 
   # connect to blog_video_embeds  

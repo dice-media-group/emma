@@ -1,10 +1,10 @@
-<%= form_with(model: blog_article, local: true) do |form| %>
-  <% if blog_article.errors.any? %>
+<%= form_with(model: @article, local: true) do |form| %>
+  <% if @article.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(blog_article.errors.count, "error") %> prohibited this blog_article from being saved:</h2>
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this @article from being saved:</h2>
 
       <ul>
-      <% blog_article.errors.full_messages.each do |message| %>
+      <% @article.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -45,58 +45,68 @@
       <%# start article settings %>
         <h3>Settings</h3>
         <div class="article-controls">
-          <div class="form-group">
-            <%= form.label :pinned_value %> <p>(set to zero for it not to be pinned)</p>
-            <%= form.number_field :pinned_value, class: 'form-control' %>
-          </div>
+        <p>for all good men</p>
+          <%= form.fields_for :entry do |entry| %>
+            <p>to come to the aid of thier country</p>
+<%# start fields_for  %>
 
-          <div class="form-group">
-            <%# publish refers to blog_entry as a child of blog_article %>
-            (checkbox goes here)
-            <%= form.label :publish  %>
-            <%#= form.publish  %> 
-          </div>
-
-          <div class="form-group">
-            <%# schedule publication date  %>
-            <%# see blog_entry form for code %>
-            
-            <%= form.label "Publish_at"  %>
-            <%#= form.publication date  %> 
-          </div>
-
-          <div class="form-group">
-            <%# check blog_entry form for code  %>
-            <%= form.label "featured_image"  %>
-            <%#= form.blog_entry_image  %> 
-          </div>
-
-          <div class="form-group">
-          <%# maybe use tags like in vue nested form and stitch together in controller %>
-            <%= form.label "tags"  %>
-
-          </div>
+            <div class="form-group">
+              <%= entry.label :title %>
+              <%= entry.text_field :title, class: 'form-control' %>
+            </div>
 
 
+            <div class="form-group">
+              <%= entry.label :pinned_value %> <p>(set to zero for it not to be pinned)</p>
+              <%= entry.number_field :pinned_value, class: 'form-control' %>
+            </div>
 
+
+            <div class="form-group">
+              <%= entry.label :publish_at %>
+
+              <%= datetime_select("entry", 
+                                  "publish_at", 
+                                  ampm: true,
+                                  start_year: DateTime.now.year,
+                                  start_month: DateTime.now.month,
+                                  default: 3.days.from_now
+                                  )%>
+            </div>
+
+
+            <div class="form-group">
+              <%# check blog_entry form for code  %>
+              <%= entry.label "featured_image"  %>
+              <%#= form.blog_entry_image  %> 
+            </div>
+
+            <div class="form-group">
+            <%# maybe use tags like in vue nested form and stitch together in controller %>
+              <%= entry.label "tags"  %>
+
+            </div>
+
+<%# finish fields_for %>
+          <% end %>
         </div>
       <%# finish article settings %>    
     </div>
   </div>
 
   <div class="form-group">
-    <% if blog_article.persisted? %>
+    <% if @article.persisted? %>
       <div class="float-right">
-        <%= link_to 'Destroy', blog_article, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Destroy', @article, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
 
     <%= form.submit class: 'btn btn-primary' %>
 
-    <% if blog_article.persisted? %>
-      <%= link_to "Cancel", blog_article, class: "btn btn-link" %>
+    <% if @article.persisted? %>
+      <%= link_to "Cancel", @article, class: "btn btn-link" %>
     <% else %>
-      <%= link_to "Cancel", blog_articles_path, class: "btn btn-link" %>
+      <%= link_to "Cancel", @articles_path, class: "btn btn-link" %>
     <% end %>
   </div>
 <% end %>
