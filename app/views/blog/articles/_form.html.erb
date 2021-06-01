@@ -48,46 +48,9 @@
         <p>for all good men</p>
           <%= form.fields_for :entry do |entry| %>
             <p>to come to the aid of thier country</p>
-<%# start fields_for  %>
+            <%= render partial: 'entry',   locals: {entry: entry} %>
+            <%#= render partial: "ad",          locals: { ad: ad } %>
 
-            <div class="form-group">
-              <%= entry.label :title %>
-              <%= entry.text_field :title, class: 'form-control' %>
-            </div>
-
-
-            <div class="form-group">
-              <%= entry.label :pinned_value %> <p>(set to zero for it not to be pinned)</p>
-              <%= entry.number_field :pinned_value, class: 'form-control' %>
-            </div>
-
-
-            <div class="form-group">
-              <%= entry.label :publish_at %>
-
-              <%= datetime_select("entry", 
-                                  "publish_at", 
-                                  ampm: true,
-                                  start_year: DateTime.now.year,
-                                  start_month: DateTime.now.month,
-                                  default: 3.days.from_now
-                                  )%>
-            </div>
-
-
-            <div class="form-group">
-              <%# check blog_entry form for code  %>
-              <%= entry.label "featured_image"  %>
-              <%#= form.blog_entry_image  %> 
-            </div>
-
-            <div class="form-group">
-            <%# maybe use tags like in vue nested form and stitch together in controller %>
-              <%= entry.label "tags"  %>
-
-            </div>
-
-<%# finish fields_for %>
           <% end %>
         </div>
       <%# finish article settings %>    
