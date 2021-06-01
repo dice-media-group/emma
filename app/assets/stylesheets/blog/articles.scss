@@ -9,9 +9,16 @@
     min-width: 20%;
     // max-width: 27%;
 }
+
 .article-controls {
     background-color: aqua;
     padding: 5px;
+}
+
+.article-controls textarea {
+    height: 150px;
+    overflow-y: auto;
+
 }
 
 trix-editor {
