@@ -21,6 +21,7 @@ class Blog::ArticlesController < ApplicationController
 
   # GET /blog/articles/1/edit
   def edit
+    @entry    = @article.entry
   end
 
   # POST /blog/articles
@@ -80,14 +81,16 @@ class Blog::ArticlesController < ApplicationController
         :body, 
         :pinned_value, 
         entry_attributes: [:id, 
-                              :title, 
+                              :title,
+                              :summary,
                               :pinned_value, 
                               :publish_at, 
                               :seo_title,
                               :seo_description,
                               :tag_list,
                               :skill_list,
-                              :interest_list
+                              :interest_list,
+                              :image, 
                             ])
     end
 end

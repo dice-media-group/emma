@@ -19,5 +19,32 @@
 
   <dt>Byline:</dt>
   <dd><%= @blog_article.user.name.full %></dd>
+  <hr>
+
+  <dt>SEO title</dt>
+  <dd>
+    <%= @article.entry.seo_title %>
+  </dd>
+
+  <dt>SEO description</dt>
+  <dd>
+    <%= @article.entry.seo_description %>
+  </dd>
+
+  <dt>Pin value</dt>
+  <dd>
+    <%= @article.entry.pinned_value %>
+  </dd>
+
+  <dt>Publish at</dt>
+  <dd>
+    <%= @article.entry.publish_at %>
+  </dd>
+
+  <dt>Image</dt>
+  <dd>
+    <%= image_tag @article.entry.image, width: 280 %>
+  </dd>
+
 
 </dl>
