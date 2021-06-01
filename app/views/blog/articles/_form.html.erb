@@ -43,13 +43,10 @@
     </div>
     <div class="article-settings">
       <%# start article settings %>
-        <h3>Settings</h3>
+        <h3>Settings for Publishing</h3>
         <div class="article-controls">
-        <p>for all good men</p>
           <%= form.fields_for :entry do |entry| %>
-            <p>to come to the aid of thier country</p>
             <%= render partial: 'entry',   locals: {entry: entry} %>
-            <%#= render partial: "ad",          locals: { ad: ad } %>
 
           <% end %>
         </div>
