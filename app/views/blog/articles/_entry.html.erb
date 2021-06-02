@@ -1,23 +1,18 @@
 <%# start fields_for  %>
-            <div class="col-4">
+
               <div class="form-group" data-uppy="blog_article[entry_attributes][image]">
                 <%= entry.label :image %>
-                <div>
-                  <% if @entry.image.attached? %>
-                    <%= image_tag @entry.image, width: 280, data: { behavior: 'uppy-preview' } %>
-                  <% else %>
-                    <%= link_to image_tag("svgs/image-regular.svg", 
+              <div>
+              <%= link_to "#", data: { behavior: "uppy-trigger" } do %>
+                <% if @entry.image.attached? %>
+                  <%= image_tag @entry.image, width: 280, data: { behavior: 'uppy-preview' } %>
+                <% else %>
+                  <%= image_tag "svgs/image-regular.svg", 
                         width: 280, 
-                        data: { behavior: 'uppy-preview' }), 
-                        "#" %>
-
-                  <% end %>
-                </div>
-
-                <%= link_to "Upload Image", "#", data: { behavior: "uppy-trigger" } %>
-              </div>
-            
-            </div>
+                        data: { behavior: 'uppy-preview' }  %>
+                <% end %>
+              <% end %>
+              <p>(click image to upload replacement)</p>
 
 
             <div class="form-group">

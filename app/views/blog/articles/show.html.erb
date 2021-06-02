@@ -43,7 +43,7 @@
 
   <dt>Image</dt>
   <dd>
-    <%= image_tag @article.entry.image, width: 280 %>
+    <%= image_tag @article.entry.image, width: 280  if @article.entry.image.attached? %>
   </dd>
 
 
