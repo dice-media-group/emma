@@ -20,7 +20,7 @@ class Blog::Article < ApplicationRecord
     # https://alexanderpaterson.com/posts/showing-estimated-reading-time-on-a-rails-blog-post
     words_per_minute = 150
     text =  self.body.to_plain_text
-    result = (text.scan(/\w+/).length / WORDS_PER_MINUTE).to_i
+    result = (text.scan(/\w+/).length / WORDS_PER_MINUTE).to_i ||= 1
   end
 
   def self.collect_pinned

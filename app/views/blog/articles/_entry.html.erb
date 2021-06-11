@@ -61,7 +61,11 @@
 
             <div class="form-group">
               <%= entry.label :tag_list, "Tags (seperated by commas)" %>
-              <%= entry.text_field :tag_list, class: 'form-control' %>
+              <%= entry.text_field(:tag_list, class: 'form-control', value: @entry.tags.join(","))%>
+              <%#= f.input :tag_list, 
+                :label => "Tags* (seperated by commas)", 
+                :input_html => { :class => "css-class", 
+                :value => @article.tag_list.join(", ") } %>
             </div>
 
 
@@ -74,7 +78,7 @@
 
             <div class="form-group">
             <%# maybe use tags like in vue nested form and stitch together in controller %>
-              <%= entry.label "tags"  %>
+              <%#= entry.label "tags"  %>
 
             </div>
 

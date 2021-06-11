@@ -21,7 +21,7 @@ class Blog::ArticlesController < ApplicationController
 
   # GET /blog/articles/1/edit
   def edit
-    @entry    = @article.entry
+    @entry    = @article.entry || @article.build_entry
   end
 
   # POST /blog/articles
