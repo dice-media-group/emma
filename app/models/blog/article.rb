@@ -7,7 +7,8 @@ class Blog::Article < ApplicationRecord
   has_one   :entry, 
             class_name:   "Blog::Entry",
             foreign_key:  "article_id",
-            inverse_of:   :article
+            inverse_of:   :article,
+            dependent: :destroy
 
   accepts_nested_attributes_for :entry,
     :allow_destroy => true,
