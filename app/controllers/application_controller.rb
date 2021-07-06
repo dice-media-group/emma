@@ -32,10 +32,12 @@ class ApplicationController < ActionController::Base
       @texting_phrase = "TEXT US"
       @possesive      = "our"
       @objective_case = "us"
+      @hiring_phrase  = "Services"
     else
       @texting_phrase = "TEXT ME"
       @possesive      = "my"
       @objective_case = "me"
+      @hiring_phrase  = "Hire Me"
     end
 
   end
