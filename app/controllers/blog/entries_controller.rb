@@ -21,12 +21,18 @@ class Blog::EntriesController < ApplicationController
   end
 
   # GET /blog/entries/new
-  def new
-    @blog_entry = Blog::Entry.new
-    @articles   = Blog::Article.all.select(:id, :title)
-    @blog_entry.recommendations.new
+  # 2021-06-14
+  # let's see if it's better design to have the blog entry created as a 
+  # child of the article only.  There's still a question of how to publish 
+  # other parts of an entry.  Maybe it should be with Blog::Entry as a join
+  # record with has_many :through
+
+  # def new
+  #   @blog_entry = Blog::Entry.new
+  #   @articles   = Blog::Article.all.select(:id, :title)
+  #   @blog_entry.recommendations.new
     
-  end
+  # end
 
   # GET /blog/entries/1/edit
   def edit

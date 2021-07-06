@@ -15,21 +15,21 @@ class Blog::ArticlesController < ApplicationController
 
   # GET /blog/articles/new
   def new
-    @blog_article = Blog::Article.new
-    @entries      = Blog::Entry.all
+    @article  = Blog::Article.new
+    @entry    = @article.build_entry
   end
 
   # GET /blog/articles/1/edit
   def edit
-    @entries      = Blog::Entry.all
+    @entry    = @article.entry || @article.build_entry
   end
 
   # POST /blog/articles
   # POST /blog/articles.json
   def create
     # @blog_entry     = Blog::Entry.find(params[:entry_id])
-    @blog_article = Blog::Article.new(blog_article_params)
-    @blog_article.user = current_user
+    @blog_article         = Blog::Article.new(blog_article_params)
+    @blog_article.user    = current_user
 
     respond_to do |format|
       if @blog_article.save
@@ -72,11 +72,25 @@ class Blog::ArticlesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_blog_article
       @blog_article = Blog::Article.find(params[:id])
+      @article = Blog::Article.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def blog_article_params
       params.require(:blog_article).permit(:title, 
-        :body, :pinned_value, :entry_id, :blog_article_entry_id)
+        :body, 
+        :pinned_value, 
+        entry_attributes: [:id, 
+                              :title,
+                              :summary,
+                              :pinned_value, 
+                              :publish_at, 
+                              :seo_title,
+                              :seo_description,
+                              :tag_list,
+                              :skill_list,
+                              :interest_list,
+                              :image, 
+                            ])
     end
 end

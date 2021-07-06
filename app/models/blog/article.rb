@@ -2,19 +2,18 @@ class Blog::Article < ApplicationRecord
   WORDS_PER_MINUTE = 150
   belongs_to    :user
   has_rich_text :body
-  has_many      :blog_entry_assignments,
-                foreign_key: "blog_article_id", 
-                class_name: "Blog::EntryAssignment"
 
-  # has_many      :blog_entries, 
-  #               through: :blog_entry_assignments,
-  #               source: :entry,
-  #               class_name: 'Blog::Entry'
-  # has_many       :blog_entries, 
-  #                :through => :blog_entry_assignments, 
-  #                :source => :blog_entry
 
-  belongs_to :entry, class_name: 'Blog::Entry'
+  has_one   :entry, 
+            class_name:   "Blog::Entry",
+            foreign_key:  "article_id",
+            inverse_of:   :article,
+            dependent: :destroy
+
+  accepts_nested_attributes_for :entry,
+    :allow_destroy => true,
+    :reject_if     => :all_blank
+  
   ##########################
   # => Methods
   ##########################
@@ -22,7 +21,7 @@ class Blog::Article < ApplicationRecord
     # https://alexanderpaterson.com/posts/showing-estimated-reading-time-on-a-rails-blog-post
     words_per_minute = 150
     text =  self.body.to_plain_text
-    result = (text.scan(/\w+/).length / WORDS_PER_MINUTE).to_i
+    result = (text.scan(/\w+/).length / WORDS_PER_MINUTE).to_i ||= 1
   end
 
   def self.collect_pinned
@@ -31,13 +30,3 @@ class Blog::Article < ApplicationRecord
 
 
 end
-
-
-# class Student < ApplicationRecord
-#   has_many :admission_application_students, 
-#             class_name: 'Admission::ApplicationStudent'
-#   has_many :admission_applications, 
-#                  through: :admission_application_students, 
-#                   source: :application, 
-#               class_name: 'Admission::Application'
-# end

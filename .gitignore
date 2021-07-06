@@ -39,4 +39,6 @@ yarn-debug.log*
 .tool-versions
 /config/credentials/development.key
 
+# Ignore vscode files
+.vscode
 /config/credentials/production.key

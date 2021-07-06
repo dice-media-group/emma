@@ -1,0 +1,71 @@
+<%# start fields_for  %>
+
+              <div class="form-group" data-uppy="blog_article[entry_attributes][image]">
+                <%= entry.label :image %>
+              <div>
+              <%= link_to "#", data: { behavior: "uppy-trigger" } do %>
+                <% if @entry.image.attached? %>
+                  <%= image_tag @entry.image, width: 280, data: { behavior: 'uppy-preview' } %>
+                <% else %>
+                  <%= image_tag "svgs/image-regular.svg", 
+                        width: 280, 
+                        data: { behavior: 'uppy-preview' }  %>
+                <% end %>
+              <% end %>
+              <p>(click image to upload replacement)</p>
+
+
+            <div class="form-group">
+              <%= entry.label "Published Title" %>
+              <%= entry.text_field :title, class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <%= entry.label :summary %>
+              <%= entry.rich_text_area :summary, class: 'form-control' %>
+            </div>
+
+
+            <div class="form-group">
+              <%= entry.label :seo_title %>
+              <%= entry.text_field :seo_title, class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <%= entry.label :seo_description %>
+              <%= entry.text_area :seo_description, class: 'form-control' %>
+            </div>
+
+
+
+            <div class="form-group">
+              <%= entry.label "Published Pinned Value" %> <p>(set to zero for it not to be pinned)</p>
+              <%= entry.number_field :pinned_value, class: 'form-control' %>
+            </div>
+
+
+            <div class="form-group">
+
+              <%= entry.label :publish_at %>
+
+              <% publish_at_value =  @article.entry.publish_at %>
+              <%= datetime_select("blog_article[entry_attributes]", 
+                  "publish_at", 
+                  ampm: true,
+                  start_year: DateTime.now.year,
+                  start_month: DateTime.now.month,
+                  default: publish_at_value
+                  # options
+                  )%>
+            </div>
+
+            <div class="form-group">
+              <%= entry.label :tag_list, "Tags (seperated by commas)" %>
+              <%= entry.text_field(:tag_list, class: 'form-control', value: @entry.tags.join(","))%>
+              <%#= f.input :tag_list, 
+                :label => "Tags* (seperated by commas)", 
+                :input_html => { :class => "css-class", 
+                :value => @article.tag_list.join(", ") } %>
+            </div>
+
+<%# finish fields_for %>
