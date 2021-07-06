@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+:root {
+    --backstage-version-color: blue;
+}
 
 .backstage, .index, .new, .edit, .show {
   font-family: "Poppins";
@@ -246,3 +249,9 @@
     grid-row-gap: 0px;
 
   }
+
+.backstage_color-bar {
+  background-color: var(--backstage-version-color);
+  width:100vw;
+  height: 20px;
+}
