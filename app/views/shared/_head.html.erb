@@ -13,19 +13,23 @@
   <%= display_meta_tags site: "#{@site.general_info.plain_text_name}",
                       reverse: true,
                       image_src: '/assets/favicons/favicon-192.png',
-                      keywords: %W[ web development software webapp],
+                      keywords: "#{@site.general_info.tag_list.to_s}",
                       description: "#{@site.first_time.blurb}",
                       canonical: request.original_url,
                       og: {
-                        title:     "About Me | #{@site.general_info.plain_text_name}",
+                        title:     "#{@site.general_info.plain_text_name || "About Me"}",
                         site_name: "#{@site.general_info.plain_text_name}",
                         type:      'website',
                         url:       request.original_url,
-                        image:     "https://pbs.twimg.com/media/EqSNJ8NU8AIgUQS?format=jpg&name=small"
+                        image:     "#{request.original_url.split("/").join("/")}#{@site_meta_image_url}",
+                        description: "#{@site.general_info.default_meta_blurb}"
                       },
                       twitter: {
-                        card: 'summary',
-                        site: "#{@site.general_info.plain_text_name}"
+                        card:         "#{@site.general_info.default_meta_blurb}",
+                        site:         "#{@site.general_info.plain_text_name}",
+                        title:        "#{@site.general_info.plain_text_name || "About Me"}",
+                        description:  "#{@site.general_info.default_meta_blurb}",
+                        image:        "#{request.original_url.split("/").join("/")}#{@site_meta_image_url}",                        
                       } %>
 
  <%= csp_meta_tag %>
