@@ -22,10 +22,14 @@
                         type:      'website',
                         url:       request.original_url,
                         image:     "#{request.original_url.split("/").join("/")}#{@site_meta_image_url}",
+                        description: "#{@site.general_info.default_meta_blurb}"
                       },
                       twitter: {
-                        card: "#{@site.general_info.default_meta_blurb}",
-                        site: "#{@site.general_info.plain_text_name}"
+                        card:         "#{@site.general_info.default_meta_blurb}",
+                        site:         "#{@site.general_info.plain_text_name}",
+                        title:        "#{@site.general_info.plain_text_name || "About Me"}",
+                        description:  "#{@site.general_info.default_meta_blurb}",
+                        image:        "#{request.original_url.split("/").join("/")}#{@site_meta_image_url}",                        
                       } %>
 
  <%= csp_meta_tag %>
