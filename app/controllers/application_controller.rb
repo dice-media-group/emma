@@ -27,6 +27,7 @@ class ApplicationController < ActionController::Base
     @site                         = Site.first
     @text_number                  = @site.general_info.text_number
     @newsletter_subscription_url  = @site.general_info.newsletter_sub_url
+    @site_meta_image_url          = _set_site_meta_image_url
 
     if @site.general_info.is_team_website? == true
       @texting_phrase = "TEXT US"
@@ -42,6 +43,11 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def _set_site_meta_image_url
+    url = AttachedImage.new(model=Site.first.general_info,
+          image_name="meta_image")
+          .url
+  end
   protected
 
     def configure_permitted_parameters

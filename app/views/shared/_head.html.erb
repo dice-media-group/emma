@@ -21,7 +21,7 @@
                         site_name: "#{@site.general_info.plain_text_name}",
                         type:      'website',
                         url:       request.original_url,
-                        image:     "#{url_for(@site.general_info.meta_image).to_s " "}"
+                        image:     "#{request.original_url.split("/").join("/")}#{@site_meta_image_url}",
                       },
                       twitter: {
                         card: "#{@site.general_info.default_meta_blurb}",
