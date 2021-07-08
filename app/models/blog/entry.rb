@@ -63,4 +63,22 @@ class Blog::Entry < ApplicationRecord
   def self.from_time
     Time.now - self.created_at
   end
+
+  def self.construct_meta_image_url(blog_entry)
+    if blog_entry.image.attached?
+      url = self.base_url + AttachedImage.new(model= blog_entry,
+      image_name="image")
+      .url      
+    else
+      url = self.base_url + AttachedImage.new(model=Site.first.general_info,
+      image_name="meta_image")
+      .url
+    end
+
+  end
+
+  def self.base_url
+    # set conditional for 
+      base_url = "https://" + ENV['APPLICATION_HOST'].to_s
+  end
 end

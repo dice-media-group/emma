@@ -1,11 +1,17 @@
-<% set_meta_tags title: "#{@blog_entry.title}",
-                 description: "#{@blog_entry.seo_description}",
-                 keywords: "#{@blog_entry.tag_list}",
-                 image_src: ("https://pbs.twimg.com/media/EqSNJ8NU8AIgUQS?format=jpg&name=small"),
-                 og: {
-                   title:     "#{@blog_entry.title} |  #{@site.general_info.plain_text_name}",
-                   image:     ("https://pbs.twimg.com/media/EqSNJ8NU8AIgUQS?format=jpg&name=small")
-                 } %>
+<%# FIX: twitter needs some research https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started %>
+<% set_meta_tags  title: "#{@blog_entry.title}",
+                  description: "#{@blog_entry.seo_description}",
+                  keywords: "#{@blog_entry.tag_list}",
+                  image_src: "#{@blog_entry_meta_image_url}",
+                  og: {
+                      title:     "#{@blog_entry.title || ''}",
+                      site_name: "#{@site.general_info.plain_text_name}",
+                      type:      'website',
+                      url:       request.original_url,
+                      image:     "#{@blog_entry_meta_image_url}",
+                      description: "#{@blog_entry.seo_description}"
+                  }
+%>
 
 <article id="post-10701" class="post-10701 post type-post status-publish format-standard has-post-thumbnail hentry category-business category-leadership">
   
