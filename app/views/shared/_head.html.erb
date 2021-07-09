@@ -10,6 +10,8 @@
  <%= csrf_meta_tags %>
  <!-- display_meta_tags -->
   <%= tag :meta, name: "current-user", content: current_user.id, data: {email: current_user.email } if user_signed_in? %>
+
+<%# FIX: twitter needs some research https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started %>
   <%= display_meta_tags site: "#{@site.general_info.plain_text_name}",
                       reverse: true,
                       image_src: '/assets/favicons/favicon-192.png',
@@ -23,14 +25,8 @@
                         url:       request.original_url,
                         image:     "#{request.original_url.split("/").join("/")}#{@site_meta_image_url}",
                         description: "#{@site.general_info.default_meta_blurb}"
-                      },
-                      twitter: {
-                        card:         "#{@site.general_info.default_meta_blurb}",
-                        site:         "#{@site.general_info.plain_text_name}",
-                        title:        "#{@site.general_info.plain_text_name || "About Me"}",
-                        description:  "#{@site.general_info.default_meta_blurb}",
-                        image:        "#{request.original_url.split("/").join("/")}#{@site_meta_image_url}",                        
-                      } %>
+                      }
+                      %>
 
  <%= csp_meta_tag %>
 

@@ -18,6 +18,8 @@ class Blog::EntriesController < ApplicationController
     @recommended_entries  = @blog_entry.recommended_entries    
     @author               = @blog_article.user if @blog_article.present?
 
+    @blog_entry_meta_image_url  = Blog::Entry.construct_meta_image_url(@blog_entry).to_s
+""
   end
 
   # GET /blog/entries/new
