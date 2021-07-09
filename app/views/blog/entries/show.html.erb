@@ -2,13 +2,13 @@
 <% set_meta_tags  title: "#{@blog_entry.title}",
                   description: "#{@blog_entry.seo_description}",
                   keywords: "#{@blog_entry.tag_list}",
-                  image_src: "#{@blog_entry_meta_image_url}",
+                  image_src: Blog::Entry.construct_meta_image_url(@blog_entry).to_s,
                   og: {
                       title:     "#{@blog_entry.title || ''}",
                       site_name: "#{@site.general_info.plain_text_name}",
                       type:      'website',
                       url:       request.original_url,
-                      image:     "#{@blog_entry_meta_image_url}",
+                      image:     Blog::Entry.construct_meta_image_url(@blog_entry).to_s,
                       description: "#{@blog_entry.seo_description}"
                   }
 %>
