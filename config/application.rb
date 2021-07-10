@@ -19,5 +19,11 @@ module Emma
     # the framework and any gems in your application.
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    # allow iframe for actiontext to embed youtube or other video providers
+    config.to_prepare do
+      ActionText::ContentHelper.allowed_tags << "iframe"
+    end
+    
   end
 end

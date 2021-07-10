@@ -60,6 +60,8 @@ $(document).on("turbolinks:load", () => {
 require("trix");
 require("@rails/actiontext");
 import "controllers";
+// embed youtube video in actiontext
+import "youtube"
 
 // Start uppy
 const Uppy = require("@uppy/core");
@@ -144,3 +146,5 @@ $(document).ready(function() {
 // finish select2
 
 import "controllers";
+
+import "controllers"

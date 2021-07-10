@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   namespace :backstage do
     get 'get_in_contact_content/edit'
   end
+
+  # youtube embed into actiontext
+  resources :youtube, only: :show
+  
   namespace :site do
     get 'biography/edit'
   end
