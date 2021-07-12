@@ -17,12 +17,36 @@
           <tr>
         
 
-                <th>Title</th>
+                <th>
+                  <%= link_to :sort => "title" do %> 
+                    Title <i class="fas fa-sort-up"></i>
+                  <% end %>
+                </th>
                 <th>Body</th>
-                <th>User</th>
-                <th>Pinned Order</th>
+                <th>
+                  <%= link_to :sort => "user" do %> 
+                    User <i class="fas fa-sort-up"></i>
+                  <% end %>                
+                </th>
+                <th>
+                  <%= link_to :sort => "created_at" do %> 
+                    Created At <i class="fas fa-sort-down"></i>
+                  <% end %>
                 
-              <th></th>
+                </th>
+                <th>
+                  <%= link_to :sort => "publish_at" do %> 
+                    Publish At <i class="fas fa-sort-down"></i>
+                  <% end %>
+                
+                </th>
+                <th>
+                  <%= link_to :sort => "pinned_value" do %> 
+                    Pinned Value <i class="fas fa-sort-down"></i>
+                  <% end %>
+                
+                </th>
+                <th></th>
             
           </tr>
         </thead>
@@ -35,10 +59,17 @@
                 <td><%= link_to blog_article.title,  edit_blog_article_path(blog_article) %></td>
                 <td><%= strip_tags(blog_article.body.to_s).truncate(270) %></td> 
                 <td><%= blog_article.user.name.full %></td>
-                <td><%= blog_article.pinned_value %></td>
+                <td><%= blog_article.created_at %></td>
+                <td><%= blog_article.entry.publish_at %></td>
+                <td><%= blog_article.entry.pinned_value || 0 %>
+                
+                </td>
               
               
-                <td><%= link_to 'Show', blog_article %></td>
+                <td><%= link_to 'Show', blog_article %> <hr>
+                    <%= link_to 'Preview', blog_entry_path(blog_article.entry), target: "_blank" %>
+                
+                </td>
               
             <% end %>
           <% end %>
