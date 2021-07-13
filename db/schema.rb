@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_214948) do
+ActiveRecord::Schema.define(version: 2021_07_13_182159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2021_07_12_214948) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "pinned_value", default: 0
+    t.integer "last_updated_by_id", default: 0
     t.index ["user_id"], name: "index_blog_articles_on_user_id"
   end
 
