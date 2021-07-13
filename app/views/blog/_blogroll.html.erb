@@ -5,11 +5,10 @@
       <%# do nothing %>
     <% else %>
       <%= render partial: "blog/entries/entry", 
-          collection: Blog::Entry.featured_2nd_and_3rd, 
+          collection: @blog_entries, 
           as: :entry %>     
     <% end %>
     
-    <%= render @blog_entries %>
 
     <% if(!params.has_key?(:tag) )%>
       <%== render partial: '/shared/pagy/nav', locals: {pagy: @pagy} %>      

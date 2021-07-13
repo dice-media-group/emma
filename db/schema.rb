@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_191245) do
+ActiveRecord::Schema.define(version: 2021_07_12_214948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_191245) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
-    t.integer "pinned_value"
+    t.integer "pinned_value", null: false
     t.datetime "publish_at"
     t.integer "article_id"
     t.string "seo_title"
