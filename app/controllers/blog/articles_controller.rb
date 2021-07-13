@@ -45,7 +45,7 @@ class Blog::ArticlesController < ApplicationController
   # PATCH/PUT /blog/articles/1
   # PATCH/PUT /blog/articles/1.json
   def update
-    @blog_article.user = current_user
+    @blog_article.last_updated_by_id = current_user.id
 
     respond_to do |format|
       if @blog_article.update(blog_article_params)
