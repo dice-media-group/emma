@@ -1,40 +1,23 @@
-<style>
-  .grid-1-1-2 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr) 2fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
 
-  .flexgrid {
-    display: flex;
-  }
+<section id="top-section">
+  <h1>Events  <%= "(#{@meetups.count})" %></h1>
 
-  .flexgrid .item {
-    margin: 1em;
-    padding: 1em;
-    background-color: Wheat;
-  }
+  <%= link_to 'new', 
+      new_backstage_meetup_path, 
+      class: "btn btn-primary" %>
+</section>
+
+      <%# responsive css grid start %>
+<div class="message">
+  Sorry, your browser does not support CSS Grid. 😅
+</div>
+<section class="responsive-listing">
+  <div class="grid">
+    <%= render @meetups %>    
+  </div>
+</section>
+<%# responsive css grid finish %>
 
 
-</style>
-      <section id="top-section">
-        <h1>Backstage::Meetups <%= "(#{@meetups.count})" %></h1>
-        <%= link_to 'new', 
-            new_backstage_meetup_path, 
-            class: "btn btn-primary" %>
-      </section>
-      <section class="flexgrid">
-        <% @meetups.each do |meetup| %>
-          <div class="item">
-            <p>
-              title: <%= link_to meetup.title, edit_backstage_meetup_path(meetup) %>
-            </p>
-            <p>start <%= meetup.start_date %> </p>            
-            <p>finish <%= meetup.end_date %></p>
-        </div>
-        <% end %>
-              
 
-      </section>
+
