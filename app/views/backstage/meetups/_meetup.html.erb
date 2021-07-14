@@ -1,0 +1,14 @@
+<% style = 'background: center / contain no-repeat ' +
+            ' url('  + "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" + ');'
+
+%>
+
+    <%= link_to(edit_backstage_meetup_path(meetup), 
+                class:"item item--medium",        
+                style: style
+               ) do %>
+        <div    class="item__details" >
+        <%= "#{meetup.title}"%><%#= link_to book.title, edit_backstage_book_path(book) %>
+        </div>
+
+    <% end %>
