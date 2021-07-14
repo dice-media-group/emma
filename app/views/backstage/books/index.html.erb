@@ -1,25 +1,21 @@
-      <section id="top-section">
-        <h1>Backstage::Books <%= "(#{@books.count})" %></h1>
-        <%= link_to 'new', 
-            new_backstage_book_path, 
-            class: "btn btn-primary" %>
-      </section>
-      <section class="flexgrid">
-        <% @books.each do |book| %>
-          <div class="item">
-            <p>
-              title: <%= link_to book.title, edit_backstage_book_path(book) %>
-            </p>
-            <p>By: <%= book.byline %> </p>            
-            <p>
-              <% if book.jacket_location %>
-                <%= image_tag book.jacket_location %>
-              <% else %>
-                image 
-              <% end %>
-            </p>
-        </div>
-        <% end %>
-              
+<section id="top-section">
+  <h1>Backstage::Books <%= "(#{@books.count})" %></h1>
+  <%= link_to 'new', 
+      new_backstage_book_path, 
+      class: "btn btn-primary" %>
+</section>
 
-      </section>
+<%# responsive css grid start %>
+<div class="message">
+  Sorry, your browser does not support CSS Grid. 😅
+</div>
+<section class="responsive-listing">
+  <h1>Recommended Books</h1>
+  <div class="grid">
+    <%= render @books %>    
+  </div>
+</section>
+<%# responsive css grid finish %>
+
+
+
