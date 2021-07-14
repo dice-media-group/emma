@@ -1,0 +1,14 @@
+<% style = 'background: center / contain no-repeat ' +
+            ' url('  + "#{book.jacket_location}" + ');'
+
+%>
+
+    <%= link_to(edit_backstage_book_path(book), 
+                class:"item item--medium",        
+                style: style
+               ) do %>
+        <div    class="item__details" >
+        <%= "#{book.title}"%><%#= link_to book.title, edit_backstage_book_path(book) %>
+        </div>
+
+    <% end %>

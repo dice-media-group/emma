@@ -30,12 +30,19 @@
 
   <div class="form-group">
     <div class="form-group" data-uppy="book[image]">
-      <%= form.label :jacket_location %>
+      <%= form.label "jacket Location Url" %>
       <div>
         <% if book.jacket_location? %>
                 <%= image_tag book.jacket_location %>
         <% end %>
-        <%= form.text_field :jacket_location, class: 'form-control' %>
+        <%= form.url_field :jacket_location, 
+                            class:'form-control',
+                            placeholder:"https://example.com",
+                            pattern:"https://.*",
+                            minlength:"7",
+                            size:"22",
+                            title: "URL must be a secure link"
+        %>
       </div>
     </div>
   
