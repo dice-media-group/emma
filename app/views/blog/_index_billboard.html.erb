@@ -22,8 +22,7 @@
                                     <%= entry.article.reading_time.to_i ||= 1 %> min read                                
                                 </h5>
 
-                                    <% entry_body_intro = !entry.article.blank? ? strip_tags(entry.article.body.to_s).truncate(270) : "no article attached" %>
-                                    <p><%= entry_body_intro  %></p>
+                                    <p><%= entry.summary  %></p>
                                 <div class="text-right">
                                     <%= link_to entry, class: "ct-post-permalink link-blue" do %>
                                         Read More &gt;&gt;

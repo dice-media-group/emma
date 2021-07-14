@@ -37,7 +37,7 @@
                         </span>               
                     </h5>
                     <p>
-                        <%= entry.article.body.to_plain_text[0..404] %> &#8230;
+                        <%= entry.summary %> &#8230;
                     </p>
                     <div class="text-right">
                         <%= link_to  blog_entry_path(entry), class: "ct-post-permalink link-blue" do %>
