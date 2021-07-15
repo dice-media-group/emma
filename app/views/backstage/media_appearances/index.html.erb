@@ -1,25 +1,21 @@
-      <section id="top-section">
-        <h1>Backstage::MediaAppearances <%= "(#{@media_appearances.count})" %></h1>
-        <%= link_to 'new', 
-            new_backstage_media_appearance_path, 
-            class: "btn btn-primary" %>
-      </section>
-      <section class="flexgrid">
-        <% @media_appearances.each do |media_appearance| %>
-          <div class="item">
-            <p>
-              title: <%= link_to media_appearance.title, edit_backstage_media_appearance_path(media_appearance) %>
-            </p>
-            <p>Published: <%= media_appearance.published_on %> </p>            
-            <p>
-              <% if media_appearance.image.attached? %>
-                <%= image_tag media_appearance.image %>
-              <% else %>
-                image 
-              <% end %>
-            </p>
-        </div>
-        <% end %>
-              
+<section id="top-section">
+  <h1>MediaAppearances (mentions in the Press) <%= "(#{@media_appearances.count})" %></h1>
+  <%= link_to 'new', 
+      new_backstage_media_appearance_path, 
+      class: "btn btn-primary" %>
+</section>
 
-      </section>
+      <%# responsive css grid start %>
+<div class="message">
+  Sorry, your browser does not support CSS Grid. 😅
+</div>
+<section class="responsive-listing">
+  <div class="grid">
+    <%= render @media_appearances %>    
+  </div>
+</section>
+<%# responsive css grid finish %>
+
+
+
+
