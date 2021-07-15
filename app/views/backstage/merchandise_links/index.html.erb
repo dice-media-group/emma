@@ -1,22 +1,17 @@
-      <section id="top-section">
-        <h1>Merchandise Links <%= "(#{@merchandise_links.count})" %></h1>
-        <%= link_to 'new', 
-            new_backstage_merchandise_link_path, 
-            class: "btn btn-primary" %>
-      </section>
-      <section class="flexgrid">
-        <% @merchandise_links.each do |link| %>
-          <div class="item">
-            <p >Book:  
-                <%= link_to link.book.title, edit_backstage_merchandise_link_path(link.id) %>
-            </p>
-            <p >
-              Seller:
-              <%= link_to link.seller_name, link.url, target: "_blank" %>
-            </p>
-          </div>
-        
-        <% end %>
-              
+<section id="top-section">
+  <h1>Merchandise Links <%= "(#{@merchandise_links.count})" %></h1>
+  <%= link_to 'new', 
+      new_backstage_merchandise_link_path, 
+      class: "btn btn-primary" %>
+</section>
 
-      </section>
+<%# responsive css grid start %>
+<div class="message">
+  Sorry, your browser does not support CSS Grid. 😅
+</div>
+<section class="responsive-listing">
+  <div class="grid">    
+    <%= render partial: "merchandise_link", collection: @merchandise_links %>
+  </div>
+</section>
+<%# responsive css grid finish %>

@@ -1,0 +1,17 @@
+<% style = 'background: center / contain no-repeat ' +
+            ' url('  + "https://images.unsplash.com/photo-1542654803-fb4757630764?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1651&q=80" + ');'
+
+%>
+
+    <%= link_to(edit_backstage_merchandise_link_path(merchandise_link), 
+                class:"item item--medium",        
+                style: style
+               ) do %>
+        <div    class="item__details" >
+            <strong>Book:</strong>&nbsp;
+            <%= "#{merchandise_link.book.title}"%>,&nbsp;
+            <strong>Seller:</strong>&nbsp;
+            <%= "#{merchandise_link.seller_name}"%>
+        </div>
+
+    <% end %>
