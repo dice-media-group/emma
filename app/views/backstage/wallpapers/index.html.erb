@@ -1,25 +1,18 @@
-      <section id="top-section">
-        <h1>Backstage::Wallpapers <%= "(#{@wallpapers.count})" %></h1>
-        <%= link_to 'new', 
-            new_backstage_wallpaper_path, 
-            class: "btn btn-primary" %>
-      </section>
-      <section class="flexgrid">
-        <% @wallpapers.each do |wallpaper| %>
-          <div class="item">
-            <p>
-              title: <%= link_to wallpaper.title, edit_backstage_wallpaper_path(wallpaper) %>
-            </p>
-            <p>Size: <%= wallpaper.device_size %> </p>            
-            <p>
-              <% if wallpaper.image.attached? %>
-                <%= image_tag wallpaper.image %>
-              <% else %>
-                image 
-              <% end %>
-            </p>
-        </div>
-        <% end %>
-              
+<section id="top-section">
+  <h1>Backstage::Wallpapers <%= "(#{@wallpapers.count})" %></h1>
+  <%= link_to 'new', 
+      new_backstage_wallpaper_path, 
+      class: "btn btn-primary" %>
+</section>
 
-      </section>
+<%# responsive css grid start %>
+<div class="message">
+  Sorry, your browser does not support CSS Grid. 😅
+</div>
+<section class="responsive-listing">
+  <div class="grid">
+    <%= render @wallpapers %>    
+  </div>
+</section>
+<%# responsive css grid finish %>
+

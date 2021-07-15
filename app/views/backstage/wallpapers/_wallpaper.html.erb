@@ -1,0 +1,14 @@
+<% style = 'background: center / contain no-repeat ' +
+            ' url('  + "#{url_for(wallpaper.image)}" + ');'
+
+%>
+
+<%= link_to(edit_backstage_wallpaper_path(wallpaper), 
+            class:"item item--medium",        
+            style: style
+            ) do %>
+    <div    class="item__details" >
+    <%= "#{wallpaper.title}"%><%#= link_to wallpaper.title, edit_backstage_wallpaper_path(wallpaper) %>
+    </div>
+
+<% end %>
