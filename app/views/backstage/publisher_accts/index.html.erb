@@ -1,55 +1,44 @@
-<style>
-  .grid-1-1-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) 2fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
+<div id="top">&nbsp;</div>
 
+<section id="top-section">
+  <h1>PublisherAccounts</h1> 
+  &nbsp;&nbsp;
+  <%= link_to 'new', 
+      new_backstage_publisher_acct_path, 
+      class: "btn btn-primary" %>
+</section>
 
-</style>
+<a href="#social_accts">Show Social Accounts</a>&nbsp;|&nbsp;<a href="#podcast_accts">Show Podcasts</a>
 
-      <section id="top-section">
-        <h1>PublisherAccounts#index</h1> 
-        &nbsp;&nbsp;
-        <%= link_to 'new', 
-            new_backstage_publisher_acct_path, 
-            class: "btn btn-primary" %>
-      </section>
-              <a href="#social_accts">social</a> <a href="#podcast_accts">podcasts</a>
+<%# responsive css grid start %>
+<div class="message">
+  Sorry, your browser does not support CSS Grid. 😅
+</div>
+<section class="responsive-listing">
+  <h3 id="social_accts">Social Accounts</h3>
 
-      <section class="publisher-accts flexgrid">
-      <div class="social-accts">
-        <h3 id="social_accts">Social Accounts</h3>
-        <div class="flexgrid">
-          <% @social_accounts.each do |acct| %>
-          <div class="item">
-            <p >
-              <i class="<%= acct.font_awesome_class %> "></i> 
-              <%= link_to acct.name, edit_backstage_publisher_acct_path(acct.id) %>
-            </p>
-            <p ><%= acct.network_kind %> </p>            
-            <p ><%= acct.blurb %></p>
-          </div>        
-          <% end %>        
-        </div>
-      </div>
-      <div class="podcast-accts">
-        <h3 id="podcast_accts">Podcast Accounts</h3>
-        <div class="flexgrid">
-          <% @podcast_accounts.each do |acct| %>
-            <div class="item">
-              <p >
-                <i class="<%= acct.font_awesome_class %> "></i> 
-                <%= link_to acct.name, edit_backstage_publisher_acct_path(acct.id) %>
-              </p>
-              <p ><%= acct.network_kind %> </p>            
-              <p ><%= acct.blurb %></p>
-            </div>        
-          <% end %>
-        </div>
-      </div>
-        </section>
-              
+  <div class="grid">
+    <%= render partial: "social_account", collection: @social_accounts %>          
 
+  </div>
+</section>
+<%# responsive css grid finish %>
+
+<a href="#social_accts">Show Social Accounts</a>&nbsp;|&nbsp;<a href="#podcast_accts">Show Podcasts</a>
+
+<%# responsive css grid start %>
+<div class="message">
+  Sorry, your browser does not support CSS Grid. 😅
+</div>
+
+<section class="responsive-listing">
+  <h3 id="podcast_accts">Podcast Accounts</h3>
+
+  <div class="grid">
+    <%= render partial: "podcast_account", collection: @podcast_accounts %>          
+
+  </div>
+</section>
+<%# responsive css grid finish %>
+
+              <a href="#social_accts">go to top of page</a>&nbsp;|&nbsp;<a href="#social_accts">Show Social Accounts</a>&nbsp;|&nbsp;<a href="#podcast_accts">Show Podcasts</a>

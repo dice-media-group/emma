@@ -1,0 +1,28 @@
+<% style = "background-image:" 
+        +  "url(" 
+        + "'data:image/svg+xml,%3Csvg" 
+        + 'xmlns="http://www.w3.org/2000/svg"'
+        +  '%3E%3Ccircle' 
+        + 'r="50" cx="50" cy="50" fill="tomato"' 
+        + ");"
+
+%>
+<%# double qoutes: background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle r='50' cx='50' cy='50' fill='tomato'/%3E%3Ccircle r='41' cx='47' cy='50' fill='orange'/%3E%3Ccircle r='33' cx='48' cy='53' fill='gold'/%3E%3Ccircle r='25' cx='49' cy='51' fill='yellowgreen'/%3E%3Ccircle r='17' cx='52' cy='50' fill='lightseagreen'/%3E%3Ccircle r='9' cx='55' cy='48' fill='teal'/%3E%3C/svg%3E"); %>
+
+<%# single quotes: background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3Ccircle r="50" cx="50" cy="50" fill="tomato"/%3E%3Ccircle r="41" cx="47" cy="50" fill="orange"/%3E%3Ccircle r="33" cx="48" cy="53" fill="gold"/%3E%3Ccircle r="25" cx="49" cy="51" fill="yellowgreen"/%3E%3Ccircle r="17" cx="52" cy="50" fill="lightseagreen"/%3E%3Ccircle r="9" cx="55" cy="48" fill="teal"/%3E%3C/svg%3E'); %>
+
+    <%= link_to(edit_backstage_publisher_acct_path(podcast_account), 
+                class:"item item--medium", 
+                style: style,       
+               ) do %>
+        <div    class="item__details" >
+                    <span >
+              <i class="<%= podcast_account.font_awesome_class %> "></i> 
+              <%= podcast_account.name %>
+            </span>
+            <p ><%= podcast_account.blurb %></p>
+
+        <%#= link_to podcast_account.title, edit_backstage_podcast_account_path(podcast_account) %>
+        </div>
+
+    <% end %>
