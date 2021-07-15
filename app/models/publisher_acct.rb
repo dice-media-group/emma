@@ -2,6 +2,8 @@ class PublisherAcct < ApplicationRecord
     scope :published_to,    -> { where("podcast_ranking > ?", 0).order("podcast_ranking DESC")}
     # scope :sorted_by_network_kind_n_name, -> { order('network_kind DESC', :name) }
     scope :social_accts,    -> { where("network_kind = ?", 'social').order(:name) }
+    scope :podcast_accts,    -> { where("network_kind = ?", 'podcast').order(:name) }
+
     def self.link(account_name)
         url = self.find_by(name: account_name).url
     end
