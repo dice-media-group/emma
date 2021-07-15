@@ -4,6 +4,9 @@
   <div class="row">
     <div class="col-sm-6">
       <h1>Photos</h1>
+      <p>
+        Upload images into the site's cloud and use the image's link (URL) anywhere.
+      </p>
     </div>
 
     <div class="col-sm-6 text-right">
@@ -13,37 +16,17 @@
     </div>
   </div>
 </section>
-<section>
-  <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover">
-      <thead>
-        <tr>
-      
 
-              
-            <th>Image</th>
-            <th>Link</th>
-          
-        </tr>
-      </thead>
 
-      <tbody>
-        <% @photos.each do |photo| %>
-          <%= content_tag :tr, id: dom_id(photo), class: dom_class(photo) do %>
-            
-
-            
-            
-              <td>
-                  <% if photo.image.attached? %>
-                    <%= link_to (image_tag photo.image, style: "max-width: 100px"), photo %>
-                  <% end %>            
-              </td>
-              <td><%= link_to 'Show', photo %></td>
-            
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
+  <%# responsive css grid start %>
+<div class="message">
+  Sorry, your browser does not support CSS Grid. 😅
+</div>
+<section class="responsive-listing">
+  <div class="grid">
+    <%= render @photos %>    
   </div>
-  </section>
+</section>
+<%# responsive css grid finish %>
+
+
