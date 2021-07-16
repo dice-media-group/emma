@@ -43,22 +43,7 @@
   </div>
 
   <h3>Meta tags</h3>
-  <div class="col-4">
-    <div class="form-group" data-uppy="general_info[meta_image]">
-      <%= form.label :meta_image %>
-      <div>
-        <% if @general_info.meta_image.attached? %>
-          <%= image_tag @general_info.meta_image, width: 280, data: { behavior: 'uppy-preview' } %>
-        <% else %>
-                <%= link_to image_tag("svgs/image-regular.svg", width: 280, data: { behavior: 'uppy-preview' }), "#", width: 280, data: { behavior: "uppy-trigger" } %>
-
-        <% end %>
-      </div>
-
-      <%= link_to "Upload Meta Image", "#", data: { behavior: "uppy-trigger" } %>
-    </div>
-  
-  </div>
+  <%= render '/backstage/shared/sample', { headline: "Welcome", model: @general_info, image_attribute: "meta_image" } %>
 
 
   <div class="form-group">
