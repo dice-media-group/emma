@@ -1,19 +1,19 @@
-<%# style = 'background: center / contain no-repeat ' +
-            ' url('  + "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle r='50' cx='50' cy='50' fill='tomato'/%3E%3Ccircle r='41' cx='47' cy='50' fill='orange'/%3E%3Ccircle r='33' cx='48' cy='53' fill='gold'/%3E%3Ccircle r='25' cx='49' cy='51' fill='yellowgreen'/%3E%3Ccircle r='17' cx='52' cy='50' fill='lightseagreen'/%3E%3Ccircle r='9' cx='55' cy='48' fill='teal'/%3E%3C/svg%3E" + ');'
+<% style = 'background: center  no-repeat ' + ' url('  + '/images/photos/mobile-phone-1087845_640.jpg' + ');'
 
 %>
 
     <%= link_to(edit_backstage_publisher_acct_path(social_account), 
-                class:"item item--medium",        
-               ) do %>
+                class:"item item--medium",
+                style: style
+                
+                ) do %>
         <div    class="item__details" >
                     <span >
               <i class="<%= social_account.font_awesome_class %> "></i> 
               <%= social_account.name %>
             </span>
             <p ><%= social_account.blurb %></p>
-
-        <%#= link_to social_account.title, edit_backstage_social_account_path(social_account) %>
+            <!-- Image by <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1087845">Gerd Altmann</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1087845">Pixabay</a> -->
         </div>
 
     <% end %>
