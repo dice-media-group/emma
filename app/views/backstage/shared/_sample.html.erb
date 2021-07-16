@@ -1,0 +1,35 @@
+<%
+ data_uppy = "#{model.model_name.singular }" + '[' + "#{image_attribute}" + ']'
+
+ model_name = model.model_name.singular
+ model_image_attribute_name     = "#{model_name}" + '_' + "#{image_attribute}"
+%>
+
+<%= "now is the time for all good men" %>
+<%= "#{local_assigns[:headline]}"    %> <br>
+Is image attached?
+<%= model.meta_image.attached? %>
+
+<hr>
+  <div class="col-4">
+    <div class="form-group" data-uppy="<%= data_uppy %>">
+      <label for="<%= model_image_attribute_name %> ">
+        <%= model.send(image_attribute).name.titleize %>
+      </label>
+      
+      <%= link_to "#", data: { behavior: "uppy-trigger" } do %>
+        <div>
+          <% if model.send(image_attribute).attached? %>
+            <%= image_tag model.send(image_attribute), width: 280, data: { behavior: 'uppy-preview' } %>
+          <% else %>
+                  <%= link_to image_tag("svgs/image-regular.svg", width: 280, data: { behavior: 'uppy-preview' }), "#", width: 280, data: { behavior: "uppy-trigger" } %>
+
+          <% end %>
+        </div>
+      <% end %>
+      <p>(Click image to upload)</p>
+    </div>
+  
+  </div>
+
+<hr>
