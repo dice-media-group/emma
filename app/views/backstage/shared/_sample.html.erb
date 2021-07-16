@@ -16,16 +16,18 @@ Is image attached?
       <label for="<%= model_image_attribute_name %> ">
         <%= model.send(image_attribute).name.titleize %>
       </label>
-      <div>
-        <% if model.send(image_attribute).attached? %>
-          <%= image_tag model.send(image_attribute), width: 280, data: { behavior: 'uppy-preview' } %>
-        <% else %>
-                <%= link_to image_tag("svgs/image-regular.svg", width: 280, data: { behavior: 'uppy-preview' }), "#", width: 280, data: { behavior: "uppy-trigger" } %>
+      
+      <%= link_to "#", data: { behavior: "uppy-trigger" } do %>
+        <div>
+          <% if model.send(image_attribute).attached? %>
+            <%= image_tag model.send(image_attribute), width: 280, data: { behavior: 'uppy-preview' } %>
+          <% else %>
+                  <%= link_to image_tag("svgs/image-regular.svg", width: 280, data: { behavior: 'uppy-preview' }), "#", width: 280, data: { behavior: "uppy-trigger" } %>
 
-        <% end %>
-      </div>
-
-      <%= link_to "Upload Meta Image", "#", data: { behavior: "uppy-trigger" } %>
+          <% end %>
+        </div>
+      <% end %>
+      <p>(Click image to upload)</p>
     </div>
   
   </div>
