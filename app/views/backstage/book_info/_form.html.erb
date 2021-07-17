@@ -20,7 +20,16 @@
 
   <div class="form-group">
     <%= form.label :billboard_image_url %>
-    <%= form.text_area :billboard_image_url, class: 'form-control styled' %>
+    <%#= form.text_area :billboard_image_url, class: 'form-control styled' %>
+    <%= form.url_field :header_photo_url, 
+                    class:'form-control styled',
+                    placeholder:"https://example.com",
+                    pattern:"https://.*",
+                    minlength:"7",
+                    size:"22",
+                    title: "URL must be a secure link"
+    %>
+    
   </div>
 
 
