@@ -1,0 +1,14 @@
+<% style = 'background: center / contain no-repeat ' +
+            ' url('  + "#{url_for(press_kit_entry.article_image_url)}" + ');'
+
+%>
+
+<%= link_to(edit_backstage_press_kit_entry_path(press_kit_entry), 
+            class:"item item--medium",        
+            style: style
+            ) do %>
+    <div    class="item__details" >
+        <%= "#{press_kit_entry.title}"%>
+    </div>
+
+<% end %>

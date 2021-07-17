@@ -1,0 +1,14 @@
+<% style = 'background: center / contain no-repeat ' +
+            ' url('  + "#{url_for(press_kit_photo.image)}" + ');'
+
+%>
+
+<%= link_to(backstage_press_kit_photo_path(press_kit_photo), 
+            class:"item item--medium",        
+            style: style
+            ) do %>
+    <div    class="item__details" >
+    Photo
+    </div>
+
+<% end %>
