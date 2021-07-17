@@ -22,17 +22,27 @@
   <div class="form-article">
     <div class="form-group">
       <%= form.label :title %>
-      <%= form.text_field :title, class: 'form-control' %>
+      <%= form.text_field :title, class: 'form-control', placeholder: "Tom Apple Lives in 2017" %>
     </div>
 
     <div class="form-group">
-      <%= form.label :article_link %>
-      <%= form.text_area :article_link, class: 'form-control styled' %>
+      <%= form.label :article_link %> <br>
+
+      <% if @press_kit_entry.article_link.present? %>
+        <%= link_to  !@press_kit_entry.article_link.to_s, press_kit_entry.article_link.to_s, target: "_blank"  %>
+      <% end %>
+
+      <%= form.text_area :article_link, class: 'form-control styled', placeholder: "https://www.example.com/article1/" %>
     </div>
 
     <div class="form-group">
-      <%= form.label :article_image_url %>
-      <%= form.text_area :article_image_url, class: 'form-control styled' %>
+      <%= form.label :article_image_url %> <br>
+
+      <% if @press_kit_entry.article_image_url.present? %>
+        <%= image_tag @press_kit_entry.article_image_url  %>
+      <% end %>
+
+      <%= form.text_area :article_image_url, class: 'form-control styled', placeholder: "https://www.example.com/image.jpg" %>
     </div>
 
     <div class="form-group">
