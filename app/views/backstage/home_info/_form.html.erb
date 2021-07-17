@@ -16,7 +16,15 @@
 
   <div class="form-group">
     <%= form.label :video_billboard_url %>
-    <%= form.text_area :video_billboard_url, class: 'form-control' %>
+    <%= form.url_field :video_billboard_url, 
+                    class:'form-control styled',
+                    placeholder:"https://example.com",
+                    pattern:"https://.*",
+                    minlength:"7",
+                    size:"22",
+                    title: "URL must be a secure link"
+    %>
+
   </div>
 
   <div class="form-group">
@@ -31,12 +39,26 @@
 
   <div class="form-group">
     <%= form.label :watch_this_poster_url %>
-    <%= form.text_area :watch_this_poster_url, class: 'form-control' %>
+    <%= form.url_field :watch_this_poster_url, 
+                    class:'form-control styled',
+                    placeholder:"https://example.com",
+                    pattern:"https://.*",
+                    minlength:"7",
+                    size:"22",
+                    title: "URL must be a secure link"
+    %>
   </div>
 
   <div class="form-group">
     <%= form.label :watch_this_video_url %>
-    <%= form.text_area :watch_this_video_url, class: 'form-control' %>
+    <%= form.url_field :watch_this_video_url, 
+                    class:'form-control styled',
+                    placeholder:"https://example.com",
+                    pattern:"https://.*",
+                    minlength:"7",
+                    size:"22",
+                    title: "URL must be a secure link"
+    %>
   </div>
 
 
