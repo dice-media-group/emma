@@ -19,8 +19,16 @@
 
 
   <div class="form-group">
-    <%= form.label :billboard_image_filename %>
-    <%= form.text_field :billboard_image_filename, class: 'form-control' %>
+    <%= form.label "Billboard image URL" %>
+    <%= form.url_field :billboard_image_filename, 
+                    class:'form-control styled',
+                    placeholder:"https://example.com",
+                    pattern:"https://.*",
+                    minlength:"7",
+                    size:"22",
+                    title: "URL must be a secure link"
+    %>            
+
   </div>
 
   <div class="form-group">
