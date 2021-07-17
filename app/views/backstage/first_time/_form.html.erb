@@ -92,7 +92,15 @@
     <aside class="form-sidebar-left">
             <div class="form-group">
           <%= form.label :featured_image_src %>
-          <%= form.text_area :featured_image_src, class: 'form-control' %>
+          <%= form.url_field :featured_image_src, 
+                          class:'form-control styled',
+                          placeholder:"https://example.com",
+                          pattern:"https://.*",
+                          minlength:"7",
+                          size:"22",
+                          title: "URL must be a secure link"
+          %>
+
         </div>
 
         <div class="form-group">
@@ -117,7 +125,15 @@
 
           <div class="form-group flex-form-group">
             <%= form.label :billboard_image_url %>
-            <%= form.text_area :billboard_image_url, class: 'form-control styled' %>
+            <%= form.url_field :billboard_image_url, 
+                            class:'form-control styled',
+                            placeholder:"https://example.com",
+                            pattern:"https://.*",
+                            minlength:"7",
+                            size:"22",
+                            title: "URL must be a secure link"
+            %>
+            
           </div>
 
         </div>
@@ -143,13 +159,28 @@
           <div class="form-group flex-form-group">
             <%= form.label :featured_youtube_video_url %>
             <p>(copy the the shared embed url for the youtube video)</p>
-            <%= form.text_area :featured_youtube_video_url, class: 'form-control' %>
+            <%= form.url_field :featured_youtube_video_url, 
+                            class:'form-control styled',
+                            placeholder:"https://example.com",
+                            pattern:"https://.*",
+                            minlength:"7",
+                            size:"22",
+                            title: "URL must be a secure link"
+            %>
+
           </div>
 
           <div class="form-group flex-form-group">
             <%= form.label :featured_youtube_image_url %>
             <p>(the url for the clickable image to watch the youtube video)</p>
-            <%= form.text_area :featured_youtube_image_url, class: 'form-control' %>
+            <%= form.url_field :featured_youtube_image_url, 
+                            class:'form-control styled',
+                            placeholder:"https://example.com",
+                            pattern:"https://.*",
+                            minlength:"7",
+                            size:"22",
+                            title: "URL must be a secure link"
+            %>            
           </div>
         
         </div>
