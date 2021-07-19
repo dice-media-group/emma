@@ -53,7 +53,8 @@ Trix.config.toolbar = {
 
 class EmbedController {
   constructor(element) {
-    this.pattern = /^https:\/\/([^\.]+\.)?youtube\.com\/watch\?v=(.*)/
+    // this.pattern = /^https:\/\/([^\.]+\.)?youtube\.com\/watch\?v=(.*)/
+    this.pattern = /(\/|%3D|v=)([0-9A-z-_]{11})([%#?&]|$)/
 
     this.element = element
     this.editor = element.editor
