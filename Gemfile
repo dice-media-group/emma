@@ -70,9 +70,9 @@ gem 'name_of_person', '~> 1.1'
 gem 'noticed', '~> 1.2'
 
 # omniauth-facebook and omniauth-twitter rely on an old, buggy version of omniauth 4/19/21
-gem 'omniauth', '~> 1.9.1' # errors currently with higher versions
-gem 'omniauth-facebook', '~> 6.0'
-# gem 'omniauth-github', '~> 2.0'
+gem 'omniauth', '~> 2.0', '>= 2.0.4'
+gem 'omniauth-facebook', '~> 8.0'
+gem 'omniauth-github', '~> 2.0'
 gem 'omniauth-twitter', '~> 1.4'
 gem 'sidekiq', '~> 6.0', '>= 6.0.3'
 gem 'sitemap_generator', '~> 6.1', '>= 6.1.2'
@@ -102,5 +102,3 @@ gem 'acts_as_list', '~> 1.0', '>= 1.0.3'
 
 # fix security bug
 gem 'omniauth-rails_csrf_protection'
-gem 'omniauth-github'
-gem 'omniauth-google-oauth2'
