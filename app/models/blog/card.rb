@@ -9,7 +9,7 @@ class Blog::Card < ApplicationRecord
 
   def image_url
     if image.attached?
-      image_url =  self.image.service_url
+      image_url =  self.image.url
     else
       image_url = "https://via.placeholder.com/425x356?text=missing+image"
     end

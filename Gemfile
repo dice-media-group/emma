@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+gem 'rails', '~> 6.1', '>= 6.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -83,7 +83,7 @@ gem 'image_processing'
 gem 'pagy', '~> 3.9'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1' #ngrok testing
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6', groups: [:development, :test] #ngrok testing
-gem 'acts-as-taggable-on', '~> 6.5'
+gem 'acts-as-taggable-on', '~> 8.1'
 # gem 'trix-rails', require: 'trix' # trix for administrate is seperate from actiontext in main app
 # gem 'administrate-field-trix' # supporting code for the trix field
 gem 'meta-tags', '~> 2.14'
