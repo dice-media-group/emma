@@ -119,7 +119,6 @@
 
 @home_info = HomeInfo.first_or_create!(bio_link_text: "default text for bio_link_text",
                                         biography_blurb: "biography_blurb", 
-                                        bio_link_text: "bio link text",
                                         video_billboard_url: "https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4", 
                                         watch_this_video_url: "https://www.youtube.com/embed/z5tugxy70MY", 
                                         watch_this_poster_url: "https://via.placeholder.com/1024x576?text=Watch+This", 
