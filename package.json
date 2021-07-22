@@ -7,7 +7,7 @@
     "@rails/actiontext": "^6.0.3-2",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "5.4.0",
+    "@rails/webpacker": "4.3.0",
     "@uppy/core": "^1.13.2",
     "@uppy/dashboard": "^1.12.7",
     "bootstrap": "^4.5.2",
@@ -17,7 +17,6 @@
     "jquery": "^3.5.1",
     "local-time": "^2.1.0",
     "popper.js": "^1.16.1",
-    "postcss": "^7.0.36",
     "select2": "^4.0.13",
     "smoothscroll-polyfill": "^0.4.4",
     "stimulus": "^2.0.0",
@@ -28,13 +27,10 @@
     "vue-loader": "^15.9.6",
     "vue-template-compiler": "^2.6.12",
     "vuedraggable": "^2.24.3",
-    "vuex": "^3.6.2",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12",
-    "ws": "^6.2.2"
+    "vuex": "^3.6.2"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.0"
   }
 }

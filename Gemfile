@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'rails', '~> 6.1', '>= 6.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -12,8 +13,7 @@ gem "puma", ">= 4.3.8"
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-# gem 'webpacker', '~> 4.0'
-gem 'webpacker', '~> 5.4'
+gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -71,9 +71,9 @@ gem 'name_of_person', '~> 1.1'
 gem 'noticed', '~> 1.2'
 
 # omniauth-facebook and omniauth-twitter rely on an old, buggy version of omniauth 4/19/21
-gem 'omniauth', '~> 2.0', '>= 2.0.4'
-gem 'omniauth-facebook', '~> 8.0'
-gem 'omniauth-github', '~> 2.0'
+gem 'omniauth', '~> 1.9.1' # errors currently with higher versions
+gem 'omniauth-facebook', '~> 6.0'
+# gem 'omniauth-github', '~> 2.0'
 gem 'omniauth-twitter', '~> 1.4'
 gem 'sidekiq', '~> 6.0', '>= 6.0.3'
 gem 'sitemap_generator', '~> 6.1', '>= 6.1.2'
@@ -84,6 +84,7 @@ gem 'image_processing'
 gem 'pagy', '~> 3.9'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1' #ngrok testing
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6', groups: [:development, :test] #ngrok testing
+# gem 'acts-as-taggable-on', '~> 6.5'
 gem 'acts-as-taggable-on', '~> 8.1'
 # gem 'trix-rails', require: 'trix' # trix for administrate is seperate from actiontext in main app
 # gem 'administrate-field-trix' # supporting code for the trix field
@@ -103,3 +104,5 @@ gem 'acts_as_list', '~> 1.0', '>= 1.0.3'
 
 # fix security bug
 gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
