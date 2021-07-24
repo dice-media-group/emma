@@ -7,12 +7,30 @@ require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
+
 require("local-time").start();
 
-window.Rails = Rails;
 
-import "bootstrap";
-import "data-confirm-modal";
+require("jquery")
+require('select2')
+
+// window.Rails = Rails;
+
+// jquery
+import $ from 'jquery'
+
+// bootstrap 
+import 'bootstrap/dist/js/bootstrap'
+require("stylesheets/application.scss")
+
+// select2
+import 'select2/dist/css/select2.css';
+import 'select2'
+
+// import './us_states';
+
+
+// vue
 import Vue from 'vue/dist/vue.esm'
 import Vuex from 'vuex'
 import App from '../app.vue'
@@ -146,5 +164,3 @@ $(document).ready(function() {
 // finish select2
 
 import "controllers";
-
-import "controllers"
