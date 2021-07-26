@@ -10,6 +10,29 @@
 @import "animation";
 @import "home";
 
+
+@font-face {
+  font-family: 'LeagueGothic-Regular';
+    src:
+        url('../fonts/league_gothic/WOFF2/LeagueGothic-Regular.woff2') format('woff2'),
+        url('../fonts/league_gothic/WOFF/LeagueGothic-Regular.woff') format('woff'),
+        url('../fonts/league_gothic/OTF/LeagueGothic-Regular.otf') format('otf'),
+        url('../fonts/league_gothic/TTF/LeagueGothic-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'LeagueGothic-Condensed';
+    src:
+        url('../fonts/league_gothic/WOFF2/LeagueGothic-Condensed.woff2') format('woff2'),
+        url('../fonts/league_gothic/WOFF/LeagueGothic-Condensed.woff') format('woff'),
+        url('../fonts/league_gothic/OTF/LeagueGothic-Condensed.otf') format('otf'),
+        url('../fonts/league_gothic/TTF/LeagueGothic-Condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -301,7 +324,7 @@ h1,
 h2,
 .h1,
 .h2 {
-  font-family: "league-gothic", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "LeagueGothic-Regular", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
 h1.hf-welter,
@@ -6393,6 +6416,14 @@ a.hover-social.sp-snapchat-square:focus {
 
 .ct-cta-community svg {
   width: 100%;
+}
+
+.ct-cta-community svg {
+  font-family: "LeagueGothic-Regular", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.coin {
+  font-family: LeagueGothic-Regular, Geneva, Helvetica, sans-serif;
 }
 
 .has-cta .ct-cta-community {
