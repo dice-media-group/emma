@@ -40,6 +40,12 @@ html {
 }
 body {
   margin: 0;
+  a {
+    text-decoration: none;
+  }
+  h1 {
+    font-size: 3rem;
+  }
 }
 article,
 aside,
@@ -6228,7 +6234,7 @@ a.hover-social.sp-snapchat-square:focus {
 @media (min-width: 992px) {
   .ct-mark-type {
     font-size: 23pt;
-    max-width: 300px;
+    max-width: 400px;
   }
 }
 @media (min-width: 768px) {
@@ -7839,4 +7845,22 @@ a.hover-social.sp-snapchat-square:focus {
   display: grid;
   grid-row-gap: 1em;
   grid-template-columns: repeat(3, minmax(50px, 1fr))
+}
+
+
+
+#ct-mc-main-desktop {
+  align-self: end;
+}
+
+
+.ct-widget-content {
+  display: grid;
+}
+
+/* frontdoor.debug-e60669f68d2320af1300dbd9eea9b19ec312a01feb8bafea592bc535031434c9.css | http://127.0.0.1:5050/assets/frontdoor.debug-e60669f68d2320af1300dbd9eea9b19ec312a01feb8bafea592bc535031434c9.css */
+
+.ct-widget-mailinglist .ct-widget-content h1 {
+  /* font-size: 3rem; */
+  font-size: 5rem;
 }
