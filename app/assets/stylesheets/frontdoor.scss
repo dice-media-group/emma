@@ -40,6 +40,9 @@ html {
 }
 body {
   margin: 0;
+  a {
+    text-decoration: none;
+  }
 }
 article,
 aside,
@@ -7839,4 +7842,15 @@ a.hover-social.sp-snapchat-square:focus {
   display: grid;
   grid-row-gap: 1em;
   grid-template-columns: repeat(3, minmax(50px, 1fr))
+}
+
+
+
+#ct-mc-main-desktop {
+  align-self: end;
+}
+
+
+.ct-widget-content {
+  display: grid;
 }
