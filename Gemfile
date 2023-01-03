@@ -96,7 +96,7 @@ gem 'aws-sdk-s3', '~> 1.87'
 #   send leads to hubspot
 gem 'hubspot-api-client', '~> 9.2', '>= 9.2.1'
 #   overall api client
-gem 'httparty', '~> 0.18.1'
+gem 'httparty', '~> 0.21.0'
 #   contact lead email
 gem 'sendgrid-ruby'
 #   pass rails vars to javascript
